@@ -51,7 +51,7 @@ def main(file_input: str, file_output: str):
             result += "\t"*prev_level + "<ul>\n"
             prev_level += 1
         result += "\t"*level
-        result += "<li><a href=#%s>%s</a></li>\n"%(curr_id, string)
+        result += '<li><a href="#%s">%s</a></li>\n'%(curr_id, string)
 
     level = 1
     while prev_level > level:
