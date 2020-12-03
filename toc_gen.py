@@ -11,16 +11,6 @@ parser.add_argument("input", type=str, help="path to generate ToC (html)")
 parser.add_argument("-o", "--output", type=str, default="output.txt",
                     help="output text path for ToC")
 
-def list_to_html(lst: list):
-    result = ["<ul>"]
-    for item in lst:
-        if isinstance(item, list):
-            result.append(list_to_html(item))
-        else:
-            result.append('<li><a href="#{}">{}</a></li>'.format(item[0], item[1]))
-    result.append("</ul>")
-    return " ".join(result)
-
 def main(file_input: str, file_output: str):
     logger = logging.getLogger("main")
     logger.debug("input: %s, output: %s", file_input, file_output)
@@ -44,6 +34,10 @@ def main(file_input: str, file_output: str):
         level = int(tag.name[1:])
         curr_id = tag['id']
         string = tag.string
+        if string is None:
+            # when string contains icon, remove icon & ()
+            string = ''.join([x if isinstance(x, str) else '' for x in tag.contents])
+            string = string.replace('(', '').replace(')', '').strip()
         if curr_id == "rop":
             logger.info("skip toc header. level: %d, id: %s, string: %s",
                         level, curr_id, string)
@@ -57,7 +51,7 @@ def main(file_input: str, file_output: str):
             result += "\t"*prev_level + "<ul>\n"
             prev_level += 1
         result += "\t"*level
-        result += "<li><a herf=#%s>%s</a></li>\n"%(curr_id, string)
+        result += '<li><a href="#%s">%s</a></li>\n'%(curr_id, string)
 
     level = 1
     while prev_level > level:
