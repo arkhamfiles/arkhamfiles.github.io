@@ -8,32 +8,33 @@ Autometic generate code for rr_raw.html
 TODO
   * sanity check for symbol list
 """
-from typing import Tuple
+from typing import Tuple, Dict
 import logging
 import io
 import re
 import argparse
+import copy
 from bs4 import BeautifulSoup
 
 logging.basicConfig(level=logging.INFO)
 
-def main(file_input: io.TextIOWrapper, file_output: io.TextIOWrapper,
-         link_info: Tuple[str, str, int]):
-    """main function
+def generate_toc(file_input: io.TextIOWrapper):
+    """
+    generate ToC string & collect header id
 
     Args:
-        file_input (str): path for input html file
-        file_output (str): path for output txt file
-        link_info (str, str, int): regex, format, # of string
-    """
-    logger = logging.getLogger("main")
-    logger.debug("input: %s, output: %s", file_input, file_output)
-    soup = BeautifulSoup(file_input, 'html5lib')
+        file_input (io.TextIOWrapper): file for read
 
-    # generation of ToC
+    Returns:
+        str: header string
+        Dict[str, str]: header information (string to id)
+    """
+    logger = logging.getLogger('generate_toc')
+    file_input.seek(0)
+    soup = BeautifulSoup(file_input, 'html5lib')
     header_string = "<ul>\n"
     prev_level = 1
-    dict_id = {}
+    dict_id: Dict[str, str] = {}
     for tag in soup.findAll(True):
         if not tag.name or tag.name[0] != 'h':
             # we only consider h#
@@ -77,6 +78,66 @@ def main(file_input: io.TextIOWrapper, file_output: io.TextIOWrapper,
         prev_level += 1
     header_string += "</ul>\n"
     del soup
+    return header_string, dict_id
+
+def make_symbol(text: str):
+    """change symbol in text (in-place)
+
+    Args:
+        text (str): input str
+
+    Returns:
+        str: output str
+    """
+    matches = [x for x in re.finditer('[[]([a-z_]+)[]]', text)]
+    for match in reversed(matches):
+        start, end = match.start(), match.end()
+        string = text[start+1:end-1]
+        tagged = '<span title="{0}" class="icon-{0}"></span>'.format(string)
+        text = text[:start] + tagged + text[end:]
+    return text
+
+def make_link(text: str, dict_id: Dict[str, str],
+              regex_in: str, regex_out: str, idx: int):
+    """make hyperlink by id map
+
+    Args:
+        text (str): target text
+        dict_id (Dict[str, str]): map from text -> id
+        regex_in (str): regex for search text
+        regex_out (str): formatter for output text
+        idx (int): the index for text in regex_in
+
+    Returns:
+        str: linked text
+    """
+    logger = logging.getLogger('make_link')
+    matches = [x for x in re.finditer(regex_in, text)]
+    for match in reversed(matches):
+        groups = match.groups()
+        string = groups[idx]
+        if string not in dict_id:
+            logger.warning("exported string: %s not found.", string)
+            continue
+        tagged = regex_out.format(*groups, id=dict_id[string])
+        text = text[:match.start()] + tagged + text[match.end():]
+    return text
+
+def main(file_input: io.TextIOWrapper, file_output: io.TextIOWrapper,
+         link_info: Tuple[str, str, int]):
+    """
+    main function
+
+    Args:
+        file_input (str): path for input html file
+        file_output (str): path for output txt file
+        link_info (str, str, int): regex, format, # of string
+    """
+    logger = logging.getLogger("main")
+    logger.debug("input: %s, output: %s", file_input, file_output)
+
+    header_string, dict_id = generate_toc(file_input)
+    header_string = make_symbol(header_string)
 
     file_input.seek(0)
     for line in file_input:
@@ -84,24 +145,8 @@ def main(file_input: io.TextIOWrapper, file_output: io.TextIOWrapper,
         if line.strip() == "<!-- TOC placeholder -->":
             file_output.write(header_string)
             continue
-        # find link
-        matches = [x for x in re.finditer(link_info[0], line)]
-        for match in reversed(matches):
-            groups = match.groups()
-            string = groups[link_info[2]]
-            if string not in dict_id:
-                logger.warning("exported string: %s not found.", string)
-                continue
-            tagged = link_info[1].format(*groups, id=dict_id[string])
-            line = line[:match.start()] + tagged + line[match.end():]
-        # find symbol
-        matches = [x for x in re.finditer('[[]([a-z_]+)[]]', line)]
-        for match in reversed(matches):
-            start, end = match.start(), match.end()
-            string = line[start+1:end-1]
-            tagged = '<span title="{0}" class="icon-{0}"></span>'.format(string)
-            line = line[:start] + tagged + line[end:]
-        # write
+        line = make_link(line, dict_id, *link_info)
+        line = make_symbol(line)
         file_output.write(line)
 
 if __name__ == '__main__':
