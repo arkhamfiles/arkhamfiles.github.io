@@ -8327,6 +8327,11 @@ article.review .review-comment {
     background: rgba(255, 0, 0, 0.5)
 }
 
+div.rules-reference {
+    padding: 20px;
+    line-height: 23.8px;
+}
+
 .rules-reference table.chart {
     border-spacing: 10
 }
