@@ -1,33 +1,34 @@
 #!/usr/bin/env python3
 """
 Autometic generate code for rr_raw.html
- * table of contents
- * link
-"""
+  * table of contents
+  * link
+  * symbol like [---]
 
+TODO
+  * sanity check for symbol list
+"""
+from typing import Tuple
 import logging
-import os
+import io
 import re
 import argparse
 from bs4 import BeautifulSoup
 
 logging.basicConfig(level=logging.INFO)
 
-def main(file_input: str, file_output: str):
+def main(file_input: io.TextIOWrapper, file_output: io.TextIOWrapper,
+         link_info: Tuple[str, str, int]):
     """main function
 
     Args:
         file_input (str): path for input html file
         file_output (str): path for output txt file
+        link_info (str, str, int): regex, format, # of string
     """
     logger = logging.getLogger("main")
     logger.debug("input: %s, output: %s", file_input, file_output)
-    if not os.path.isfile(file_input):
-        logger.critical("file %s cannot be found.")
-        return
-
-    with open(file_input) as file_pointer:
-        soup = BeautifulSoup(file_pointer, 'html5lib')
+    soup = BeautifulSoup(file_input, 'html5lib')
 
     # generation of ToC
     header_string = "<ul>\n"
@@ -77,32 +78,47 @@ def main(file_input: str, file_output: str):
     header_string += "</ul>\n"
     del soup
 
-    fp_in = open(file_input)
-    fp_out = open(file_output, 'w')
-    for line in fp_in:
+    file_input.seek(0)
+    for line in file_input:
         # ToC case
         if line.strip() == "<!-- TOC placeholder -->":
-            fp_out.write(header_string)
+            file_output.write(header_string)
             continue
-        # otherwise: find link
-        matches = [x for x in re.finditer('([0-9]+)쪽 [“"”]([가-힣 .0-9IVX]+)[“"”]', line)]
+        # find link
+        matches = [x for x in re.finditer(link_info[0], line)]
         for match in reversed(matches):
-            string = match[2]
+            groups = match.groups()
+            string = groups[link_info[2]]
             if string not in dict_id:
-                logger.warning("exported string: %s (page %d) not found.",
-                               match[2], int(match[1]))
+                logger.warning("exported string: %s not found.", string)
                 continue
-            start, end = match.start(2), match.end(2)
-            tagged = '<a href="#%s">'%dict_id[string] + string + '</a>'
+            tagged = link_info[1].format(*groups, id=dict_id[string])
+            line = line[:match.start()] + tagged + line[match.end():]
+        # find symbol
+        matches = [x for x in re.finditer('[[]([a-z_]+)[]]', line)]
+        for match in reversed(matches):
+            start, end = match.start(), match.end()
+            string = line[start+1:end-1]
+            tagged = '<span title="{0}" class="icon-{0}"></span>'.format(string)
             line = line[:start] + tagged + line[end:]
-        fp_out.write(line)
-    fp_in.close()
-    fp_out.close()
+        # write
+        file_output.write(line)
 
 if __name__ == '__main__':
     PARSER = argparse.ArgumentParser(description="Auto-generator for rule-reference")
-    PARSER.add_argument("input", type=str, help="path of original html")
-    PARSER.add_argument("-o", "--output", type=str, default="output.html",
-                        help="path of processed html")
+    PARSER.add_argument("input", nargs='?', type=argparse.FileType('r'),
+                        help="path of original html")
+    PARSER.add_argument("output", nargs='?', type=argparse.FileType('w'),
+                        default="output.html", help="path of processed html")
+    PARSER.add_argument("--raw", action='store_true',
+                        help="when you convert raw RR")
     ARGS = PARSER.parse_args()
-    main(ARGS.input, ARGS.output)
+    if ARGS.raw:
+        REGEX = '([0-9]+)쪽 [“"”]([가-힣 .0-9IVX~]+)[“"”]'
+        FORMAT = '“<a href="#{id}">{1}</a>”'
+        IDX = 1
+    else:
+        REGEX = '([0-9]+)쪽 [“"”]([가-힣 .0-9IVX~]+)[“"”]'
+        FORMAT = '“<a href="#{id}">{1}</a>”'
+        IDX = 1
+    main(ARGS.input, ARGS.output, (REGEX, FORMAT, IDX))
