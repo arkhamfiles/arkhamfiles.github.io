@@ -8172,7 +8172,7 @@ div.site-slogan {
     border-color: #c0c000 !important
 }
 
-.icon-guardian,.icon-mystic,.icon-seeker,.icon-rogue,.icon-survivor {
+/*.icon-guardian,.icon-mystic,.icon-seeker,.icon-rogue,.icon-survivor {
     background-image: url("/bundles/app/images/factions/guardian.png");
     background-repeat: no-repeat;
     width: 16px;
@@ -8197,7 +8197,7 @@ div.site-slogan {
 .icon-survivor {
     background-image: url("/bundles/app/images/factions/survivor.png");
     margin-top: -1px
-}
+}*/
 
 .icon-big {
     background-position: 100%;
@@ -8382,103 +8382,6 @@ div.rules-reference {
     color: #fff !important;
     background-color: #20638f !important;
     border-color: #194f72 !important
-}
-
-@font-face {
-    font-family: 'thronesdb';
-    src: url('../fonts/arkham-icons.otf?irjt2b');
-    src: url('../fonts/arkham-icons.otf?#iefixirjt2b') format('opentype'), url('../bundles/app/fonts/arkham-icons.ttf?irjt2b') format('truetype'), url('../bundles/app/fonts/arkham-icons.woff?irjt2b') format('woff'), url('../bundles/app/fonts/arkham-icons.svg?irjt2b#thronesdb') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-[class^="icon-"],[class*=" icon-"] {
-    font-family: 'thronesdb';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
-.icon-reaction:before {
-    content: "!"
-}
-
-.icon-fast:before,.icon-free:before {
-    content: "j"
-}
-
-.icon-eldersign:before,.icon-elder_sign:before {
-    content: "o"
-}
-
-.icon-lightning:before {
-    content: "j"
-}
-
-.icon-action:before {
-    content: "i"
-}
-
-.icon-strength:before,.icon-combat:before {
-    content: "c"
-}
-
-.icon-agility:before {
-    content: "a"
-}
-
-.icon-will:before,.icon-willpower:before {
-    content: "p"
-}
-
-.icon-lore:before,.icon-intellect:before {
-    content: "b"
-}
-
-.icon-wild:before {
-    content: "?";
-    font-weight: bold;
-    padding-right: 2px
-}
-
-.icon-unique:before {
-    content: "s";
-    font-size: 1.1em
-}
-
-.icon-elder_thing:before {
-    content: "n"
-}
-
-.icon-skull:before {
-    content: "k"
-}
-
-.icon-auto_fail:before {
-    content: "m"
-}
-
-.icon-cultist:before {
-    content: "l"
-}
-
-.icon-tablet:before {
-    content: "q"
-}
-
-.icon-per_investigator:before {
-    content: "u";
-    vertical-align: top;
-    font-size: 12px
-}
-
-.icon-null:before {
-    content: "t"
 }
 
 .spoiler {
