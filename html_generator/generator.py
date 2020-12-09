@@ -26,13 +26,14 @@ def generate(file_input: io.TextIOWrapper,
     logger = logging.getLogger("main")
     logger.debug("input: %s, output: %s", file_input, file_output)
 
-    header_string = generate_toc(file_input)
+    toc = generate_toc(file_input)
+    toc = symbolgen(toc)
 
     file_input.seek(0)
     for line in file_input:
         # ToC case
         if line.strip() == "<!-- TOC placeholder -->":
-            file_output.write(header_string)
+            file_output.write(toc)
             continue
         line = linkgen(line)
         line = symbolgen(line)
