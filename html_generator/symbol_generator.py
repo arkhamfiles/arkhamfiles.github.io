@@ -14,12 +14,14 @@ class SymbolGenerator:
     """
     def __init__(self):
         self._logger = logging.getLogger(type(self).__name__)
-        self._re = '\\[([^\\[^\\]^ ]+)\\]'
+        self._re = '\\[([^\\[^\\]^ ^가-힣^ㄱ-ㅎ^ㅏ-ㅣ]+)\\]' # reject KOR
         self._format = '<span title="{0}" class="icon-{0}"></span>'
         self._symbols = self._get_symbols()
-    
+        self._ignores = self._get_ignores()
+
     @staticmethod
     def _get_symbols() -> FrozenSet[str]:
+        """The symbol list (if you want to convert)"""
         symbols = [
             'reaction', 'fast', 'free', 'action',
             'eldersign', 'elder_sign', 'elder_thing',
@@ -31,6 +33,12 @@ class SymbolGenerator:
             'accessory', 'body', 'ally', 'hand', 'hand_2', 'arcane', 'arcane_2'
         ]
         return frozenset(symbols)
+
+    @staticmethod
+    def _get_ignores() -> FrozenSet[str]:
+        """The ignore list (if you want not to print warning message)"""
+        ignores = ['endif']
+        return frozenset(ignores)
 
     """
     @staticmethod
@@ -80,6 +88,8 @@ class SymbolGenerator:
         matches = list(re.finditer(self._re, target))
         for match in reversed(matches):
             text = match.group(1)
+            if text in self._ignores:
+                continue
             if text not in self._symbols:
                 self._logger.warning('unknown symbol name: %s', text)
                 continue
