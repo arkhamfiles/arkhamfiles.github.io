@@ -32,3 +32,22 @@ footer {
   background-color: steelblue;
   padding: 25px;
 }
+
+h4 {
+  margin-top: 20px;
+}
+
+div.stopMsgBox {
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  padding: 1em;
+  text-align: center;
+  width: 450px;
+  margin: 1em auto;
+}
+
+div.stopMsgBox span {
+  font-weight: bold;
+  font-size: 1.8em;
+}
