@@ -1,7 +1,7 @@
-Write-Output "generate rr_raw.html..."
-python generate.py raw/rr_raw.html rr_raw.html
+Write-Output "generate rr.html..."
+python generate.py raw/rule_reference.html rule_reference.html
 
 Write-Output "generate rr.html..."
-python generate.py raw/rr.html rr.html
+python generate.py raw/rr_ongoing.html rr_ongoing.html
 
 Write-Output "terminated..."
