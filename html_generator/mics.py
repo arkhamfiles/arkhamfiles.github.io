@@ -42,7 +42,7 @@ def load_filetype(file: FileType, check: bool = True) -> Optional[TextIOBase]:
         Optional[TextIOBase]: output. None if not check and file is invalid.
     """
     if isinstance(file, str) and os.path.isfile(file):
-        return open(file)
+        return open(file, encoding='utf-8')
     if isinstance(file, str) and all(map(lambda x: x in file, ['<', '>'])):
         return StringIO(file)
     if isinstance(file, TextIOBase):
@@ -65,7 +65,7 @@ class TestFileReader(unittest.TestCase):
         """load TextIOWarper & check seek is contains after close"""
         with tempfile.NamedTemporaryFile('w+') as filep:
             filep.write(self._test_string)
-            readonly = open(filep.name)
+            readonly = open(filep.name, encoding='utf-8')
             readonly.seek(5)
             curr_pos = readonly.tell()
             loaded = load_filetype(readonly)

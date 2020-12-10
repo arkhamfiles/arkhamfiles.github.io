@@ -4,9 +4,9 @@ import argparse
 import html_generator
 
 parser = argparse.ArgumentParser(description="Auto-generator for rule-reference")
-parser.add_argument("input", nargs='?', type=argparse.FileType('r'),
+parser.add_argument("input", nargs='?', type=argparse.FileType('r', encoding='utf-8'),
                     help="path of original html")
-parser.add_argument("output", nargs='?', type=argparse.FileType('w'),
+parser.add_argument("output", nargs='?', type=argparse.FileType('w', encoding='utf-8'),
                     default="output.html", help="path of processed html")
 parser.add_argument("--raw", action='store_true',
                     help="when you convert raw RR")

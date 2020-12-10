@@ -236,7 +236,7 @@ class TestLinkGenerator(unittest.TestCase):
     def test_rrfaq(self):
         """LinkGenerator -- RR and FAQ case"""
         with tempfile.TemporaryDirectory() as folder:
-            with open(os.path.join(folder, 'target.html'), 'w') as filept:
+            with open(os.path.join(folder, 'target.html'), 'w', encoding='utf-8') as filept:
                 filept.write('''
                     <html><body>
                     <h2 id="Chicken">치킨</h2>
@@ -244,11 +244,11 @@ class TestLinkGenerator(unittest.TestCase):
                     <h3 id="Beer">맥주</h3>
                     </body></html>
                 ''')
-            with open(os.path.join(folder, 'rr.html'), 'w') as filept:
+            with open(os.path.join(folder, 'rr.html'), 'w', encoding='utf-8') as filept:
                 filept.write(
                     '<html><body><h2 id="Chicken">치킨</h2></body></html>'
                     )
-            with open(os.path.join(folder, 'faq.html'), 'w') as filept:
+            with open(os.path.join(folder, 'faq.html'), 'w', encoding='utf-8') as filept:
                 filept.write(
                     '<html><body><h2 id="Chicken">치킨</h2></body></html>'
                     )
