@@ -37,7 +37,7 @@ h4 {
   margin-top: 20px;
 }
 
-div.stopMsgBox {
+p.stopMsgBox {
   border: 2px;
   border-style: solid;
   border-color: black;
@@ -47,7 +47,7 @@ div.stopMsgBox {
   margin: 1em auto;
 }
 
-div.stopMsgBox span {
+p.stopMsgBox span {
   font-weight: bold;
   font-size: 1.8em;
 }
