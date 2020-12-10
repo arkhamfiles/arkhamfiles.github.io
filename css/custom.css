@@ -26,3 +26,9 @@ ul.barItem li:hover {
 ul.barItem li.currentItem {
   background-color: darkblue;
 }
+
+footer {
+  color: whitesmoke;
+  background-color: steelblue;
+  padding: 25px;
+}
