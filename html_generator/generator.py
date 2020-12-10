@@ -32,6 +32,7 @@ def generate(file_input: io.TextIOWrapper,
     file_input.seek(0)
     for line in file_input:
         # ToC case
+        line = line.replace("../", "") # rewind link
         if line.strip() == "<!-- TOC placeholder -->":
             file_output.write(toc)
             continue
