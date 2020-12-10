@@ -86,9 +86,7 @@
 }
 
 .icon-per_investigator:before {
-    content: "u";
-    vertical-align: top;
-    font-size: 12px
+    content: "u"
 }
 
 .icon-guardian:before {
@@ -112,9 +110,9 @@
 }
 
 .icon-bless:before { /* need to update*/
-    content: "t"
+    content: "v"
 }
 
 .icon-curse:before { /* need to update*/
-    content: "t"
+    content: "w"
 }
