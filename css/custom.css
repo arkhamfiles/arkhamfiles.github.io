@@ -100,3 +100,8 @@ p.question {
   padding: 0.1em;
   text-indent: 1em;
 }
+
+span.trait {
+  font-style: italic;
+  font-weight: bold;
+}

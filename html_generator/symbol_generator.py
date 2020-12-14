@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """ Autometic symbol generator class
 """
-from typing import FrozenSet, List, Dict, MutableSet, Optional
+from typing import FrozenSet, List, Dict
 import logging
 import re
-import os
 import unittest
+from copy import deepcopy
 
 class SymbolGenerator:
     """Symbol Generator
@@ -14,9 +14,12 @@ class SymbolGenerator:
     """
     def __init__(self):
         self._logger = logging.getLogger(type(self).__name__)
+        self._re_trait = '\\[\\[([^\\[^\\]]+)\\]\\]'
+        self._format_trait = '<span class="trait">{0}</span>'
         self._re = '\\[([^\\[^\\]^ ^가-힣^ㄱ-ㅎ^ㅏ-ㅣ]+)\\]' # reject KOR
         self._format = '<span title="{0}" class="icon-{0}"></span>'
         self._symbols = self._get_symbols()
+        self._maps = self._get_maps()
         self._ignores = self._get_ignores()
 
     @staticmethod
@@ -35,45 +38,41 @@ class SymbolGenerator:
         return frozenset(symbols)
 
     @staticmethod
+    def _get_maps() -> Dict[str, str]:
+        maps = {
+            'core': '기본판',
+            'tdl': '던위치의 유산',
+            'ptc': '카르코사로 가는 길',
+            'tpa': '잊힌 시대',
+            'tcu': '끝맺지 못한 의식',
+            'tde': '꿈을 먹는 자',
+            'tic': '인스머스에 드리운 음모',
+            'nc': '너새니얼 조',
+            'hw': '하비 월터스',
+            'wh': '위니프리드 해버먹',
+            'jf': '재클린 파인',
+            'sc': '스텔라 클라크',
+            'book': '서적',
+            'promo': '프로모',
+            'parallel': '평행'
+        }
+        return maps
+
+    @staticmethod
     def _get_ignores() -> FrozenSet[str]:
         """The ignore list (if you want not to print warning message)"""
         ignores = ['endif']
         return frozenset(ignores)
 
-    """
-    @staticmethod
-    def _get_symbols(path_css: str) -> FrozenSet[str]:
-        candidates: MutableSet[str] = set()
-        with open(path_css) as filept:
-            prop: Dict[str, str] = {}
-            items: List[str] = []
-            for line in filept:
-                line = line.strip()
-                if '{' in line:
-                    line = line.replace('{', '').strip()
-                    items = [x.strip() for x in line.split(',')]
-                    prop = {}
-                    continue
-                if '}' not in line:
-                    if ':' in line:
-                        splited = line.replace(';', '').strip().split(':')
-                        if len(splited) == 2:
-                            prop[splited[0]] = splited[1]
-                    continue
-                if not any(map(lambda x: '.icon' in x, items)):
-                    continue
-                if not any(map(lambda x: x in prop, ['content', 'background-image'])):
-                    continue
-                for item in items:
-                    match = re.search("\\.icon-([a-z_]+)(:[:]||[$])", item)
-                    candidates.add(match.group(1))
-        return frozenset(candidates)
-    """
-
     @property
     def symbols(self) -> List[str]:
         """return able tokens"""
         return list(self._symbols)
+
+    @property
+    def maps(self) -> Dict[str, str]:
+        """return map"""
+        return deepcopy(self._maps)
 
     def __call__(self, target: str) -> str:
         """search in text and convert for symbols.
@@ -85,15 +84,25 @@ class SymbolGenerator:
         Returns:
             str: output
         """
+        # traits update
+        matches = list(re.finditer(self._re_trait, target))
+        for match in reversed(matches):
+            tagged = self._format_trait.format(match.group(1))
+            target = target[:match.start()] + tagged + target[match.end():]
+        
+        # symbol / code update
         matches = list(re.finditer(self._re, target))
         for match in reversed(matches):
-            text = match.group(1)
+            text = match.group(1).lower()
             if text in self._ignores:
                 continue
-            if text not in self._symbols:
-                self._logger.warning('unknown symbol name: %s', text)
+            if text in self._symbols:
+                tagged = self._format.format(text)
+            elif text in self._maps:
+                tagged = self._maps[text]
+            else:
+                self._logger.warning("cannot find symbol [%s]", text)
                 continue
-            tagged = self._format.format(text)
             target = target[:match.start()] + tagged + target[match.end():]
         return target
 
@@ -105,6 +114,22 @@ class TestSymbolGenerator(unittest.TestCase):
         self.assertEqual(
             generator("[action]"),
             '<span title="action" class="icon-action"></span>'
+        )
+    
+    def test_code(self):
+        """map test"""
+        generator = SymbolGenerator()
+        self.assertEqual(
+            generator("[core] 38"),
+            '기본판 38'
+        )
+    
+    def test_trait(self):
+        """trait test"""
+        generator = SymbolGenerator()
+        self.assertEqual(
+            generator("[[마법]]"),
+            '<span class="trait">마법</span>'
         )
 
     def test_sentense(self):
