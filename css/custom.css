@@ -43,7 +43,7 @@ p.stopMsgBox {
   border-color: black;
   padding: 1em;
   text-align: center;
-  width: 450px;
+  width: 35em;
   margin: 1em auto;
 }
 
@@ -89,7 +89,7 @@ table.errata span {
   color: blue;
 }
 
-p.example {
+p.example, span.example, li.example {
   font-style: italic;
 }
 
