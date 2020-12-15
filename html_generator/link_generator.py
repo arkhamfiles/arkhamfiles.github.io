@@ -3,13 +3,15 @@
 """
 import logging
 import os
-from io import TextIOBase, StringIO
-from typing import Dict, Optional, Union
-from abc import ABC, abstractmethod
 import re
-import unittest
 import tempfile
-from bs4 import BeautifulSoup
+import unittest
+from abc import ABC, abstractmethod
+from io import StringIO, TextIOBase
+from typing import Dict, Optional, Union
+
+import bs4
+
 from .mics import load_filetype
 
 FileType = Union[str, TextIOBase]
@@ -25,12 +27,12 @@ class LinkGeneratorInterface(ABC):
     @staticmethod
     def _build_id_map(file: FileType) -> Dict[str, str]:
         file_p = load_filetype(file)
-        soup = BeautifulSoup(file_p, 'html5lib')
+        soup = bs4.BeautifulSoup(file_p, 'html5lib')
         id_map: Dict[str, str] = {}
-        for tag in soup.find_all(re.compile("h[0-9]")):
+        for tag in soup.find_all(re.compile("h[0-9]")): #type: bs4.element.Tag
             if not tag.has_attr('id'):
                 continue
-            curr_id = tag['id']
+            curr_id: str = tag['id']
             text = re.sub("[\\(\\[\\<].*?[\\)\\]\\>]", "", str(tag))
             text = re.sub("[\\(\\[\\<\\)\\]\\>]", "", text).strip()
             if curr_id is not None and curr_id[-1] == '_':
@@ -95,9 +97,10 @@ class LinkGenerator(LinkGeneratorInterface):
                  out_dir: Optional[str] = None):
         super().__init__()
         if isinstance(file, str):
-            file = self._check_path(file, out_dir)
-            if file is None:
+            _file = self._check_path(file, out_dir)
+            if _file is None:
                 raise ValueError('file is necessary.')
+            file = _file
         rr = self._check_path(rr, out_dir)
         faq = self._check_path(faq, out_dir)
         self._text2id: Dict[str, Dict[str, str]] = {
@@ -119,9 +122,10 @@ class LinkGenerator(LinkGeneratorInterface):
     def _check_path(self, path: Optional[str], out_dir: Optional[str]) -> Optional[str]:
         if path is None:
             return None
+        out_dir = '.' if out_dir is None else out_dir
         if os.path.isfile(os.path.join(out_dir, path)):
             path = os.path.join(out_dir, path)
-        elif out_dir is None or not os.path.isfile(path):
+        elif not os.path.isfile(path):
             self._logger.warning("the path(%s) is not file.", path)
             return None
         #out_dir = os.curdir if out_dir is None else out_dir
@@ -148,6 +152,7 @@ class LinkGenerator(LinkGeneratorInterface):
                 tagged = self._format.format(
                     id=curr_id, text=text, path=self._paths[where]
                 )
+                self._logger.debug("ID: %s, text: %s, where: %s, tag: %s", curr_id, text, where, tagged)
             elif len(text) == 1:
                 text = text[0]
                 if text not in self._text2id[where]:
@@ -156,6 +161,7 @@ class LinkGenerator(LinkGeneratorInterface):
                 tagged = self._format.format(
                     id=self._text2id[where][text], text=text, path=self._paths[where]
                 )
+                self._logger.debug("text: %s, where: %s, tag: %s", text, where, tagged)
             else:
                 self._logger.warning("Don't use # except for ID: %s", match.group(2))
                 continue

@@ -29,13 +29,14 @@ class SymbolGenerator:
         'autofail': 'auto_fail', 'will': 'willpower'
     }
     _symbols_ignore = frozenset([
-        'endif'
+        'endif', 'accessory', 'body', 'ally', 'hand', 'hand_2',
+        'arcane', 'arcane_2', 'health', 'sanity'
     ])
     _symbols_map = {
         'core': '기본판',
         'tdl': '던위치의 유산',
-        'ptc': '카르코사로 가는 길',
-        'tpa': '잊힌 시대',
+        'tptc': '카르코사로 가는 길',
+        'tfa': '잊힌 시대',
         'tcu': '끝맺지 못한 의식',
         'tde': '꿈을 먹는 자',
         'tic': '인스머스에 드리운 음모',

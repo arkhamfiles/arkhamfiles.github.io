@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 """ mics functions
 """
-import os
-from typing import Iterable, Union, Optional
-from io import TextIOBase, StringIO
-import logging
-import unittest
-import tempfile
 import functools
-from bs4 import BeautifulSoup
+import logging
+import os
+import tempfile
+import unittest
+from io import StringIO, TextIOBase
+from typing import Iterable, Union, Callable, Any, List
+
+import bs4
 
 FileType = Union[str, TextIOBase]
 
-def _wrap_once(func, func2):
+def _wrap_once(func: Callable[..., Any], func2: Callable[..., Any]) -> Callable[..., Any]:
     """First call: func2 is called, Next call: func is called
 
     Args:
@@ -20,7 +21,7 @@ def _wrap_once(func, func2):
         func2 (Callable): function want to be called once
     """
     @functools.wraps(func)
-    def warpper(*args, **kwargs):
+    def warpper(*args: ..., **kwargs: ...):
         if not warpper.has_run:
             warpper.has_run = True
             return func2(*args, **kwargs)
@@ -28,7 +29,7 @@ def _wrap_once(func, func2):
     warpper.has_run = False
     return warpper
 
-def load_filetype(file: FileType, check: bool = True) -> Optional[TextIOBase]:
+def load_filetype(file: FileType) -> TextIOBase:
     """load FileType
 
     Args:
@@ -39,7 +40,7 @@ def load_filetype(file: FileType, check: bool = True) -> Optional[TextIOBase]:
         ValueError: if file is wrong. only if check is True
 
     Returns:
-        Optional[TextIOBase]: output. None if not check and file is invalid.
+        TextIOBase: output. None if not check and file is invalid.
     """
     if isinstance(file, str) and os.path.isfile(file):
         return open(file, encoding='utf-8')
@@ -51,11 +52,7 @@ def load_filetype(file: FileType, check: bool = True) -> Optional[TextIOBase]:
         file_p.close = _wrap_once(file_p.close, lambda: file_p.seek(init_pos))
         file_p.seek(0)
         return file_p
-    if check:
-        if isinstance(file, str):
-            raise ValueError("input seems to neither path nor html string.")
-        raise ValueError("unproper file type")
-    return None
+    raise ValueError("input seems to neither path nor html string.")
 
 class TestFileReader(unittest.TestCase):
     """Test load_filetype class"""
@@ -106,15 +103,13 @@ def generate_toc(file: FileType,
         ids.add('rop')
     elif isinstance(id_ignore, str):
         ids.add(str(id_ignore))
-    elif isinstance(id_ignore, Iterable) and \
-         all(map(lambda x: isinstance(x, str), id_ignore)):
-        ids.update(id_ignore)
     else:
-        raise ValueError("unknown id type.")
+        ids.update(id_ignore)
 
-    soup = BeautifulSoup(file, 'html5lib')
-    header_string = "<ul>\n"
+    soup = bs4.BeautifulSoup(file, 'html5lib')
+    header_string: str = "<ul>\n"
     prev_level = 1
+
     for tag in soup.findAll(True):
         if not tag.name or tag.name[0] != 'h':
             # we only consider h#
@@ -123,13 +118,14 @@ def generate_toc(file: FileType,
             logger.debug("NO id: %s (omit)", tag.string)
             continue
         level = int(tag.name[1:])
-        curr_id = tag['id']
-        string = tag.string
+        curr_id: str = tag['id']
+        string: str = tag.string
         if string is None:
             # when string contains icon, remove icon & ()
             string = ''.join([x if isinstance(x, str) else '' for x in tag.contents])
             string = string.replace('(', '').replace(')', '').strip()
-        logger.debug("level: %d, id: %s, string: %s", level, curr_id, string)
+        classes: List[str] = [x for x in tag.parent['class'] if x != 'rules-reference']
+        logger.debug("level: %d, id: %s, string: %s, class: %s", level, curr_id, string, classes)
         if curr_id == "rop":
             continue
         if curr_id[0] == '_':
@@ -142,7 +138,11 @@ def generate_toc(file: FileType,
             header_string += "\t"*prev_level + "<ul>\n"
             prev_level += 1
         header_string += "\t"*level
-        header_string += '<li><a href="#%s">%s</a></li>\n'%(curr_id, string)
+        header_string += '<li{cls}><a href="#{id}"{cls}>{text}</a></li>\n'.format(
+            cls = ' class="'+' '.join(classes)+'"' if classes else '',
+            id = curr_id,
+            text = string
+        )
     level = 1
     while prev_level > level:
         prev_level -= 1
@@ -158,6 +158,7 @@ def generate_toc(file: FileType,
 class TestToC(unittest.TestCase):
     """ToC Test"""
     def test_toc(self):
+        """toc test"""
         test_string = '''
         <html><body>
         <h1 id="h1">h1</h1>
