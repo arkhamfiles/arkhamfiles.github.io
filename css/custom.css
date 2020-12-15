@@ -52,6 +52,16 @@ p.stopMsgBox span {
   font-size: 1.8em;
 }
 
+p.cardEffectBox {
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  padding: 0.5em;
+  text-align: left;
+  margin: 1em auto;
+  width: 40em;
+}
+
 table.errata {
   border-width: 2px;
   border-collapse: collapse;
@@ -70,7 +80,7 @@ table.errata th {
   padding-right: 0.3em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
-  width: 50px;
+  width: 6em;
 }
 
 table.errata td {
@@ -89,15 +99,19 @@ table.errata span {
   color: blue;
 }
 
-p.example, span.example, li.example {
+.example{
   font-style: italic;
 }
 
-p.question {
-  border: 1px;
-  border-style: solid;
-  border-color: black;
-  padding: 0.1em;
+p.question::before {
+  content: "질문: ";
+  font-weight: bold;
+  text-indent: 1em;
+}
+
+p.answer::before {
+  content: "답변: ";
+  font-weight: bold;
   text-indent: 1em;
 }
 
@@ -105,3 +119,16 @@ span.trait {
   font-style: italic;
   font-weight: bold;
 }
+
+/*div.errata {
+  display: none;
+}
+
+.tcu, .tde, .tic, .starter {
+  color: red;
+}
+
+.V1_1 {
+  color: red;
+}
+*/
