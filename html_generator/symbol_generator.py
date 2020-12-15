@@ -152,7 +152,7 @@ class TestSymbolGenerator(unittest.TestCase):
                 generator("[%s]"%name),
                 "[%s]"%name
             )
-    
+
     def test_property(self):
         """test property"""
         generator = SymbolGenerator()
