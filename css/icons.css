@@ -1,7 +1,10 @@
 @font-face {
     font-family: 'thronesdb';
     src: url('../fonts/arkham-icons.otf?irjt2b');
-    src: url('../fonts/arkham-icons.otf?#iefixirjt2b') format('opentype'), url('../bundles/app/fonts/arkham-icons.ttf?irjt2b') format('truetype'), url('../bundles/app/fonts/arkham-icons.woff?irjt2b') format('woff'), url('../bundles/app/fonts/arkham-icons.svg?irjt2b#thronesdb') format('svg');
+    src: url('../fonts/arkham-icons.otf?#iefixirjt2b') format('opentype'), 
+    url('../fonts/arkham-icons.ttf?irjt2b') format('truetype'), 
+    url('../fonts/arkham-icons.woff?irjt2b') format('woff'), 
+    url('../fonts/arkham-icons.svg?irjt2b#thronesdb') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -22,23 +25,19 @@
     content: "!"
 }
 
-.icon-fast:before,.icon-free:before {
+.icon-free:before {
     content: "j"
 }
 
-.icon-eldersign:before,.icon-elder_sign:before {
+.icon-elder_sign:before {
     content: "o"
-}
-
-.icon-lightning:before {
-    content: "j"
 }
 
 .icon-action:before {
     content: "i"
 }
 
-.icon-strength:before,.icon-combat:before {
+.icon-combat:before {
     content: "c"
 }
 
@@ -46,11 +45,11 @@
     content: "a"
 }
 
-.icon-will:before,.icon-willpower:before {
+.icon-willpower:before {
     content: "p"
 }
 
-.icon-lore:before,.icon-intellect:before {
+.icon-intellect:before {
     content: "b"
 }
 
@@ -109,10 +108,14 @@
     content: "e"
 }
 
-.icon-bless:before { /* need to update*/
+.icon-bless:before {
     content: "v"
 }
 
-.icon-curse:before { /* need to update*/
+.icon-curse:before {
     content: "w"
+}
+
+.icon-null:before {
+	content: "t";
 }
