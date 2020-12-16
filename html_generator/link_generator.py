@@ -54,6 +54,11 @@ class LinkGeneratorInterface(ABC):
             str: output
         """
 
+class LinkGeneratorDummy(LinkGeneratorInterface):
+    """ Dummy Link Generator (no link generated) """
+    def __call__(self, text: str) -> str:
+        return text
+
 class LinkGeneratorRaw(LinkGeneratorInterface):
     """Link Generator for RAW RR
 

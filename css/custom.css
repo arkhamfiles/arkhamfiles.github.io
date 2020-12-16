@@ -62,14 +62,14 @@ p.cardEffectBox {
   width: 40em;
 }
 
-table.errata {
+.errata table {
   border-width: 2px;
   border-collapse: collapse;
   border-style: solid;
   border-color: black;
 }
 
-table.errata th {
+.errata th {
   border-style: solid;
   border-color: black;
   border-width: 1px;
@@ -84,7 +84,7 @@ table.errata th {
   font-size: 14px;
 }
 
-table.errata td {
+.errata td {
   border-style: solid;
   border-color: black;
   border-width: 1px;
@@ -97,7 +97,7 @@ table.errata td {
   font-size: 12px;
 }
 
-table.errata span {
+.errata table span {
   color: blue;
 }
 
