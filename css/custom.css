@@ -111,6 +111,10 @@ p.question::before {
   text-indent: 1em;
 }
 
+p.question {
+  margin-bottom: 0px;
+}
+
 p.answer::before {
   content: "답변: ";
   font-weight: bold;
@@ -120,6 +124,11 @@ p.answer::before {
 span.trait {
   font-style: italic;
   font-weight: bold;
+}
+
+blockquote br{
+  display: block;
+  margin: 1%;
 }
 
 /*div.errata {
