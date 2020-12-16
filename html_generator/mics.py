@@ -4,10 +4,13 @@
 import functools
 import logging
 import os
+import re
 import tempfile
 import unittest
+from collections import deque
+from dataclasses import dataclass, field
 from io import StringIO, TextIOBase
-from typing import Iterable, Union, Callable, Any, List
+from typing import Any, Callable, Iterable, List, Union
 
 import bs4
 
@@ -83,6 +86,29 @@ class TestFileReader(unittest.TestCase):
         loaded = load_filetype(self._test_string)
         self.assertIsNotNone(loaded)
 
+@dataclass
+class _Tag:
+    id: str
+    contents: str
+    level: int
+    classes: List[str] = field(default_factory=list)
+    is_number: bool = field(init=False, default=False)
+
+    _pattern = re.compile("(\\([0-9]+\\.[0-9]+\\))")
+
+    def __post_init__(self):
+        match = _Tag._pattern.search(self.contents)
+        if match:
+            self.is_number = True
+            self.contents = self.contents[match.end():]
+
+    def __str__(self):
+        str_class = ' class="{}"'.format(' '.join(self.classes)) if self.classes else ''
+        result = '<li{}>'.format(str_class)
+        result += '<a{} href="#{}">'.format(str_class, self.id)
+        result += self.contents
+        result += '</a></li>'
+        return result
 
 def generate_toc(file: FileType,
                  id_ignore: Union[str, Iterable[str], None] = None) -> str:
@@ -91,6 +117,7 @@ def generate_toc(file: FileType,
 
     Args:
         file (Union[str, TextIOBase]): path or file string or fileIO
+        id_ignore (Union[str, Iterable[str], None]): id for ignore (default = 'rod')
 
     Returns:
         str: header string
@@ -98,18 +125,18 @@ def generate_toc(file: FileType,
     logger = logging.getLogger('generate_toc')
     file_p = load_filetype(file)
     # id update
-    ids = set()
     if id_ignore is None:
-        ids.add('rop')
+        ids = frozenset(['rop'])
     elif isinstance(id_ignore, str):
-        ids.add(str(id_ignore))
+        ids = frozenset([str(id_ignore)])
     else:
-        ids.update(id_ignore)
+        ids = frozenset(id_ignore)
 
     soup = bs4.BeautifulSoup(file, 'html5lib')
-    header_string: str = "<ul>\n"
-    prev_level = 1
-
+    tags: List[_Tag] = []
+    classes_ignore = frozenset([
+        'rules-reference', 'errata', 'rules'
+    ])
     for tag in soup.findAll(True):
         if not tag.name or tag.name[0] != 'h':
             # we only consider h#
@@ -124,37 +151,37 @@ def generate_toc(file: FileType,
             # when string contains icon, remove icon & ()
             string = ''.join([x if isinstance(x, str) else '' for x in tag.contents])
             string = string.replace('(', '').replace(')', '').strip()
-        classes: List[str] = [x for x in tag.parent['class'] if x != 'rules-reference']
+        classes: List[str] = [x for x in tag.parent['class'] if x not in classes_ignore]
         logger.debug("level: %d, id: %s, string: %s, class: %s", level, curr_id, string, classes)
-        if curr_id == "rop":
+        if curr_id in ids:
             continue
         if curr_id[0] == '_':
             # if no header
             continue
-        while prev_level > level:
-            prev_level -= 1
-            header_string += "\t"*prev_level + "</ul>\n"
-        while prev_level < level:
-            header_string += "\t"*prev_level + "<ul>\n"
-            prev_level += 1
-        header_string += "\t"*level
-        header_string += '<li{cls}><a href="#{id}"{cls}>{text}</a></li>\n'.format(
-            cls = ' class="'+' '.join(classes)+'"' if classes else '',
-            id = curr_id,
-            text = string
-        )
-    level = 1
-    while prev_level > level:
-        prev_level -= 1
-        header_string += "\t"*prev_level + "</ul>\n"
-    while prev_level < level:
-        header_string += "\t"*prev_level + "<ul>\n"
-        prev_level += 1
-    header_string += "</ul>\n"
+        tags.append(_Tag(curr_id, string, level, classes))
+
+    header_string = ""
+    tags_list: "deque[str]" = deque(maxlen=9)
+    if sum(map(lambda x: 1 if x.level == 1 else 0, tags)) == 1:
+        tags = [_Tag(x.id, x.contents, x.level-1, x.classes) for x in tags if x.level > 1]
+    for tag in tags:
+        while len(tags_list) > tag.level:
+            curr_tag = tags_list.pop()
+            header_string += "\t"*len(tags_list) + "</{}>\n".format(curr_tag)
+        if len(tags_list)+1 == tag.level and tag.is_number:
+            header_string += "\t"*len(tags_list) + "<ol>\n"
+            tags_list.append('ol')
+        while len(tags_list) < tag.level:
+            header_string += "\t"*len(tags_list) + "<ul>\n"
+            tags_list.append('ul')
+        header_string += '\t'*tag.level
+        header_string += str(tag)+'\n'
+    while tags_list:
+        tag = tags_list.pop()
+        header_string += "\t"*len(tags_list) + "</{}>\n".format(tag)
     del soup
     file_p.close()
     return header_string
-
 class TestToC(unittest.TestCase):
     """ToC Test"""
     def test_toc(self):
