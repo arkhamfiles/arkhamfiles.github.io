@@ -102,7 +102,7 @@ p.cardEffectBox {
   font-size: 12px;
 }
 
-.errata table span {
+.errata table span:not([class^="icon-"],[class*=" icon-"]) {
   color: blue;
 }
 
