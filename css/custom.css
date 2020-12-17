@@ -27,6 +27,11 @@ ul.barItem li.currentItem {
   background-color: darkblue;
 }
 
+ul.barItem li a{
+    color: inherit;
+    text-decoration: none;
+}
+
 footer {
   color: whitesmoke;
   background-color: steelblue;
