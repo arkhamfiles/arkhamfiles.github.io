@@ -1,6 +1,15 @@
 div.topBar {
   background-color: steelblue;
-  height: 38px;
+  min-height: 38px;
+  width: 100%;
+}
+
+div.topBar button {
+  display: none;
+}
+
+div.topBar button span {
+  background-color: white;
 }
 
 div.barTitle {
@@ -32,6 +41,25 @@ ul.barItem li a{
     text-decoration: none;
 }
 
+@media (min-width:320px) and (max-width:768px) {
+  div.topBar button {
+    display: block;
+  }
+
+  div.barTitle {
+    float: none;
+  }
+
+  ul.barItem {
+    padding-left: 15px;
+    display: none;
+  }
+
+  ul.barItem li {
+    float: none;
+  }
+}
+
 footer {
   color: whitesmoke;
   background-color: steelblue;
@@ -48,7 +76,7 @@ p.stopMsgBox {
   border-color: black;
   padding: 1em;
   text-align: center;
-  width: 35em;
+  max-width: 35em;
   margin: 1em auto;
 }
 

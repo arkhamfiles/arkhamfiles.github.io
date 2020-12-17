@@ -17,11 +17,23 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
+    <script>
+      window.onload = function () {
+        window.barButton.onclick = function() {
+          window.barMenu.style.display = 'block';
+        }
+    }
+    </script>
 	  </head>
   <body>
     <div class="topBar">
+      <button id="barButton" name="barButton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <div class="barTitle">아컴파일즈 레퍼런스</div>
-      <ul class="barItem">
+      <ul class="barItem" id="barMenu" name="barMenu">
         <li><a href="rule_reference.html">참조 안내서</a></li>
         <li><a href="notes.html">규칙 보충 해설</a></li>
         <li><a href="faq.html">FAQ</a></li>
@@ -83,10 +95,10 @@
     <tr>
     <th>미공개면<br />읽을거리</th>
     <td>
-        미스캐토닉 대학은 <span>북서부</span>에서 가장 명망 있는 대학입니다. 모두에게 존경받는 헨리 아미티지 박사가 운영하는 미스캐토닉 대학 도서관은, 초자연적인 내용을 다룬 책들이 즐비한 것으로도 유명합니다. 
+        미스캐토닉 대학은 <span>북서부</span>에서 가장 명망 있는 대학입니다. 모두에게 존경받는 헨리 아미티지 박사가 운영하는 미스캐토닉 대학 도서관은, 초자연적인 내용을 다룬 책들이 즐비한 것으로도 유명합니다.
     </td>
     <td>
-        미스캐토닉 대학은 <span>북동부</span>에서 가장 명망 있는 대학입니다. 모두에게 존경받는 헨리 아미티지 박사가 운영하는 미스캐토닉 대학 도서관은, 초자연적인 내용을 다룬 책들이 즐비한 것으로도 유명합니다. 
+        미스캐토닉 대학은 <span>북동부</span>에서 가장 명망 있는 대학입니다. 모두에게 존경받는 헨리 아미티지 박사가 운영하는 미스캐토닉 대학 도서관은, 초자연적인 내용을 다룬 책들이 즐비한 것으로도 유명합니다.
     </td>
     </tr>
 </tbody></table>
