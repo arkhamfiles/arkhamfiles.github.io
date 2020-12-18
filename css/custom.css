@@ -100,6 +100,7 @@ p.cardEffectBox {
   border-collapse: collapse;
   border-style: solid;
   border-color: black;
+  margin-bottom: 1em;
 }
 
 .errata th {
