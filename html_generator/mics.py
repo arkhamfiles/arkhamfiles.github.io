@@ -132,15 +132,12 @@ def generate_toc(file: FileType,
     else:
         ids = frozenset(id_ignore)
 
-    soup = bs4.BeautifulSoup(file, 'html5lib')
+    soup = bs4.BeautifulSoup(file_p, 'html5lib')
     tags: List[_Tag] = []
     classes_ignore = frozenset([
         'rules-reference', 'errata', 'rules'
     ])
-    for tag in soup.findAll(True):
-        if not tag.name or tag.name[0] != 'h':
-            # we only consider h#
-            continue
+    for tag in soup.find_all(re.compile('h[0-9]')):
         if not tag.has_attr('id'):
             logger.debug("NO id: %s (omit)", tag.string)
             continue

@@ -39,27 +39,3 @@ def generate(file_input: io.TextIOWrapper,
         line = linkgen(line)
         line = symbolgen(line)
         file_output.write(line)
-
-"""
-if __name__ == '__main__':
-    PARSER = argparse.ArgumentParser(description="Auto-generator for rule-reference")
-    PARSER.add_argument("input", nargs='?', type=argparse.FileType('r'),
-                        help="path of original html")
-    PARSER.add_argument("output", nargs='?', type=argparse.FileType('w'),
-                        default="output.html", help="path of processed html")
-    PARSER.add_argument("--raw", action='store_true',
-                        help="when you convert raw RR")
-    PARSER.add_argument("-r", "--rr", type=str, default=None,
-                        help="path of rr")
-    PARSER.add_argument("-f", "--faq", type=str, default=None,
-                        help="path of faq")
-    PARSER.add_argument("-s", "--css", type=str, default=None,
-                        help="path of symbol for css")
-    ARGS = PARSER.parse_args()
-    if ARGS.raw:
-        LINKGEN = LinkGeneratorRaw(ARGS.input)
-    else:
-        LINKGEN = LinkGenerator(ARGS.input, ARGS.rr, ARGS.faq)
-    SYMBOLGEN = SymbolGenerator(ARGS.css)
-    generate(ARGS.input, ARGS.output, LINKGEN, SYMBOLGEN)
-"""
