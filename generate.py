@@ -20,9 +20,17 @@ def main():
                         help="path of faq")
     parser.add_argument("--nolink", action='store_true',
                         help="when you disable link")
+    parser.add_argument("--reference", action='store_true',
+                        help="only if reference generation")
     # parser.add_argument("-s", "--css", type=str, default=None,
     #                     help="path of symbol for css")
     args = parser.parse_args()
+    if args.reference:
+        logger.debug('reference generation')
+        html_generator.generate_reference(
+            args.input, args.output, args.rr, args.faq
+        )
+        return
     if args.nolink:
         logger.debug('nolink flaged')
         link_gen = html_generator.LinkGeneratorDummy()

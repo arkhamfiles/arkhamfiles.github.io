@@ -13,4 +13,7 @@ python generate.py raw/errata.html errata.html --nolink
 Write-Output "generate taboo.html..."
 python generate.py raw/taboo.html taboo.html --nolink
 
+Write-Output "generate reference.html..."
+python generate.py raw/reference.html reference.html --rr rule_reference.html --faq notes.html --reference
+
 Write-Output "terminated..."
