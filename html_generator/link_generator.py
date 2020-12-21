@@ -72,11 +72,11 @@ class LinkGeneratorRaw(LinkGeneratorInterface):
     def __init__(self, file: FileType):
         super().__init__()
         self._text2id = self._build_id_map(file)
-        self._re = '([0-9]+)쪽 [“"”]([^“^"^”]+)[“"”]'
+        self._re = re.compile('([0-9]+)쪽 [“"”]([^“^"^”]+)[“"”]')
         self._format = '"<a href="#{id}">{text}</a>"'
 
     def __call__(self, target: str) -> str:
-        matches = list(re.finditer(self._re, target))
+        matches = list(self._re.finditer(target))
         for match in reversed(matches):
             text = match.group(2)
             if text not in self._text2id:
@@ -121,7 +121,7 @@ class LinkGenerator(LinkGeneratorInterface):
             '참조': os.path.normpath(os.path.relpath(rr, out_dir)) if rr is not None else '',
             '파큐': os.path.normpath(os.path.relpath(faq, out_dir)) if faq is not None else ''
         }
-        self._re = '(링크|참조|파큐|[0-9]+쪽) [“"”]([^“^"^”]+)[“"”]'
+        self._re = re.compile('(링크|참조|파큐|[0-9]+쪽) [“"”]([^“^"^”]+)[“"”]')
         self._format = '"<a href="{path}#{id}">{text}</a>"'
 
     def _check_path(self, path: Optional[str], out_dir: Optional[str]) -> Optional[str]:
@@ -139,7 +139,7 @@ class LinkGenerator(LinkGeneratorInterface):
 
 
     def __call__(self, target: str) -> str:
-        matches = list(re.finditer(self._re, target))
+        matches = list(self._re.finditer(target))
         for match in reversed(matches):
             where = match.group(1)
             where = '링크' if where[-1] == '쪽' else where

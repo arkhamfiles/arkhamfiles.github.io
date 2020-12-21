@@ -53,6 +53,8 @@ class SymbolGenerator:
 
     def __init__(self):
         self._logger = logging.getLogger(type(self).__name__)
+        self._re_trait = re.compile('\\[\\[([^\\[^\\]]+)\\]\\]')
+        self._re_symbol = re.compile('\\[([^\\[^\\]^ ^가-힣^ㄱ-ㅎ^ㅏ-ㅣ]+)\\]')
 
     @property
     def icons(self) -> FrozenSet[str]:
@@ -75,13 +77,13 @@ class SymbolGenerator:
             str: output
         """
         # traits update
-        matches = list(re.finditer('\\[\\[([^\\[^\\]]+)\\]\\]', target))
+        matches = list(self._re_trait.finditer(target))
         for match in reversed(matches):
             tagged = '<span class="trait">{0}</span>'.format(match.group(1))
             target = target[:match.start()] + tagged + target[match.end():]
 
         # symbol / code update
-        matches = list(re.finditer('\\[([^\\[^\\]^ ^가-힣^ㄱ-ㅎ^ㅏ-ㅣ]+)\\]', target))
+        matches = list(self._re_symbol.finditer(target))
         for match in reversed(matches):
             text = match.group(1).lower()
             if text in self._symbols_ignore:
