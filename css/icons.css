@@ -56,7 +56,7 @@
 .icon-wild:before {
     content: "?";
     font-weight: bold;
-    padding-right: 2px
+    padding-left: 0.1em
 }
 
 .icon-unique:before {
