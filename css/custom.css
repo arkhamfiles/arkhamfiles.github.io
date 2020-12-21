@@ -93,6 +93,7 @@ p.cardEffectBox {
   text-align: left;
   margin: 1em auto;
   width: 40em;
+  display: inherit !important;
 }
 
 .errata table {
@@ -135,8 +136,21 @@ p.cardEffectBox {
   color: blue;
 }
 
-.example{
-  font-style: italic;
+p.example::before, span.example::before, div.example p:first-child::before{
+  content: "예시: ";
+  font-weight: bold;
+}
+
+p.note::before, span.note::before, div.note p:first-child::before{
+  content: "알아두기: ";
+  font-weight: bold;
+}
+
+.example:not(span) {
+  border-left-style: double;
+  border-left-width: 3px;
+  padding-left: 0.5em;
+  margin-left: 1em;
 }
 
 p.question::before {
