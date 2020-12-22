@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import argparse
-import html_generator
 import logging
+import html_generator
 
 def main():
     """main"""
@@ -31,17 +31,19 @@ def main():
             args.input, args.output, args.rr, args.faq
         )
         return
+    generators = []
     if args.nolink:
         logger.debug('nolink flaged')
-        link_gen = html_generator.LinkGeneratorDummy()
     elif args.raw:
         logger.debug('raw flaged. input: %s', args.input)
-        link_gen = html_generator.LinkGeneratorRaw(args.input)
+        generators.append(html_generator.LinkGeneratorRaw(args.input))
     else:
         logger.debug('default. input: %s, rr: %s, faq: %s',
                      args.input, args.rr, args.faq)
-        link_gen = html_generator.LinkGenerator(args.input, args.rr, args.faq)
-    symbol_gen = html_generator.SymbolGenerator()
-    html_generator.generate(args.input, args.output, link_gen, symbol_gen)
+        generators.append(html_generator.LinkGenerator(args.input, args.rr, args.faq))
+    if args.output.name == 'taboo.html':
+        generators.append(html_generator.TabooGenerator())
+    generators.append(html_generator.SymbolGenerator())
+    html_generator.generate(args.input, args.output, generators)
 
 main()

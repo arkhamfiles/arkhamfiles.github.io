@@ -6,17 +6,18 @@ import os
 import re
 import tempfile
 import unittest
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from io import StringIO, TextIOBase
 from typing import Dict, Optional, Union
 
 import bs4
 
 from .mics import load_filetype
+from .generator import GeneratorInterface
 
 FileType = Union[str, TextIOBase]
 
-class LinkGeneratorInterface(ABC):
+class LinkGeneratorInterface(GeneratorInterface):
     """Abstract class for link generator
 
     Note: you need to override __call__
@@ -53,11 +54,6 @@ class LinkGeneratorInterface(ABC):
         Returns:
             str: output
         """
-
-class LinkGeneratorDummy(LinkGeneratorInterface):
-    """ Dummy Link Generator (no link generated) """
-    def __call__(self, text: str) -> str:
-        return text
 
 class LinkGeneratorRaw(LinkGeneratorInterface):
     """Link Generator for RAW RR
@@ -278,6 +274,3 @@ class TestLinkGenerator(unittest.TestCase):
                 generator('파큐 "치킨"'),
                 '"<a href="faq.html#Chicken">치킨</a>"'
             )
-
-if __name__ == '__main__':
-    unittest.main()

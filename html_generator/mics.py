@@ -5,14 +5,16 @@ import functools
 import logging
 import os
 import re
-import tempfile
 import unittest
+from functools import reduce
 from collections import deque
 from dataclasses import dataclass, field
 from io import StringIO, TextIOBase
-from typing import Any, Callable, Iterable, List, Union
+from typing import Any, Callable, Iterable, List, Union, Tuple
 
 import bs4
+
+from .defines import EXPANSION
 
 FileType = Union[str, TextIOBase]
 
@@ -50,11 +52,15 @@ def load_filetype(file: FileType) -> TextIOBase:
     if isinstance(file, str) and all(map(lambda x: x in file, ['<', '>'])):
         return StringIO(file)
     if isinstance(file, TextIOBase):
-        file_p = file
-        init_pos = file.tell()
-        file_p.close = _wrap_once(file_p.close, lambda: file_p.seek(init_pos))
-        file_p.seek(0)
-        return file_p
+        if hasattr(file, 'name'):
+            file_p = open(getattr(file, 'name'), 'r', encoding=file.encoding)
+            return file_p
+        else:
+            file_p = file
+            init_pos = file.tell()
+            file_p.close = _wrap_once(file_p.close, lambda: file_p.seek(init_pos))
+            file_p.seek(0)
+            return file_p
     raise ValueError("input seems to neither path nor html string.")
 
 class TestFileReader(unittest.TestCase):
@@ -63,7 +69,11 @@ class TestFileReader(unittest.TestCase):
 
     def test_file(self):
         """load TextIOWarper & check seek is contains after close"""
-        with tempfile.NamedTemporaryFile('w+') as filep:
+        filename = os.urandom(6).hex()
+        while os.path.exists(filename):
+            filename = os.urandom(6).hex()
+        try:
+            filep = open(filename, 'w+')
             filep.write(self._test_string)
             readonly = open(filep.name, encoding='utf-8')
             readonly.seek(5)
@@ -74,38 +84,89 @@ class TestFileReader(unittest.TestCase):
             self.assertEqual(curr_pos, readonly.tell())
             readonly.close()
             self.assertTrue(readonly.closed)
+        finally:
+            filep.close()
+            os.remove(filename)
 
     def test_str(self):
         """load string Path or html"""
-        with tempfile.NamedTemporaryFile('w+') as filep:
+        filename = os.urandom(6).hex()
+        while os.path.exists(filename):
+            filename = os.urandom(6).hex()
+        try:
+            filep = open(filename, 'w+')
             filep.write(self._test_string)
             loaded = load_filetype(filep.name)
             self.assertFalse(loaded.closed)
             loaded.close()
+        finally:
+            filep.close()
+            os.remove(filename)
         self.assertRaises(ValueError, load_filetype, "UNPROPER_PATH_IS_GIVEN")
         loaded = load_filetype(self._test_string)
         self.assertIsNotNone(loaded)
 
+
+_re_number = re.compile("\\(([0-9]+)[.]([0-9]+)\\)")
+_re_ver = re.compile("V([0-9]+)_([0-9]+)")
+_exps: List[str] = list(EXPANSION.keys())
 @dataclass
 class _Tag:
     id: str
     contents: str
     level: int
-    classes: List[str] = field(default_factory=list)
+    version: Tuple[int, int] = field(init=False, default=(1, 0))
+    _expansion: int = field(init=False, default=1001)
     is_number: bool = field(init=False, default=False)
-
-    _pattern = re.compile("(\\([0-9]+\\.[0-9]+\\))")
+    _value: int = field(init=False, default=0)
 
     def __post_init__(self):
-        match = _Tag._pattern.search(self.contents)
+        match = _re_number.search(self.contents)
         if match:
             self.is_number = True
+            self._value = int(match.group(2))
             self.contents = self.contents[match.end():]
 
+    def update(self, targets: Iterable[str]):
+        """update class information"""
+        for tar in targets:
+            self._update(tar)
+        return self
+
+    def _update(self, target: str):
+        try:
+            idx = _exps.index(target)
+            if idx < self._expansion:
+                self._expansion = idx
+            return self
+        except ValueError:
+            pass
+        match = _re_ver.search(target)
+        if match:
+            version = int(match.group(1)), int(match.group(2))
+            if version[0] > self.version[0] or (version[0] == self.version[0] and version[1] > self.version[1]):
+                self.version = version
+            return self
+        return self
+    
+    def done(self):
+        if self._expansion > 1000:
+            self._expansion = 0
+
+    @property
+    def expansion(self):
+        return _exps[self._expansion]
+
     def __str__(self):
-        str_class = ' class="{}"'.format(' '.join(self.classes)) if self.classes else ''
-        result = '<li{}>'.format(str_class)
-        result += '<a{} href="#{}">'.format(str_class, self.id)
+        classes = []
+        if self._expansion > 0:
+            classes.append(self.expansion)
+        if self.version != (1, 0):
+            classes.append("V{}_{}".format(*self.version))
+        class_str = ' class="{}"'.format(' '.join(classes)) if classes else ''
+        result = '<li{}'.format(class_str)
+        result += ' value={}'.format(self._value) if self.is_number else ''
+        result += '><a href="#{}"{}>'.format(self.id, class_str)
         result += self.contents
         result += '</a></li>'
         return result
@@ -137,7 +198,11 @@ def generate_toc(file: FileType,
     classes_ignore = frozenset([
         'rules-reference', 'errata', 'rules'
     ])
-    for tag in soup.find_all(re.compile('h[0-9]')):
+    for tag in soup.find_all(True):
+        if tag.name[0] != 'h':
+            if tags and tag.name != 'div' and tag.has_attr('class'):
+                tags[-1].update(tag['class'])
+            continue
         if not tag.has_attr('id'):
             logger.debug("NO id: %s (omit)", tag.string)
             continue
@@ -148,19 +213,28 @@ def generate_toc(file: FileType,
             # when string contains icon, remove icon & ()
             string = ''.join([x if isinstance(x, str) else '' for x in tag.contents])
             string = string.replace('(', '').replace(')', '').strip()
-        classes: List[str] = [x for x in tag.parent['class'] if x not in classes_ignore]
+        classes: List[str] = [
+            x for x in tag.parent['class'] if x not in classes_ignore
+        ] if tag.parent.has_attr('class') else []
+        if not classes:
+            classes.append('core')
         logger.debug("level: %d, id: %s, string: %s, class: %s", level, curr_id, string, classes)
         if curr_id in ids:
             continue
         if curr_id[0] == '_':
             # if no header
             continue
-        tags.append(_Tag(curr_id, string, level, classes))
+        if tags:
+            tags[-1].done()
+        tags.append(_Tag(curr_id, string, level))
+        tags[-1].update(classes)
 
     header_string = ""
     tags_list: "deque[str]" = deque(maxlen=9)
     if sum(map(lambda x: 1 if x.level == 1 else 0, tags)) == 1:
-        tags = [_Tag(x.id, x.contents, x.level-1, x.classes) for x in tags if x.level > 1]
+        tags = [x for x in tags if x.level > 1]
+        for tag in tags:
+            tag.level -= 1
     for tag in tags:
         while len(tags_list) > tag.level:
             curr_tag = tags_list.pop()

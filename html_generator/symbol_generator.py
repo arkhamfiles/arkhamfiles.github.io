@@ -7,54 +7,23 @@ from typing import FrozenSet
 import itertools
 import unittest
 
-class SymbolGenerator:
+from .generator import GeneratorInterface
+from .defines import ICON, ICON_IGNORE, ICON_REDIRECT, EXPANSION
+
+class SymbolGenerator(GeneratorInterface):
     """Symbol Generator
 
     convert symbol such as [action] in arkhamDB notation
     """
-    _symbols_icon = {
-        'reaction': '반응 격발', 'free': '자유 격발', 'action': '행동 격발',
-        'elder_sign': '고대 표식', 'elder_thing': '옛것',
-        'skull': '해골', 'auto_fail': '자동 실패',
-        'cultist': '추종자', 'tablet': '석판',
-        'bless': '축복', 'curse': '저주',
-        'combat': '힘', 'agility': '민첩',
-        'willpower': '의지', 'intellect': '지식', 'wild': '만능',
-        'unique': '고유', 'per_investigator': '조사자당', 'null': '–',
-        'guardian': '수호자', 'mystic': '신비주의자',
-        'seeker': '탐구자', 'rogue': '무법자', 'survivor': '생존자'
-    }
-    _symbols_redirect = {
-        'fast': 'free', 'elder_sign': 'elder_sign', 'elderthing': 'elder_thing',
-        'autofail': 'auto_fail', 'will': 'willpower'
-    }
-    _symbols_ignore = frozenset([
-        'endif', 'accessory', 'body', 'ally', 'hand', 'hand_2',
-        'arcane', 'arcane_2', 'health', 'sanity'
-    ])
-    _symbols_map = {
-        'core': '기본판',
-        'tdl': '던위치의 유산',
-        'tptc': '카르코사로 가는 길',
-        'tfa': '잊힌 시대',
-        'tcu': '끝맺지 못한 의식',
-        'tde': '꿈을 먹는 자',
-        'tic': '인스머스에 드리운 음모',
-        'starter': '초심자 덱',
-        'nc': '너새니얼 조',
-        'hw': '하비 월터스',
-        'wh': '위니프리드 해버먹',
-        'jf': '재클린 파인',
-        'sc': '스텔라 클라크',
-        'book': '서적',
-        'promo': '프로모',
-        'parallel': '평행'
-    }
 
     def __init__(self):
         self._logger = logging.getLogger(type(self).__name__)
         self._re_trait = re.compile('\\[\\[([^\\[^\\]]+)\\]\\]')
         self._re_symbol = re.compile('\\[([^\\[^\\]^ ^가-힣^ㄱ-ㅎ^ㅏ-ㅣ]+)\\]')
+        self._symbols_icon = ICON
+        self._symbols_redirect = ICON_REDIRECT
+        self._symbols_ignore = frozenset(ICON_IGNORE)
+        self._symbols_map = EXPANSION
 
     @property
     def icons(self) -> FrozenSet[str]:
@@ -165,6 +134,3 @@ class TestSymbolGenerator(unittest.TestCase):
         self.assertIn('fast', icons)
         self.assertIn('endif', icons)
         self.assertIn('core', icons)
-
-if __name__ == '__main__':
-    unittest.main()

@@ -1,4 +1,5 @@
 .vscode
-/rr_ongoing.html
 __pycache__
 typings
+/reference.html
+/output.txt
