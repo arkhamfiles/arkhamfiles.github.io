@@ -26,6 +26,20 @@ ICON_IGNORE: List[str] = [
     'arcane', 'arcane_2', 'health', 'sanity'
 ]
 
+SYMBOLS: Dict[str, str] = OrderedDict([
+    ('core', '기본판'),
+    ('rtnotz', '돌아온 광신도의 밤'),
+    ('tdl', '던위치의 유산'),
+    ('rtdl', '돌아온 던위치의 유산'),
+    ('tptc', '카르코사로 가는 길'),
+    ('rtptc', '돌아온 카르코사로 가는 길'),
+    ('tfa', '잊힌 시대'),
+    ('rtfa', '돌아온 잊힌 시대'),
+    ('tcu', '끝맺지 못한 의식'),
+    ('tde', '꿈을 먹는 자'),
+    ('tic', '인스머스에 드리운 음모')
+])
+
 EXPANSION: Dict[str, str] = OrderedDict([
     ('core', '기본판'),
     ('tdl', '던위치의 유산'),

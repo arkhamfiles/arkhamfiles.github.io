@@ -8,7 +8,7 @@ import itertools
 import unittest
 
 from .generator import GeneratorInterface
-from .defines import ICON, ICON_IGNORE, ICON_REDIRECT, EXPANSION
+from .defines import ICON, ICON_IGNORE, ICON_REDIRECT, EXPANSION, SYMBOLS
 
 class SymbolGenerator(GeneratorInterface):
     """Symbol Generator
@@ -23,6 +23,7 @@ class SymbolGenerator(GeneratorInterface):
         self._symbols_icon = ICON
         self._symbols_redirect = ICON_REDIRECT
         self._symbols_ignore = frozenset(ICON_IGNORE)
+        self._symbols_symbol = SYMBOLS
         self._symbols_map = EXPANSION
 
     @property
@@ -32,6 +33,7 @@ class SymbolGenerator(GeneratorInterface):
             self._symbols_icon.keys(),
             self._symbols_redirect.keys(),
             self._symbols_ignore,
+            self._symbols_symbol.keys(),
             self._symbols_map.keys()
         ))
 
@@ -61,7 +63,11 @@ class SymbolGenerator(GeneratorInterface):
                 text = self._symbols_redirect[text]
             if text in self._symbols_icon:
                 tagged = '<span title="{title}" class="icon-{icon}"></span>'.format(
-                    icon = text, title = self._symbols_icon[text]
+                    icon=text, title=self._symbols_icon[text]
+                )
+            elif text in self._symbols_symbol:
+                tagged = '<span title="{title}" class="symbol-{icon}"></span>'.format(
+                    icon=text, title=self._symbols_symbol[text]
                 )
             elif text in self._symbols_map:
                 tagged = self._symbols_map[text]
@@ -86,7 +92,7 @@ class TestSymbolGenerator(unittest.TestCase):
         generator = SymbolGenerator()
         self.assertEqual(
             generator("[core] 38"),
-            '기본판 38'
+            '<span title="기본판" class="symbol-core"></span> 38'
         )
 
     def test_trait(self):
