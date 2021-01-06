@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'arkhamsymbols';
+    src: url('../fonts/arkham-symbols.otf');
+    src: url('../fonts/arkham-symbols.otf') format('opentype'), 
+    url('../fonts/arkham-symbols.ttf') format('truetype'), 
+    url('../fonts/arkham-symbols.woff') format('woff'), 
+    url('../fonts/arkham-symbols.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="symbol-"],[class*=" symbol-"] {
+    font-family: 'arkhamsymbols';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.symbol-core:before {
+    content: "a"
+}
+
+.symbol-rtnotz:before {
+    content: "A"
+}
+
+.symbol-tdl:before {
+    content: "b"
+}
+
+.symbol-rtdl:before {
+    content: "B"
+}
+
+.symbol-tptc:before {
+    content: "c"
+}
+
+.symbol-rtptc:before {
+    content: "C"
+}
+
+.symbol-tfa:before {
+    content: "d"
+}
+
+.symbol-rtfa:before {
+    content: "D"
+}
+
+.symbol-tcu:before {
+    content: "e"
+}
+
+.symbol-tde:before {
+    content: "f"
+}
+
+.symbol-tic:before {
+    content: "g"
+}
+
