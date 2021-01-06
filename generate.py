@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-
 import argparse
 import logging
+import time
 import html_generator
 
 def main():
     """main"""
+    logging.basicConfig(level=logging.INFO)
     logger = logging.getLogger('main')
     parser = argparse.ArgumentParser(description="Auto-generator for rule-reference")
-    parser.add_argument("input", nargs='?', type=argparse.FileType('r', encoding='utf-8'),
+    parser.add_argument("input", nargs='?', type=str,
                         help="path of original html")
-    parser.add_argument("output", nargs='?', type=argparse.FileType('w', encoding='utf-8'),
+    parser.add_argument("output", nargs='?', type=str,
                         default="output.html", help="path of processed html")
     parser.add_argument("--raw", action='store_true',
                         help="when you convert raw RR")
@@ -22,9 +23,14 @@ def main():
                         help="when you disable link")
     parser.add_argument("--reference", action='store_true',
                         help="only if reference generation")
-    # parser.add_argument("-s", "--css", type=str, default=None,
-    #                     help="path of symbol for css")
     args = parser.parse_args()
+    is_update = html_generator.check_update_necessary(args.input, args.output)
+    if not is_update:
+        print('%s is not updated (no update exists).'%args.output)
+        return
+    start_time = time.time()
+    args.input = open(args.input, 'r', encoding='utf-8')
+    args.output = open(args.output, 'w', encoding='utf-8')
     if args.reference:
         logger.debug('reference generation')
         html_generator.generate_reference(
@@ -45,5 +51,8 @@ def main():
         generators.append(html_generator.TabooGenerator())
     generators.append(html_generator.SymbolGenerator())
     html_generator.generate(args.input, args.output, generators)
+    args.input.close()
+    args.output.close()
+    print('generate done: %.2fms'%(time.time()-start_time)*1000)
 
 main()

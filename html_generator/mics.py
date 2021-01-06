@@ -271,5 +271,28 @@ class TestToC(unittest.TestCase):
         self.assertNotIn('hidden', toc)
         self.assertIn('<a href="#new">new</a>', toc)
 
+def check_update_necessary(base: str, want: str) -> bool:
+    """check whether update is necessary based on fixed time
+
+    Args:
+        base (str): target based file
+        want (str): generated
+
+    Returns:
+        bool: True if update is necessary
+    """
+    logger = logging.getLogger("check_update")
+    if not os.path.isfile(want):
+        logger.debug("target doesn't exist: %s", want)
+        return True
+    baseinfo = os.stat(base)
+    wantinfo = os.stat(want)
+    logger.debug("basetime: %d, wanttime: %d", baseinfo.st_mtime_ns, wantinfo.st_mtime_ns)
+    if baseinfo.st_mtime_ns > wantinfo.st_mtime_ns:
+        logger.debug("base is newer; updated")
+        return True
+    logger.debug("base is older; skip")
+    return False
+
 if __name__ == '__main__':
     unittest.main()
