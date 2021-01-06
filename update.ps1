@@ -1,3 +1,6 @@
+Write-Output "generate svg font..."
+ffpython generate_icon.py
+
 Write-Output "generate rule_reference.html..."
 python generate.py raw/rule_reference.html rule_reference.html
 

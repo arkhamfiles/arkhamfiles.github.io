@@ -1,0 +1,57 @@
+[
+    {
+        "char": "a",
+        "name": "core",
+        "path": "01_NZ.svg"
+    },
+    {
+        "char": "A",
+        "name": "rtnotz",
+        "path": "11_RNZ.svg"
+    },
+    {
+        "char": "b",
+        "name": "tdl",
+        "path": "02_DL.svg"
+    },
+    {
+        "char": "B",
+        "name": "rtdl",
+        "path": "12_RDL.svg"
+    },
+    {
+        "char": "c",
+        "name": "tptc",
+        "path": "03_PC.svg"
+    },
+    {
+        "char": "C",
+        "name": "rtptc",
+        "path": "13_RPC.svg"
+    },
+    {
+        "char": "d",
+        "name": "tfa",
+        "path": "04_FA.svg"
+    },
+    {
+        "char": "D",
+        "name": "rtfa",
+        "path": "14_RFA.svg"
+    },
+    {
+        "char": "e",
+        "name": "tcu",
+        "path": "05_CU.svg"
+    },
+    {
+        "char": "f",
+        "name": "tde",
+        "path": "06_DE.svg"
+    },
+    {
+        "char": "g",
+        "name": "tic",
+        "path": "07_IC.svg"
+    }
+]
