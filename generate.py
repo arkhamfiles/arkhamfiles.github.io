@@ -53,6 +53,6 @@ def main():
     html_generator.generate(args.input, args.output, generators)
     args.input.close()
     args.output.close()
-    print('generate done: %.2fms'%(time.time()-start_time)*1000)
+    print('generate done: %.2fms'%((time.time()-start_time)*1000))
 
 main()
