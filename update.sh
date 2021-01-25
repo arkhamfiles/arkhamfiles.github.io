@@ -14,6 +14,9 @@ python3 generate.py raw/errata.html errata.html --nolink
 echo -e "generate taboo.html..."
 python3 generate.py raw/taboo.html taboo.html --nolink
 
+echo -e "generate taboo.html..."
+python3 generate.py raw/ultimatums.html ultimatums.html --nolink
+
 echo -e "generate reference.html..."
 python3 generate.py raw/reference.html reference.html --rr rule_reference.html --faq notes.html --reference
 
