@@ -194,6 +194,10 @@ blockquote br{
   margin: 1%;
 }
 
+.errata4 {
+  color: red;
+}
+
 /*div.errata {
   display: none;
 }
