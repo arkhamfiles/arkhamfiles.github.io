@@ -22,6 +22,14 @@ window.onload = function () {
     localStorage.setItem('highlightNew', highlightNew);
   }
 
+  var viewSelector = document.querySelectorAll('.scenarioToggleButton');
+  viewSelector.forEach(function (x) {
+    x.onclick = function() {
+      x.innerText = x.innerText == '내용 보기' ? '내용 가리기' : '내용 보기';
+      toggleView(window[x.id.replace('Toggle', 'Div')], 'display', 'block');
+    };
+  });
+
   if (!viewAll) {
     toggleViewSelector('.tfa, .tcu, .tde, .tic, .starter');
   }

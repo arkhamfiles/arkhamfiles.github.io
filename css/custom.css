@@ -45,10 +45,15 @@ ul.barItem li a{
     text-decoration: none;
 }
 
-ul.barItem li span.spanButton {
-  border: 1px solid white;
+span.spanButton {
+  margin: 4px;
+  border: 1px solid steelblue;
   padding: 5px;
   width: 114px;
+}
+
+ul.barItem li span.spanButton {
+  border: 1px solid white;
 }
 
 @media (min-width:320px) and (max-width:768px) {
@@ -196,6 +201,11 @@ blockquote br{
 
 .errata4 {
   color: red;
+}
+
+.scenarioHidden {
+  margin-top: 11px;
+  display: none;
 }
 
 /*div.errata {
