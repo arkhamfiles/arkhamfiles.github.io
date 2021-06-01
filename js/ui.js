@@ -9,7 +9,7 @@ window.onload = function () {
   }
 
   window.toggleViewAll.onclick = function() {
-    toggleViewSelector('.tfa, .tcu, .tde, .tic, .starter');
+    toggleViewSelector('.tcu, .tde, .tic, .starter');
     viewAll = !viewAll;
       window.toggleViewAll.innerText = viewAll ? '한국어판만 보기' : '모두 보기';
     localStorage.setItem('viewAll', viewAll);
@@ -31,7 +31,7 @@ window.onload = function () {
   });
 
   if (!viewAll) {
-    toggleViewSelector('.tfa, .tcu, .tde, .tic, .starter');
+    toggleViewSelector('.tcu, .tde, .tic, .starter');
   }
 
   if (highlightNew) {
