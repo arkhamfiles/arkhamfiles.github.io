@@ -155,7 +155,11 @@ class _Tag:
 
     @property
     def expansion(self):
-        return _exps[self._expansion]
+        try:
+            return _exps[self._expansion]
+        except:
+            print("unknown expansion: ", self._expansion)
+            return _exps[0]
 
     def __str__(self):
         classes = []
