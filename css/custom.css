@@ -189,6 +189,15 @@ p.answer::before {
   text-indent: 1em;
 }
 
+p.answer {
+  margin-bottom: 0px;
+}
+
+p.cite {
+  font-style: italic;
+  text-align: right;
+}
+
 span.trait {
   font-style: italic;
   font-weight: bold;

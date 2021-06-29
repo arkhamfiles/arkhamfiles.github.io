@@ -9,14 +9,14 @@ window.onload = function () {
   }
 
   window.toggleViewAll.onclick = function() {
-    toggleViewSelector('.tcu, .tde, .tic, .starter');
+    toggleViewSelector('.tde, .tic, .starter');
     viewAll = !viewAll;
       window.toggleViewAll.innerText = viewAll ? '한국어판만 보기' : '모두 보기';
     localStorage.setItem('viewAll', viewAll);
   }
 
   window.toggleHighlightNew.onclick = function() {
-    toggleViewColor('.V1_1');
+    toggleViewColor('.V1_2');
     highlightNew = !highlightNew;
     window.toggleHighlightNew.innerText = highlightNew ? '강조 끄기' : '신규 항목 강조';
     localStorage.setItem('highlightNew', highlightNew);
@@ -31,11 +31,11 @@ window.onload = function () {
   });
 
   if (!viewAll) {
-    toggleViewSelector('.tcu, .tde, .tic, .starter');
+    toggleViewSelector('.tde, .tic, .starter');
   }
 
   if (highlightNew) {
-    toggleViewColor('.V1_1');
+    toggleViewColor('.V1_2');
   }
 }
 
