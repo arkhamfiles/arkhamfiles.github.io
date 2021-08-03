@@ -53,5 +53,30 @@
         "char": "g",
         "name": "tic",
         "path": "07_IC.svg"
+    },
+    {
+        "char": "0",
+        "name": "nc",
+        "path": "21_NC.svg"
+    },
+    {
+        "char": "1",
+        "name": "hw",
+        "path": "22_HW.svg"
+    },
+    {
+        "char": "3",
+        "name": "wh",
+        "path": "23_WH.svg"
+    },
+    {
+        "char": "4",
+        "name": "jf",
+        "path": "24_JF.svg"
+    },
+    {
+        "char": "5",
+        "name": "sc",
+        "path": "25_SC.svg"
     }
 ]

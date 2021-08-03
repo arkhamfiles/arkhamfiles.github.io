@@ -37,7 +37,12 @@ SYMBOLS: Dict[str, str] = OrderedDict([
     ('rtfa', '돌아온 잊힌 시대'),
     ('tcu', '끝맺지 못한 의식'),
     ('tde', '꿈을 먹는 자'),
-    ('tic', '인스머스에 드리운 음모')
+    ('tic', '인스머스에 드리운 음모'),
+    ('nc', '너새니얼 조'),
+    ('hw', '하비 월터스'),
+    ('wh', '위니프리드 해버먹'),
+    ('jf', '재클린 파인'),
+    ('sc', '스텔라 클라크')
 ])
 
 EXPANSION: Dict[str, str] = OrderedDict([

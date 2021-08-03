@@ -295,6 +295,12 @@ def check_update_necessary(base: str, want: str) -> bool:
     if baseinfo.st_mtime_ns > wantinfo.st_mtime_ns:
         logger.debug("base is newer; updated")
         return True
+    module_path = os.path.split(__file__)[0]
+    geninfo = [os.stat(os.path.join(module_path, x)) for x in os.listdir(module_path)
+               if os.path.splitext(x)[-1].lower() == '.py']
+    if geninfo and max(geninfo, key=lambda x: x.st_mtime_ns).st_mtime_ns > wantinfo.st_mtime_ns:
+        logger.debug("generator is newer; updated")
+        return True
     logger.debug("base is older; skip")
     return False
 

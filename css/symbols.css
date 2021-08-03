@@ -65,3 +65,23 @@
     content: "g"
 }
 
+.symbol-nc:before {
+    content: "0"
+}
+
+.symbol-hw:before {
+    content: "1"
+}
+
+.symbol-wh:before {
+    content: "3"
+}
+
+.symbol-jf:before {
+    content: "4"
+}
+
+.symbol-sc:before {
+    content: "5"
+}
+

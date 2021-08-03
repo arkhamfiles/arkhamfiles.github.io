@@ -54,11 +54,14 @@
 본 문서에서는 svg 파일을 폰트로 제작합니다. 폰트제작 스크립트는 [여기](generate_icon.py)를 참고하세요. 폰트를 수정하는 방법은 아래와 같습니다.
 
  * svg파일을 [svgs](svgs)에 추가합니다. 파일명은 상관 없습니다. (svg만 가능하니, png 등은 변환 요망)
+   * svg 파일은 되도록 가로-세로 크기가 같도록 합니다. 가로가 길면 먹힐 가능성이 있습니다.
  * [info.json](svgs/info.json) 파일을 수정합니다. `char`는 맵핑하려는 문자, `name`은 html 내부에서 사용할 코드명, `path`는 파일명을 의미합니다.
    * a-z는 사이클, A-Z는 돌아온, 0-9는 독시/스타터를 계획하고 있습니다.
  * [defines.py](html_generator/defines.py) 파일을 수정합니다. `SYMBOLS`에 추가하면 됩니다. (`name`, 실제 이름) 으로 작성해야 합니다.
+   * 특정 확장판인 경우 `EXPANSION`에도 추가하도록 합시다. 작성시 발매 순서에 맞추어야 합니다. 이는 FAQ 작성시에 필터링을 위해 활용됩니다.
  * generate를 수행하면 자동으로 폰트 및 symbols.css가 생성됩니다. fontforge library가 설치되어, python과 연동되어야 합니다.
    * windows인 경우, PATH를 지정하면 ffpython을 활용합니다.
+   * ubuntu는 fontforge를 잘 깔아야 합니다. 시도 안해봄.
 
 ## 저작권 / Copyright
 
