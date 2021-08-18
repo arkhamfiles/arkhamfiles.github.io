@@ -217,6 +217,44 @@ blockquote br{
   display: none;
 }
 
+ul.decklist {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-column: 3;
+}
+
+@media (max-width: 960px) and (min_width: 501px) {
+  ul.decklist {columns: 2;}
+}
+
+@media (max-width: 500px){
+  ul.decklist {columns: 1;}
+}
+
+ul.decklist > li.two::before {
+  content: "2x ";
+  font-weight: bold;
+  font-style: italic;
+}
+
+ul.decklist > li.three::before {
+  content: "3x ";
+  font-weight: bold;
+  font-style: italic;
+}
+
+ul.decklist > li.title {
+  font-size: 1.15em;
+  margin-top: 1em;
+  font-weight: bold;
+  list-style: none;
+}
+
+h4.decklist {
+  text-align: center;
+  font-weight: bold;
+}
+
 /*div.errata {
   display: none;
 }

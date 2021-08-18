@@ -19,6 +19,9 @@ python generate.py raw/taboo.html taboo.html --nolink
 Write-Output "generate ultimatums.html..."
 python generate.py raw/ultimatums.html ultimatums.html --nolink
 
+Write-Output "generate starter_deck.html..."
+python generate.py raw/starter_deck.html starter_deck.html --nolink
+
 Write-Output "generate test.html..."
 python generate.py raw/test.html test.html --nolink
 
