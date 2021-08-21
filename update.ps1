@@ -22,6 +22,9 @@ python generate.py raw/ultimatums.html ultimatums.html --nolink
 Write-Output "generate starter_deck.html..."
 python generate.py raw/starter_deck.html starter_deck.html --nolink
 
+Write-Output "generate index.html..."
+python generate.py raw/index.html index.html --nolink
+
 Write-Output "generate test.html..."
 python generate.py raw/test.html test.html --nolink
 
