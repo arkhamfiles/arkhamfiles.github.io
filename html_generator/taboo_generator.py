@@ -50,17 +50,21 @@ class TabooGenerator(GeneratorInterface):
         elif self.state in [_State.CHAIN, _State.FORBIDDEN]:
             match = self._re_text.search(text)
             if match:
-                cycle = self._check_cycle(match.group(1))
-                text = text[:match.start()] +\
-                       '<li class="{}">'.format(cycle) +\
-                       text[match.start()+4:]
+                # disable cycle expression
+                text = text[:match.start()] + '<li>' + text[match.start()+4:]
+                # cycle = self._check_cycle(match.group(1))
+                # text = text[:match.start()] +\
+                #        '<li class="{}">'.format(cycle) +\
+                #        text[match.start()+4:]
         elif self.state == _State.MUTATE:
             match = self._re_text.search(text)
             if match:
-                cycle = self._check_cycle(match.group(1))
-                text = text[:match.start()] +\
-                       '<div class="{}">'.format(cycle) +\
-                       text[match.start():]
+                # disable cycle expression
+                text = text[:match.start()] + '<div>' + text[match.start()+4:]
+                # cycle = self._check_cycle(match.group(1))
+                # text = text[:match.start()] +\
+                #        '<div class="{}">'.format(cycle) +\
+                #        text[match.start():]
                 self.state = _State.MUTATE_ITEM
         elif self.state == _State.MUTATE_ITEM:
             match = self._re_mutate_end.search(text)
