@@ -7,7 +7,7 @@
     {
         "char": "A",
         "name": "rtnotz",
-        "path": "11_RNZ.svg"
+        "path": "101_RNZ.svg"
     },
     {
         "char": "b",
@@ -17,7 +17,7 @@
     {
         "char": "B",
         "name": "rtdl",
-        "path": "12_RDL.svg"
+        "path": "102_RDL.svg"
     },
     {
         "char": "c",
@@ -27,7 +27,7 @@
     {
         "char": "C",
         "name": "rtptc",
-        "path": "13_RPC.svg"
+        "path": "103_RPC.svg"
     },
     {
         "char": "d",
@@ -37,12 +37,17 @@
     {
         "char": "D",
         "name": "rtfa",
-        "path": "14_RFA.svg"
+        "path": "104_RFA.svg"
     },
     {
         "char": "e",
         "name": "tcu",
         "path": "05_CU.svg"
+    },
+    {
+        "char": "E",
+        "name": "rtcu",
+        "path": "105_RCU.svg"
     },
     {
         "char": "f",
@@ -55,28 +60,28 @@
         "path": "07_IC.svg"
     },
     {
-        "char": "0",
+        "char": "1",
         "name": "nc",
-        "path": "21_NC.svg"
+        "path": "201_NC.svg"
     },
     {
-        "char": "1",
+        "char": "2",
         "name": "hw",
-        "path": "22_HW.svg"
+        "path": "202_HW.svg"
     },
     {
         "char": "3",
         "name": "wh",
-        "path": "23_WH.svg"
+        "path": "203_WH.svg"
     },
     {
         "char": "4",
         "name": "jf",
-        "path": "24_JF.svg"
+        "path": "204_JF.svg"
     },
     {
         "char": "5",
         "name": "sc",
-        "path": "25_SC.svg"
+        "path": "205_SC.svg"
     }
 ]

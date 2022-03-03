@@ -57,6 +57,10 @@
     content: "e"
 }
 
+.symbol-rtcu:before {
+    content: "E"
+}
+
 .symbol-tde:before {
     content: "f"
 }
@@ -66,11 +70,11 @@
 }
 
 .symbol-nc:before {
-    content: "0"
+    content: "1"
 }
 
 .symbol-hw:before {
-    content: "1"
+    content: "2"
 }
 
 .symbol-wh:before {
