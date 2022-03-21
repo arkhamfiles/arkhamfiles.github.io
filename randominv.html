@@ -1,0 +1,403 @@
+<html><head>
+    <title>조사자 랜덤 선택기: 아컴호러 카드게임</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="../icon-192.png">
+    <!--link rel="apple-touch-icon" sizes="120x120" href="../icon-120.png">
+        <meta name="description" content="Rules Reference"-->
+    <link href="https://fonts.googleapis.com/css?family=Amiri:400,400italic,700,700italic|Julius+Sans+One|Open+Sans:400,400italic,700,700italic|Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/jquery.qtip.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.9.0/css/bootstrap-markdown.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/icons.css">
+    <link rel="stylesheet" href="../css/symbols.css">
+    <link rel="stylesheet" href="../css/custom.css">
+		<!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <style>
+      .titleRowBlock {
+        display: flex;
+        flex-flow: row wrap;
+        height: 50px;
+        font-size: 30px;
+        width: 100%;
+      }
+      .halfRowBlock {
+        display: flex;
+        flex-flow: row wrap;
+        height: 200px;
+        width: 100%;
+      }
+      .pickRowBlock {
+        display: flex;
+        flex-flow: row wrap;
+        height: 110px;
+        width: 100%;
+        margin-bottom: 30px;
+        border-bottom: 1px dotted black;
+      }
+
+      .textBlock {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+      }
+
+      .halfRowBlock ul {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .halfRowBlock li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+
+      .halfRowBlock label {
+        width: 10%;
+      }
+
+      .halfRowBlock .longLabel label {
+        width: 20%;
+      }
+
+      .halfRowBlock input {
+        width: 50%;
+        display: initial;
+      }
+
+      .pickRowBlock input.smallInput {
+        width: 40px;
+      }
+
+      .quarterBlock {
+        width: 48%;
+        height: 48%;
+        margin: 1%;
+        border-radius: 5px;
+      }
+
+      .color1 {
+        background-color: green;
+      }
+
+      .color2 {
+        background-color: cornflowerblue;
+      }
+
+      .color3 {
+        background-color: bisque;
+      }
+
+      .color4 {
+        background-color: yellowgreen;
+      }
+    </style>
+    <script>
+      const PACK_CORE = 0;
+      const PACK_PARALLEL = 1;
+      const PACK_DUNWICH = 2;
+      const PACK_CARCOSA = 3;
+      const PACK_TFA = 4;
+      const PACK_TCU = 5;
+      const PACK_TDE = 6;
+      const PACK_INV = 7;
+      const PACK_TIC = 8;
+      const PACK_EOTE = 9;
+      const CLASS_GUARDIAN = 0;
+      const CLASS_SEEKER = 1;
+      const CLASS_ROGUE = 2;
+      const CLASS_MYSTIC = 3;
+      const CLASS_SURVIVOR = 4;
+      const CLASS_NEUTRAL = 5;
+      const TIER_S = 0;
+      const TIER_A_PLUS = 1;
+      const TIER_A = 2;
+      const TIER_A_MINUS = 3;
+      const TIER_B_PLUS = 4;
+      const TIER_B = 5;
+      const TIER_B_MINUS = 6;
+      const TIER_C_PLUS = 7;
+      const TIER_C = 8;
+      const TIER_C_MINUS = 9;
+      const TIER_D_PLUS = 10;
+      const TIER_D = 11;
+      const TIER_D_MINUS = 12;
+      const TIER_F = 13;
+      const TIER_UNDEF = 14;
+      const invData = [
+        {name: '로랜드 뱅크스', pack: PACK_CORE, class: CLASS_GUARDIAN, tier: TIER_C_MINUS},
+        {name: '데이지 워커', pack: PACK_CORE, class: CLASS_SEEKER, tier: TIER_A_PLUS},
+        {name: '"스키즈" 오\'툴', pack: PACK_CORE, class: CLASS_ROGUE, tier: TIER_D},
+        {name: '애그니스 베이커', pack: PACK_CORE, class: CLASS_MYSTIC, tier: TIER_A_MINUS},
+        {name: '웬디 애덤스', pack: PACK_CORE, class: CLASS_SURVIVOR, tier: TIER_B_PLUS},
+        {name: '평행/로랜드 뱅크스', pack: PACK_PARALLEL, class: CLASS_GUARDIAN, tier: TIER_D},
+        {name: '평행/데이지 워커', pack: PACK_PARALLEL, class: CLASS_SEEKER, tier: TIER_D_MINUS},
+        {name: '평행/"스키즈" 오\'툴', pack: PACK_PARALLEL, class: CLASS_ROGUE, tier: TIER_B},
+        {name: '평행/애그니스 베이커', pack: PACK_PARALLEL, class: CLASS_MYSTIC, tier: TIER_A_MINUS},
+        {name: '평행/웬디 애덤스', pack: PACK_PARALLEL, class: CLASS_SURVIVOR, tier: TIER_UNDEF},
+        {name: '조이 사마라스', pack: PACK_DUNWICH, class: CLASS_GUARDIAN, tier: TIER_B},
+        {name: '렉스 머피', pack: PACK_DUNWICH, class: CLASS_SEEKER, tier: TIER_C_PLUS},
+        {name: '제니 반즈', pack: PACK_DUNWICH, class: CLASS_ROGUE, tier: TIER_C},
+        {name: '짐 컬버', pack: PACK_DUNWICH, class: CLASS_MYSTIC, tier: TIER_D},
+        {name: '“재떨이” 피트', pack: PACK_DUNWICH, class: CLASS_SURVIVOR, tier: TIER_D},
+        {name: '마크 해리건', pack: PACK_CARCOSA, class: CLASS_GUARDIAN, tier: TIER_B},
+        {name: '민 티 판', pack: PACK_CARCOSA, class: CLASS_SEEKER, tier: TIER_A_PLUS},
+        {name: '세피나 루소', pack: PACK_CARCOSA, class: CLASS_ROGUE, tier: TIER_B},
+        {name: '아카치 오넬레', pack: PACK_CARCOSA, class: CLASS_MYSTIC, tier: TIER_C_PLUS},
+        {name: '윌리엄 요릭', pack: PACK_CARCOSA, class: CLASS_SURVIVOR, tier: TIER_C_PLUS},
+        {name: '롤라 헤이즈', pack: PACK_CARCOSA, class: CLASS_SURVIVOR, tier: TIER_F},
+        {name: '레오 앤더슨', pack: PACK_TFA, class: CLASS_GUARDIAN, tier: TIER_A_MINUS},
+        {name: '우르술라 다운즈', pack: PACK_TFA, class: CLASS_SEEKER, tier: TIER_C_PLUS},
+        {name: '핀 에드워즈', pack: PACK_TFA, class: CLASS_ROGUE, tier: TIER_D},
+        {name: '마테오 신부', pack: PACK_TFA, class: CLASS_MYSTIC, tier: TIER_C_MINUS},
+        {name: '캘빈 라이트', pack: PACK_TFA, class: CLASS_SURVIVOR, tier: TIER_C},
+        {name: '캐롤린 펀', pack: PACK_TCU, class: CLASS_GUARDIAN, tier: TIER_F},
+        {name: '조 다이아몬드', pack: PACK_TCU, class: CLASS_SEEKER, tier: TIER_D_PLUS},
+        {name: '프레스턴 페어몬트', pack: PACK_TCU, class: CLASS_ROGUE, tier: TIER_B},
+        {name: '다이애나 스탠리', pack: PACK_TCU, class: CLASS_MYSTIC, tier: TIER_B_PLUS},
+        {name: '리타 영', pack: PACK_TCU, class: CLASS_SURVIVOR, tier: TIER_D_MINUS},
+        {name: '마리 램부', pack: PACK_TCU, class: CLASS_MYSTIC, tier: TIER_D_PLUS},
+        {name: '토미 멀둔', pack: PACK_TDE, class: CLASS_GUARDIAN, tier: TIER_B_MINUS},
+        {name: '맨디 톰슨', pack: PACK_TDE, class: CLASS_SEEKER, tier: TIER_A_MINUS},
+        {name: '토니 모건', pack: PACK_TDE, class: CLASS_ROGUE, tier: TIER_B},
+        {name: '루크 로빈슨', pack: PACK_TDE, class: CLASS_MYSTIC, tier: TIER_A},
+        {name: '패트리스 해서웨이', pack: PACK_TDE, class: CLASS_SURVIVOR, tier: TIER_C_MINUS},
+        {name: '너새니얼 조', pack: PACK_INV, class: CLASS_GUARDIAN, tier: TIER_B_MINUS},
+        {name: '하비 월터스', pack: PACK_INV, class: CLASS_SEEKER, tier: TIER_C},
+        {name: '위니프레드 해버먹', pack: PACK_INV, class: CLASS_ROGUE, tier: TIER_B_MINUS},
+        {name: '재클린 파인', pack: PACK_INV, class: CLASS_MYSTIC, tier: TIER_C_PLUS},
+        {name: '스텔라 클라크', pack: PACK_INV, class: CLASS_SURVIVOR, tier: TIER_S},
+        {name: '메리 수녀', pack: PACK_TIC, class: CLASS_GUARDIAN, tier: TIER_D_MINUS},
+        {name: '어맨다 샤프', pack: PACK_TIC, class: CLASS_SEEKER, tier: TIER_B_PLUS},
+        {name: '트리시 스카보로', pack: PACK_TIC, class: CLASS_ROGUE, tier: TIER_B_PLUS},
+        {name: '덱스터 드레이크', pack: PACK_TIC, class: CLASS_MYSTIC, tier: TIER_A},
+        {name: '사일러스 마쉬', pack: PACK_TIC, class: CLASS_SURVIVOR, tier: TIER_B_MINUS},
+        {name: '다니엘라 레예스', pack: PACK_EOTE, class: CLASS_GUARDIAN, tier: TIER_D_PLUS},
+        {name: '노먼 위더스', pack: PACK_EOTE, class: CLASS_SEEKER, tier: TIER_C_MINUS},
+        {name: '몬터레이 잭', pack: PACK_EOTE, class: CLASS_ROGUE, tier: TIER_B_MINUS},
+        {name: '릴리 첸', pack: PACK_EOTE, class: CLASS_MYSTIC, tier: TIER_C},
+        {name: '밥 젠킨스', pack: PACK_EOTE, class: CLASS_SURVIVOR, tier: TIER_A},
+      ];
+
+      var weightSum = 0;
+      function _setupWeights(packMod, classMod, tierMod) {
+        weightSum = 0;
+        var packModArr = packMod ? packMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        var classModArr = classMod ? classMod : [1, 1, 1, 1, 1, 1];
+        var tierModArr = tierMod ? tierMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0];
+        for (var i = 0; i < invData.length; i++) {
+          invData[i].weight = 1 * packModArr[invData[i].pack] * classModArr[invData[i].class] * tierModArr[invData[i].tier];
+          weightSum += invData[i].weight;
+        }
+      }
+
+      function _pickOne(banned) {
+        var banList = banned ? banned : [];
+        var res;
+
+        do {
+          var randVal = Math.random() * weightSum;
+          var walkSum = 0;
+          for (var i = 0; i < invData.length; i++) {
+            walkSum += invData[i].weight;
+            if (randVal < walkSum) {
+              res = invData[i];
+              break;
+            }
+          }
+        } while (banList.includes(res.name))
+
+        return res;
+      }
+
+      function _pickMulti(cnt, banned) {
+        var banList = banned ? banned : [];
+        var res = [];
+
+        while (cnt > 0) {
+          var picked = _pickOne(banList);
+          banList.push(picked.name);
+          res.push(picked);
+          cnt--;
+        }
+
+        return res;
+      }
+
+      function run() {
+        var tierMod = [];
+          var packMod = [];
+            var classMod = [];
+          for (var i = 0; i < 14; i++) {
+            tierMod.push(document.formTier.elements[i].value);
+          }
+        for (var i = 0; i < 10; i++) {
+          packMod.push(document.formPack.elements[i].value);
+        }
+      for (var i = 0; i < 6; i++) {
+        classMod.push(document.formClass.elements[i].value);
+      }
+      tierMod.push(0);
+        _setupWeights(packMod, classMod, tierMod);
+        document.getElementById("resultText").innerText = '';
+        var res = _pickMulti(document.formCount.text1.value);
+        for (var i = 0; i < res.length; i++) {
+          document.getElementById("resultText").innerText += res[i].name + (i === res.length - 1 ? '' : '\n');
+        }
+      }
+
+      function onlyKorean() {
+        document.formPack.elements[PACK_PARALLEL].value = 0;
+          document.formPack.elements[PACK_TDE].value = 0;
+            document.formPack.elements[PACK_INV].value = 0;
+              document.formPack.elements[PACK_TIC].value = 0;
+                document.formPack.elements[PACK_EOTE].value = 0;
+      }
+    </script>
+	  </head>
+
+
+
+<div class="col-md-8" id="rules">
+<div class="rules-reference" style="text-align: justify">
+<div>
+  <div class="titleRowBlock">
+    <div class="textBlock">
+      조사자 랜덤 선택기
+    </div>
+  </div>
+  <div class="pickRowBlock">
+    <div class="textBlock">
+    <form name="formCount">
+      <input type="text" name="text1" id="text1" value="1" class="smallInput">개 <button type="button" onclick="run()">선택</button>
+          </form>
+          <button type="button" onclick="onlyKorean()">한국어판만</button>
+    </div>
+      <div class="textBlock" id="resultText">
+      </div>
+
+</div>
+  <div class="halfRowBlock">
+    <div class="textBlock">
+      확장
+    </div>
+      <ul style="list-style-type: none; width: 100%;" class="longLabel">
+      <form name="formPack">
+        <li>
+          <label for="pack_core">기본판</label><input type="range" id="pack_core" name="pack_core" min="0" max="3" value="1" step="0.1"><br>
+        </li>
+        <li>
+        <label for="pack_parallel">평행 조사자</label><input type="range" id="pack_parallel" name="pack_parallel" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_dunwich">던위치의 유산</label><input type="range" id="pack_dunwich" name="pack_dunwich" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_carcosa">카르코사로 가는 길</label><input type="range" id="pack_carcosa" name="pack_carcosa" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_tfa">잊힌 시대</label><input type="range" id="pack_tfa" name="pack_tfa" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_tcu">끝맺지 못한 의식</label><input type="range" id="pack_tcu" name="pack_tcu" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_tde">꿈을 먹는 자</label><input type="range" id="pack_tde" name="pack_tde" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_inv">조사자 확장</label><input type="range" id="pack_inv" name="pack_inv" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_tic">인스머스에 드리운 음모</label><input type="range" id="pack_tic" name="pack_tic" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_eote">지구의 끝자락</label><input type="range" id="pack_eote" name="pack_eote" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      </ul>
+  </form>
+    <div class="textBlock">
+      직업군
+    </div>
+      <ul style="list-style-type: none; width: 100%;">
+      <form name="formClass">
+        <li>
+          <label for="class_guardian">수호자</label><input type="range" id="class_guardian" name="class_guardian" min="0" max="3" value="1" step="0.1"><br>
+        </li>
+        <li>
+        <label for="class_seeker">탐구자</label><input type="range" id="class_seeker" name="class_seeker" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="class_rogue">무법자</label><input type="range" id="class_rogue" name="class_rogue" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="class_mystic">신비주의자</label><input type="range" id="class_mystic" name="class_mystic" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="class_survivor">생존자</label><input type="range" id="class_survivor" name="class_survivor" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="class_neutral">중립</label><input type="range" id="class_neutral" name="class_neutral" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      </ul>
+  </form>
+    <div class="textBlock">
+      티어 (아컴파일즈 선정 풀확장 기준)
+    </div>
+      <ul style="list-style-type: none; width: 100%;">
+      <form name="formTier">
+        <li>
+          <label for="tier_s">Tier S</label><input type="range" id="tier_s" name="tier_s" min="0" max="3" value="1" step="0.1"><br>
+        </li>
+        <li>
+        <label for="tier_ap">Tier A+</label><input type="range" id="tier_ap" name="tier_ap" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_a">Tier A</label><input type="range" id="tier_a" name="tier_a" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_am">Tier A-</label><input type="range" id="tier_am" name="tier_am" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_bp">Tier B+</label><input type="range" id="tier_bp" name="tier_bp" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_b">Tier B</label><input type="range" id="tier_b" name="tier_b" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_bm">Tier B-</label><input type="range" id="tier_bm" name="tier_bm" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_cp">Tier C+</label><input type="range" id="tier_cp" name="tier_cp" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_c">Tier C</label><input type="range" id="tier_c" name="tier_c" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_cm">Tier C-</label><input type="range" id="tier_cm" name="tier_cm" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_dp">Tier D+</label><input type="range" id="tier_dp" name="tier_dp" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_d">Tier D</label><input type="range" id="tier_d" name="tier_d" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_dm">Tier D-</label><input type="range" id="tier_dm" name="tier_dm" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="tier_f">Tier F</label><input type="range" id="tier_f" name="tier_f" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      </ul>
+  </form>
+  </div>
+  <div class="coverBlock">
+  </div>
+</div>
+
+</div>
