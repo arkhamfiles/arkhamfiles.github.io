@@ -151,7 +151,7 @@
         {name: '세피나 루소', pack: PACK_CARCOSA, class: CLASS_ROGUE, tier: TIER_B},
         {name: '아카치 오넬레', pack: PACK_CARCOSA, class: CLASS_MYSTIC, tier: TIER_C_PLUS},
         {name: '윌리엄 요릭', pack: PACK_CARCOSA, class: CLASS_SURVIVOR, tier: TIER_C_PLUS},
-        {name: '롤라 헤이즈', pack: PACK_CARCOSA, class: CLASS_SURVIVOR, tier: TIER_F},
+        {name: '롤라 헤이즈', pack: PACK_CARCOSA, class: CLASS_NEUTRAL, tier: TIER_F},
         {name: '레오 앤더슨', pack: PACK_TFA, class: CLASS_GUARDIAN, tier: TIER_A_MINUS},
         {name: '우르술라 다운즈', pack: PACK_TFA, class: CLASS_SEEKER, tier: TIER_C_PLUS},
         {name: '핀 에드워즈', pack: PACK_TFA, class: CLASS_ROGUE, tier: TIER_D},
@@ -186,14 +186,19 @@
       ];
 
       var weightSum = 0;
+      var actCnt = 0;
       function _setupWeights(packMod, classMod, tierMod) {
         weightSum = 0;
+        actCnt = 0;
         var packModArr = packMod ? packMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
         var classModArr = classMod ? classMod : [1, 1, 1, 1, 1, 1];
         var tierModArr = tierMod ? tierMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0];
         for (var i = 0; i < invData.length; i++) {
           invData[i].weight = 1 * packModArr[invData[i].pack] * classModArr[invData[i].class] * tierModArr[invData[i].tier];
           weightSum += invData[i].weight;
+          if (invData[i].weight) {
+            actCnt++;
+          }
         }
       }
 
@@ -211,7 +216,10 @@
               break;
             }
           }
-        } while (banList.includes(res.name))
+        } while (res && (actCnt > banList.length) && banList.includes(res.name))
+        if (actCnt <= banList.length) {
+          res = {name: '선택 불가'};
+        }
 
         return res;
       }
@@ -222,6 +230,9 @@
 
         while (cnt > 0) {
           var picked = _pickOne(banList);
+          if (!picked) {
+            picked = {name: '선택 불가'};
+          }
           banList.push(picked.name);
           res.push(picked);
           cnt--;
@@ -259,6 +270,18 @@
               document.formPack.elements[PACK_TIC].value = 0;
                 document.formPack.elements[PACK_EOTE].value = 0;
       }
+
+      function init() {
+    for (var i = 0; i < 14; i++) {
+            document.formTier.elements[i].value = 1;
+    }
+  for (var i = 0; i < 10; i++) {
+          document.formPack.elements[i].value = 1;
+  }
+for (var i = 0; i < 6; i++) {
+        document.formClass.elements[i].value = 1;
+}
+      }
     </script>
 	  </head>
 
@@ -278,6 +301,7 @@
       <input type="text" name="text1" id="text1" value="1" class="smallInput">개 <button type="button" onclick="run()">선택</button>
           </form>
           <button type="button" onclick="onlyKorean()">한국어판만</button>
+          <button type="button" onclick="init()">초기화</button>
     </div>
       <div class="textBlock" id="resultText">
       </div>
