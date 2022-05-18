@@ -40,6 +40,14 @@
         margin-bottom: 30px;
         border-bottom: 1px dotted black;
       }
+      
+      .selectCardBlock {
+        justify-content: space-around;
+      }
+      
+      .resultShowBlock {
+        margin: 14px 0;
+      }
 
       .textBlock {
         margin: auto;
@@ -132,7 +140,7 @@
         {name: '어둠의 계약', pack: PACK_TFA, code: '04038', count: 1, campaignOnly: true},
         {name: '비운', pack: PACK_TFA, code: '04040', count: 1, campaignOnly: true},
         {name: '열세 번째 환상', pack: PACK_TCU, code: '05041', count: 2},
-        {name: '탑', pack: PACK_TCU, code: '05042', count: 2},
+        {name: '탑 · XVI', pack: PACK_TCU, code: '05042', count: 2},
         {name: '이기심', pack: PACK_TDE, code: '06035', count: 1},
         {name: '도벽', pack: PACK_TDE, code: '06036', count: 1},
         {name: '기면증', pack: PACK_TDE, code: '06037', count: 1},
@@ -143,8 +151,8 @@
         {name: '허무주의', pack: PACK_INV, code: '60404', count: 1},
         {name: '실패공포증', pack: PACK_INV, code: '60504', count: 1},
         {name: '저주받은 신봉자', pack: PACK_TIC, code: '07038', count: 2},
-        {name: '무시무시한 저주', pack: PACK_TIC, code: '07038', count: 2},
-        {name: '심판의 날', pack: PACK_TIC, code: '07038', count: 1},
+        {name: '무시무시한 저주', pack: PACK_TIC, code: '07039', count: 2},
+        {name: '심판의 날', pack: PACK_TIC, code: '07040', count: 1},
         {name: '팔 부상', pack: PACK_EOTE, code: '08130', count: 1},
         {name: '다리 부상', pack: PACK_EOTE, code: '08131', count: 1},
         {name: '공황', pack: PACK_EOTE, code: '08132', count: 1},
@@ -156,7 +164,7 @@
         {name: '수목화 변이', pack: PACK_RT_TFA, code: '53012', count: 1},
         {name: '거부할 수 없는 제안', pack: PACK_RT_TFA, code: '53013', count: 1, campaignOnly: true},
         {name: '나락으로 떨어지다', pack: PACK_RT_TCU, code: '54014', count: 1},
-        {name: '악마', pack: PACK_RT_TCU, code: '54015', count: 2}
+        {name: '악마 · XV', pack: PACK_RT_TCU, code: '54015', count: 2}
       ];
 
       var weightSum = 0;
@@ -176,7 +184,7 @@
           weightSum += weaknessData[i].weight;
           if (weaknessData[i].weight) {
             actCnt++;
-		        weaknessData[i].workCount = weaknessData[i].count;
+  	        weaknessData[i].workCount = weaknessData[i].count;
           }
         }
       }
@@ -227,9 +235,12 @@
         return res;
       }
 
+      var iter, savedRes, finalRes = [];
+      
       function run() {
         var packMod = [];
         var bans = [];
+        finalRes = [];
         for (var i = 0; i < 15; i++) {
           packMod.push(document.formPack.elements[i].value);
         }
@@ -241,23 +252,87 @@
         }
         _setupWeights(packMod, {ban: bans, campaignOnly: document.formCount.option_campaign_only.checked});
         document.getElementById("resultText").innerText = '';
-        var res = _pickMulti(document.formCount.text1.value);
-        for (var i = 0; i < res.length; i++) {
-          document.getElementById("resultText").innerText += res[i].name + (i === res.length - 1 ? '' : '\n');
+        if (!document.formCount.chooseMode.value) {
+          var res = _pickMulti(document.formCount.text1.value);
+          for (var i = 0; i < res.length; i++) {
+            document.getElementById("resultText").innerHTML += '<a href="' + _makeDBURL(res[i].code) + '">' + res[i].name + '</a>' + (i === res.length - 1 ? '' : '<br>');
+          }
+        } else {
+          iter = document.formCount.text1.value;
+          if (!(iter > 0))
+            return;
+          _hide(document.getElementById("chooseUI"));
+          _show(document.getElementById("selectUI"));
+          iter--;
+          _fillSelect();
         }
+      }
+      
+      function _chooseThis(idx) {
+        document.getElementById("selectChoices").innerHTML = '';
+        if (document.formCount.chooseMode.value == 'selectOne') {
+          finalRes.push(savedRes[idx]);
+        } else {
+          savedRes.splice(idx, 1);
+          var randVal = Math.random() * savedRes.length;
+          finalRes.push(savedRes[Math.floor(randVal)]);
+        }
+        iter--;
+        if (iter >= 0) {
+          _fillSelect();
+        } else {
+          _hide(document.getElementById("selectUI"));
+          _show(document.getElementById("chooseUI"));
+          for (var i = 0; i < finalRes.length; i++) {
+            document.getElementById("resultText").innerHTML += '<a href="' + _makeDBURL(finalRes[i].code) + '">' + finalRes[i].name + '</a>' + (i === finalRes.length - 1 ? '' : '<br>');
+          }
+        }
+      }
+      
+      function _fillSelect() {
+        savedRes = _pickMulti(document.formCount.text2.value);
+        var htmlCons = '';
+        for (var i = 0; i < savedRes.length; i++) {
+          htmlCons += '<div>' + savedRes[i].name + '<br><img src="' + _makeDBImageURL(savedRes[i].code) + '" onclick="_chooseThis(' + i + ')"></div>';
+        }
+        document.getElementById("selectChoices").innerHTML = htmlCons;
+      }
+        
+      
+      function _makeDBURL(code) {
+        return 'https://ko.arkhamdb.com/card/' + code;
+      }
+      
+      function _makeDBImageURL(code) {
+        return 'https://arkhamdb.com/bundles/cards/' + code + '.png';
       }
 
       function onlyKorean() {
         document.formPack.elements[PACK_PARALLEL].value = 0;
-          document.formPack.elements[PACK_TDE].value = 0;
-              document.formPack.elements[PACK_TIC].value = 0;
-                document.formPack.elements[PACK_EOTE].value = 0;
+        document.formPack.elements[PACK_TDE].value = 0;
+        document.formPack.elements[PACK_TIC].value = 0;
+        document.formPack.elements[PACK_EOTE].value = 0;
       }
 
       function init() {
-  for (var i = 0; i < 15; i++) {
+        for (var i = 0; i < 15; i++) {
           document.formPack.elements[i].value = 1;
-  }
+        }
+      }
+      
+      function changeMode() {
+        if (document.formCount.chooseMode.value) {
+          _show(document.getElementById("chooseOption"));
+        } else {
+          _hide(document.getElementById("chooseOption"));
+        }
+      }
+      
+      function _show(elem) {
+        elem.style.display = 'block';
+      }
+      function _hide(elem) {
+        elem.style.display = 'none';
       }
     </script>
 	  </head>
@@ -266,7 +341,16 @@
 
 <div class="col-md-8" id="rules">
 <div class="rules-reference" style="text-align: justify">
-<div>
+<div id="selectUI" style="display: none;">
+  <div class="titleRowBlock">
+    <div class="textBlock">
+      약점 랜덤 선택기
+    </div>
+  </div>
+  <div class="pickRowBlock selectCardBlock" id="selectChoices">
+  </div>
+</div>
+<div id="chooseUI">
   <div class="titleRowBlock">
     <div class="textBlock">
       약점 랜덤 선택기
@@ -275,15 +359,21 @@
   <div class="pickRowBlock">
     <div class="textBlock">
     <form name="formCount">
+      <select name="chooseMode" onchange="changeMode()">
+        <option value="" selected>단일 선택</option>
+        <option value="selectOne">n장 중 선택</option>
+        <option value="banOne">n장 중 1밴</option>
+      </select>
       <input type="text" name="text1" id="text1" value="1" class="smallInput">개 <button type="button" onclick="run()">선택</button>
+      <span id="chooseOption" style="display: none;">선택지 <input type="text" name="text2" id="text2" value="3" class="smallInput">장</span>
 	    <br><input type="checkbox" name="ban_doomed"><label for="ban_doomed">비운 밴</label>
 	    <input type="checkbox" name="ban_sellsoul"><label for="ban_sellsoul">거부할 수 없는 제안 밴</label>
 	    <input type="checkbox" name="option_campaign_only" checked><label for="option_campaign_only">캠페인 전용 포함</label>
           </form>
           <button type="button" onclick="onlyKorean()">한국어판만</button>
-          <button type="button" onclick="init()">초기화</button>
+          <button type="button" onclick="init()">초기화</button><br>
     </div>
-      <div class="textBlock" id="resultText">
+      <div class="textBlock resultShowBlock" id="resultText">
       </div>
 
 </div>
