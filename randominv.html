@@ -244,18 +244,18 @@
 
       function run() {
         var tierMod = [];
-          var packMod = [];
-            var classMod = [];
-          for (var i = 0; i < 14; i++) {
-            tierMod.push(document.formTier.elements[i].value);
-          }
+        var packMod = [];
+        var classMod = [];
+        for (var i = 0; i < 14; i++) {
+          tierMod.push(document.formTier.elements[i].value);
+        }
         for (var i = 0; i < 10; i++) {
           packMod.push(document.formPack.elements[i].value);
         }
-      for (var i = 0; i < 6; i++) {
-        classMod.push(document.formClass.elements[i].value);
-      }
-      tierMod.push(0);
+        for (var i = 0; i < 6; i++) {
+          classMod.push(document.formClass.elements[i].value);
+        }
+        tierMod.push(0);
         _setupWeights(packMod, classMod, tierMod);
         document.getElementById("resultText").innerText = '';
         var res = _pickMulti(document.formCount.text1.value);
@@ -266,21 +266,20 @@
 
       function onlyKorean() {
         document.formPack.elements[PACK_PARALLEL].value = 0;
-          document.formPack.elements[PACK_TDE].value = 0;
-              document.formPack.elements[PACK_TIC].value = 0;
-                document.formPack.elements[PACK_EOTE].value = 0;
+        document.formPack.elements[PACK_TIC].value = 0;
+        document.formPack.elements[PACK_EOTE].value = 0;
       }
 
       function init() {
-    for (var i = 0; i < 14; i++) {
-            document.formTier.elements[i].value = 1;
-    }
-  for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 14; i++) {
+          document.formTier.elements[i].value = 1;
+        }
+        for (var i = 0; i < 10; i++) {
           document.formPack.elements[i].value = 1;
-  }
-for (var i = 0; i < 6; i++) {
-        document.formClass.elements[i].value = 1;
-}
+        }
+        for (var i = 0; i < 6; i++) {
+          document.formClass.elements[i].value = 1;
+        }
       }
     </script>
 	  </head>

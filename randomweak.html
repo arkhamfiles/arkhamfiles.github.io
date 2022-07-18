@@ -40,7 +40,7 @@
         margin-bottom: 30px;
         border-bottom: 1px dotted black;
       }
-      
+
       .selectCardBlock {
         justify-content: space-around;
       }
@@ -50,7 +50,7 @@
         width: 100%;
         text-align: center;
       }
-      
+
       .resultShowBlock {
         margin: 14px 0;
       }
@@ -236,7 +236,7 @@
       }
 
       var iter, savedRes, finalRes = [];
-      
+
       function run() {
         var packMod = [];
         var bans = [];
@@ -267,7 +267,7 @@
           _fillSelect();
         }
       }
-      
+
       function _chooseThis(idx) {
         document.getElementById("selectChoices").innerHTML = '';
         if (document.formCount.chooseMode.value == 'selectOne') {
@@ -288,7 +288,7 @@
           }
         }
       }
-      
+
       function _fillSelect() {
         savedRes = _pickMulti(document.formCount.text2.value);
         var htmlCons = '';
@@ -297,19 +297,18 @@
         }
         document.getElementById("selectChoices").innerHTML = htmlCons;
       }
-        
-      
+
+
       function _makeDBURL(code) {
         return 'https://ko.arkhamdb.com/card/' + code;
       }
-      
+
       function _makeDBImageURL(code) {
         return 'https://arkhamdb.com/bundles/cards/' + code + '.png';
       }
 
       function onlyKorean() {
         document.formPack.elements[PACK_PARALLEL].value = 0;
-        document.formPack.elements[PACK_TDE].value = 0;
         document.formPack.elements[PACK_TIC].value = 0;
         document.formPack.elements[PACK_EOTE].value = 0;
       }
@@ -319,7 +318,7 @@
           document.formPack.elements[i].value = 1;
         }
       }
-      
+
       function changeMode() {
         if (document.formCount.chooseMode.value) {
           _show(document.getElementById("chooseOption"));
@@ -327,7 +326,7 @@
           _hide(document.getElementById("chooseOption"));
         }
       }
-      
+
       function _show(elem) {
         elem.style.display = 'block';
       }
