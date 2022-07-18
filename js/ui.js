@@ -62,3 +62,7 @@ function toggleViewColor (selector, color) {
     toggleView(x, 'color', '', 'red');
   });
 }
+
+function putCurrentItemClass (idx) {
+  document.getElementById('barMenu').children[idx].children[0].className = 'currentItem';
+}

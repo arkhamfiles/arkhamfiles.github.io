@@ -255,6 +255,12 @@ h4.decklist {
   font-weight: bold;
 }
 
+.innerFrame {
+  width: 100%;
+  height: 1000px;
+  border: none;
+}
+
 /*div.errata {
   display: none;
 }
