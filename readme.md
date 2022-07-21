@@ -36,17 +36,17 @@
 
 본 문서는 `raw/***.html` 파일에서 python 스크립트를 이용하여 자동으로 실제 문서를 작성합니다.
   * depencency: python3+ 에서 작동합니다. 2.7에서는 작동하지 않습니다.
-    * beautifulsoup4, html5lib 을 설치하여야 합니다.
+    * beautifulsoup4, html5lib, requess 를 설치하여야 합니다.
     * python 3.6 이하라면, dataclasses를 설치하여야 합니다.
     * 폰트 생성을 위해 fontforge를 설치하여야 합니다.
       * windows: fontforge 설치 위치의 bin 폴더(eg. C:\Program Files (x86)\FontForgeBuilds\bin)를 PATH 시스템 변수에 추가하여야 합니다.
       * ubuntu: TODO
   * 아래 스크립트를 실행합니다. (현재 폴더에서 실행해야함)
     * windows: powershell에서 `.\update.ps1`을 실행합니다.
-    * ubuntu: terminal에서 `bash update.sh`를 실행합니다.
+    * ubuntu: terminal에서 `bash update.sh`를 실행합니다. (추후 업데이트 예정)
   * 주의
     * 수정 시간을 기반으로 수정 여부를 판단합니다. 자동 스킵되는 경우 시스템 시간을 확인해주세요.
-    * github는 font 파일의 변경 사항을 추적하지 못합니다. font에 변경사항이 없으나 생성한 경우, 되도록 font 파일의 revert를 요청드립니다.
+    * github는 font 파일의 변경 사항을 추적하지 못합니다. font에 변경사항이 없으나 생성한 경우, 업로드 해도 그만 안해도 그만입니다. 편한대로 하세요!
   * ~~이렇게 써도 제가 하겠죠 아마~~
     
 ## 폰트 수정하기

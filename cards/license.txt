@@ -1,5 +1,5 @@
 Important note about copyright.
 
-All files under this folder are under Fantasy Flight Games. We only utilize those images for non-commercial purposes.
+All files in this folder (except this file) are copyrighted by Fantasy Flight Games. We only utilize those images for non-commercial purposes.
 
-For any request related to the copyright, please write an issue or send an e-mail to arkhamfileskorea at gmail com
+For any request related to the copyright, please write an issue on GitHub or send an e-mail to arkhamfileskorea at gmail com
