@@ -1,6 +1,9 @@
 Write-Output "generate svg font..."
 ffpython generate_icon.py
 
+Write-Output "update card images..."
+python download_cards.py
+
 Write-Output "generate rule_reference.html..."
 python generate.py raw/rule_reference.html rule_reference.html
 
