@@ -20,27 +20,32 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
     <script src="js/ui.js"></script>
-	</head>
+    <script>
+      putCurrentItemClass(0);
+    </script>
+	  </head>
   <body>
-    <div class="topBar">
-      <button id="barButton" name="barButton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <div class="barTitle"><a href="index.html" style="color:white; text-decoration: none;">아컴호러 카드게임 허브</a></div>
-      <ul class="barItem" id="barMenu" name="barMenu">
-        <a href="rule_reference.html"><li class="currentItem">참조 안내서</li></a>
-        <a href="notes.html"><li>규칙 보충 해설</li></a>
-        <a href="faq.html"><li>FAQ</li></a>
-        <a href="taboo.html"><li>금기 목록</li></a>
-        <a href="ultimatums.html"><li>최후통첩</li></a>
-        <a href="starter_deck.html"><li>초심자용 덱</li></a>
-        <a href="errata.html"><li>정오표</li></a>
-        <li class="buttonItem"><span class="spanButton" name="toggleHighlightNew" id="toggleHighlightNew"> </span></li>
-        <li class="buttonItem"><span class="spanButton" name="toggleViewAll" id="toggleViewAll"> </span></li>
-      </ul>
-    </div>
+
+  <div class="topBar">
+    <button id="barButton" name="barButton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="barTitle"><a href="index.html" style="color:white; text-decoration: none;">아컴호러 카드게임 허브</a></div>
+    <ul class="barItem" id="barMenu" name="barMenu">
+      <a href="rule_reference.html"><li>참조 안내서</li></a>
+      <a href="notes.html"><li>규칙 보충 해설</li></a>
+      <a href="faq.html"><li>FAQ</li></a>
+      <a href="taboo.html"><li>금기 목록</li></a>
+      <a href="ultimatums.html"><li>최후통첩</li></a>
+      <a href="starter_deck.html"><li>초심자용 덱</li></a>
+      <a href="errata.html"><li>정오표</li></a>
+      <a href="utility.html"><li>유틸리티</li></a>
+      <li class="buttonItem"><span class="spanButton" name="toggleHighlightNew" id="toggleHighlightNew"> </span></li>
+      <li class="buttonItem"><span class="spanButton" name="toggleViewAll" id="toggleViewAll"> </span></li>
+    </ul>
+  </div>
 	  <div class="row">
 <div class="col-md-4">
 
@@ -344,7 +349,7 @@
 <h2 id="Experience_">경험치</h2>
 <p>"<a href="#Campaign_Play">캠페인 플레이</a>"를 참조하세요.</p>
 
-<h2 id="Unique">고유 (<span title="고유" class="icon-unique"></span>)</h2> 
+<h2 id="Unique">고유 (<span title="고유" class="icon-unique"></span>)</h2>
 <p><span style="font-size: 0px">*</span>카드 명칭 앞에 (<span title="고유" class="icon-unique"></span>) 기호가 붙은 카드를 고유 카드라고 합니다.</p>
 <p>언제든지 (명칭이 같은) 고유 카드는 플레이 상태로 단 한 장만 있을 수 있습니다.</p>
 <ul>
