@@ -21,7 +21,7 @@
     <![endif]-->
     <script src="js/ui.js"></script>
     <script>
-      putCurrentItemClass(7);
+      var currentItemClass = 7;
 
       function _loadFrame (toLoad) {
         document.querySelector('#rules').innerHTML = '';
@@ -56,6 +56,8 @@
   </div>
 	  <div class="row">
 <div class="col-md-3">
+
+<h1 id="rop"></h1>
 <nav class="inner rop">
 <ul>
 	<li><a href="#" onclick="_loadFrame('randominv.html')">조사자 랜덤 선택기</a></li>

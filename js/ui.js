@@ -37,6 +37,8 @@ window.onload = function () {
   if (highlightNew) {
     toggleViewColor('.V1_3');
   }
+
+  putCurrentItemClass(currentItemClass);
 }
 
 function toggleView (element, type, mode, initial) {
