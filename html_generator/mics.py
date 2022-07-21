@@ -257,6 +257,7 @@ def generate_toc(file: FileType,
     del soup
     file_p.close()
     return header_string
+
 class TestToC(unittest.TestCase):
     """ToC Test"""
     def test_toc(self):
