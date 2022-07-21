@@ -21,6 +21,8 @@
     <![endif]-->
     <script src="js/ui.js"></script>
     <script>
+      putCurrentItemClass(7);
+
       function _loadFrame (toLoad) {
         document.querySelector('#rules').innerHTML = '';
         var a =  document.createElement('iframe');
@@ -30,7 +32,7 @@
       }
     </script>
 	  </head>
-  <body onload="putCurrentItemClass(7);">
+  <body>
 
   <div class="topBar">
     <button id="barButton" name="barButton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
