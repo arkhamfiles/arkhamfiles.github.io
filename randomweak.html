@@ -261,6 +261,8 @@
           iter = document.formCount.text1.value;
           if (!(iter > 0))
             return;
+          if (!(document.formCount.text2.value > 1))
+            return;
           _hide(document.getElementById("chooseUI"));
           _show(document.getElementById("selectUI"));
           iter--;
