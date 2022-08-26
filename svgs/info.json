@@ -60,6 +60,16 @@
         "path": "07_IC.svg"
     },
     {
+        "char": "h",
+        "name": "eoep",
+        "path": "08_EOEP.svg"
+    },
+    {
+        "char": "H",
+        "name": "eoec",
+        "path": "108_EOEC.svg"
+    },
+    {
         "char": "1",
         "name": "nc",
         "path": "201_NC.svg"
@@ -83,5 +93,10 @@
         "char": "5",
         "name": "sc",
         "path": "205_SC.svg"
+    },
+    {
+        "char": "6",
+        "name": "par",
+        "path": "206_PI.svg"
     }
 ]

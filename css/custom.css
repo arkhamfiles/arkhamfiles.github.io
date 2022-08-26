@@ -152,7 +152,7 @@ p.cardEffectBox {
   font-size: 12px;
 }
 
-.errata table span:not([class^="icon-"],[class*=" icon-"]) {
+.errata table span:not([class^="icon-"],[class*=" icon-"],[class="trait"],[class^="symbol-"],[class*=" symbol-"]) {
   color: blue;
 }
 
@@ -208,10 +208,6 @@ blockquote br{
   margin: 1%;
 }
 
-.errata4, .errata5 {
-  color: red;
-}
-
 .scenarioHidden {
   margin-top: 11px;
   display: none;
@@ -261,15 +257,37 @@ h4.decklist {
   border: none;
 }
 
-/*div.errata {
-  display: none;
+h3.errata1::after {
+  content: " [v1]";
+  font-size: large;
 }
 
-.tcu, .tde, .tic, .starter {
-  color: red;
+h3.errata2::after {
+  content: " [v2]";
+  font-size: large;
 }
 
-.V1_1 {
-  color: red;
+h3.errata3::after {
+  content: " [v3]";
+  font-size: large;
 }
-*/
+
+h3.errata4::after {
+  content: " [v4]";
+  font-size: large;
+}
+
+h3.errata5::after {
+  content: " [v5]";
+  font-size: large;
+}
+
+h3.errata6::after {
+  content: " [v6]";
+  font-size: large;
+}
+
+h3.errata7::after {
+  content: " [v7]";
+  font-size: large;
+}

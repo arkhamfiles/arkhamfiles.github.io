@@ -69,6 +69,14 @@
     content: "g"
 }
 
+.symbol-eoep:before {
+    content: "h"
+}
+
+.symbol-eoec:before {
+    content: "H"
+}
+
 .symbol-nc:before {
     content: "1"
 }
@@ -87,5 +95,9 @@
 
 .symbol-sc:before {
     content: "5"
+}
+
+.symbol-par:before {
+    content: "6"
 }
 

@@ -16,7 +16,7 @@ window.onload = function () {
   }
 
   window.toggleHighlightNew.onclick = function() {
-    toggleViewColor('.V1_3');
+    toggleViewColor('.V1_4, .new');
     highlightNew = !highlightNew;
     window.toggleHighlightNew.innerText = highlightNew ? '강조 끄기' : '신규 항목 강조';
     localStorage.setItem('highlightNew', highlightNew);
@@ -35,7 +35,7 @@ window.onload = function () {
   }
 
   if (highlightNew) {
-    toggleViewColor('.V1_3');
+    toggleViewColor('.V1_4, .new');
   }
 
   putCurrentItemClass(currentItemClass);
