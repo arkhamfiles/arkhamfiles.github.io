@@ -9,14 +9,14 @@ window.onload = function () {
   }
 
   window.toggleViewAll.onclick = function() {
-    toggleViewSelector('.eote, .tsk');
+    toggleViewSelector('.eoep, eoec, .tskp, .tskc');
     viewAll = !viewAll;
       window.toggleViewAll.innerText = viewAll ? '한국어판만 보기' : '모두 보기';
     localStorage.setItem('viewAll', viewAll);
   }
 
   window.toggleHighlightNew.onclick = function() {
-    toggleViewColor('.V1_4, .new');
+    toggleViewColor('.V1_4, .V1_41, .new');
     toggleViewSelector('.newShowList', 'list-item');
     highlightNew = !highlightNew;
     window.toggleHighlightNew.innerText = highlightNew ? '강조 끄기' : '신규 항목 강조';
@@ -32,11 +32,11 @@ window.onload = function () {
   });
 
   if (!viewAll) {
-    toggleViewSelector('.eote, .tsk');
+    toggleViewSelector('.eoep, eoec, .tskp, .tskc');
   }
 
   if (highlightNew) {
-    toggleViewColor('.V1_4, .new');
+    toggleViewColor('.V1_4, .V1_41, .new');
     toggleViewSelector('.newShowList', 'list-item');
   }
 
