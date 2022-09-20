@@ -141,7 +141,7 @@
         {name: '평행/데이지 워커', pack: PACK_PARALLEL, class: CLASS_SEEKER, tier: TIER_D_MINUS},
         {name: '평행/"스키즈" 오\'툴', pack: PACK_PARALLEL, class: CLASS_ROGUE, tier: TIER_B},
         {name: '평행/애그니스 베이커', pack: PACK_PARALLEL, class: CLASS_MYSTIC, tier: TIER_A_MINUS},
-        {name: '평행/웬디 애덤스', pack: PACK_PARALLEL, class: CLASS_SURVIVOR, tier: TIER_UNDEF},
+        {name: '평행/웬디 애덤스', pack: PACK_PARALLEL, class: CLASS_SURVIVOR, tier: TIER_C},
         {name: '조이 사마라스', pack: PACK_DUNWICH, class: CLASS_GUARDIAN, tier: TIER_B},
         {name: '렉스 머피', pack: PACK_DUNWICH, class: CLASS_SEEKER, tier: TIER_C_PLUS},
         {name: '제니 반즈', pack: PACK_DUNWICH, class: CLASS_ROGUE, tier: TIER_C},
@@ -184,6 +184,12 @@
         {name: '몬터레이 잭', pack: PACK_EOTE, class: CLASS_ROGUE, tier: TIER_B_MINUS},
         {name: '릴리 첸', pack: PACK_EOTE, class: CLASS_MYSTIC, tier: TIER_C},
         {name: '밥 젠킨스', pack: PACK_EOTE, class: CLASS_SURVIVOR, tier: TIER_A},
+        {name: '카슨 싱클레어', pack: PACK_TSK, class: CLASS_GUARDIAN, tier: TIER_B},
+        {name: '빈센트 리', pack: PACK_TSK, class: CLASS_SEEKER, tier: TIER_A_PLUS},
+        {name: '카이마니 존스', pack: PACK_TSK, class: CLASS_ROGUE, tier: TIER_S},
+        {name: '아미나 지단', pack: PACK_TSK, class: CLASS_MYSTIC, tier: TIER_D_PLUS},
+        {name: '대럴 시몬스', pack: PACK_TSK, class: CLASS_SURVIVOR, tier: TIER_A_PLUS},
+        {name: '찰리 케인', pack: PACK_TSK, class: CLASS_NEUTRAL, tier: TIER_A},
       ];
 
       var weightSum = 0;
@@ -191,7 +197,7 @@
       function _setupWeights(packMod, classMod, tierMod) {
         weightSum = 0;
         actCnt = 0;
-        var packModArr = packMod ? packMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        var packModArr = packMod ? packMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
         var classModArr = classMod ? classMod : [1, 1, 1, 1, 1, 1];
         var tierModArr = tierMod ? tierMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0];
         for (var i = 0; i < invData.length; i++) {
@@ -249,7 +255,7 @@
         for (var i = 0; i < 14; i++) {
           tierMod.push(document.formTier.elements[i].value);
         }
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 11; i++) {
           packMod.push(document.formPack.elements[i].value);
         }
         for (var i = 0; i < 6; i++) {
@@ -268,13 +274,14 @@
         document.formPack.elements[PACK_PARALLEL].value = 0;
         document.formPack.elements[PACK_TIC].value = 0;
         document.formPack.elements[PACK_EOTE].value = 0;
+        document.formPack.elements[PACK_TSK].value = 0;
       }
 
       function init() {
         for (var i = 0; i < 14; i++) {
           document.formTier.elements[i].value = 1;
         }
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 11; i++) {
           document.formPack.elements[i].value = 1;
         }
         for (var i = 0; i < 6; i++) {
@@ -341,6 +348,9 @@
       </li>
       <li>
         <label for="pack_eote">지구의 끝자락</label><input type="range" id="pack_eote" name="pack_eote" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_tsk">진홍색 열쇠</label><input type="range" id="pack_tsk" name="pack_tsk" min="0" max="3" value="1" step="0.1"><br>
       </li>
       </ul>
   </form>
