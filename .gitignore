@@ -6,3 +6,7 @@ typings
 RR.*
 raw/backup.html
 *.zip
+/card_list.html
+card_list/card_list.html
+card_list/outputs.json
+card_list/dist
