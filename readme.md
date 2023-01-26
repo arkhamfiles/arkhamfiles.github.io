@@ -1,6 +1,35 @@
-# <아컴호러 카드게임> 웹 참조 안내서 / FAQ
+# <아컴호러 카드게임> 허브
 
-본 레포지터리는 <아컴호러 카드게임>의 참조 안내서 및 FAQ의 웹 배포를 목표로 합니다.
+본 레포지터리는 <아컴호러 카드게임> 허브 관리를 위한 레포지터리 입니다. 자세한 것은 깃허브 페이지로 생성된 웹페이지를 참고해주세요.
+
+<아컴호러 카드게임> 허브는 <아컴호러 카드게임>의 정식 라이선스 및 한국 내 독점 판권을 보유한 코리아보드게임즈의 공식 사이트입니다. 본 사이트는 코리아보드게임즈로부터 관리를 위탁받아 네이버 아컴파일즈 카페에서 운영하고 있으며, <아컴호러 카드게임> 한국어판의 번역진이 주축이 되어 번역 및 관리를 하고 있습니다. 
+
+This repository is generated for "the hub of Arkham horror The Card Game", Korean language. For more detail, please check the website generated using the github-pages.
+
+"The hub of Arkham horror The Card Game" is the offical site of Koreaboardgames, the sole agent of AHLCG. This repository is maintained by the arkhamfiles naver cafe entrusted by koreaboardgames. If you want to contact us, please contact any contributors of this repository, e-mail address in the website, or write issue on this repository.
+
+## License / Copyright
+
+본 레포지터리에 있는 내용은 기본적으로 저작권이 있는 항목입니다. 사용에 주의를 가지시길 바랍니다. 웹페이지 형태가 아닌 RAW 파일의 형태더라도 저작권이 있음을 유의하시길 바랍니다. 저작권에 관해서는, 웹페이지에 명시된 항목을 참고해 주시길 바랍니다.
+
+"본 사이트 및 본 사이트의 모든 내용은 코리아보드게임즈의 사전 동의 없이 복사, 복제, 재출판, 업로드, 게시, 전송, 배포 또는 2차적 저작물 생성 등에 이용될 수 없습니다. 다만, 코리아보드게임즈는 이용자에게 본 사이트의 텍스트, 사진, 소리, 파일, 링크 등의 정보(“자료”)에 접근하고 이용할 수 있는, 그리고 본 사이트를 개인적, 비상업적인 용도로만 사용할 수 있는 비독점적, 양도 불가능한 제한적 권리를 부여합니다."
+
+추가로, 본 웹사이트 기본 골조는 ArkhamDB에서 가져왔습니다. (좌우 구성 및 목차 나열 및 아래 footnote 위치 등). 본 항목에 대해서는 저작권을 가지고 있지 않음을 밝힙니다. 이 자리를 빌어 Kalmalisk를 포함한 ArkhamDB의 모든 기여자들에게 감사의 말을 올립니다.
+
+유일한 예외로, **python script**는 MIT license 조건 하에서 사용하여도 됩니다. 본 license를 적용받는 파일은 `html_generator` 폴더 내의 `defines.py`를 제외한 파일, `generate.py`, `generate_icon.py` 입니다. 이 것이 코드 내에 있는 텍스트 그 자체를 사용해도 된다는 의미는 아닌 것은 명심하시길 바랍니다.
+
+(english translation: korean has priority)
+
+All contents in this repository has license. Please be careful if you want to use. If you want to use the contents, please check the license in the webpage.
+
+The structure of this website comes from ArkhamDB (structure, content, footnotes). We have NO license about them. In this page, we sincerely thanks to all contributors of ArkhamDB including Kalmalisk.
+
+Some python scripts will be distributed as MIT license: all files in `html_generator` (except `defines.py`), `generator.py`, `generate_icon.py`. You can check the license file in `html_generator/license`.
+
+## 할일
+
+* fontforge font 작성 코드 fontTools로 변경 (fontforge 없어도 되게)
+* QnA 쪽 전처리 코드 수정
 
 ## 작성 방법
 
@@ -63,14 +92,3 @@
    * windows인 경우, PATH를 지정하면 ffpython을 활용합니다.
    * ubuntu는 fontforge를 잘 깔아야 합니다. 시도 안해봄.
 
-## 저작권 / Copyright
-
-참조 안내서, FAQ 등 <아컴호러 카드게임>의 정보의 저작권은 [Fantasy Flight Games](https://www.fantasyflightgames.com/) 및 [코리아보드게임즈](https://www.koreaboardgames.com/)에 있습니다.
-
-The information of *Arkham Horror: The Card Game* such as rule reference, FAQ, is copyrighted by [Fantasy Flight Games](https://www.fantasyflightgames.com/) and [Korea Boardgames](https://www.koreaboardgames.com/_eng/)
-
-## Thanks to
-
-웹페이지는 [ArkhamDB](https://github.com/Kamalisk/arkhamdb)에 기반하여 작성되었습니다. Kam. 및 모든 기여자에게 감사의 말을 올립니다.
-
-The webpage is created based on [ArkhamDB](https://github.com/Kamalisk/arkhamdb). I appreciate Kam. and all contributors of ArkhamDB.
