@@ -65,7 +65,7 @@ Some python scripts will be distributed as MIT license: all files in `html_gener
 
 본 문서는 `raw/***.html` 파일에서 python 스크립트를 이용하여 자동으로 실제 문서를 작성합니다.
   * depencency: python3+ 에서 작동합니다. 2.7에서는 작동하지 않습니다.
-    * beautifulsoup4, html5lib, requess 를 설치하여야 합니다.
+    * beautifulsoup4, html5lib, requests 를 설치하여야 합니다.
     * python 3.6 이하라면, dataclasses를 설치하여야 합니다.
     * 폰트 생성을 위해 fontforge를 설치하여야 합니다.
       * windows: fontforge 설치 위치의 bin 폴더(eg. C:\Program Files (x86)\FontForgeBuilds\bin)를 PATH 시스템 변수에 추가하여야 합니다.
