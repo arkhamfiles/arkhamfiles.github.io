@@ -30,6 +30,8 @@ def update_reandomweak():
             cards.add(match.group(3)) # code
     print(cards)
     for card in cards:
+        if card == '00000':
+            continue
         url = 'https://arkhamdb.com/bundles/cards/%s.png'%card
         req = requests.get(url)
         with open("cards/%s.png"%card, 'wb') as fid:
