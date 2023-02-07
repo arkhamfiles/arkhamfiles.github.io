@@ -9,6 +9,7 @@ python generate.py raw/notes.html notes.html --rr rule_reference.html
 
 Write-Output "generate faq.html..."
 python generate.py raw/faq.html faq.html --rr rule_reference.html --faq notes.html
+python generate.py raw/faq_legacy.html faq_legacy.html --rr rule_reference.html --faq notes.html
 
 Write-Output "generate errata.html..."
 python generate.py raw/errata.html errata.html --nolink
