@@ -291,3 +291,47 @@ h3.errata7::after {
   content: " [v7]";
   font-size: large;
 }
+
+@media (min-width: 992px) {
+  .col-md-4 {
+    position: fixed;
+    overflow-y: scroll;
+    height: calc(100% - 158px);
+  }
+
+  .col-md-8 {
+    left: 33.33333333%;
+  }
+
+  .col-md-3 {
+    position: fixed;
+    overflow-y: scroll;
+    height: calc(100% - 158px);
+  }
+
+  .col-md-9 {
+    left: 25%;
+  }
+
+  .utilRow {
+    width: 100%;
+  }
+  
+  .topBar {
+    position: fixed;
+    margin-top: 10px;
+  }
+
+  .row {
+    top: 48px;
+    position: fixed;
+    overflow-y: scroll;
+    height: calc(100% - 158px);
+  }
+
+  footer {
+    position: fixed;
+    bottom: -0%;
+    width: 100%;
+  }
+}
