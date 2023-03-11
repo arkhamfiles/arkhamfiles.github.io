@@ -313,8 +313,9 @@ h3.errata7::after {
     left: 25%;
   }
 
-  .utilRow {
+  .row {
     width: 100%;
+    margin: 0;
   }
   
   .topBar {
