@@ -341,3 +341,23 @@ h3.errata7::after {
     width: 100%;
   }
 }
+
+.levelDiv {
+    border: 1px solid black;
+    text-align: center;
+    margin: auto 0;
+    width: 50px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.faqEntry {
+  display: flex;
+  margin: 15px 10px;
+}
+
+.faqContent {
+  left: 20px;
+  position: relative;
+  margin: auto 0;
+}
