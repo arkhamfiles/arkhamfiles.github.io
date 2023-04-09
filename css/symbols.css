@@ -77,6 +77,14 @@
     content: "H"
 }
 
+.symbol-skp:before {
+    content: "i"
+}
+
+.symbol-skc:before {
+    content: "I"
+}
+
 .symbol-nc:before {
     content: "1"
 }

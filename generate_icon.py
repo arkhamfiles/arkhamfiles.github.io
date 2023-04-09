@@ -39,6 +39,11 @@ def generate_fonts():
     for item in data:
         glyph = font.createChar(ord(item['char']), item['name'])
         glyph.importOutlines(os.path.join('svgs', item['path']))
+        
+    font.fontname = 'ahlcg-symbols'
+    font.familyname = 'ahlcg-symbols'
+    font.copyright = 'This font is created for the maintaining "korean hub for AHLCG, https://arkhamfiles.github.io/". All right is reserved for FFG and Asmodee, and Korea Board Games, which is the exclusive distributor in south korea.'
+    
     font.generate("fonts/arkham-symbols.ttf")
     font.generate("fonts/arkham-symbols.otf")
     font.generate("fonts/arkham-symbols.woff")
@@ -76,14 +81,14 @@ def generate_css():
             filept.write('.symbol-{name}:before {{\n    content: "{char}"\n}}\n\n'.format(**item))
 
 def main():
-    is_update = check_update_necessary('svgs/info.json', "fonts/arkham-symbols.ttf")
-    if not is_update:
-        print('the font is not generated (no update exists).')
-        return
-    start_time = time.time()
+    # is_update = check_update_necessary('svgs/info.json', "fonts/arkham-symbols.ttf")
+    # if not is_update:
+    #     print('the font is not generated (no update exists).')
+    #     return
+    # start_time = time.time()
     generate_fonts()
     generate_css()
-    print('generate done: %.2fms'%(time.time()-start_time)*1000)
+    # print('generate done: %.2fms'%(time.time()-start_time)*1000)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
