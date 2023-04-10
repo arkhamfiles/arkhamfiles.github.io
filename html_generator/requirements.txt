@@ -2,3 +2,4 @@ beautifulsoup4
 html5lib
 dataclasses; python_version < '3.7'
 requests
+fonttools[woff] >= 4.39
