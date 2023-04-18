@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ttFont sfntVersion="\x00\x01\x00\x00" ttLibVersion="4.39">
+
+  <GlyphOrder>
+    <!-- The 'id' attribute is only for humans; it is ignored when parsed. -->
+    <GlyphID id="0" name=".notdef"/>
+    <GlyphID id="1" name=".null"/>
+    <GlyphID id="2" name="nonmarkingreturn"/>
+  </GlyphOrder>
+
+  <head>
+    <!-- Most of this table will be recalculated by the compiler -->
+    <tableVersion value="1.0"/>
+    <fontRevision value="1.0"/>
+    <checkSumAdjustment value="0x0"/>
+    <magicNumber value="0x5f0f3cf5"/>
+    <flags value="00000000 00001011"/>
+    <unitsPerEm value="1000"/>
+    <created value="Wed Aug 24 11:50:12 2022"/>
+    <modified value="Wed Aug 24 11:50:12 2022"/>
+    <xMin value="0"/>
+    <yMin value="0"/>
+    <xMax value="0"/>
+    <yMax value="0"/>
+    <macStyle value="00000000 00000000"/>
+    <lowestRecPPEM value="8"/>
+    <fontDirectionHint value="2"/>
+    <indexToLocFormat value="0"/>
+    <glyphDataFormat value="0"/>
+  </head>
+
+  <hhea>
+    <tableVersion value="0x00010000"/>
+    <ascent value="80"/>
+    <descent value="-200"/>
+    <lineGap value="90"/>
+    <advanceWidthMax value="1000"/>
+    <minLeftSideBearing value="-4"/>
+    <minRightSideBearing value="-321"/>
+    <xMaxExtent value="1322"/>
+    <caretSlopeRise value="1"/>
+    <caretSlopeRun value="0"/>
+    <caretOffset value="0"/>
+    <reserved0 value="0"/>
+    <reserved1 value="0"/>
+    <reserved2 value="0"/>
+    <reserved3 value="0"/>
+    <metricDataFormat value="0"/>
+    <numberOfHMetrics value="4"/>
+  </hhea>
+
+  <maxp>
+    <!-- Most of this table will be recalculated by the compiler -->
+    <tableVersion value="0x10000"/>
+    <numGlyphs value="23"/>
+    <maxPoints value="1333"/>
+    <maxContours value="14"/>
+    <maxCompositePoints value="0"/>
+    <maxCompositeContours value="0"/>
+    <maxZones value="2"/>
+    <maxTwilightPoints value="0"/>
+    <maxStorage value="1"/>
+    <maxFunctionDefs value="1"/>
+    <maxInstructionDefs value="0"/>
+    <maxStackElements value="64"/>
+    <maxSizeOfInstructions value="46"/>
+    <maxComponentElements value="0"/>
+    <maxComponentDepth value="0"/>
+  </maxp>
+
+  <OS_2>
+    <!-- The fields 'usFirstCharIndex' and 'usLastCharIndex'
+         will be recalculated by the compiler -->
+    <version value="4"/>
+    <xAvgCharWidth value="1000"/>
+    <usWeightClass value="400"/>
+    <usWidthClass value="5"/>
+    <fsType value="00000000 00000000"/>
+    <ySubscriptXSize value="650"/>
+    <ySubscriptYSize value="700"/>
+    <ySubscriptXOffset value="0"/>
+    <ySubscriptYOffset value="150"/>
+    <ySuperscriptXSize value="650"/>
+    <ySuperscriptYSize value="700"/>
+    <ySuperscriptXOffset value="0"/>
+    <ySuperscriptYOffset value="500"/>
+    <yStrikeoutSize value="50"/>
+    <yStrikeoutPosition value="150"/>
+    <sFamilyClass value="0"/>
+    <panose>
+      <bFamilyType value="2"/>
+      <bSerifStyle value="0"/>
+      <bWeight value="5"/>
+      <bProportion value="9"/>
+      <bContrast value="0"/>
+      <bStrokeVariation value="0"/>
+      <bArmStyle value="0"/>
+      <bLetterForm value="0"/>
+      <bMidline value="0"/>
+      <bXHeight value="0"/>
+    </panose>
+    <ulUnicodeRange1 value="00000000 00000000 00000000 00000001"/>
+    <ulUnicodeRange2 value="00000000 00000000 00000000 00000000"/>
+    <ulUnicodeRange3 value="00000000 00000000 00000000 00000000"/>
+    <ulUnicodeRange4 value="00000000 00000000 00000000 00000000"/>
+    <achVendID value="PfEd"/>
+    <fsSelection value="00000000 10000000"/>
+    <usFirstCharIndex value="49"/>
+    <usLastCharIndex value="104"/>
+    <sTypoAscender value="800"/>
+    <sTypoDescender value="-200"/>
+    <sTypoLineGap value="90"/>
+    <usWinAscent value="804"/>
+    <usWinDescent value="209"/>
+    <ulCodePageRange1 value="00000000 00000000 00000000 00000001"/>
+    <ulCodePageRange2 value="00000000 00000000 00000000 00000000"/>
+    <sxHeight value="800"/>
+    <sCapHeight value="783"/>
+    <usDefaultChar value="0"/>
+    <usBreakChar value="32"/>
+    <usMaxContext value="1"/>
+  </OS_2>
+
+  <hmtx>
+    <mtx name=".notdef" width="1000" lsb="33"/>
+    <mtx name=".null" width="0" lsb="0"/>
+    <mtx name="nonmarkingreturn" width="1000" lsb="0"/>
+  </hmtx>
+
+  <cmap>
+    <tableVersion version="0"/>
+    <cmap_format_4 platformID="0" platEncID="3" language="0">
+    </cmap_format_4>
+    <cmap_format_0 platformID="1" platEncID="0" language="0">
+      <map code="0x0" name=".null"/>
+      <map code="0x8" name=".null"/>
+      <map code="0x9" name="nonmarkingreturn"/>
+      <map code="0xd" name="nonmarkingreturn"/>
+      <map code="0x1d" name=".null"/>
+    </cmap_format_0>
+    <cmap_format_4 platformID="3" platEncID="1" language="0">
+    </cmap_format_4>
+  </cmap>
+
+  <loca>
+    <!-- The 'loca' table will be calculated by the compiler -->
+  </loca>
+
+  <glyf>
+
+    <!-- The xMin, yMin, xMax and yMax values
+         will be recalculated by the compiler. -->
+
+    <TTGlyph name=".notdef" xMin="33" yMin="0" xMax="298" yMax="666">
+      <contour>
+        <pt x="33" y="0" on="1"/>
+        <pt x="33" y="666" on="1"/>
+        <pt x="298" y="666" on="1"/>
+        <pt x="298" y="0" on="1"/>
+      </contour>
+      <contour>
+        <pt x="66" y="33" on="1"/>
+        <pt x="265" y="33" on="1"/>
+        <pt x="265" y="633" on="1"/>
+        <pt x="66" y="633" on="1"/>
+      </contour>
+      <instructions>
+        <assembly>
+          PUSHB[ ]	/* 2 values pushed */
+          1 0
+          MDAP[1]	/* MoveDirectAbsPt */
+          ALIGNRP[ ]	/* AlignRelativePt */
+          PUSHB[ ]	/* 3 values pushed */
+          7 4 0
+          MIRP[01101]	/* MoveIndirectRelPt */
+          SHP[0]	/* ShiftPointByLastPoint */
+          PUSHB[ ]	/* 2 values pushed */
+          6 5
+          MDRP[11100]	/* MoveDirectRelPt */
+          ALIGNRP[ ]	/* AlignRelativePt */
+          PUSHB[ ]	/* 3 values pushed */
+          3 2 0
+          MIRP[01101]	/* MoveIndirectRelPt */
+          SHP[0]	/* ShiftPointByLastPoint */
+          SVTCA[0]	/* SetFPVectorToAxis */
+          PUSHB[ ]	/* 2 values pushed */
+          3 0
+          MDAP[1]	/* MoveDirectAbsPt */
+          ALIGNRP[ ]	/* AlignRelativePt */
+          PUSHB[ ]	/* 3 values pushed */
+          5 4 0
+          MIRP[01101]	/* MoveIndirectRelPt */
+          SHP[0]	/* ShiftPointByLastPoint */
+          PUSHB[ ]	/* 3 values pushed */
+          7 6 1
+          MIRP[11100]	/* MoveIndirectRelPt */
+          ALIGNRP[ ]	/* AlignRelativePt */
+          PUSHB[ ]	/* 3 values pushed */
+          1 2 0
+          MIRP[01101]	/* MoveIndirectRelPt */
+          SHP[0]	/* ShiftPointByLastPoint */
+        </assembly>
+      </instructions>
+    </TTGlyph>
+
+    <TTGlyph name=".null"/><!-- contains no outline data -->
+
+    <TTGlyph name="nonmarkingreturn"/><!-- contains no outline data -->
+
+  </glyf>
+
+  <name>
+    <namerecord nameID="0" platformID="0" platEncID="3" langID="0x0">
+      Copyright (c) 2023, Fantasy Flight Publishing, Inc. All Right Reserved.
+    </namerecord>
+    <namerecord nameID="1" platformID="0" platEncID="3" langID="0x0">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="2" platformID="0" platEncID="3" langID="0x0">
+      Regular
+    </namerecord>
+    <namerecord nameID="3" platformID="0" platEncID="3" langID="0x0">
+      Arkham Symbols generated for arkhamfiles.github.io
+    </namerecord>
+    <namerecord nameID="4" platformID="0" platEncID="3" langID="0x0">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="6" platformID="0" platEncID="3" langID="0x0">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="10" platformID="0" platEncID="3" langID="0x0">
+      Additional information about copyright: the font maker, arkhamfiles korea, has limited right about this font and we generate this font for maintaining the Arkham horror cardgame hub website. FFG has the copyright about most contents during generating this font.
+    </namerecord>
+    <namerecord nameID="16" platformID="0" platEncID="3" langID="0x0">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0">
+      Copyright (c) 2023, Fantasy Flight Publishing, Inc. All Right Reserved.
+    </namerecord>
+    <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="2" platformID="1" platEncID="0" langID="0x0">
+      Regular
+    </namerecord>
+    <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0">
+      Arkham Symbols generated for arkhamfiles.github.io
+    </namerecord>
+    <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="10" platformID="1" platEncID="0" langID="0x0">
+      Additional information about copyright: the font maker, arkhamfiles korea, has limited right about this font and we generate this font for maintaining the Arkham horror cardgame hub website. FFG has the copyright about most contents during generating this font.
+    </namerecord>
+    <namerecord nameID="16" platformID="1" platEncID="0" langID="0x0">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
+      Copyright (c) 2023, Fantasy Flight Publishing, Inc. All Right Reserved.
+    </namerecord>
+    <namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="2" platformID="3" platEncID="1" langID="0x409">
+      Regular
+    </namerecord>
+    <namerecord nameID="3" platformID="3" platEncID="1" langID="0x409">
+      Arkham Symbols generated for arkhamfiles.github.io
+    </namerecord>
+    <namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">
+      Arkham Symbols
+    </namerecord>
+    <namerecord nameID="10" platformID="3" platEncID="1" langID="0x0409">
+      Additional information about copyright: the font maker, arkhamfiles korea, has limited right about this font and we generate this font for maintaining the Arkham horror cardgame hub website. FFG has the copyright about most contents during generating this font.
+    </namerecord>
+    <namerecord nameID="16" platformID="3" platEncID="1" langID="0x0409">
+      Arkham Symbols
+    </namerecord>
+  </name>
+
+  <post>
+    <formatType value="2.0"/>
+    <italicAngle value="0.0"/>
+    <underlinePosition value="-75"/>
+    <underlineThickness value="50"/>
+    <isFixedPitch value="1"/>
+    <minMemType42 value="0"/>
+    <maxMemType42 value="0"/>
+    <minMemType1 value="0"/>
+    <maxMemType1 value="0"/>
+    <psNames>
+      <!-- This file uses unique glyph names based on the information
+           found in the 'post' table. Since these names might not be unique,
+           we have to invent artificial names in case of clashes. In order to
+           be able to retain the original information, we need a name to
+           ps name mapping for those cases where they differ. That's what
+           you see below.
+            -->
+    </psNames>
+    <extraNames>
+      <!-- following are the name that are not taken from the standard Mac glyph order -->
+    </extraNames>
+  </post>
+
+</ttFont>

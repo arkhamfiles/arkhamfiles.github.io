@@ -70,6 +70,16 @@
         "path": "108_EOEC.svg"
     },
     {
+        "char": "i",
+        "name": "skp",
+        "path": "09_SKP.svg"
+    },
+    {
+        "char": "I",
+        "name": "skc",
+        "path": "109_SKC.svg"
+    },
+    {
         "char": "1",
         "name": "nc",
         "path": "201_NC.svg"
