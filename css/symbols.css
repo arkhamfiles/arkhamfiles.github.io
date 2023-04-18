@@ -1,17 +1,14 @@
 @font-face {
-    font-family: 'arkhamsymbols';
-    src: url('../fonts/arkham-symbols.otf');
-    src: url('../fonts/arkham-symbols.otf') format('opentype'), 
-    url('../fonts/arkham-symbols.ttf') format('truetype'), 
-    url('../fonts/arkham-symbols.woff') format('woff'), 
-    url('../fonts/arkham-symbols.svg') format('svg');
+    font-family: 'Arkham Symbols';
+    src: url('../fonts/arkham-symbols.otf') format('opentype'),
+    url('../fonts/arkham-symbols.ttf') format('truetype'),
+    url('../fonts/arkham-symbols.woff') format('woff'),
+    url('../fonts/arkham-symbols.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
-
 [class^="symbol-"],[class*=" symbol-"] {
-    font-family: 'arkhamsymbols';
-    speak: none;
+    font-family: 'Arkham Symbols';
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -75,6 +72,14 @@
 
 .symbol-eoec:before {
     content: "H"
+}
+
+.symbol-skp:before {
+    content: "i"
+}
+
+.symbol-skc:before {
+    content: "I"
 }
 
 .symbol-nc:before {
