@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>아컴 호러 카드게임: 카드 목록</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="icon-192.png">
+  <!--link rel="apple-touch-icon" sizes="120x120" href="icon-120.png">
+        <meta name="description" content="Rules Reference"-->
+  <link
+    href="https://fonts.googleapis.com/css?family=Amiri:400,400italic,700,700italic|Julius+Sans+One|Open+Sans:400,400italic,700,700italic|Open+Sans+Condensed:300"
+    rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/jquery.qtip.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-markdown/2.9.0/css/bootstrap-markdown.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/symbols.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+  <script src="js/ui.js"></script>
+  <script>
+    var printData = [{
+      "code": "07002",
+      "name": "어맨다 샤프",
+      "subname": "학생",
+      "text": "<b>강제</b> - 조사 단계 시작에: 카드를 1장 뽑습니다. ‘어맨다 샤프’ 밑에 있는 카드를 버립니다. 당신의 손에 있는 카드를 1장 선택해서 ‘어맨다 샤프’ 밑에 놓습니다.\n<b>강제</b> - 당신이 수행하는 능력 테스트 시작에: (가능하다면) ‘어맨다 샤프’ 밑에 있는 카드를 소모합니다. 이번 테스트가 끝날 때 그 카드를 버리지 않습니다.\n[elder_sign] 효과: +0. 이번 능력 테스트에서, 당신은 ‘어맨다 샤프’ 밑에 있는 카드에 있는 능력 아이콘 개수를 두 배로 불려도 됩니다.",
+      "traits": "미스캐토닉. 학자.",
+      "back_flavor": "어맨다 샤프는 미스캐토닉 대학에서 특출난 실력을 발휘하며 졸업까지 탄탄대로를 걷고 있었다. 그러던 어느 날, 어맨다는 대양의 밑바닥에서 거대한 괴물이 솟아오르는 그림을 본 후로, 도저히 수업을 따라갈 수가 없었다. 그날부터 꿈속에서는 광대한 수중 도시가 펼쳐졌고 불가해한 언어로 된 속삭임이 귓가에 어른거렸다. 어맨다는 아직은 학업에 전념하고 있지만, 더는 최우수 졸업생이란 목표를 좇지 않는다. 그 대신, 현실의 경계 사이에 숨겨져 있는 초자연적인 비밀에 담긴 의미를 밝혀내고자 나섰다.",
+      "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 탐구자 카드([seeker]), 레벨 0-3 [[숙련]] 능력 카드, 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 불가해한 연구, 심해로부터의 속삭임, 무작위 기본 약점 카드 1장.",
+      "faction_code": "seeker",
+      "faqs": [701, 702, 703]
+    }];
+
+    const FAQ_LEVEL_A = 'A';
+    const FAQ_LEVEL_B = 'B';
+    const FAQ_LEVEL_C = 'C';
+    const FAQ_LEVEL_D = 'D';
+    const FAQ_LEVEL_E = 'E';
+
+    var faqData = {
+      701: {
+        level: FAQ_LEVEL_A,
+        date: '2020',
+        source: 'FAQ, v.1.8',
+        question_text: '‘어맨다 샤프’ 밑에 있는 카드가 능력 테스트에 소모된 동안, 그 카드가 다른 플레이 영역으로 이동하려 한다면 어떻게 처리해야 하나요?',
+        answer_text: '이 경우, ‘어맨다 샤프’ 밑에 남지 않고 해당 플레이 영역으로 이동합니다. 능력 테스트 끝에 버려지는 능력 카드만이 ‘어맨다 샤프’ 밑에 남습니다.'
+      },
+      702: {
+        level: FAQ_LEVEL_C,
+        date: '2021',
+        source: 'FAQ, v.1.8',
+        question_text: '‘어맨다 샤프’ 밑에 있는 카드가 능력 테스트에 소모된 동안, 그 카드가 다른 플레이 영역으로 이동하려 한다면 어떻게 처리해야 하나요?',
+        answer_text: '이 경우, ‘어맨다 샤프’ 밑에 남지 않고 해당 플레이 영역으로 이동합니다. 능력 테스트 끝에 버려지는 능력 카드만이 ‘어맨다 샤프’ 밑에 남습니다.'
+      },
+      703: {
+        level: FAQ_LEVEL_A,
+        date: '2022',
+        source: 'FAQ, v.2.0',
+        question_text: '‘방어 태세’, ‘지역 조사’, ‘비술 이론’, ‘불굴의 기백’이 ‘어맨다 샤프’ 밑에 있을 때, 이러한 카드를 능력 테스트에 소모할 수 있나요?',
+        answer_text: '불가능합니다. 이번 능력 테스트와 일치하는 능력 아이콘이 1개 이상 있어야만 소모할 수 있습니다. 위에 언급된 카드는당신의 손에 있거나 능력 테스트에 소모된 경우에만 아이콘을 갖습니다. 따라서 (‘어맨다 샤프’나 ‘연습이 완벽을 만든다’와 같이) 다른 곳/방법을 통해서는 소모할 수 없습니다.'
+      }
+    }
+
+    function _onLoad() {
+      function _getClass(obj) {
+        return obj.faction_code ? obj.faction_code : 'neutral';
+      }
+      function _getClassName(obj) {
+        switch (obj.faction_code) {
+          case "guardian":
+            return '수호자';
+            break;
+          case "seeker":
+            return '탐구자';
+            break;
+          case "rogue":
+            return '무법자';
+            break;
+          case "mystic":
+            return '신비주의자';
+            break;
+          case "survivor":
+            return '생존자';
+            break;
+          default:
+            return '';
+        }
+      }
+      function _getTypeName(obj) {
+        switch (obj.faction_code) {
+          case "guardian":
+            return '수호자';
+            break;
+          case "seeker":
+            return '탐구자';
+            break;
+          case "rogue":
+            return '무법자';
+            break;
+          case "mystic":
+            return '신비주의자';
+            break;
+          case "survivor":
+            return '생존자';
+            break;
+          default:
+            return '';
+        }
+      }
+
+      function _makeText(text) {
+        return '<p>' + text.replaceAll('[bless]', '<span class="icon-bless" title="Bless"></span>')
+          .replaceAll('[curse]', '<span class="icon-curse" title="curse"></span>')
+          .replaceAll('[reaction]', '<span class="icon-reaction" title="Reaction"></span>')
+          .replaceAll('[action]', '<span class="icon-action" title="action"></span>')
+          .replaceAll('[free]', '<span class="icon-free" title="free"></span>')
+          .replaceAll('[elder_sign]', '<span class="icon-elder_sign" title="Elder Sign"></span>')
+          .replaceAll('[auto_fail]', '<span class="icon-auto_fail" title="auto_fail"></span>')
+          .replaceAll('[guardian]', '<span class="icon-guardian" title="Guardian"></span>')
+          .replaceAll('[seeker]', '<span class="icon-seeker" title="seeker"></span>')
+          .replaceAll('[rogue]', '<span class="icon-rogue" title="rogue"></span>')
+          .replaceAll('[mystic]', '<span class="icon-mystic" title="mystic"></span>')
+          .replaceAll('[survivor]', '<span class="icon-survivor" title="survivor"></span>')
+          .replaceAll('[willpower]', '<span class="icon-willpower" title="willpower"></span>')
+          .replaceAll('[combat]', '<span class="icon-combat" title="combat"></span>')
+          .replaceAll('[agility]', '<span class="icon-agility" title="agility"></span>')
+          .replaceAll('[intellect]', '<span class="icon-intellect" title="intellect"></span>')
+          .replaceAll('[[', '<b><i>')
+          .replaceAll(']]', '</i></b>')
+          .replaceAll('\n', '</p><p>') + '</p>';
+      }
+
+      function _makeFaqText(faqs) {
+        let resultText = '';
+        for (idx of faqs) {
+          resultText += `<div class="faqEntry"><div class="levelDiv">LEVEL<br>` + faqData[idx].level + `</div>
+<p class="faqContent"><strong>Q: </strong>` + faqData[idx].question_text + `<br><strong>A: </strong>` + faqData[idx].answer_text + `<br><strong>출처: </strong>` + faqData[idx].source + `, ` + faqData[idx].date + `</p>
+</div>`
+        }
+        return resultText;
+      }
+
+      var rootElem = document.getElementById('rootElem');
+      for (var i = 0; i < printData.length; i++) {
+        rootElem.innerHTML += `<div class="col-sm-7">
+        	<div>
+        		<div class="panel panel-default border-` + _getClass(printData[i]) + ` ">
+        			<div class="panel-heading border-` + _getClass(printData[i]) + ` bg-` + _getClass(printData[i]) + ` ">
+        				<h3 class="panel-title">` +
+          (printData[i].is_unique ? `<span class="icon-unique"></span> ` : '') +
+          `<a href="https://ko.arkhamdb.com/card/` + printData[i].code + `" class="card-name card-tip" data-code="` + printData[i].code + `">` + printData[i].name + `
+        </a>` +
+          (printData[i].subname ? `<div class="card-subname small">` + printData[i].subname + `</div>` : '') + ` 				</h3>
+          		</div>
+        			<div class="panel-body card-content">
+        				<div class="card-faction">
+        	<span class="icon-` + _getClass(printData[i]) + ` fg-` + _getClass(printData[i]) + `"></span>
+        	<span class="card-faction">` + _getClassName(printData[i]) + `</span>
+        		</div>
+        				<div class="card-info">
+
+        <p class="card-traits">` + printData[i].traits + `</p>
+
+
+
+        </div>								<div class="">
+        <div class="card-text border-` + _getClass(printData[i]) + `">
+        	` + _makeText(printData[i].text) + `
+        </div>
+        </div>` +
+          (printData[i].flavor ? `<div class="card-flavor small">` + printData[i].flavor + `</div>` : '') + `
+        																</div>
+        		</div>
+        	</div>
+        </div>
+        <div class="col-sm-5" style="margin-bottom:2em">
+        	<div class="">
+        				   <img src="cards/` + printData[i].code + `.png" alt="` + printData[i].name + `" class="img-responsive img-vertical-card" style="margin:auto">
+        			</div>
+        </div>`;
+        if (printData[i].back_text) {
+          rootElem.innerHTML += `<div class="col-sm-7" style="margin-bottom:2em">
+          	<div>
+          		<div class="panel panel-default border-` + _getClass(printData[i]) + ` ">
+          			  		<div class="panel-heading border-` + _getClass(printData[i]) + ` bg-` + _getClass(printData[i]) + `">
+          				<h3 class="panel-title">
+          					<div class="">` + printData[i].name + ` - Back</div>
+          				</h3>
+            		</div>
+            					  		<div class="panel-body card-content border-` + _getClass(printData[i]) + `">
+            													<div class="card-text border-` + _getClass(printData[i]) + `">
+          					` + _makeText(printData[i].back_text) + `
+          					</div>` +
+            (printData[i].back_flavor ? `<div class="card-flavor small">` + printData[i].back_flavor + `</div>` : '') + `
+          					</div>
+          									  		</div>
+            				</div>
+          	</div>
+          </div>
+          <div class="col-sm-5" style="margin-bottom:2em">
+          	<div class="">
+          				   <img src="cards/` + printData[i].code + `b.png" alt="` + printData[i].name + `" class="img-responsive img-vertical-card" style="margin:auto">
+          			</div>
+          </div>
+          <div class="col-md-12" style="margin-top:2em">
+	<div style="line-height:34px" id="faq-header">
+		<span style="font-size:24px">FAQs</span> (taken from the official FAQ or FFG's responses to the <a href="https://www.fantasyflightgames.com/en/contact/rules/">official rules question form</a>)
+	</div>
+
+				<article class="review">
+			<div>` + _makeFaqText(printData[i].faqs) + `
+			</div>
+		</article>
+		
+</div>`;
+        }
+      }
+    }
+  </script>
+</head>
+
+<body onload="_onLoad()">
+  <!-- script: insert_file top_bar.html -->
+  <div class="row" id="rootElem">
+
+
+  </div>
+
+
+</body>
+
+</html>

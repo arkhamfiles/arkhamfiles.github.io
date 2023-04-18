@@ -57,6 +57,11 @@ ul.barItem li span.spanButton {
 }
 
 @media (min-width:320px) and (max-width:768px) {
+  .topBar {
+    position: fixed;
+    z-index: 1;
+  }
+
   div.topBar button {
     display: block;
   }
@@ -112,7 +117,7 @@ p.cardEffectBox {
   padding: 0.5em;
   text-align: left;
   margin: 1em auto;
-  width: 40em;
+  /*width: 40em;*/
   display: inherit !important;
 }
 
@@ -290,4 +295,69 @@ h3.errata6::after {
 h3.errata7::after {
   content: " [v7]";
   font-size: large;
+}
+
+@media (min-width: 992px) {
+  .col-md-4 {
+    position: fixed;
+    overflow-y: scroll;
+    height: calc(100% - 158px);
+  }
+
+  .col-md-8 {
+    left: 33.33333333%;
+  }
+
+  .col-md-3 {
+    position: fixed;
+    overflow-y: scroll;
+    height: calc(100% - 158px);
+  }
+
+  .col-md-9 {
+    left: 25%;
+  }
+
+  .row {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .topBar {
+    position: fixed;
+    margin-top: 10px;
+  }
+
+  .row {
+    top: 48px;
+    position: fixed;
+    overflow-y: scroll;
+    height: calc(100% - 158px);
+  }
+
+  footer {
+    position: fixed;
+    bottom: -0%;
+    width: 100%;
+  }
+}
+
+.levelDiv {
+    border: 1px solid black;
+    text-align: center;
+    margin: auto 0;
+    width: 50px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.faqEntry {
+  display: flex;
+  margin: 15px 10px;
+}
+
+.faqContent {
+  left: 20px;
+  position: relative;
+  margin: auto 0;
 }
