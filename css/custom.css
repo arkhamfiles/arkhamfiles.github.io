@@ -140,7 +140,7 @@ p.cardEffectBox {
   padding-right: 0.3em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
-  width: 6em;
+  width: 10em;
   font-size: 14px;
 }
 
@@ -148,12 +148,12 @@ p.cardEffectBox {
   border-style: solid;
   border-color: black;
   border-width: 1px;
-  width: 500px;
   border-spacing: 5px;
   padding-left: 0.3em;
   padding-right: 0.3em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
+  width: 50em;
   font-size: 12px;
 }
 
@@ -219,8 +219,8 @@ blockquote br{
 }
 
 ul.decklist {
-  columns: 3;
   -webkit-columns: 3;
+  columns: 3;
   -moz-column: 3;
 }
 

@@ -8325,6 +8325,7 @@ article.review .review-comment {
 div.rules-reference {
     padding: 20px;
     line-height: 23.8px;
+    text-align: justify;
 }
 
 .rules-reference table.chart {
