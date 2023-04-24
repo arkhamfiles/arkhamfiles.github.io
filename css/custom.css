@@ -297,6 +297,11 @@ h3.errata7::after {
   font-size: large;
 }
 
+h3.errata8::after {
+  content: " [v8]";
+  font-size: large;
+}
+
 @media (min-width: 992px) {
   .col-md-4 {
     position: fixed;
