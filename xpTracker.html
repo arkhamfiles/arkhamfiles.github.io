@@ -120,7 +120,7 @@
       background-color: #800080;
     }
 
-    .card-type.asset {
+    .card-type.story {
       background-color: #008000;
     }
 
@@ -142,6 +142,8 @@
         <option value="">-- 캠페인 선택 --</option>
         <option value="0">던위치의 유산</option>
         <option value="1">카르코사로 가는 길</option>
+        <option value="2">잊힌 시대</option>
+        <option value="3">끝맺지 못한 의식</option>
       </select>
     </section>
     <section id="scenarios" class="hidden">
@@ -164,8 +166,7 @@
           { name: "오른 도서관", xp: 1, type: 'location' },
           { name: "기숙사", xp: 1, type: 'location' },
           { name: "교수실", xp: 1, type: 'location' },
-          { name: "이스인 관찰자", xp: 1, type: 'enemy' },
-          { name: "이스인 관찰자", xp: 1, type: 'enemy' },
+          { name: "이스인 관찰자", xp: 1, type: 'enemy', count: 2 },
           { name: "요그 소토스의 마술사", xp: 1, type: 'enemy' },
           { name: "실험체", xp: 2, type: 'enemy' },
         ],
@@ -195,8 +196,7 @@
         cards: [
           { name: "특실칸", xp: 1, type: 'location' },
           { name: "기관차", xp: 1, type: 'location' },
-          { name: "갑자기 튀어나온 괴생명체", xp: 1, type: 'enemy' },
-          { name: "갑자기 튀어나온 괴생명체", xp: 1, type: 'enemy' },
+          { name: "갑자기 튀어나온 괴생명체", xp: 1, type: 'enemy', count: 2 },
         ],
       },
       {
@@ -209,11 +209,7 @@
       {
         name: "차원 너머의 보이지 않는 존재",
         cards: [
-          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
-          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
-          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
-          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
-          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
+          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy', count: 5 },
         ],
       },
       {
@@ -230,189 +226,396 @@
         name: "시공간을 헤매다",
         cards: [
           { name: "잠복자의 하인", xp: 1, type: 'enemy' },
-          { name: "이스인 관찰자", xp: 1, type: 'enemy' },
-          { name: "이스인 관찰자", xp: 1, type: 'enemy' },
+          { name: "이스인 관찰자", xp: 1, type: 'enemy', count: 2 },
           { name: "결말", xp: 5, type: 'resolution' },
         ],
       },
     ], [
+      {
+        name: "커튼콜",
+        cards: [
+          { name: "특별석", type: "Location", xp: 1 },
+          { name: "조명실", type: "Location", xp: 1 },
+          { name: "배우 휴게실", type: "Location", xp: 1 },
+          { name: "예행 연습실", type: "Location", xp: 1 },
+          { name: "무대 아래 공간", type: "Location", xp: 1 },
+          { name: "왕실의 특사", type: "Enemy", xp: 2 },
+          { name: "왕의 권속", type: "Enemy", xp: 1 },
+        ],
+      },
+      {
+        name: "마지막 왕",
+        cards: [
+          { name: "단서", type: "resolution", xp: 1, count: 5 },
+        ],
+      },
+      {
+        name: "과거로부터의 메아리",
+        cards: [
+          { name: "비밀 서재", type: "Location", xp: 2 },
+          { name: "맹세를 입에 담은 자", type: "Enemy", xp: 2 },
+          { name: "왕의 권속", type: "Enemy", xp: 1 },
+        ],
+      },
+      {
+        name: "입에 담아선 안 될 맹세",
+        cards: [
+          { name: "식당", type: "Location", xp: 1 },
+          { name: "진료실", type: "Location", xp: 1 },
+          { name: "지하층 복도", type: "Location", xp: 1 },
+          { name: "대니얼 체스터필드", type: "Enemy", xp: 1, group: "Chesterfield" },
+          { name: "알데바란의 야수", type: "Enemy", xp: 1 },
+          { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1, count: 2 },
+        ],
+      },
+      {
+        name: "막간 2",
+        cards: [
+          { name: "대니얼 체스터필드 생존", type: "resolution", xp: 2, group: "Chesterfield" },
+          { name: "경고를 받아들였다", type: "resolution", xp: 1 },
+        ],
+      },
+      {
+        name: "진실의 망령",
+        cards: [
+          { name: "그랑 기뇰", type: "Location", xp: 1 },
+          { name: "페르 라셰즈 공동묘지", type: "Location", xp: 1 },
+          { name: "생 마르탱 운하", type: "Location", xp: 1 },
+          { name: "뤽상부르 공원", type: "Location", xp: 1 },
+          { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1, count: 2 },
+          { name: "나이젤 잉그램을 찾았다", type: "resolution", xp: 2 },
+        ],
+      },
+      {
+        name: "창백한 가면",
+        cards: [
+          { name: "뼈가 가득한 동굴", type: "Location", xp: 1 },
+          { name: "영혼의 우물", type: "Location", xp: 1 },
+          { name: "좁은 환기통", type: "Location", xp: 1 },
+          { name: "으슬으슬한 웅덩이", type: "Location", xp: 1 },
+          { name: "그림자의 무덤", type: "Location", xp: 1 },
+          { name: "죽음의 악령", type: "Enemy", xp: 2 },
+        ],
+      },
+      {
+        name: "검은 별이 떠오르다",
+        cards: [
+          { name: "외벽", type: "Location", xp: 1 },
+          { name: "북쪽 탑", type: "Location", xp: 1 },
+          { name: "수도원 성당", type: "Location", xp: 1 },
+          { name: "생 오베르 예배당/수도원 탑", type: "Location", xp: 2 },
+          { name: "알데바란의 야수", type: "Enemy", xp: 1 },
+        ],
+      },
+      {
+        name: "어스레한 카르코사",
+        cards: [
+          { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1, count: 2 },
+          { name: "알데바란의 야수", type: "Enemy", xp: 1 },
+          { name: "왕의 권속", type: "Enemy", xp: 1 },
+          { name: "결말", type: "resolution", xp: 5 },
+        ],
+      },
+    ], [
+      {
+        name: '길들지 않은 야생',
+        cards: [
+          { name: '뱀 소굴', type: 'Location', xp: 1 },
+          { name: '맴도는 길', type: 'Location', xp: 1 },
+          { name: '송곳니의 사원', type: 'Location', xp: 2 },
+          { name: '수풀이 무성한 유적', type: 'Location', xp: 2 },
+          { name: '에스틀리의 유적', type: 'Location', xp: 2 },
+          { name: '이츠타카', type: 'Enemy', xp: 1 },
+          { name: '요스에서 올라온 뱀', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '막간 1',
+        cards: [
+          { name: '쌍안경', type: 'resolution', xp: 2 },
+        ],
+      },
+      {
+        name: '에스틀리의 몰락',
+        cards: [
+          { name: '웅장한 석실', type: 'Location', xp: 1 },
+          { name: '매장 구덩이', type: 'Location', xp: 1 },
+          { name: '비밀 통로', type: 'Location', xp: 1 },
+          { name: '시간의 방', type: 'Location', xp: 2, veng: 2 },
+          { name: '요스에서 올라온 뱀', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '운명의 실 가닥',
+        cards: [
+          { name: '미스캐토닉 대학', type: 'Location', xp: 1 },
+          { name: '아컴 북부', type: 'Location', xp: 1 },
+          { name: '골동품 상점', type: 'Location', xp: 1 },
+          { name: '아컴 시청', type: 'Location', xp: 1 },
+          { name: '에스틀리 전시실', type: 'Location', xp: 1, group: "Relic" },
+          { name: '할런 언스톤', type: 'Enemy', xp: 1, group: "Relic" },
+          { name: '아컴 경찰서', type: 'Location', xp: 1, group: "Alejandro" },
+          { name: '앙리 드보', type: 'Enemy', xp: 1, group: "Alejandro" },
+          { name: '마리아 드실바', type: 'Enemy', xp: 1, group: "Ichtaca" },
+          { name: '검은 동굴', type: 'Location', xp: 1, group: "Ichtaca" },
+          { name: '완료한 주요목적 1', type: 'Resolution', xp: 1, count: 3 },
+          { name: '이츠타카', type: 'Resolution', xp: 2 },
+          { name: '알레한드로 벨라', type: 'Resolution', xp: 2 },
+        ],
+      },
+      {
+        name: '경계 너머',
+        cards: [
+          { name: '파드마 암리타', type: 'Enemy', xp: 2, veng: 2 },
+          { name: '테노치티틀란의 뱀', type: 'Enemy', xp: 1, veng: 1 },
+          { name: '테노치티틀란 장소 1개', type: 'Resolution', xp: 1, group: "BBTeno" },
+          { name: '테노치티틀란 장소 2개', type: 'Resolution', xp: 2, group: "BBTeno" },
+          { name: '테노치티틀란 장소 3개', type: 'Resolution', xp: 3, group: "BBTeno" },
+          { name: '테노치티틀란 장소 4개', type: 'Resolution', xp: 4, group: "BBTeno" },
+          { name: '테노치티틀란 장소 5개', type: 'Resolution', xp: 5, group: "BBTeno" },
+          { name: '테노치티틀란 장소 6개', type: 'Resolution', xp: 6, group: "BBTeno" },
+        ],
+      },
+      {
+        name: '고대 문명의 심장부 #1',
+        cards: [
+          { name: '뱀 소굴', type: 'Location', xp: 1 },
+          { name: '맴도는 길', type: 'Location', xp: 1 },
+          { name: '송곳니의 사원', type: 'Location', xp: 2, group: "HotERuins" },
+          { name: '수풀이 무성한 유적', type: 'Location', xp: 2, group: "HotERuins" },
+          { name: '돌 제단', type: 'Location', xp: 1, group: "HotERuins" },
+          { name: '시간이 붕괴된 숲', type: 'Location', xp: 1 },
+          { name: '육식성 교살 덩굴', type: 'Enemy', xp: 1, count: 2 },
+        ],
+      },
+      {
+        name: '고대 문명의 심장부 #2',
+        cards: [
+          { name: '우상 숭배의 전당', type: 'Location', xp: 1 },
+          { name: '어두운 공동', type: 'Location', xp: 1 },
+          { name: '위험천만한 낭떠러지 길', type: 'Location', xp: 1 },
+          { name: '수정 기둥', type: 'Location', xp: 1 },
+          { name: '요스의 하강로', type: 'Location', xp: 2, veng: 2 },
+          { name: '요스에서 올라온 뱀', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '기록물의 도시',
+        cards: [
+          { name: '취조실: 구금실', type: 'Location', xp: 1 },
+          { name: '취조실: 수액으로 가득찬 방', type: 'Location', xp: 1 },
+          { name: '이스의 행성계 모형', type: 'Location', xp: 1 },
+          { name: '탈구축실', type: 'Location', xp: 1 },
+          { name: '프나코투스의 탑', type: 'Location', xp: 2 },
+          { name: "이스인 관찰자", xp: 1, type: 'enemy', count: 2 },
+          { name: '임무 6개 달성', type: 'Resolution', xp: 4, group: "CotAProc" },
+          { name: '임무 5개 달성', type: 'Resolution', xp: 2, group: "CotAProc" },
+          { name: '임무 4개 달성', type: 'Resolution', xp: 1, group: "CotAProc" },
+        ],
+      },
+      {
+        name: '요스 깊은 곳으로',
+        cards: [
+          { name: '깊이 2', type: 'Resolution', xp: 2, group: "DoYDepth" },
+          { name: '깊이 3', type: 'Resolution', xp: 3, group: "DoYDepth" },
+          { name: '깊이 4', type: 'Resolution', xp: 4, group: "DoYDepth" },
+          { name: '깊이 5', type: 'Resolution', xp: 5, group: "DoYDepth" },
+          { name: '깊이 6', type: 'Resolution', xp: 6, group: "DoYDepth" },
+          { name: '이그', type: 'Enemy', xp: 5 },
+          { name: '무저갱의 포식자', type: 'Enemy', xp: 2 },
+          { name: '요스에서 올라온 뱀', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '막간 5',
+        cards: [
+          { name: '지도', type: 'Resolution', xp: 2 },
+        ],
+      },
+      {
+        name: '산산조각난 영겁',
+        cards: [
+          { name: '시간의 이질지대', type: 'Location', xp: 1 },
+          { name: '무 대륙', type: 'Location', xp: 1 },
+          { name: '프나코투스', type: 'Location', xp: 1 },
+          { name: '발루시아', type: 'Location', xp: 1 },
+          { name: '형태 없는 종자', type: 'Enemy', xp: 2 },
+          { name: '이츠타카', type: 'Enemy', xp: 2 },
+          { name: '알레한드로 벨라', type: 'Enemy', xp: 2 },
+          { name: '요스에서 올라온 뱀', type: 'Enemy', xp: 1 },
+          { name: "결말", type: "resolution", xp: 5 },
+        ],
+      },
+    ], [
   {
-    name: "커튼콜",
+    name: '마녀의 시간',
     cards: [
-      { name: "특별석", type: "Location", xp: 1 },
-      { name: "조명실", type: "Location", xp: 1 },
-      { name: "배우 휴게실", type: "Location", xp: 1 },
-      { name: "예행 연습실", type: "Location", xp: 1 },
-      { name: "무대 아래 공간", type: "Location", xp: 1 },
-      { name: "왕실의 특사", type: "Enemy", xp: 2 },
-      { name: "왕의 권속", type: "Enemy", xp: 1 },
+      { name: '마녀에 씐 숲', type: 'Location', xp: 1, count: 5 },
+      { name: '마녀의 의식진', type: 'Location', xp: 2, group: "WHAnette" },
+      { name: '애닛 메이슨', type: 'Enemy', xp: 2, group: "WHAnette" },
+      { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
+      { name: '멈출 수 없는 슈브 니구라스의 어린 것', type: 'Enemy', xp: 1 },
+      { name: '결말', type: 'Resolution', xp: 1 },
     ],
   },
   {
-    name: "마지막 왕",
+    name: "죽음의 문턱에서",
     cards: [
-      { name: "단서", type: "resolution", xp: 1 },
-      { name: "단서", type: "resolution", xp: 1 },
-      { name: "단서", type: "resolution", xp: 1 },
-      { name: "단서", type: "resolution", xp: 1 },
-      { name: "단서", type: "resolution", xp: 1 },
+      { name: '당구장', type: 'Location', xp: 1 },
+      { name: '요제프의 침실', type: 'Location', xp: 1 },
+      { name: '집무실', type: 'Location', xp: 2 },
+      { name: '요제프 마이거', type: 'Enemy', xp: 2, group: "TCUYosef" },
+      { name: '황천의 안개', type: 'Enemy', xp: 1 },
     ],
   },
   {
-    name: "과거로부터의 메아리",
+    name: '막간 2',
     cards: [
-      { name: "비밀 서재", type: "Location", xp: 2 },
-      { name: "맹세를 입에 담은 자", type: "Enemy", xp: 2 },
-      { name: "왕의 권속", type: "Enemy", xp: 1 },
+      { name: '요제프 마이거 구출', type: 'Resolution', xp: 2, group: "TCUYosef" },
     ],
   },
   {
-    name: "입에 담아선 안 될 맹세",
+    name: '비밀 이름',
     cards: [
-      { name: "식당", type: "Location", xp: 1 },
-      { name: "진료실", type: "Location", xp: 1 },
-      { name: "지하층 복도", type: "Location", xp: 1 },
-      { name: "대니얼 체스터필드", type: "Enemy", xp: 1, group: "Chesterfield" },
-      { name: "알데바란의 야수", type: "Enemy", xp: 1 },
-      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
-      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
+      { name: '황혼의 심연', type: 'Location', xp: 1 },
+      { name: '옛것의 도시', type: 'Location', xp: 1 },
+      { name: '물리학 강의실', type: 'Location', xp: 1 },
+      { name: '위대한 고대의 존재의 궁정', type: 'Location', xp: 1 },
+      { name: '결말 1 - 브라운 젠킨', type: 'Resolution', xp: 1, group: "TSNRes" },
+      { name: '결말 1 - 나하브', type: 'Resolution', xp: 1, group: "TSNRes" },
+      { name: '결말 1 - 둘 모두/결말 2', type: 'Resolution', xp: 2, group: "TSNRes" },
     ],
   },
   {
-    name: "막간 2",
+    name: '죄악의 응보',
     cards: [
-      { name: "대니얼 체스터필드 생존", type: "resolution", xp: 2, group: "Chesterfield" },
-      { name: "경고를 받아들였다", type: "resolution", xp: 1 },
+      { name: '신들린 들판', type: 'Location', xp: 1 },
+      { name: '버려진 예배당', type: 'Location', xp: 1 },
+      { name: '원혼의 미련', type: 'Story', xp: 1, count: 4 },
     ],
   },
   {
-    name: "진실의 망령",
+    name: '대의를 위하여',
     cards: [
-      { name: "그랑 기뇰", type: "Location", xp: 1 },
-      { name: "페르 라셰즈 공동묘지", type: "Location", xp: 1 },
-      { name: "생 마르탱 운하", type: "Location", xp: 1 },
-      { name: "뤽상부르 공원", type: "Location", xp: 1 },
-      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
-      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
-      { name: "나이젤 잉그램을 찾았다", type: "resolution", xp: 2 },
+      { name: '보관소', type: 'Location', xp: 1 },
+      { name: '서재', type: 'Location', xp: 1 },
+      { name: '의식실', type: 'Location', xp: 2 },
+      { name: '네이선 윅', type: 'Enemy', xp: 1 },
+      { name: '소환된 괴수', type: 'Enemy', xp: 2 },
     ],
   },
   {
-    name: "창백한 가면",
+    name: '합일과 환멸',
     cards: [
-      { name: "뼈가 가득한 동굴", type: "Location", xp: 1 },
-      { name: "영혼의 우물", type: "Location", xp: 1 },
-      { name: "좁은 환기통", type: "Location", xp: 1 },
-      { name: "으슬으슬한 웅덩이", type: "Location", xp: 1 },
-      { name: "그림자의 무덤", type: "Location", xp: 1 },
-      { name: "죽음의 악령", type: "Enemy", xp: 2 },
+      { name: '인적 없는 섬', type: 'Location', xp: 1, count: 6 },
+      { name: '영혼 덫', type: 'Location', xp: 1 },
+      { name: '황천의 안개', type: 'Enemy', xp: 1 },
+      { name: '애닛 메이슨', type: 'Enemy', xp: 2, group: "UaDBossE" },
+      { name: '요제프 마이거', type: 'Enemy', xp: 2, group: "UaDBossE" },
     ],
   },
   {
-    name: "검은 별이 떠오르다",
+    name: '혼돈의 손아귀에서',
     cards: [
-      { name: "외벽", type: "Location", xp: 1 },
-      { name: "북쪽 탑", type: "Location", xp: 1 },
-      { name: "수도원 성당", type: "Location", xp: 1 },
-      { name: "생 오베르 예배당/수도원 탑", type: "Location", xp: 2 },
-      { name: "알데바란의 야수", type: "Enemy", xp: 1 },
+      { name: '교수대 언덕/은빛 황혼회 집회소', type: 'Location', xp: 1 },
+      { name: '교단 집행자/혼돈을 목도한 자', type: 'Enemy', xp: 1, count: 2 },
+      { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
+      { name: '애닛 메이슨/칼 샌포드', type: 'Enemy', xp: 2 },
     ],
   },
   {
-    name: "어스레한 카르코사",
+    name: '검은 옥좌 앞에',
     cards: [
-      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
-      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
-      { name: "알데바란의 야수", type: "Enemy", xp: 1 },
-      { name: "왕의 권속", type: "Enemy", xp: 1 },
-      { name: "결말", type: "resolution", xp: 5 },
+      { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
+      { name: '결말', type: 'Resolution', xp: 5 },
+      { name: '검은 서책에 서명을 했다', type: 'Resolution', xp: 5 },
     ],
   },
 ]];
 
     function updateTotalXP(scenarioList) {
-  let totalXP = 0;
-  const groupMaxXP = {};
+      let totalXP = 0;
+      const groupMaxXP = {};
 
-// First loop: Update group max XP, disable other checkboxes in the same group
-scenarioList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
-  const cardData = checkbox.dataset;
-  const group = cardData.group;
+      // First loop: Update group max XP, disable other checkboxes in the same group
+      scenarioList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+        const cardData = checkbox.dataset;
+        const group = cardData.group;
 
-  if (checkbox.checked) {
-    const xp = parseInt(cardData.xp);
+        if (checkbox.checked) {
+          const xp = parseInt(cardData.xp);
 
-    if (group) {
-      if (!groupMaxXP[group] || xp > groupMaxXP[group]) {
-        groupMaxXP[group] = xp;
-      }
+          if (group) {
+            if (!groupMaxXP[group] || xp > groupMaxXP[group]) {
+              groupMaxXP[group] = xp;
+            }
 
-      const otherCheckboxesInGroup = scenarioList.querySelectorAll(
-        `input[type="checkbox"][data-group="${group}"]:not(:checked)`
-      );
+            const otherCheckboxesInGroup = scenarioList.querySelectorAll(
+              `input[type="checkbox"][data-group="${group}"]:not(:checked)`
+            );
 
-      otherCheckboxesInGroup.forEach((otherCheckbox) => {
-        otherCheckbox.disabled = true;
+            otherCheckboxesInGroup.forEach((otherCheckbox) => {
+              otherCheckbox.disabled = true;
+            });
+          } else {
+            totalXP += xp;
+          }
+        }
       });
-    } else {
-      totalXP += xp;
-    }
-  }
-});
 
-// Add the maximum XP from each group to the total XP
-for (const maxXP of Object.values(groupMaxXP)) {
-  totalXP += maxXP;
-}
-
-  // Second loop: Enable checkboxes in the same group if all checkboxes in the group are unchecked
-  scenarioList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
-    const cardData = checkbox.dataset;
-    const group = cardData.group;
-
-    if (!checkbox.checked && group) {
-      const allCheckboxesInGroup = scenarioList.querySelectorAll(
-        `input[type="checkbox"][data-group="${group}"]`
-      );
-
-      const allUnchecked = Array.from(allCheckboxesInGroup).every((checkbox) => !checkbox.checked);
-
-      if (allUnchecked) {
-        allCheckboxesInGroup.forEach((otherCheckbox) => {
-          otherCheckbox.disabled = false;
-        });
+      // Add the maximum XP from each group to the total XP
+      for (const maxXP of Object.values(groupMaxXP)) {
+        totalXP += maxXP;
       }
+
+      // Second loop: Enable checkboxes in the same group if all checkboxes in the group are unchecked
+      scenarioList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+        const cardData = checkbox.dataset;
+        const group = cardData.group;
+
+        if (!checkbox.checked && group) {
+          const allCheckboxesInGroup = scenarioList.querySelectorAll(
+            `input[type="checkbox"][data-group="${group}"]`
+          );
+
+          const allUnchecked = Array.from(allCheckboxesInGroup).every((checkbox) => !checkbox.checked);
+
+          if (allUnchecked) {
+            allCheckboxesInGroup.forEach((otherCheckbox) => {
+              otherCheckbox.disabled = false;
+            });
+          }
+        }
+      });
+
+      return totalXP;
     }
-  });
 
-  return totalXP;
-}
+    function calculateTotalScenarioXP(scenarioList) {
+      let totalXP = 0;
+      const groupMaxXP = {};
 
-function calculateTotalScenarioXP(scenarioList) {
-  let totalXP = 0;
-  const groupMaxXP = {};
+      scenarioList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+        const cardData = checkbox.dataset;
+        const group = cardData.group;
+        const xp = parseInt(cardData.xp);
 
-  scenarioList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
-    const cardData = checkbox.dataset;
-    const group = cardData.group;
-    const xp = parseInt(cardData.xp);
+        if (group) {
+          if (!groupMaxXP[group] || xp > groupMaxXP[group]) {
+            groupMaxXP[group] = xp;
+          }
+        } else {
+          totalXP += xp;
+        }
+      });
 
-    if (group) {
-      if (!groupMaxXP[group] || xp > groupMaxXP[group]) {
-        groupMaxXP[group] = xp;
+      // Add the maximum XP from each group to the total XP
+      for (const maxXP of Object.values(groupMaxXP)) {
+        totalXP += maxXP;
       }
-    } else {
-      totalXP += xp;
+
+      return totalXP;
     }
-  });
-
-  // Add the maximum XP from each group to the total XP
-  for (const maxXP of Object.values(groupMaxXP)) {
-    totalXP += maxXP;
-  }
-
-  return totalXP;
-}
 
     campaignSelector.addEventListener("change", function () {
       if (this.value) {
@@ -443,36 +646,41 @@ function calculateTotalScenarioXP(scenarioList) {
         const cardList = document.createElement("ul");
         card.appendChild(cardList);
 
-        const totalXP = scenario.cards.reduce((acc, card) => acc + card.xp, 0);
+        const totalXP = scenario.cards.reduce((acc, card) => acc + card.xp * (card.count || 1), 0);
         if (index === campaignData.length - 1) {
           lastScenarioXP = totalXP;
         }
         scenario.cards.forEach((cardData) => {
-          const listItem = document.createElement("li");
+          const cardCount = cardData.count || 1;
 
-          const checkbox = document.createElement("input");
-          checkbox.type = "checkbox";
-          checkbox.name = "xp";
-          checkbox.value = cardData.name;
-          checkbox.dataset.xp = cardData.xp;
-          cardData.group ? (checkbox.dataset.group = cardData.group) : undefined;
-          listItem.appendChild(checkbox);
+          for (let idx = 0; idx < cardCount; idx++) {
+            const listItem = document.createElement("li");
 
-          const label = document.createElement("label");
-          label.htmlFor = cardData.name;
-          label.textContent = `${cardData.name} (${cardData.xp} XP)`;
-          listItem.appendChild(label);
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.name = "xp";
+            checkbox.value = cardData.name;
+            checkbox.id = scenario.name + cardData.name + idx;
+            checkbox.dataset.xp = cardData.xp;
+            cardData.group ? (checkbox.dataset.group = cardData.group) : undefined;
+            listItem.appendChild(checkbox);
 
-          const cardType = document.createElement("span");
-          cardType.className = `card-type ${cardData.type.toLowerCase()}`;
-          cardType.textContent = _getTypeName(cardData.type);
-          label.insertBefore(cardType, label.firstChild);
+            const label = document.createElement("label");
+            label.htmlFor = checkbox.id;
+            label.textContent = `${cardData.name} (${cardData.xp} XP` + (cardData.veng ? ` - 복수 ${cardData.veng}점` : ``) + `)`;
+            listItem.appendChild(label);
 
-          cardList.appendChild(listItem);
+            const cardType = document.createElement("span");
+            cardType.className = `card-type ${cardData.type.toLowerCase()}`;
+            cardType.textContent = _getTypeName(cardData.type);
+            label.insertBefore(cardType, label.firstChild);
+
+            cardList.appendChild(listItem);
+          }
         });
       });
-        totalCampaignXP = calculateTotalScenarioXP(scenarioList);
-        
+      totalCampaignXP = calculateTotalScenarioXP(scenarioList);
+
 
       const excludeLastScenario = document.getElementById("exclude-last");
       const adjustedTotalXP = excludeLastScenario.checked ? totalCampaignXP - lastScenarioXP : totalCampaignXP;
@@ -487,14 +695,14 @@ function calculateTotalScenarioXP(scenarioList) {
         }
       });
 
-toggleCheckAllButton.addEventListener("click", () => {
-  const checkboxes = scenarioList.querySelectorAll('input[type="checkbox"]');
-  const allChecked = checkboxes.length === scenarioList.querySelectorAll('input[type="checkbox"]:checked').length;
-  checkboxes.forEach((checkbox) => {
-    checkbox.checked = !allChecked;
-  });
-  counter.textContent = `체크된 경험치: ${allChecked ? 0 : updateTotalXP(scenarioList)} | 총 경험치: ${adjustedTotalXP}`;
-});
+      toggleCheckAllButton.addEventListener("click", () => {
+        const checkboxes = scenarioList.querySelectorAll('input[type="checkbox"]');
+        const allChecked = checkboxes.length === scenarioList.querySelectorAll('input[type="checkbox"]:checked').length;
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = !allChecked;
+        });
+        counter.textContent = `체크된 경험치: ${allChecked ? 0 : updateTotalXP(scenarioList)} | 총 경험치: ${adjustedTotalXP}`;
+      });
     });
 
     function getCampaignData(campaignId) {
@@ -512,8 +720,8 @@ toggleCheckAllButton.addEventListener("click", () => {
         case "resolution":
           return '결말';
           break;
-        case "mystic":
-          return '신비주의자';
+        case "story":
+          return '이야기';
           break;
         case "survivor":
           return '생존자';
