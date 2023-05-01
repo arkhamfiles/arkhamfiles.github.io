@@ -18,6 +18,7 @@
       line-height: 1.6;
       color: #333;
       padding: 20px;
+      padding-bottom: 220px;
     }
 
     header {
@@ -147,7 +148,6 @@
       <input type="checkbox" id="exclude-last" checked />
       <label for="exclude-last">총 경험치에서 마지막 시나리오 제외</label>
       <br />
-      <button id="toggle-check-all">모두 체크</button>
       <p class="counter">체크된 경험치: 0 | 총 경험치: 0</p>
       <div id="scenario-list"></div>
     </section>
@@ -157,10 +157,9 @@
     const scenariosSection = document.getElementById("scenarios");
     const scenarioList = document.getElementById("scenario-list");
     const counter = document.querySelector(".counter");
-    const toggleCheckAllButton = document.getElementById("toggle-check-all");
     const campaignData = [[
       {
-        title: "과외 활동",
+        name: "과외 활동",
         cards: [
           { name: "오른 도서관", xp: 1, type: 'location' },
           { name: "기숙사", xp: 1, type: 'location' },
@@ -172,7 +171,7 @@
         ],
       },
       {
-        title: "도박장은 언제나 이긴다",
+        name: "도박장은 언제나 이긴다",
         cards: [
           { name: "미술품 갤러리", xp: 1, type: 'location' },
           { name: "VIP 공간", xp: 1, type: 'location' },
@@ -182,7 +181,7 @@
         ],
       },
       {
-        title: "미스캐토닉 박물관",
+        name: "미스캐토닉 박물관",
         cards: [
           { name: "전시장: 메두사 전시실", xp: 1, type: 'location' },
           { name: "전시장: 자연 전시실", xp: 1, type: 'location' },
@@ -192,7 +191,7 @@
         ],
       },
       {
-        title: "에식스 카운티 특급열차",
+        name: "에식스 카운티 특급열차",
         cards: [
           { name: "특실칸", xp: 1, type: 'location' },
           { name: "기관차", xp: 1, type: 'location' },
@@ -201,14 +200,14 @@
         ],
       },
       {
-        title: "제단에 흘린 피",
+        name: "제단에 흘린 피",
         cards: [
           { name: "숨겨진 방/사일러스 비숍", xp: 2, type: 'location' },
           { name: "결말", xp: 2, type: 'resolution' },
         ],
       },
       {
-        title: "차원 너머의 보이지 않는 존재",
+        name: "차원 너머의 보이지 않는 존재",
         cards: [
           { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
           { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
@@ -218,7 +217,7 @@
         ],
       },
       {
-        title: "파멸이 기다리는 곳",
+        name: "파멸이 기다리는 곳",
         cards: [
           { name: "파수꾼 언덕 정상", xp: 2, type: 'location' },
           { name: "세스 비숍", xp: 1, type: 'enemy' },
@@ -228,7 +227,7 @@
         ],
       },
       {
-        title: "시공간을 헤매다",
+        name: "시공간을 헤매다",
         cards: [
           { name: "잠복자의 하인", xp: 1, type: 'enemy' },
           { name: "이스인 관찰자", xp: 1, type: 'enemy' },
@@ -423,6 +422,10 @@ function calculateTotalScenarioXP(scenarioList) {
       }
 
       scenarioList.innerHTML = "";
+      const toggleCheckAllButton = document.createElement("button");
+      toggleCheckAllButton.id = 'toggle-check-all';
+      toggleCheckAllButton.textContent = '모두 체크';
+      scenarioList.appendChild(toggleCheckAllButton);
 
       const campaignData = getCampaignData(this.value);
       let totalCampaignXP = 0;
@@ -434,7 +437,7 @@ function calculateTotalScenarioXP(scenarioList) {
         scenarioList.appendChild(card);
 
         const title = document.createElement("h3");
-        title.textContent = scenario.title;
+        title.textContent = scenario.name;
         card.appendChild(title);
 
         const cardList = document.createElement("ul");
