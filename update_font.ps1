@@ -1,2 +1,2 @@
-Write-Output "generate svg font..."
-ffpython generate_icon.py
+Write-Output "generate fonts..."
+python generate_icon.py

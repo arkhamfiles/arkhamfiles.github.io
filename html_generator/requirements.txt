@@ -1,4 +1,5 @@
 beautifulsoup4
 html5lib
-dataclasses; python_version < '3.7'
 requests
+fonttools >= 4.39
+font-cli
