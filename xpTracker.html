@@ -1,0 +1,523 @@
+<html>
+
+<head>
+  <title>캠페인 경험치 트래커: 아컴호러 카드게임</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="../icon-192.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .campaign-selection {
+      margin-bottom: 30px;
+    }
+
+    .scenario-card {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .scenario-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .scenario-card ul {
+      margin-bottom: 10px;
+    }
+
+    .scenario-card li {
+      list-style: none;
+      margin-bottom: 5px;
+    }
+
+    .scenario-card label {
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+
+    .scenario-card input {
+      vertical-align: middle;
+    }
+
+    .counter {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    #toggle-check-all {
+      background-color: #333;
+      color: #fff;
+      font-size: 16px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #toggle-check-all:hover {
+      background-color: #555;
+    }
+
+    .card-type {
+      display: inline-block;
+      background-color: #333;
+      color: #fff;
+      font-size: 12px;
+      padding: 2px 4px;
+      border-radius: 3px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .card-type.location {
+      background-color: #0080ff;
+    }
+
+    .card-type.enemy {
+      background-color: #ff0000;
+    }
+
+    .card-type.resolution {
+      background-color: #800080;
+    }
+
+    .card-type.asset {
+      background-color: #008000;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1>캠페인 경험치 트래커</h1>
+  </header>
+  <main>
+    <section class="campaign-selection">
+      <h2>캠페인을 선택하세요.</h2>
+      <select id="campaign-selector">
+        <option value="">-- 캠페인 선택 --</option>
+        <option value="0">던위치의 유산</option>
+        <option value="1">카르코사로 가는 길</option>
+      </select>
+    </section>
+    <section id="scenarios" class="hidden">
+      <input type="checkbox" id="exclude-last" checked />
+      <label for="exclude-last">총 경험치에서 마지막 시나리오 제외</label>
+      <br />
+      <button id="toggle-check-all">모두 체크</button>
+      <p class="counter">체크된 경험치: 0 | 총 경험치: 0</p>
+      <div id="scenario-list"></div>
+    </section>
+  </main>
+  <script>
+    const campaignSelector = document.getElementById("campaign-selector");
+    const scenariosSection = document.getElementById("scenarios");
+    const scenarioList = document.getElementById("scenario-list");
+    const counter = document.querySelector(".counter");
+    const toggleCheckAllButton = document.getElementById("toggle-check-all");
+    const campaignData = [[
+      {
+        title: "과외 활동",
+        cards: [
+          { name: "오른 도서관", xp: 1, type: 'location' },
+          { name: "기숙사", xp: 1, type: 'location' },
+          { name: "교수실", xp: 1, type: 'location' },
+          { name: "이스인 관찰자", xp: 1, type: 'enemy' },
+          { name: "이스인 관찰자", xp: 1, type: 'enemy' },
+          { name: "요그 소토스의 마술사", xp: 1, type: 'enemy' },
+          { name: "실험체", xp: 2, type: 'enemy' },
+        ],
+      },
+      {
+        title: "도박장은 언제나 이긴다",
+        cards: [
+          { name: "미술품 갤러리", xp: 1, type: 'location' },
+          { name: "VIP 공간", xp: 1, type: 'location' },
+          { name: "뒷골목", xp: 1, type: 'location' },
+          { name: "클로버 클럽 책임자", xp: 1, type: 'enemy' },
+          { name: "잠복자의 하인", xp: 1, type: 'enemy' },
+        ],
+      },
+      {
+        title: "미스캐토닉 박물관",
+        cards: [
+          { name: "전시장: 메두사 전시실", xp: 1, type: 'location' },
+          { name: "전시장: 자연 전시실", xp: 1, type: 'location' },
+          { name: "전시장: 이집트 전시실", xp: 1, type: 'location' },
+          { name: "전시장: 망자의 회랑", xp: 1, type: 'location' },
+          { name: "전시장: 제한 구역", xp: 1, type: 'location' },
+        ],
+      },
+      {
+        title: "에식스 카운티 특급열차",
+        cards: [
+          { name: "특실칸", xp: 1, type: 'location' },
+          { name: "기관차", xp: 1, type: 'location' },
+          { name: "갑자기 튀어나온 괴생명체", xp: 1, type: 'enemy' },
+          { name: "갑자기 튀어나온 괴생명체", xp: 1, type: 'enemy' },
+        ],
+      },
+      {
+        title: "제단에 흘린 피",
+        cards: [
+          { name: "숨겨진 방/사일러스 비숍", xp: 2, type: 'location' },
+          { name: "결말", xp: 2, type: 'resolution' },
+        ],
+      },
+      {
+        title: "차원 너머의 보이지 않는 존재",
+        cards: [
+          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
+          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
+          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
+          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
+          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy' },
+        ],
+      },
+      {
+        title: "파멸이 기다리는 곳",
+        cards: [
+          { name: "파수꾼 언덕 정상", xp: 2, type: 'location' },
+          { name: "세스 비숍", xp: 1, type: 'enemy' },
+          { name: "광분한 쇼고스", xp: 1, type: 'enemy' },
+          { name: "요그 소토스의 마술사", xp: 1, type: 'enemy' },
+          { name: "잠복자의 하인", xp: 1, type: 'enemy' },
+        ],
+      },
+      {
+        title: "시공간을 헤매다",
+        cards: [
+          { name: "잠복자의 하인", xp: 1, type: 'enemy' },
+          { name: "이스인 관찰자", xp: 1, type: 'enemy' },
+          { name: "이스인 관찰자", xp: 1, type: 'enemy' },
+          { name: "결말", xp: 5, type: 'resolution' },
+        ],
+      },
+    ], [
+  {
+    name: "커튼콜",
+    cards: [
+      { name: "특별석", type: "Location", xp: 1 },
+      { name: "조명실", type: "Location", xp: 1 },
+      { name: "배우 휴게실", type: "Location", xp: 1 },
+      { name: "예행 연습실", type: "Location", xp: 1 },
+      { name: "무대 아래 공간", type: "Location", xp: 1 },
+      { name: "왕실의 특사", type: "Enemy", xp: 2 },
+      { name: "왕의 권속", type: "Enemy", xp: 1 },
+    ],
+  },
+  {
+    name: "마지막 왕",
+    cards: [
+      { name: "단서", type: "resolution", xp: 1 },
+      { name: "단서", type: "resolution", xp: 1 },
+      { name: "단서", type: "resolution", xp: 1 },
+      { name: "단서", type: "resolution", xp: 1 },
+      { name: "단서", type: "resolution", xp: 1 },
+    ],
+  },
+  {
+    name: "과거로부터의 메아리",
+    cards: [
+      { name: "비밀 서재", type: "Location", xp: 2 },
+      { name: "맹세를 입에 담은 자", type: "Enemy", xp: 2 },
+      { name: "왕의 권속", type: "Enemy", xp: 1 },
+    ],
+  },
+  {
+    name: "입에 담아선 안 될 맹세",
+    cards: [
+      { name: "식당", type: "Location", xp: 1 },
+      { name: "진료실", type: "Location", xp: 1 },
+      { name: "지하층 복도", type: "Location", xp: 1 },
+      { name: "대니얼 체스터필드", type: "Enemy", xp: 1, group: "Chesterfield" },
+      { name: "알데바란의 야수", type: "Enemy", xp: 1 },
+      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
+      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
+    ],
+  },
+  {
+    name: "막간 2",
+    cards: [
+      { name: "대니얼 체스터필드 생존", type: "resolution", xp: 2, group: "Chesterfield" },
+      { name: "경고를 받아들였다", type: "resolution", xp: 1 },
+    ],
+  },
+  {
+    name: "진실의 망령",
+    cards: [
+      { name: "그랑 기뇰", type: "Location", xp: 1 },
+      { name: "페르 라셰즈 공동묘지", type: "Location", xp: 1 },
+      { name: "생 마르탱 운하", type: "Location", xp: 1 },
+      { name: "뤽상부르 공원", type: "Location", xp: 1 },
+      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
+      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
+      { name: "나이젤 잉그램을 찾았다", type: "resolution", xp: 2 },
+    ],
+  },
+  {
+    name: "창백한 가면",
+    cards: [
+      { name: "뼈가 가득한 동굴", type: "Location", xp: 1 },
+      { name: "영혼의 우물", type: "Location", xp: 1 },
+      { name: "좁은 환기통", type: "Location", xp: 1 },
+      { name: "으슬으슬한 웅덩이", type: "Location", xp: 1 },
+      { name: "그림자의 무덤", type: "Location", xp: 1 },
+      { name: "죽음의 악령", type: "Enemy", xp: 2 },
+    ],
+  },
+  {
+    name: "검은 별이 떠오르다",
+    cards: [
+      { name: "외벽", type: "Location", xp: 1 },
+      { name: "북쪽 탑", type: "Location", xp: 1 },
+      { name: "수도원 성당", type: "Location", xp: 1 },
+      { name: "생 오베르 예배당/수도원 탑", type: "Location", xp: 2 },
+      { name: "알데바란의 야수", type: "Enemy", xp: 1 },
+    ],
+  },
+  {
+    name: "어스레한 카르코사",
+    cards: [
+      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
+      { name: "괴성을 지르는 비야키", type: "Enemy", xp: 1 },
+      { name: "알데바란의 야수", type: "Enemy", xp: 1 },
+      { name: "왕의 권속", type: "Enemy", xp: 1 },
+      { name: "결말", type: "resolution", xp: 5 },
+    ],
+  },
+]];
+
+    function updateTotalXP(scenarioList) {
+  let totalXP = 0;
+  const groupMaxXP = {};
+
+// First loop: Update group max XP, disable other checkboxes in the same group
+scenarioList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+  const cardData = checkbox.dataset;
+  const group = cardData.group;
+
+  if (checkbox.checked) {
+    const xp = parseInt(cardData.xp);
+
+    if (group) {
+      if (!groupMaxXP[group] || xp > groupMaxXP[group]) {
+        groupMaxXP[group] = xp;
+      }
+
+      const otherCheckboxesInGroup = scenarioList.querySelectorAll(
+        `input[type="checkbox"][data-group="${group}"]:not(:checked)`
+      );
+
+      otherCheckboxesInGroup.forEach((otherCheckbox) => {
+        otherCheckbox.disabled = true;
+      });
+    } else {
+      totalXP += xp;
+    }
+  }
+});
+
+// Add the maximum XP from each group to the total XP
+for (const maxXP of Object.values(groupMaxXP)) {
+  totalXP += maxXP;
+}
+
+  // Second loop: Enable checkboxes in the same group if all checkboxes in the group are unchecked
+  scenarioList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    const cardData = checkbox.dataset;
+    const group = cardData.group;
+
+    if (!checkbox.checked && group) {
+      const allCheckboxesInGroup = scenarioList.querySelectorAll(
+        `input[type="checkbox"][data-group="${group}"]`
+      );
+
+      const allUnchecked = Array.from(allCheckboxesInGroup).every((checkbox) => !checkbox.checked);
+
+      if (allUnchecked) {
+        allCheckboxesInGroup.forEach((otherCheckbox) => {
+          otherCheckbox.disabled = false;
+        });
+      }
+    }
+  });
+
+  return totalXP;
+}
+
+function calculateTotalScenarioXP(scenarioList) {
+  let totalXP = 0;
+  const groupMaxXP = {};
+
+  scenarioList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    const cardData = checkbox.dataset;
+    const group = cardData.group;
+    const xp = parseInt(cardData.xp);
+
+    if (group) {
+      if (!groupMaxXP[group] || xp > groupMaxXP[group]) {
+        groupMaxXP[group] = xp;
+      }
+    } else {
+      totalXP += xp;
+    }
+  });
+
+  // Add the maximum XP from each group to the total XP
+  for (const maxXP of Object.values(groupMaxXP)) {
+    totalXP += maxXP;
+  }
+
+  return totalXP;
+}
+
+    campaignSelector.addEventListener("change", function () {
+      if (this.value) {
+        scenariosSection.classList.remove("hidden");
+      } else {
+        scenariosSection.classList.add("hidden");
+      }
+
+      scenarioList.innerHTML = "";
+
+      const campaignData = getCampaignData(this.value);
+      let totalCampaignXP = 0;
+      let lastScenarioXP = 0;
+
+      campaignData.forEach((scenario, index) => {
+        const card = document.createElement("div");
+        card.className = "scenario-card";
+        scenarioList.appendChild(card);
+
+        const title = document.createElement("h3");
+        title.textContent = scenario.title;
+        card.appendChild(title);
+
+        const cardList = document.createElement("ul");
+        card.appendChild(cardList);
+
+        const totalXP = scenario.cards.reduce((acc, card) => acc + card.xp, 0);
+        if (index === campaignData.length - 1) {
+          lastScenarioXP = totalXP;
+        }
+        scenario.cards.forEach((cardData) => {
+          const listItem = document.createElement("li");
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.name = "xp";
+          checkbox.value = cardData.name;
+          checkbox.dataset.xp = cardData.xp;
+          cardData.group ? (checkbox.dataset.group = cardData.group) : undefined;
+          listItem.appendChild(checkbox);
+
+          const label = document.createElement("label");
+          label.htmlFor = cardData.name;
+          label.textContent = `${cardData.name} (${cardData.xp} XP)`;
+          listItem.appendChild(label);
+
+          const cardType = document.createElement("span");
+          cardType.className = `card-type ${cardData.type.toLowerCase()}`;
+          cardType.textContent = _getTypeName(cardData.type);
+          label.insertBefore(cardType, label.firstChild);
+
+          cardList.appendChild(listItem);
+        });
+      });
+        totalCampaignXP = calculateTotalScenarioXP(scenarioList);
+        
+
+      const excludeLastScenario = document.getElementById("exclude-last");
+      const adjustedTotalXP = excludeLastScenario.checked ? totalCampaignXP - lastScenarioXP : totalCampaignXP;
+      counter.textContent = `체크된 경험치: 0 | 총 경험치: ${adjustedTotalXP}`;
+
+      document.addEventListener("change", function (event) {
+        if (event.target.matches('input[type="checkbox"]')) {
+          const totalXP = updateTotalXP(scenarioList);
+          const excludeLastScenario = document.getElementById("exclude-last");
+          const adjustedTotalXP = excludeLastScenario.checked ? totalCampaignXP - lastScenarioXP : totalCampaignXP;
+          counter.textContent = `체크된 경험치: ${totalXP} | 총 경험치: ${adjustedTotalXP}`;
+        }
+      });
+
+toggleCheckAllButton.addEventListener("click", () => {
+  const checkboxes = scenarioList.querySelectorAll('input[type="checkbox"]');
+  const allChecked = checkboxes.length === scenarioList.querySelectorAll('input[type="checkbox"]:checked').length;
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = !allChecked;
+  });
+  counter.textContent = `체크된 경험치: ${allChecked ? 0 : updateTotalXP(scenarioList)} | 총 경험치: ${adjustedTotalXP}`;
+});
+    });
+
+    function getCampaignData(campaignId) {
+      // Return the campaign data based on the selected campaign ID
+      return campaignData[campaignId];
+    }
+    function _getTypeName(obj) {
+      switch (obj.toLowerCase()) {
+        case "location":
+          return '장소';
+          break;
+        case "enemy":
+          return '적';
+          break;
+        case "resolution":
+          return '결말';
+          break;
+        case "mystic":
+          return '신비주의자';
+          break;
+        case "survivor":
+          return '생존자';
+          break;
+        default:
+          return '';
+      }
+    }
+  </script>
+</body>
