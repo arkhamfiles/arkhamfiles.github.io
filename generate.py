@@ -23,8 +23,10 @@ def main():
                         help="when you disable link")
     parser.add_argument("--reference", action='store_true',
                         help="only if reference generation")
+    parser.add_argument("--force", action='store_true',
+                        help="when you want to run code even if raw file is not updated.")
     args = parser.parse_args()
-    is_update = html_generator.check_update_necessary(args.input, args.output)
+    is_update = args.force or html_generator.check_update_necessary(args.input, args.output)
     if not is_update:
         print('%s is not updated (no update exists).'%args.output)
         return
