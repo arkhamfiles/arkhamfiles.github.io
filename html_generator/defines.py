@@ -28,11 +28,11 @@ ICON_IGNORE: List[str] = [
 
 SYMBOLS: Dict[str, str] = OrderedDict([
     ('core', '기본판'),
-    ('rtnotz', '돌아온 광신도의 밤'),
+    ('rcore', '돌아온 광신도의 밤'),
     ('tdl', '던위치의 유산'),
     ('rtdl', '돌아온 던위치의 유산'),
-    ('tptc', '카르코사로 가는 길'),
-    ('rtptc', '돌아온 카르코사로 가는 길'),
+    ('tpc', '카르코사로 가는 길'),
+    ('rtpc', '돌아온 카르코사로 가는 길'),
     ('tfa', '잊힌 시대'),
     ('rtfa', '돌아온 잊힌 시대'),
     ('tcu', '끝맺지 못한 의식'),
@@ -47,14 +47,14 @@ SYMBOLS: Dict[str, str] = OrderedDict([
     ('tic', '인스머스에 드리운 음모'),
     ('eoep', '지구의 끝자락'),
     ('eoec', '지구의 끝자락 캠페인 확장'),
-    ('skp', '진홍색 열쇠'),
-    ('skc', '진홍색 열쇠 캠페인 확장')
+    ('tskp', '진홍색 열쇠'),
+    ('tskc', '진홍색 열쇠 캠페인 확장')
 ])
 
 EXPANSION: Dict[str, str] = OrderedDict([
     ('core', '기본판'),
     ('tdl', '던위치의 유산'),
-    ('tptc', '카르코사로 가는 길'),
+    ('tpc', '카르코사로 가는 길'),
     ('tfa', '잊힌 시대'),
     ('book', '서적'),
     ('promo', '프로모'),
@@ -71,6 +71,6 @@ EXPANSION: Dict[str, str] = OrderedDict([
     ('tic', '인스머스에 드리운 음모'),
     ('eoep', '지구의 끝자락'),
     ('eoec', '지구의 끝자락 캠페인 확장'),
-    ('skp', '진홍색 열쇠'),
-    ('skc', '진홍색 열쇠 캠페인 확장')
+    ('tskp', '진홍색 열쇠'),
+    ('tskc', '진홍색 열쇠 캠페인 확장')
 ])
