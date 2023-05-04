@@ -6,7 +6,7 @@
     },
     {
         "char": "A",
-        "name": "rtnotz",
+        "name": "rcore",
         "path": "101_RNZ.svg"
     },
     {
@@ -21,12 +21,12 @@
     },
     {
         "char": "c",
-        "name": "tptc",
+        "name": "tpc",
         "path": "03_PC.svg"
     },
     {
         "char": "C",
-        "name": "rtptc",
+        "name": "rtpc",
         "path": "103_RPC.svg"
     },
     {
@@ -71,12 +71,12 @@
     },
     {
         "char": "i",
-        "name": "skp",
+        "name": "tskp",
         "path": "09_SKP.svg"
     },
     {
         "char": "I",
-        "name": "skc",
+        "name": "tskc",
         "path": "109_SKC.svg"
     },
     {

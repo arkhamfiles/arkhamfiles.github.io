@@ -22,7 +22,7 @@
     content: "a"
 }
 
-.symbol-rtnotz:before {
+.symbol-rcore:before {
     content: "A"
 }
 
@@ -34,11 +34,11 @@
     content: "B"
 }
 
-.symbol-tptc:before {
+.symbol-tpc:before {
     content: "c"
 }
 
-.symbol-rtptc:before {
+.symbol-rtpc:before {
     content: "C"
 }
 
@@ -74,11 +74,11 @@
     content: "H"
 }
 
-.symbol-skp:before {
+.symbol-tskp:before {
     content: "i"
 }
 
-.symbol-skc:before {
+.symbol-tskc:before {
     content: "I"
 }
 
