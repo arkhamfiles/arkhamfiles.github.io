@@ -28,101 +28,6 @@
   <script>
     var currentItemClass = 2;
   </script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    .left-menu {
-      width: 100%;
-    }
-
-.middle-content {
-  width: 100%;
-  padding: 1rem 0;
-}
-
-.middle-inner-content {
-  padding: 2rem 0;
-}
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      cursor: pointer;
-    }
-
-    .left-menu ul {
-      margin: 0;
-      padding-left: 1rem;
-    }
-
-    .left-menu li {
-      padding: 0.5rem 0;
-    }
-
-    .left-menu .cycle {
-      font-weight: bold;
-      color: #444;
-      padding-left: 0;
-      margin-top: 1rem;
-    }
-
-    .left-menu .card-type {
-      font-weight: 600;
-      color: #666;
-      padding-left: 1rem;
-    }
-
-    .left-menu .card-type:hover {
-      color: #333;
-      text-decoration: underline;
-    }
-
-    .card-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .card-table tr.card {
-      border-bottom: 1px solid #eee;
-    }
-
-    .card-table tr.card:hover {
-      background-color: #f8f8f8;
-      cursor: pointer;
-    }
-
-    .card-table td {
-      padding: 0.75rem 0;
-      font-weight: 600;
-    }
-
-@media (min-width: 992px) {
-
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.left-menu {
-  width: 15%;
-}
-
-.middle-content {
-  width: 85%;
-  padding: 1rem;
-}
-
-.middle-inner-content {
-  padding: 2rem;
-}
-}
-  </style>
 </head>
 
 <body>
@@ -277,8 +182,8 @@
     function _makeFaqText(faq_list) {
       let resultText = '';
       for (idx of faq_list) {
-        resultText += `<div class="faqEntry"><div class="levelDiv">LEVEL<br>` + faqs[idx].level + `</div>` +
-          `<p class="faqContent"><strong>Q: </strong>` + faqs[idx].question_text + `<br><strong>A: </strong>` + faqs[idx].answer_text + `<br><strong>출처: </strong>` + faqs[idx].source + `, ` + faqs[idx].date + `</p>` +
+        resultText += `<div class="faqEntry"><div class="levelDiv level${faqs[idx].level}">LEVEL<br>${faqs[idx].level}</div>` +
+          `<p class="faqContent"><strong>Q: </strong>${faqs[idx].question_text}<br><strong>A: </strong>${faqs[idx].answer_text}<br><strong>출처: </strong>${faqs[idx].source}, ${faqs[idx].date}</p>` +
           `</div>`
       }
       return resultText;
