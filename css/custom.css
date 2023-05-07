@@ -40,9 +40,9 @@ ul.barItem li.currentItem {
   background-color: darkblue;
 }
 
-ul.barItem li a{
-    color: inherit;
-    text-decoration: none;
+ul.barItem li a {
+  color: inherit;
+  text-decoration: none;
 }
 
 span.spanButton {
@@ -157,16 +157,20 @@ p.cardEffectBox {
   font-size: 12px;
 }
 
-.errata table span:not([class^="icon-"],[class*=" icon-"],[class="trait"],[class^="symbol-"],[class*=" symbol-"]) {
+.errata table span:not([class^="icon-"], [class*=" icon-"], [class="trait"], [class^="symbol-"], [class*=" symbol-"]) {
   color: blue;
 }
 
-p.example::before, span.example::before, div.example p:first-child::before{
+p.example::before,
+span.example::before,
+div.example p:first-child::before {
   content: "예시: ";
   font-weight: bold;
 }
 
-p.note::before, span.note::before, div.note p:first-child::before{
+p.note::before,
+span.note::before,
+div.note p:first-child::before {
   content: "알아두기: ";
   font-weight: bold;
 }
@@ -208,7 +212,7 @@ span.trait {
   font-weight: bold;
 }
 
-blockquote br{
+blockquote br {
   display: block;
   margin: 1%;
 }
@@ -225,26 +229,30 @@ ul.decklist {
 }
 
 @media (max-width: 960px) and (min_width: 501px) {
-  ul.decklist {columns: 2;}
+  ul.decklist {
+    columns: 2;
+  }
 }
 
-@media (max-width: 500px){
-  ul.decklist {columns: 1;}
+@media (max-width: 500px) {
+  ul.decklist {
+    columns: 1;
+  }
 }
 
-ul.decklist > li.two::before {
+ul.decklist>li.two::before {
   content: "2x ";
   font-weight: bold;
   font-style: italic;
 }
 
-ul.decklist > li.three::before {
+ul.decklist>li.three::before {
   content: "3x ";
   font-weight: bold;
   font-style: italic;
 }
 
-ul.decklist > li.title {
+ul.decklist>li.title {
   font-size: 1.15em;
   margin-top: 1em;
   font-weight: bold;
@@ -327,7 +335,7 @@ h3.errata8::after {
     width: 100%;
     margin: 0;
   }
-  
+
   .topBar {
     position: fixed;
     margin-top: 10px;
@@ -348,12 +356,32 @@ h3.errata8::after {
 }
 
 .levelDiv {
-    border: 1px solid black;
-    text-align: center;
-    margin: auto 0;
-    width: 50px;
-    padding: 5px;
-    border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  margin: auto 0;
+  width: 55px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.levelA {
+  background-color: #4CAF50;
+}
+
+.levelB {
+  background-color: #2196F3;
+}
+
+.levelC {
+  background-color: #FFC107;
+}
+
+.levelD {
+  background-color: #FF9800;
+}
+
+.levelE {
+  background-color: #F44336;
 }
 
 .faqEntry {
@@ -365,4 +393,88 @@ h3.errata8::after {
   left: 20px;
   position: relative;
   margin: auto 0;
+}
+
+.left-menu {
+  width: 100%;
+}
+
+.middle-content {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.middle-inner-content {
+  padding: 2rem 0;
+}
+
+.left-menu ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+  padding-left: 1rem;
+}
+
+.left-menu li {
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.left-menu .cycle {
+  font-weight: bold;
+  color: #444;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.left-menu .card-type {
+  font-weight: 600;
+  color: #666;
+  padding-left: 1rem;
+}
+
+.left-menu .card-type:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.card-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.card-table tr.card {
+  border-bottom: 1px solid #eee;
+}
+
+.card-table tr.card:hover {
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+.card-table td {
+  padding: 0.75rem 0;
+  font-weight: 600;
+}
+
+@media (min-width: 992px) {
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .left-menu {
+    width: 15%;
+  }
+
+  .middle-content {
+    width: 85%;
+    padding: 1rem;
+  }
+
+  .middle-inner-content {
+    padding: 2rem;
+  }
 }
