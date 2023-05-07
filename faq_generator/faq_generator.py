@@ -8,12 +8,12 @@ Please check you have the service key
 *** make sure that you do not upload service key in Github.
 """
 
-from typing import Dict, List, Tuple, Any, Optional, Union
+from typing import Dict, List, Tuple, Any, Optional, Union, ClassVar
 import re
 import json
 from pathlib import Path
 from os import PathLike
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build, Resource
 from googleapiclient.http import HttpRequest
@@ -59,25 +59,54 @@ class RowData:
     faq_level: str = ''
     date: str = ''
     is_formula: bool = False
-    is_link: bool = False
-    is_invalid: bool = False
+    is_valid: bool = True
     
-    def __init__(self, row_data: List[Dict[str, Any]]):
-        raise NotImplementedError()
-        # TODO: implement
-        # 'userEnteredValue' has one of followings
-        # numberValue, stringValue, boolValue, formulaValue, errorValue
-        # 'backgroundColorStyle' has 'rgbColor' as ('red', 'green', 'blue')
+    def __init__(self, row_data: List[Dict[str, Dict[str, Any]]]):
+        super().__init__()
+        ### change below index if spreadsheet order is changed
+        cell_faq = row_data[6] if len(row_data) > 6 else {}
+        cell_cardid = row_data[2] if len(row_data) > 6 else {}
+        cell_level = row_data[3] if len(row_data) > 6 else {}
+        cell_date = row_data[4] if len(row_data) > 6 else {}
+        ### then...
+        key, self.text = self._get_cell(cell_faq)
+        self.is_formula = key == 'formulaValue'
+        if 'backgroundColorStyle' in cell_faq.get('userEnteredFormat', {}):
+            color = cell_faq['userEnteredFormat']['backgroundColorStyle']['rgbColor']
+            self.is_valid = self._is_valid(color.get('red', 0), color.get('green', 0), color.get('blue', 0))
+        if not self.text:
+            self.is_valid = False
+        _, self.card_id = self._get_cell(cell_cardid)
+        _, self.faq_level = self._get_cell(cell_level)
+        _, self.date = self._get_cell(cell_date) # TODO: check data type if necessary
+    
+    @staticmethod
+    def _get_cell(cell: Dict[str, Dict[str, Any]], raise_error: bool=True) -> Tuple[str, str]:
+        """get cell value from spreadsheet cell format
+        Cell should contains following dict:
+            userEnteredValue
+                AnyKey: str (1 item only)
 
-    # @staticmethod
-    # def _is_valid(bg_color) -> bool:
-    #     """whether this row is valid, based on the background color
+        Args:
+            cell (Dict[str, Dict[str, str]]): input dict
+            raise_error (bool, optional): check error. Defaults to True.
 
-    #     Returns:
-    #         bool: True if valid, False if invalid
-    #     """
-    #     return bg_color[0] < bg_color[1]*1.05 or \
-    #            bg_color[0] < bg_color[2]*1.05
+        Returns:
+            str: key
+            str: text (force conversion as str)
+        """
+        if 'userEnteredValue' in cell:
+            assert len(cell['userEnteredValue']) == 1
+            key, value = next(iter(cell['userEnteredValue'].items()))
+            if raise_error and key == 'errorValue':
+                raise ValueError(f"error while capturing row_data: {value}")
+            return key, str(value)
+        else:
+            return '', ''
+
+    @staticmethod
+    def _is_valid(red: float, green: float, blue: float) -> bool:
+        return red < green*1.05 or red < blue*1.05
 
 class FAQGenerator:
     """faq generator class"""
@@ -87,6 +116,7 @@ class FAQGenerator:
         spreadsheets_id: Optional[str]=None,
         readonly: bool=True
     ):
+        self._report_stream = None
         """generate class
 
         Args:
@@ -103,7 +133,7 @@ class FAQGenerator:
 
         self._service: Resource = build('sheets', 'v4', credentials=self.credentials)
         self.service: Resource = self._service.spreadsheets() # pylint: disable=E1101
-        request: HttpRequest = self.service.get(spreadsheetId=spreadsheets_id, includeGridData=False)
+        request: HttpRequest = self.service.get(spreadsheetId=self.spreadsheets_id, includeGridData=False)
         info: Dict[str, Any] = request.execute()
         self.sheets: List[str] = [x['properties']['title'] for x in info['sheets']]
         if 'Note' in self.sheets:
@@ -113,8 +143,6 @@ class FAQGenerator:
         self.cards_refered_s: Dict[int, List[EntryKey]] = {}
         if isinstance(path_report, PathLike):
             self._report_stream = open(path_report, "w", encoding='utf-8')
-        else:
-            self._report_stream = None
     
     def __del__(self):
         if self._report_stream is not None and not self._report_stream.closed:
@@ -169,6 +197,11 @@ class FAQGenerator:
             sheet_name (str): name of sheet
             col_start (Union[int, str, None], optional): start column. A-based str or 0-based integer. Defaults to None (free).
             col_end (Union[int, str, None], optional): end column. A-based str or 0-based integer. Defaults to None (free).
+        
+        Return:
+            Dict[str, List[RowData]]: row data as dictionary
+                key: sheet name
+                value: list of row data
         """
         colrange = _range_tostr(col_start, "A")+":"+_range_tostr(col_end, "ZZ")
         ranges = [f"'{name}'!{colrange}" for name in self.sheets]
@@ -182,6 +215,60 @@ class FAQGenerator:
             assert len(data['data']) == 1
             rows = []
             for row in data['data'][0]['rowData']:
-                rows.append(RowData(row))
+                rows.append(RowData(row.get('values', [])))
             result[name] = rows
         return result
+    
+    def generate_faq(self, path_json: PathLike) -> Dict[str, Dict[str, str]]:
+        # TODO: logger
+        path_json = Path(path_json)
+        data = self.get_data()
+        result: Dict[str, Dict[str, str]] = {}
+        regex_formula = re.compile(r"='?([^']+)?(?:'!)?[A-Z]{1,2}([0-9]+)")
+        regex_faq = re.compile(r"(?:https://arkhamfiles.github.io/)?([a-zA-Z]+).html(#[a-zA-Z0-9_]+)(#[0-9]+)?")
+        regex_qna = re.compile(r"[Qq]:[ ]?(.+)\n[Aa]:[ ]?(.+)")
+        for sheet_name, rows in data.items():
+            for i, row in enumerate(rows[1:]):
+                if not row.is_valid:
+                    continue
+                if row.is_formula:
+                    match = regex_formula.fullmatch(row.text)
+                    if match is None:
+                        continue
+                    x, y = match.groups(sheet_name)
+                    key = "{}_{:04d}".format(x, int(y))
+                    if key in result:
+                        result[key]['cards'].append(row.card_id)
+                    else:
+                        result[key] = {'cards': [row.card_id]}
+                    continue
+                key = f"{sheet_name}_{i:04d}"
+                # TODO: LINK detection
+                item = {
+                    'level': row.faq_level,
+                    'date': row.date,
+                    'cards': [row.card_id],
+                    'text': row.text
+                }
+                if not item['level'] or not item['text']: # sanity
+                    continue
+                match = regex_qna.search(item['text'])
+                if match is not None:
+                    item['question_text'], item['answer_text'] = match.groups()
+                    item.pop('text')
+                if key in result:
+                    item['cards'].extend(result[key]['cards'])
+                result[key] = item
+        keys_del = set()
+        for key, value in result.items():
+            if 'level' not in value:
+                keys_del.add(key)
+        for key in keys_del:
+            result.pop(key)
+        with path_json.open("w", encoding="utf-8") as fp:
+            json.dump(result, fp, ensure_ascii=False, indent=4)
+        return result
+
+if __name__ == "__main__":
+    gen = FAQGenerator("../api_key.json")
+    gen.generate_faq("result.json")
