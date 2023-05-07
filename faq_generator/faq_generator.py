@@ -238,16 +238,16 @@ class FAQGenerator:
                     x, y = match.groups(sheet_name)
                     key = "{}_{:04d}".format(x, int(y))
                     if key in result:
-                        result[key]['cards'].append(row.card_id)
+                        result[key]['card_list'].append(row.card_id)
                     else:
-                        result[key] = {'cards': [row.card_id]}
+                        result[key] = {'card_list': [row.card_id]}
                     continue
                 key = f"{sheet_name}_{i:04d}"
                 # TODO: LINK detection
                 item = {
                     'level': row.faq_level,
                     'date': row.date,
-                    'cards': [row.card_id],
+                    'card_list': [row.card_id],
                     'text': row.text
                 }
                 if not item['level'] or not item['text']: # sanity
@@ -257,7 +257,7 @@ class FAQGenerator:
                     item['question_text'], item['answer_text'] = match.groups()
                     item.pop('text')
                 if key in result:
-                    item['cards'].extend(result[key]['cards'])
+                    item['card_list'].extend(result[key]['card_list'])
                 result[key] = item
         keys_del = set()
         for key, value in result.items():
@@ -271,4 +271,4 @@ class FAQGenerator:
 
 if __name__ == "__main__":
     gen = FAQGenerator("../api_key.json")
-    gen.generate_faq("result.json")
+    gen.generate_faq("example.json")
