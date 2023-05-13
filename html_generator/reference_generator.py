@@ -14,7 +14,7 @@ from .symbol_generator import SymbolGenerator
 def load_file(file: FileType):
     logger = logging.getLogger('load_file')
     file_p = load_filetype(file)
-    soup = bs4.BeautifulSoup(file_p, 'html5lib')
+    soup = bs4.BeautifulSoup(file_p, 'html.parser')
     filept = open('output.txt', 'w', encoding='utf-8')
     re_h = re.compile('h[0-9]')
     tags: Iterable[bs4.element.ResultSet] = soup.find_all([re_h, 'p', 'ul', 'ol'])

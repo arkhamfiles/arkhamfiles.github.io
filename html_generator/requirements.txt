@@ -1,5 +1,4 @@
 beautifulsoup4
-html5lib
 requests
 fonttools >= 4.39
 font-cli

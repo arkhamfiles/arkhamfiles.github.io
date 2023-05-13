@@ -197,7 +197,7 @@ def generate_toc(file: FileType,
     else:
         ids = frozenset(id_ignore)
 
-    soup = bs4.BeautifulSoup(file_p, 'html5lib')
+    soup = bs4.BeautifulSoup(file_p, 'html.parser')
     tags: List[_Tag] = []
     classes_ignore = frozenset([
         'rules-reference', 'errata', 'rules'

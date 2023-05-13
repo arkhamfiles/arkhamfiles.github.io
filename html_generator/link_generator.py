@@ -28,7 +28,7 @@ class LinkGeneratorInterface(GeneratorInterface):
     @staticmethod
     def _build_id_map(file: FileType) -> Dict[str, str]:
         file_p = load_filetype(file)
-        soup = bs4.BeautifulSoup(file_p, 'html5lib')
+        soup = bs4.BeautifulSoup(file_p, 'html.parser')
         id_map: Dict[str, str] = {}
         for tag in soup.find_all(re.compile("h[0-9]")): #type: bs4.element.Tag
             if not tag.has_attr('id'):
