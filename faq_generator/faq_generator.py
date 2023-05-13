@@ -8,16 +8,16 @@ Please check you have the service key
 *** make sure that you do not upload service key in Github.
 """
 
-from typing import Dict, List, Tuple, Any, Optional, Union, ClassVar
+from typing import Dict, List, Tuple, Any, Optional, Union, Callable
 import re
 import json
 from pathlib import Path
 from os import PathLike
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build, Resource
 from googleapiclient.http import HttpRequest
-# from googleapiclient.errors import HttpError
+from html_reader import HTMLReader
 
 EntryKey = str
 
@@ -112,6 +112,7 @@ class FAQGenerator:
     """faq generator class"""
     def __init__(
         self, path_key: PathLike,
+        path_qna: PathLike, path_notes: PathLike, path_errata: PathLike,
         path_report: Optional[PathLike]=None,
         spreadsheets_id: Optional[str]=None,
         readonly: bool=True
@@ -121,6 +122,9 @@ class FAQGenerator:
 
         Args:
             path_key (PathLike): path of the json file of service key
+            path_qna (PathLike): path of qna html file
+            path_notes (PathLike): path of rule notes html file
+            path_errata (PathLike): path of errata html file
             path_report (Optional[PathLike], optional): path of report file, no report provided if None. Defaults to None.
             spreadsheets_id (Optional[str], optional): spreadsheets id. do not need if existing in key. Defaults to None.
             readonly (bool, optional): authority scope. Defaults to True.
@@ -130,6 +134,16 @@ class FAQGenerator:
             self.spreadsheets_id = spreadsheets_id
         elif not self.spreadsheets_id:
             raise ValueError("spreadsheets id is not given from either key file or init")
+        
+        path_qna = Path(path_qna)
+        path_notes = Path(path_notes)
+        path_errata = Path(path_errata)
+        if not path_qna.is_file():
+            raise FileNotFoundError(path_qna)
+        if not path_notes.is_file():
+            raise FileNotFoundError(path_notes)
+        if not path_errata.is_file():
+            raise FileNotFoundError(path_errata)
 
         self._service: Resource = build('sheets', 'v4', credentials=self.credentials)
         self.service: Resource = self._service.spreadsheets() # pylint: disable=E1101
@@ -138,7 +152,11 @@ class FAQGenerator:
         self.sheets: List[str] = [x['properties']['title'] for x in info['sheets']]
         if 'Note' in self.sheets:
             self.sheets.remove('Note')
-        self.faq_entries: Dict[EntryKey, Dict[str, str]] = {}
+           
+        self.entries_qna = HTMLReader(path_qna).refine_qna()
+        self.entries_notes = HTMLReader(path_notes).refine_notes(path_notes.name)
+        self.entries_errata = HTMLReader(path_errata).refine_errata(path_errata.name)
+        
         self.cards_refered_p: Dict[int, List[EntryKey]] = {}
         self.cards_refered_s: Dict[int, List[EntryKey]] = {}
         if isinstance(path_report, PathLike):
@@ -225,7 +243,7 @@ class FAQGenerator:
         data = self.get_data()
         result: Dict[str, Dict[str, str]] = {}
         regex_formula = re.compile(r"='?([^']+)?(?:'!)?[A-Z]{1,2}([0-9]+)")
-        regex_faq = re.compile(r"(?:https://arkhamfiles.github.io/)?([a-zA-Z]+).html(#[a-zA-Z0-9_]+)(#[0-9]+)?")
+        regex_faq = re.compile(r"(?:https://arkhamfiles.github.io/)?([a-zA-Z]+).html#([a-zA-Z0-9_]+)#?([0-9]+)?")
         regex_qna = re.compile(r"[Qq]:[ ]?(.+)\n[Aa]:[ ]?(.+)")
         for sheet_name, rows in data.items():
             for i, row in enumerate(rows[1:]):
@@ -243,7 +261,6 @@ class FAQGenerator:
                         result[key] = {'card_list': [row.card_id]}
                     continue
                 key = f"{sheet_name}_{i:04d}"
-                # TODO: LINK detection
                 item = {
                     'level': row.faq_level,
                     'date': row.date,
@@ -252,10 +269,33 @@ class FAQGenerator:
                 }
                 if not item['level'] or not item['text']: # sanity
                     continue
-                match = regex_qna.search(item['text'])
+                match = regex_qna.search(item.get('text', ''))
                 if match is not None:
                     item['question_text'], item['answer_text'] = match.groups()
                     item.pop('text')
+                match = regex_faq.search(item.get('text', ''))
+                if match is not None:
+                    doc, name, num = match.groups()
+                    if doc in ['faq', 'faq_legacy']:
+                        if name not in self.entries_qna:
+                            print(f"FAQ is given but key is unknown: {item['text']} for {row.card_id}")
+                        else:
+                            num = int(num)-1 if isinstance(num, str) else 0
+                            item['question_text'], item['answer_text'] = self.entries_qna[name][2][num]
+                            item.pop('text')
+                    elif doc == 'notes':
+                        if name not in self.entries_notes:
+                            print(f"notes is given but key({name}) is unknown: {item['text']} for {row.card_id}")
+                        else:
+                            if num is not None:
+                                print('notes does not support number pick.')
+                            item['text'] = self.entries_notes[name][2]
+                    elif doc == 'errata':
+                        if name not in self.entries_errata:
+                            print(f"errata is given but key({name}) is unknown: {item['text']} for {row.card_id}")
+                        else:
+                            num = int(num)-1 if isinstance(num, str) else 0
+                            item['text'] = self.entries_errata[name][2][num]
                 if key in result:
                     item['card_list'].extend(result[key]['card_list'])
                 result[key] = item
@@ -269,6 +309,7 @@ class FAQGenerator:
             json.dump(result, fp, ensure_ascii=False, indent=4)
         return result
 
+
 if __name__ == "__main__":
-    gen = FAQGenerator("../api_key.json")
+    gen = FAQGenerator("../api_key.json", "../raw/faq_legacy.html", "../raw/notes.html", "../raw/errata.html")
     gen.generate_faq("example.json")
