@@ -161,7 +161,7 @@
     }
 
     function _makeText(text) {
-      return '<p>' + text.replaceAll('[bless]', '<span class="icon-bless" title="Bless"></span>')
+      return '<p>' + (text ? text.replaceAll('[bless]', '<span class="icon-bless" title="Bless"></span>')
         .replaceAll('[curse]', '<span class="icon-curse" title="curse"></span>')
         .replaceAll('[reaction]', '<span class="icon-reaction" title="Reaction"></span>')
         .replaceAll('[action]', '<span class="icon-action" title="action"></span>')
@@ -184,7 +184,7 @@
         .replaceAll('[intellect]', '<span class="icon-intellect" title="intellect"></span>')
         .replaceAll('[[', '<b><i>')
         .replaceAll(']]', '</i></b>')
-        .replaceAll('\n', '</p><p>') + '</p>';
+        .replaceAll('\n', '</p><p>') : '') + '</p>';
     }
 
     function _makeFaqText(faq_list) {
@@ -354,7 +354,7 @@
             tr.classList.add(card.faction_code);
             tr.style.color = factions[card.faction_code];
             tr.addEventListener("click", function () {
-              displayCardEntry(card, type);
+              displayCardEntry(card);
             });
 
             const td = document.createElement("td");
