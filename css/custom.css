@@ -441,6 +441,7 @@ h3.errata8::after {
 .card-table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 158px;
 }
 
 .card-table tr.card {
