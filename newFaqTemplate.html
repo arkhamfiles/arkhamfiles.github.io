@@ -37,8 +37,8 @@
     </div>
     <div class="middle-content">
       <div class="right-menu">
-        <input type="text" id="searchInput" placeholder="Search...">
-        <button id="searchButton">Search</button>
+        <input type="text" id="searchInput" placeholder="카드명 검색">
+        <button id="searchButton">검색</button>
         <div id="searchResults"></div>
       </div>
       <div id="middleContent" class="middle-inner-content">
@@ -187,7 +187,7 @@
       for (idx of faq_list) {
         resultText += `<div class="faqEntry"><div class="levelDiv level${faqs[idx].level}">LEVEL<br>${faqs[idx].level}</div>` +
           `<p class="faqContent">` + (faqs[idx].question_text ? `<strong>Q: </strong>${faqs[idx].question_text}<br><strong>A: </strong>${faqs[idx].answer_text}` : `${faqs[idx].text}`) +
-             `<br>` + (faqs[idx].source ? `<strong>출처: </strong>${faqs[idx].source}, ` : `- `) + `${faqs[idx].date}</p>` +
+          `<br>` + (faqs[idx].source ? `<strong>출처: </strong>${faqs[idx].source}, ` : `- `) + `${faqs[idx].date}</p>` +
           `</div>`
       }
       return resultText;
@@ -328,7 +328,7 @@
 	</div>
 
 				<article class="review">
-			<div>` + _makeFaqText(card.faqs) + `
+			<div>` + _makeText(_makeFaqText(card.faqs)) + `
 			</div>
 		</article>
 		
@@ -337,28 +337,32 @@
 
       searchButton.addEventListener("click", function () {
         const searchTerm = searchInput.value.toLowerCase();
-        const searchResults = [];
-        cycles.forEach((cycle) => {
-          cycle.playerScenarioPairs.forEach((pair) => {
-            if (pair.playerName.toLowerCase().includes(searchTerm) || pair.scenarioName.toLowerCase().includes(searchTerm)) {
-              searchResults.push(pair);
-            }
-          });
-        });
-        displaySearchResults(searchResults);
-      });
-
-      function displaySearchResults(searchResults) {
         middleContent.innerHTML = "";
-        searchResults.forEach((result) => {
-          const li = document.createElement("li");
-          li.innerText = `${result.playerName} - ${result.scenarioName}`;
-          li.addEventListener("click", function () {
-            displayCardEntry(result);
+
+        const table = document.createElement("table");
+        table.classList.add("card-table");
+
+        cards.forEach((cardList) => {
+          cardList.filter((x) => x.name.indexOf(searchTerm) !== -1)
+          .forEach((card) => {
+            const tr = document.createElement("tr");
+            tr.classList.add("card");
+            tr.classList.add(card.faction_code);
+            tr.style.color = factions[card.faction_code];
+            tr.addEventListener("click", function () {
+              displayCardEntry(card, type);
+            });
+
+            const td = document.createElement("td");
+            td.innerText = card.name;
+            tr.appendChild(td);
+
+            table.appendChild(tr);
           });
-          middleContent.appendChild(li);
         });
-      }
+
+        middleContent.appendChild(table);
+      });
     });
   </script>
 
