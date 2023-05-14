@@ -186,7 +186,8 @@
       let resultText = '';
       for (idx of faq_list) {
         resultText += `<div class="faqEntry"><div class="levelDiv level${faqs[idx].level}">LEVEL<br>${faqs[idx].level}</div>` +
-          `<p class="faqContent">` + (faqs[idx].question_text ? `<strong>Q: </strong>${faqs[idx].question_text}<br><strong>A: </strong>${faqs[idx].answer_text}` : `${faqs[idx].text}`) + `<br><strong>출처: </strong>${faqs[idx].source}, ${faqs[idx].date}</p>` +
+          `<p class="faqContent">` + (faqs[idx].question_text ? `<strong>Q: </strong>${faqs[idx].question_text}<br><strong>A: </strong>${faqs[idx].answer_text}` : `${faqs[idx].text}`) +
+             `<br>` + (faqs[idx].source ? `<strong>출처: </strong>${faqs[idx].source}, ` : `- `) + `${faqs[idx].date}</p>` +
           `</div>`
       }
       return resultText;
