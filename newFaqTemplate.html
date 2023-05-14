@@ -166,6 +166,11 @@
         .replaceAll('[reaction]', '<span class="icon-reaction" title="Reaction"></span>')
         .replaceAll('[action]', '<span class="icon-action" title="action"></span>')
         .replaceAll('[free]', '<span class="icon-free" title="free"></span>')
+        .replaceAll('[skull]', '<span class="icon-skull" title="skull"></span>')
+        .replaceAll('[cultist]', '<span class="icon-cultist" title="cultist"></span>')
+        .replaceAll('[tablet]', '<span class="icon-tablet" title="tablet"></span>')
+        .replaceAll('[bless]', '<span class="icon-bless" title="bless"></span>')
+        .replaceAll('[elder_thing]', '<span class="icon-elder_thing" title="Elder thing"></span>')
         .replaceAll('[elder_sign]', '<span class="icon-elder_sign" title="Elder Sign"></span>')
         .replaceAll('[auto_fail]', '<span class="icon-auto_fail" title="auto_fail"></span>')
         .replaceAll('[guardian]', '<span class="icon-guardian" title="Guardian"></span>')
@@ -186,8 +191,8 @@
       let resultText = '';
       for (idx of faq_list) {
         resultText += `<div class="faqEntry"><div class="levelDiv level${faqs[idx].level}">LEVEL<br>${faqs[idx].level}</div>` +
-          `<p class="faqContent">` + (faqs[idx].question_text ? `<strong>Q: </strong>${faqs[idx].question_text}<br><strong>A: </strong>${faqs[idx].answer_text}` : `${faqs[idx].text}`) +
-          `<br>` + (faqs[idx].source ? `<strong>출처: </strong>${faqs[idx].source}, ` : `- `) + `${faqs[idx].date}</p>` +
+          `<div class="faqContent">` + (faqs[idx].question_text ? `<strong>Q: </strong>${faqs[idx].question_text}<br><strong>A: </strong>${faqs[idx].answer_text}` : `${faqs[idx].text}`) +
+           (faqs[idx].date ? (faqs[idx].source ? `<br><strong>출처: </strong>${faqs[idx].source}, ${faqs[idx].date}` : `<br>- ${faqs[idx].date}`) : ``) +
           `</div>`
       }
       return resultText;
@@ -342,8 +347,7 @@
         const table = document.createElement("table");
         table.classList.add("card-table");
 
-        cards.forEach((cardList) => {
-          cardList.filter((x) => x.name.indexOf(searchTerm) !== -1)
+          cards["플레이어 카드"].concat(cards["시나리오 카드"]).filter((x) => x.name.indexOf(searchTerm) !== -1)
           .forEach((card) => {
             const tr = document.createElement("tr");
             tr.classList.add("card");
@@ -359,7 +363,6 @@
 
             table.appendChild(tr);
           });
-        });
 
         middleContent.appendChild(table);
       });
