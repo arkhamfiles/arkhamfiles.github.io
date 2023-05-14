@@ -192,6 +192,8 @@
       return resultText;
     }
 
+    const cards = {};
+    const faqs = thirdData;
     document.addEventListener("DOMContentLoaded", function () {
       const cycleList = document.getElementById("cycleList");
       const middleContent = document.getElementById("middleContent");
@@ -204,11 +206,10 @@
       ])
         .then(([firstData, secondData, thirdData]) => {
 
-          const cards = {};
           cards["플레이어 카드"] = firstData;
           cards["시나리오 카드"] = secondData;
 
-          const faqs = thirdData;
+          faqs = thirdData;
           // Render cycle list
           cycles.forEach((cycle) => {
             const cycleLi = document.createElement("li");
@@ -234,21 +235,21 @@
 
             cycle.pack_code.forEach((pc) => {
               cards[type].filter((x) => pc === x.pack_code)
-              .forEach((card) => {
-                const tr = document.createElement("tr");
-                tr.classList.add("card");
-                tr.classList.add(card.faction_code);
-                tr.style.color = factions[card.faction_code];
-                tr.addEventListener("click", function () {
-                  displayCardEntry(card, type);
+                .forEach((card) => {
+                  const tr = document.createElement("tr");
+                  tr.classList.add("card");
+                  tr.classList.add(card.faction_code);
+                  tr.style.color = factions[card.faction_code];
+                  tr.addEventListener("click", function () {
+                    displayCardEntry(card, type);
+                  });
+
+                  const td = document.createElement("td");
+                  td.innerText = card.name;
+                  tr.appendChild(td);
+
+                  table.appendChild(tr);
                 });
-
-                const td = document.createElement("td");
-                td.innerText = card.name;
-                tr.appendChild(td);
-
-                table.appendChild(tr);
-              });
             });
 
             middleContent.appendChild(table);
