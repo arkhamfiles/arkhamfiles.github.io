@@ -193,7 +193,7 @@
         resultText += `<div class="faqEntry"><div class="levelDiv level${faqs[idx].level}">LEVEL<br>${faqs[idx].level}</div>` +
           `<div class="faqContent">` + (faqs[idx].question_text ? `<strong>Q: </strong>${faqs[idx].question_text}<br><strong>A: </strong>${faqs[idx].answer_text}` : `${faqs[idx].text}`) +
            (faqs[idx].date ? (faqs[idx].source ? `<br><strong>출처: </strong>${faqs[idx].source}, ${faqs[idx].date}` : `<br>- ${faqs[idx].date}`) : ``) +
-          `</div>`
+          `</div></div>`
       }
       return resultText;
     }
