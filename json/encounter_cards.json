@@ -1,0 +1,1491 @@
+{
+    "01105": {
+        "back_flavor": "Your house continues to change before your very eyes. The walls have decayed, and the ground in many rooms has turned to dirt. It is almost as if you have been transported somewhere else entirely, although every now and again you recognize elements of your former home.",
+        "back_text": "The lead investigator must decide (choose one): Either each investigator discards 1 card at random from his or her hand, or the lead investigator takes 2 horror.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0145"
+        ],
+        "flavor": "It is late at night. You are holed up in your study, researching the bloody disappearances that have been taking place in the region. A few hours into your research, you hear the sound of strange chanting coming from your parlor, down the hall. At the same time, you hear dirt churning, as if something were digging beneath the floor.",
+        "name": "무슨 일이야?!",
+        "pack_code": "core",
+        "type_code": "agenda"
+    },
+    "01107": {
+        "back_flavor": "The ground begins to shake and you can see claws rising up from the dirt as uncanny creatures desperately try to claw their way out of the ground all around you. Everywhere you turn, you see monsters rising from the earth. Terrified, you flee as fast as you can.",
+        "back_text": "- If the investigators are at Act 1 or 2, they are trapped inside the house as the ghouls tear them apart. <b>(→R3)</b>\n- If the investigators are at Act 3, they barely escape with their lives, allowing the ghouls to run rampant. Each investigator that has not resigned is defeated and suffers 1 physical trauma.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0146",
+            "코_0147"
+        ],
+        "flavor": "You hear a crazed howl outside, and suddenly all the creatures turn their attention to that sound. They rush to escape the house, breaking down doors and clawing at everything in their way.",
+        "name": "구울들이 뛰쳐나간다!",
+        "pack_code": "core",
+        "text": "<b>Forced</b> - At the end of the enemy phase: Each unengaged [[Ghoul]] enemy moves 1 location towards the Parlor.\n<b>Forced</b> - At the end of the round: Place 1 doom on this agenda for each [[Ghoul]] enemy in the Hallway or Parlor.",
+        "type_code": "agenda"
+    },
+    "01110": {
+        "back_flavor": "When the robed creature falls, the fiendish swarm burrows back into the ground and the chaos of the house quiets. But the stranger in your parlor chamber doesn't seem relieved.\n\"You broke my seal that was set to trap the ghouls within.\" She raises her torch. \"Now, we must take more direct measures and burn this hell-pit to the ground!\"",
+        "back_text": "The lead investigator must decide (choose one):\n- It was never much of a home. Burn it down! <b>(→R1)</b>\n- This hell-pit is my home! No way are we burning it! <b>(→R2)</b>",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0148"
+        ],
+        "flavor": "A woman with a torch stands in your parlor, a glimmer of hatred in her eyes. \"What have you done to my barrier?\" she screams, furious. Before you can enter, a ghastly wail sounds behind you, and a creature wearing robes and a deer skull mask tears through the wall, advancing towards you.",
+        "name": "대체 무슨 짓이야?",
+        "pack_code": "core",
+        "text": "<b>Objective</b> - If the Ghoul Priest is Defeated, advance.",
+        "type_code": "act"
+    },
+    "01111": {
+        "back_flavor": "You've been investigating the strange events occurring in Arkham for several days now. Your deck in covered in newspaper articles, police reports, and witness accounts.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0149"
+        ],
+        "flavor": "The door to your study has vanished.",
+        "name": "서재",
+        "pack_code": "core",
+        "type_code": "location"
+    },
+    "01112": {
+        "back_flavor": "A moment of panic and disorientation strikes as you land upon the floor of the hallway. The world spins, as if turned on its head.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0150"
+        ],
+        "flavor": "The walls of your house are splattered with mud, and your hardwood floor is gone, replaced with a dirt path.",
+        "name": "복도",
+        "pack_code": "core",
+        "type_code": "location"
+    },
+    "01117": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "코_0151",
+            "코_0152",
+            "코_0153",
+            "코_0154"
+        ],
+        "is_unique": true,
+        "name": "리타 챈들러",
+        "pack_code": "core",
+        "subname": "광신도",
+        "text": "당신이 ‘리타 챈들러’를 조종하는 동안, ‘리타 챈들러’는 다음 기능을 획득합니다:\n“당신이 위치한 장소의 모든 조사자는 +1 [combat]을 얻습니다.\n[reaction] 당신이 위치한 장소에 있는 조사자 한 명이 [[괴물]] 적 하나를 성공적으로 공격할 때: 그 조사자는 피해를 +1 줍니다.”",
+        "traits": "조력자.",
+        "type_code": "asset"
+    },
+    "01118": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0155"
+        ],
+        "flavor": "A monstrous creature feeds from the rotting carcass in the attic.",
+        "name": "식인귀",
+        "pack_code": "core",
+        "text": "<b>Spawn</b> - Attic.",
+        "traits": "인간형. 괴물. 구울.",
+        "type_code": "enemy"
+    },
+    "01120": {
+        "back_text": "어려움 / 전문가\n[skull]: -X. 플레이 상태인 모든 파멸의 개수가 X 값입니다.\n[cultist]: -2. 플레이 상태인 모든 [[추종자]] 적에게 파멸을 1개씩 올려놓습니다. 플레이 상태인 [[추종자]] 적이 없다면, 다른 혼돈 토큰을 하나 더 공개합니다.\n[tablet]: -4. 실패하면, 당신이 가진 모든 단서를 당신이 위치한 장소에 올려 놓습니다.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0159"
+        ],
+        "name": "한밤의 가면",
+        "pack_code": "core",
+        "text": "쉬움 / 보통\n[skull]: -X. 플레이 상태인[[추종자]] 적 중에서, 파멸을 가장 많이 가진 [[추종자]] 적의 파멸 개수가 X 값입니다.\n[cultist]: -2. 가장 가까운 [[추종자]] 적에게 파멸을 1개 올려놓습니다.\n[tablet]: -3. 실패하면, 당신이 가진 단서 1개를 당신이 위치한 장소에 올려 놓습니다.",
+        "type_code": "scenario"
+    },
+    "01123": {
+        "back_flavor": "You've successfully uncovered the identities of all of the cult's high-ranking members within Arkham. The man who had stalked you throughout the city was dedicated in his conviction, as was Herman, the undertaker of the graveyard. Others seemed to have been coerced to aid the cult. Ruth, the mortician, had been told that her family would be killed if she did not supply the ghouls with fresh corpses. Thankfully, you managed to help her escape the hospital safely. Peter, the professor, had to be convinced that his involvement with the cult would do more harm than good. Victoria's obsession with occult artifacts had landed her deep within the cult's web. When you confronted Drew in the asylum, he attacked you - but interestingly, he did so because he thought you were part of the cult. The deeper you delve into this conspiracy, the clearer it becomes that many lives have been ruined by it.",
+        "back_text": "<b>(→R1)</b>",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0160"
+        ],
+        "flavor": "You have one night to find the members of this cult and unveil their plan. The more members of the cult you can find and interrogate before midnight, the better.",
+        "name": "음모를 밝혀내다",
+        "pack_code": "core",
+        "text": "[action] The investigators spend 2 clues per investigator, as a group: Draw the top card of the Cultist deck.\n<b>Objective</b> - Find as many unique [[Cultist]] enemies as you can and add them to the victory display. If there are 6 unique [[Cultist]] enemies in the victory display, advance. (Note: Not all 6 of them are in the Cultist deck.)",
+        "type_code": "act"
+    },
+    "01133": {
+        "back_flavor": "The graveyard lies at the foot of French Hill. Some of the headstones date back to the seventeenth century, when the earliest colonists came to Arkham. Considering what happened in your house, you're not completely keen on heading there.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0161",
+            "코_0162"
+        ],
+        "name": "묘지",
+        "pack_code": "core",
+        "text": "<b>Forced</b> - After you enter the Graveyard: Test [willpower] (3). If you fail, you must either take 2 horror or move to Rivertown.",
+        "traits": "아컴.",
+        "type_code": "location"
+    },
+    "01137": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0163"
+        ],
+        "flavor": "Drew is a longtime patient at Arkham Asylum. Rumor has it he was locked up for committing cannibalism several years ago. He is considered extremely dangerous.",
+        "is_unique": true,
+        "name": "“늑대인간” 드류",
+        "pack_code": "core",
+        "subname": "식인종",
+        "text": "<b>Spawn</b> - Downtown.\n<b>Forced</b> - When \"Wolf-Man\" Drew attacks: Heal 1 damage from him.",
+        "traits": "인간형. 추종자.",
+        "type_code": "enemy"
+    },
+    "01138": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0164",
+            "코_0165"
+        ],
+        "flavor": "The undertaker in the local graveyard has been digging strange tunnels underneath the mausoleum... but for what purpose?",
+        "is_unique": true,
+        "name": "헤르만 콜린스",
+        "pack_code": "core",
+        "subname": "묘지기",
+        "text": "<b>Spawn</b> - Graveyard.\n[action] Choose and discard 4 cards from your hand: <b>Parley.</b> Add Herman Collins to the victory display.",
+        "traits": "인간형. 추종자.",
+        "type_code": "enemy"
+    },
+    "01144": {
+        "back_flavor": "A dark presence approaches, and you are assaulted by invisible pressures that bring you to your knees. A terrible force threatens to invade your mind and soul. Your throat clenches and your eyes water as the sensation burns through you.",
+        "back_text": "In player order, each investigator must test [willpower] (6). Each investigator who fails must search his or her collection for a random basic [[Madness]] weakness and add it to his or her hand.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0174"
+        ],
+        "flavor": "\"Umôrdhoth... Umôrdhoth... Umôrdhoth...\"\nThe chanting builds in intensity, echoing into the cold air of the night. The sparse clouds in the sky coalesce above the Arkham woods, blotting out the faint light of the stars.",
+        "name": "의식이 시작되다",
+        "pack_code": "core",
+        "text": "Each enemy gets +1 fight and +1 evade.",
+        "type_code": "agenda"
+    },
+    "01148": {
+        "back_flavor": "You brave the unnatural chill and weave through arcane symbols, crossing the threshold of the circle. You smother the markings on the ground, covering them with dirt, breaking apart the carefully constructed pattern of smooth rocks. A shrill noise pierces your ears as the air grows suddenly warmer, and the world distorts around you, settling into normality.",
+        "back_text": "<b>(→R1)</b>",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0175",
+            "코_0176",
+            "코_0177"
+        ],
+        "flavor": "The site of the cult's ritual is inside a large cavern in a dark corner of the woods. In the center of the chamber is a candlelit circle marked by rocks and arcane runes.",
+        "name": "의식 방해",
+        "pack_code": "core",
+        "text": "[action] Spend 1 clue: Test [willpower] (3) or [agility] (3). If you succeed, place 1 clue on this Act.\n<b>Objective</b> - If there are 2 clues per investigator on this Act, advance.",
+        "type_code": "act"
+    },
+    "01151": {
+        "back_flavor": "Growing up, you were always warned to stay out of the woods at night. Now you know why.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0178",
+            "코_0179",
+            "코_0180",
+            "코_0181",
+            "코_0182"
+        ],
+        "flavor": "This path seems to twist and turn upon itself, almost as if it were alive.",
+        "name": "아컴의 숲",
+        "pack_code": "core",
+        "subname": "구불구불한 길",
+        "text": "<b>Forced</b> - When you move out of this location: Test [intellect] (3). If you fail, cancel the effects of the move.",
+        "traits": "숲.",
+        "type_code": "location"
+    },
+    "01164": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0185",
+            "코_0186",
+            "코_0187",
+            "코_0188"
+        ],
+        "name": "공포에 얼어붙다",
+        "pack_code": "core",
+        "text": "<b>Revelation</b> - Put Frozen in Fear into play in your threat area.\nThe first time you perform one of the following actions (move, fight, or evade) each round, it costs 1 additional action.\n<b>Forced</b> - At the end of your turn: Test [willpower] (3). If you succeed, discard Frozen in Fear.",
+        "traits": "두려움.",
+        "type_code": "treachery"
+    },
+    "01167": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0189",
+            "코_0190",
+            "코_0191"
+        ],
+        "flavor": "The supernatural cold threatens to freeze your soul.",
+        "name": "으스스한 한기",
+        "pack_code": "core",
+        "text": "<b>Revelation</b> - Test [willpower] (4). If you fail, choose and discard 1 asset you control (if you cannot, take 2 damage instead).",
+        "traits": "위기.",
+        "type_code": "treachery"
+    },
+    "01168": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0192",
+            "코_0193"
+        ],
+        "name": "자욱한 안개",
+        "pack_code": "core",
+        "text": "<b>Revelation</b> - Attach to your location. Limit 1 per location.\nAttached location gets +2 shroud.\n<b>Forced</b> - After attached location is successfully investigated: Discard Obscuring Fog.",
+        "traits": "위기.",
+        "type_code": "treachery"
+    },
+    "01169": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0194"
+        ],
+        "flavor": "It was only a small sacrifice.",
+        "name": "사교도 시종",
+        "pack_code": "core",
+        "text": "<b>Spawn</b> - Any empty location.\n<b>Forced</b> - After Acolyte enters play: Place 1 doom on it.",
+        "traits": "인간형. 추종자.",
+        "type_code": "enemy"
+    },
+    "01171": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0195",
+            "코_0196"
+        ],
+        "name": "기이한 주문",
+        "pack_code": "core",
+        "text": "<b>Revelation</b> - Place 2 doom on the nearest [[Cultist]] enemy. If there are no [[Cultist]] enemies in play, search the encounter deck and discard pile for a [[Cultist]] enemy and draw it. Shuffle the encounter deck.",
+        "traits": "사술.",
+        "type_code": "treachery"
+    },
+    "01172": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0197",
+            "코_0198"
+        ],
+        "flavor": "... they had no faces at all to smile with, but only a suggestive blankness where a face ought to be. <cite>H. P. Lovecraft</cite>",
+        "name": "추적해오는 나이트건트",
+        "pack_code": "core",
+        "text": "Hunter.\nWhile attempting to evade Hunting Nightgaunt, double the negative modifier of each revealed chaos token.",
+        "traits": "괴물. 나이트건트.",
+        "type_code": "enemy"
+    },
+    "01173": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0199",
+            "코_0200"
+        ],
+        "flavor": "A nightgaunt swoops down from the sky and grabs you with its clawed hands, carrying you off into the night.",
+        "name": "어둠의 날개에서",
+        "pack_code": "core",
+        "text": "<b>Revelation</b> - Test [agility] (4). If you fail, take 1 horror and 1 damage. Then, disengage with each non-[[Nightgaunt]] enemy engaged with you and move to a [[Central]] location.",
+        "type_code": "treachery"
+    },
+    "01174": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0201",
+            "코_0202"
+        ],
+        "name": "잠긴 문",
+        "pack_code": "core",
+        "text": "<b>Revelation</b> - Attach to the location in play with the most clues, and without a Locked Door attached.\nThe attached location cannot be investigated.\n[action]: Test [combat] (4) to break down the door or [agility] (4) to pick the lock. If you succeed, discard Locked Door.",
+        "traits": "장애물.",
+        "type_code": "treachery"
+    },
+    "01176": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0203",
+            "코_0204"
+        ],
+        "flavor": "They came to me slowly as if I had forgotten them, and at last I could make some sense out of the sounds. It was this: \"Have you found the Yellow Sign?\" <cite>Robert W. Chambers, \"The Yellow Sign\"</cite>",
+        "name": "황색의 표식",
+        "pack_code": "core",
+        "text": "<b>Revelation</b> - Test [willpower] (4). If you fail, take 2 horror and search your deck for a [[Madness]] weakness. Draw that card and shuffle your deck.",
+        "traits": "징조.",
+        "type_code": "treachery"
+    },
+    "01177": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0205",
+            "코_0206"
+        ],
+        "name": "이스인 관찰자",
+        "pack_code": "core",
+        "text": "<b>Prey</b> - Fewest cards in hand.\n<b>Forced</b> - When Yithian Observer attacks you: Discard 1 card at random from your hand. If you cannot, Yithian Observer deals +1 damage and +1 horror for this attack.",
+        "traits": "괴물. 이스인.",
+        "type_code": "enemy"
+    },
+    "02040": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "던_0064",
+            "던_0065",
+            "던_0066"
+        ],
+        "flavor": "박사는 앞으로 무시무시한 상대와 맞닥뜨리게 될 것이다. 그러나 다른 자들이 저지른 심각하고 사악한 행각을 해결하려면 달리 선택지가 없었다. - H.P. 러브크래프트, “던위치의 공포”",
+        "is_unique": true,
+        "name": "헨리 아미티지 박사",
+        "pack_code": "dwl",
+        "subname": "도서관장",
+        "text": "[reaction] 당신이 약점이 아닌 카드를 1장 뽑은 후, 그 카드를 버리고 ‘헨리 아미티지 박사’를 소진합니다: 자원을 3개 획득합니다.",
+        "traits": "조력자. 미스캐토닉.",
+        "type_code": "asset"
+    },
+    "02044": {
+        "back_flavor": "Before you are able to act, you hear screaming from the northern side of the campus. You begin to make your way toward the screaming, your vision darkening with each step. As soon as the creature enters sight, you feel the darkness overtake you, and a force pulls you out of your consciousness. Everything goes black, and you pass out.",
+        "back_text": "Each investigator immediately takes 3 horror. Then, proceed to <b>(→R4)</b>.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0060"
+        ],
+        "flavor": "Some kind of wild creature is on the loose. Whatever it is, it appears to be headed toward the university dormitories.",
+        "name": "야수가 풀려나다",
+        "pack_code": "dwl",
+        "text": "<b>Forced</b> - When this agenda would advance by reaching its doom threshold: Instead, remove all doom in play and move The Experiment 1 location toward the Dormitories.\n<b>Objective</b> - If The Experiment enters the Dormitories, advance.",
+        "type_code": "agenda"
+    },
+    "02050": {
+        "back_flavor": "Three floors of weathered grey granite, the library looks more like a reliquary than a place of learning. Stone gargoyles snarl down from above arched windows, and Latin script winds around the double doors at the top of a wide set of stone steps.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0068"
+        ],
+        "flavor": "The Orne Library is a labyrinth of dusty bookshelves and poorly lit halls.",
+        "name": "오른 도서관",
+        "pack_code": "dwl",
+        "text": "You must spend 1 additional action to investigate the Orne Library.",
+        "traits": "미스캐토닉.",
+        "type_code": "location"
+    },
+    "02058": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0069"
+        ],
+        "is_unique": true,
+        "name": "실험체",
+        "pack_code": "dwl",
+        "subname": "뭔가 끔찍하게 잘못됐다",
+        "text": "Massive.\nThe Experiment gets +3[per_investigator] health.\n<b>Forced</b> - When the enemy phase begins: Ready The Experiment.\n<b>Objective</b> - If The Experiment is defeated, advance to act 3b.",
+        "traits": "괴물. 흉물. 정예.",
+        "type_code": "enemy"
+    },
+    "02061": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "던_0066",
+            "던_0068"
+        ],
+        "is_unique": true,
+        "name": "워렌 라이스 교수",
+        "pack_code": "dwl",
+        "subname": "언어학 교수",
+        "text": "당신은 +1 [intellect]을 얻습니다.\n[reaction] 당신이 위치한 장소에서 당신이 마지막으로 남은 단서를 발견한 후, ‘워렌 라이스 교수’를 소진합니다: 카드를 1장 뽑습니다.",
+        "traits": "조력자. 미스캐토닉.",
+        "type_code": "asset"
+    },
+    "02063": {
+        "back_flavor": "Your questioning has drawn the attention of several men – hired thugs, by the look of them. \"Francis doesn't want to be bothered,\" one of them says. \"We suggest you leave the premises before we force you to leave.\"",
+        "back_text": "Shuffle the encounter discard pile into the encounter deck.\nIf the players have completed Extracurricular Activity, advance directly to agenda 2b. If The House Always Wins is the first scenario in the campaign, advance to agenda 2a.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0073"
+        ],
+        "flavor": "You have entered the Clover Club Casino in search of Dr. Morgan. The club is bustling at this late hour, filled with patrons looking to relax and drink, or make it big. You don't appear to be in much danger.",
+        "name": "클로버 클럽",
+        "pack_code": "dwl",
+        "text": "Each [[Criminal]] enemy gains Aloof.\nIf an investigator deals damage to a [[Criminal]] enemy: Immediately advance.",
+        "type_code": "agenda"
+    },
+    "02066": {
+        "back_flavor": "After speaking to a number of gamblers and servers, it seems as though Dr. Morgan has had quite the run lately. Instead of cashing out his winnings, he was convinced to double down. He was last seen entering the guarded hall near the back of the cardroom.",
+        "back_text": "Put the set-aside Darkened Hall into play.\nIf it is Agenda 1, discard cards from the top of the encounter deck until a [[Criminal]] enemy is discarded, and spawn that enemy in the Darkened Hall.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0038"
+        ],
+        "flavor": "You need to find Dr. Morgan. The club is packed; perhaps somebody knows where he is.",
+        "name": "초심자의 행운",
+        "pack_code": "dwl",
+        "text": "[reaction] When you reveal a chaos token: You may treat that token as if it were any other token in the chaos bag. If you do, remember that you have \"cheated.\" (Group limit once per round.)\n<b>Objective</b> - When the investigators have collected the requisite number of clues, they must immediately spend them and advance.",
+        "type_code": "act"
+    },
+    "02073": {
+        "back_flavor": "As you approach the cardroom, the clinking of poker chips and the shuffling of cards is punctuated by shouts of revelry and frustration. Your thoughts are nearly drowned out by the racket.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0075"
+        ],
+        "name": "클로버 클럽 카드게임방",
+        "pack_code": "dwl",
+        "text": "While it is Act 1, Clover Club Cardroom gains:\n\"[action] Spend 2 resources: Reveal a random chaos token.\nIf it is a [elder_sign] symbol, gain 2 clues and 2 resources from the token bank.\nIf it is an even number, gain 2 clues from the token bank.\nIf it is an odd number or a [skull], [cultist], [tablet], [elder_thing], or [auto_fail] symbol, nothing happens.\"",
+        "traits": "클로버 클럽.",
+        "type_code": "location"
+    },
+    "02077": {
+        "back_flavor": "You approach an unmarked door toward the back of the Clover Club.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0076"
+        ],
+        "flavor": "A steep, narrow staircase ascends to a second unmarked door. To your surprise, it leads into a back alley behind La Bella Luna. This must be where they smuggle in their \"goods.\"",
+        "name": "뒷골목",
+        "pack_code": "dwl",
+        "text": "[action]: <b>Resign.</b> We can get out this way!",
+        "traits": "클로버 클럽.",
+        "type_code": "location"
+    },
+    "02078": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0078"
+        ],
+        "name": "클로버 클럽 책임자",
+        "pack_code": "dwl",
+        "text": "<b>Prey</b> - Highest [intellect].\nHunter.\n<b>Forced</b> - After an investigator at Clover Club Pit Boss's location gains any number of clues: Clover Club Pit Boss readies, engages that investigator, and makes an immediate attack.",
+        "traits": "인간형. 범죄자. 정예.",
+        "type_code": "enemy"
+    },
+    "02079": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "코_0112"
+        ],
+        "is_unique": true,
+        "name": "피터 클로버",
+        "pack_code": "dwl",
+        "subname": "모든 패를 쥔 자",
+        "text": "<b>Forced</b> - At the start of the enemy phase, if no investigator controls Peter Clover: Deal 1 damage to him.\n[free]Exhaust Peter Clover: Automatically evade a [[Criminal]] enemy in your location.",
+        "traits": "인간형. 범죄자.",
+        "type_code": "asset"
+    },
+    "02080": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "던_0066"
+        ],
+        "is_unique": true,
+        "name": "프랜시스 모건 박사",
+        "pack_code": "dwl",
+        "subname": "고고학 교수",
+        "text": "당신은 +1 [combat]을 얻습니다.\n[reaction] 당신이 적 하나를 쓰러뜨린 후, ‘프랜시스 모건 박사’를 소진합니다: 카드를 1장 뽑습니다.",
+        "traits": "조력자. 미스캐토닉.",
+        "type_code": "asset"
+    },
+    "02085": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0085"
+        ],
+        "flavor": "",
+        "name": "아포고몬의 빛",
+        "pack_code": "dwl",
+        "text": "Peril.\n<b>Revelation</b> - You must attach Light of Aforgomon to either the current agenda or the current act.\nLimit 1 per agenda/act. Treat all damage as direct damage and all horror as direct horror.",
+        "traits": "계약. 권능.",
+        "type_code": "treachery"
+    },
+    "02088": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0038",
+            "던_0087"
+        ],
+        "name": "부정한 땅",
+        "pack_code": "dwl",
+        "text": "<b>Revelation</b> - Put Unhallowed Country into play in your threat area.\nYou cannot play [[Ally]] assets. Treat the printed text box of each [[Ally]] asset you control as if it were blank.\n<b>Forced</b> - At the end of your turn: Test [willpower] (3). If you succeed, discard Unhallowed Country.",
+        "traits": "두려움.",
+        "type_code": "treachery"
+    },
+    "02093": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0088"
+        ],
+        "name": "뒤틀린 운명",
+        "pack_code": "dwl",
+        "text": "<b>Revelation</b> - Reveal a random token from the chaos bag.\nIf you reveal a [elder_sign] symbol or positive number, nothing happens.\nIf you reveal any other number, take 1 damage.\nIf you reveal a [skull], [cultist], [tablet], [elder_thing], or [auto_fail] symbol, take 2 horror.",
+        "traits": "징조.",
+        "type_code": "treachery"
+    },
+    "02101": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0092",
+            "던_0093",
+            "던_0094"
+        ],
+        "name": "저 너머의 공포",
+        "pack_code": "dwl",
+        "text": "Peril.\n<b>Revelation</b> - Choose one of the following cardtypes (asset, event, or skill). Each player must discard each card in his or her hand that is of the chosen cardtype. If this is not the first copy of Terror from Beyond drawn this phase, choose two cardtypes instead.",
+        "traits": "사술. 두려움.",
+        "type_code": "treachery"
+    },
+    "02102": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0095",
+            "던_0096"
+        ],
+        "name": "불가사의한 장벽",
+        "pack_code": "dwl",
+        "text": "<b>Revelation</b> - Attach to your location.\nAs an additional cost to move into or out of attached location, test [willpower] (4). If successful, discard Arcane Barrier. Otherwise, you must either cancel the effects of the move or discard the top 5 cards of your deck.",
+        "traits": "사술. 장애물.",
+        "type_code": "treachery"
+    },
+    "02103": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0097",
+            "던_0098"
+        ],
+        "name": "구체 복합물 덩어리",
+        "pack_code": "dwl",
+        "text": "<b>Prey</b> - Lowest [willpower].\nHunter.\n<b>Forced</b> - After you perform an attack against the Conglomeration of Spheres using a [[Melee]] card: Discard that card.",
+        "traits": "괴물. 흉물.",
+        "type_code": "enemy"
+    },
+    "02104": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0099"
+        ],
+        "name": "잠복자의 하인",
+        "pack_code": "dwl",
+        "text": "<b>Prey</b> - Lowest [agility].\nHunter.\n<b>Forced</b> - When Servant of the Lurker attacks you: Discard the top 2 cards of your deck.",
+        "traits": "괴물. 흉물.",
+        "type_code": "enemy"
+    },
+    "02119": {
+        "back_flavor": "From the shadows of the museum halls, a terrible creature slithers forth, long and serpentine, and propelled by black leathery wings.",
+        "back_text": "If Hunting Horror is in play, add 1 doom to it.\nIf Hunting Horror is not in play, search the encounter deck, discard pile, and the void for Hunting Horror and spawn it in Museum Halls, if able. Shuffle the encounter discard pile into the encounter deck.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0108"
+        ],
+        "flavor": "Dr. Armitage has given the university’s Latin translation of The Necronomicon to his associate, Harold Walsted, the curator of the Miskatonic University Museum. Worried that someone might still be after the book, you have gone to the museum to recover it.",
+        "name": "접근 제한 구역",
+        "pack_code": "tmm",
+        "text": "<b>Forced</b> - When Hunting Horror enters play: Attach the set-aside copy of Shadow-spawned to it, or add 1 resource to Shadow-spawned if it is already attached.",
+        "type_code": "agenda"
+    },
+    "02120": {
+        "back_flavor": "The creature does not relent, pursuing you throughout the museum. ",
+        "back_text": "If Hunting Horror is in play, add 1 doom to it.\nIf Hunting Horror is not in play, search the encounter deck, discard pile, and the void for Hunting Horror and spawn it in Museum Halls, if able. Shuffle the encounter discard pile into the encounter deck.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0109"
+        ],
+        "flavor": "The shadows in the museum grow and become darker. As the shadows lengthen and shift, they begin to suggest the sinewy body of an uncanny creature darting at the periphery of your awareness...",
+        "name": "그림자가 짙어지다",
+        "pack_code": "tmm",
+        "text": "<b>Forced</b> - When Hunting Horror enters play: Attach the set-aside copy of Shadow-spawned to it, or add 1 resource to Shadow-spawned if it is already attached.",
+        "type_code": "agenda"
+    },
+    "02130": {
+        "back_flavor": "A sturdy wooden door with a plaque next to it reads: \"Administration.\" In the hall outside the doorway, you see a row of paintings depicting the museum’s many curators through the years, each adorned with their name and years of employment. Perhaps it’s just your imagination, but they look more distressed in recent years.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0110"
+        ],
+        "flavor": "This office is meticulously organized, from the books in alphabetical order on the shelves to the stacks of forms organized by category on each desk. A coat is draped over one of the nearby chairs; perhaps somebody other than the security guard is still here at this late hour.",
+        "name": "관리실",
+        "pack_code": "tmm",
+        "text": "You cannot investigate Administration Office while you have 4 or fewer resources.",
+        "traits": "미스캐토닉.",
+        "type_code": "location"
+    },
+    "02131": {
+        "back_flavor": "A sturdy wooden door with a plaque next to it reads: \"Administration.\" In the hall outside the doorway, you see a row of paintings depicting the museum’s many curators through the years, each adorned with their name and years of employment. Perhaps it’s just your imagination, but they look more distressed in recent years.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0111"
+        ],
+        "flavor": "This office is meticulously organized, from the books in alphabetical order on the shelves to the stacks of forms organized by category on each desk. A coat is draped over one of the nearby chairs; perhaps somebody other than the security guard is still here at this late hour.",
+        "name": "관리실",
+        "pack_code": "tmm",
+        "text": "You cannot investigate Administration Office while you have 4 or fewer cards in your hand.",
+        "traits": "미스캐토닉.",
+        "type_code": "location"
+    },
+    "02139": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "코_0038"
+        ],
+        "is_unique": true,
+        "name": "애덤 린치",
+        "pack_code": "tmm",
+        "subname": "박물관 경비원",
+        "text": "While you control Adam Lynch, treat the \"[action] [action]\" ability on the Security Office as if it were an \"[action]\" ability.\n<b>Forced</b> - When Adam Lynch leaves play: Remove him from the game and add 1 [tablet] token to the chaos bag for the remainder of the campaign.",
+        "traits": "조력자. 미스캐토닉.",
+        "type_code": "asset"
+    },
+    "02140": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "던_0068"
+        ],
+        "flavor": "압둘 알하즈레드의 최대 역작입니다.",
+        "name": "네크로노미콘",
+        "pack_code": "tmm",
+        "subname": "올라우스 워미우스 번역본",
+        "text": "당신은 +1 [intellect]을 얻습니다.\n[action]: 자원을 2개 획득합니다.",
+        "traits": "물품. 서적.",
+        "type_code": "asset"
+    },
+    "02141": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0114",
+            "던_0115",
+            "던_0116"
+        ],
+        "name": "공포의 추격자",
+        "pack_code": "tmm",
+        "subname": "공허가 낳은 괴수",
+        "text": "Hunter. Retaliate.\n<b>Forced</b> - At the start of the enemy phase: Reveal a random token from the chaos bag. If the revealed token has a [skull], [cultist], [tablet], [elder_thing], or [auto_fail] symbol, ready Hunting Horror.\n<b>Forced</b> - When Hunting Horror leaves play, place it in the void.",
+        "traits": "괴물. 정예.",
+        "type_code": "enemy"
+    },
+    "02145": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0004"
+        ],
+        "flavor": "Are you watching the exhibits, or are the exhibits watching you?",
+        "name": "의미 없는 전시물",
+        "pack_code": "tmm",
+        "text": "<b>Revelation</b> - Test [intellect] (3). If you fail, lose 1 action for each point you failed by.",
+        "traits": "두려움.",
+        "type_code": "treachery"
+    },
+    "02165": {
+        "back_text": "<b>The investigator entering the Engine Car reads the following (out loud):\n</b><blockquote><i>A tender car filled with coal blocks your way to the engine cab. Swallowing your fear, you climb out of the nearby window and clamber onto the roof of the train, making your way across the tender car. The steady backward motion of the train makes it difficult for you to keep your footing. As you get close, a winged creature swoops down from above, its body composed of piping hot steam.</i></blockquote>You must decide (choose one):\n- Test [agility] (3) to attempt to dodge the creature. If you fail, you leap too far and barely grip the side of the train, hanging on for dear life. Although you manage to pull yourself up, the experience is terrifying. You suffer 1 mental trauma.\n- Test [combat] (3) to attempt to endure the creature's extreme heat. If you fail, the creature flies through you and the heat burns you. You suffer 1 physical trauma.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0124"
+        ],
+        "flavor": "The train has stopped on a bridge high above the Miskatonic River – you might be able to survive the fall, but you don’t like your chances. Your best bet is to make your way to the engine car as fast as you can and get the train running again.",
+        "name": "뛰어!",
+        "pack_code": "tece",
+        "text": "<b>Objective</b> - If an investigator enters the Engine Car, immediately advance.",
+        "type_code": "act"
+    },
+    "02167": {
+        "back_text": "Train Car is connected to the locations to the left and right of it.\nYou cannot enter Train Car unless all of the clues on the location to its left have been discovered.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0125",
+            "던_0126"
+        ],
+        "name": "객실칸",
+        "pack_code": "tece",
+        "text": "Passenger Car is connected to the locations to the left and right of it.\n<b>Forced</b> - After you enter Passenger Car: You must either discard cards from your hand with at least 2 total [agility] icons or take 2 damage.",
+        "traits": "열차.",
+        "type_code": "location"
+    },
+    "02168": {
+        "back_text": "Train Car is connected to the locations to the left and right of it.\nYou cannot enter Train Car unless all of the clues on the location to its left have been discovered.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0127"
+        ],
+        "name": "객실칸",
+        "pack_code": "tece",
+        "text": "Passenger Car is connected to the locations to the left and right of it.\n<b>Forced</b> - After you enter Passenger Car: You must either discard cards from your hand with at least 2 total [combat] icons or take 2 damage.",
+        "traits": "열차.",
+        "type_code": "location"
+    },
+    "02169": {
+        "back_text": "Train Car is connected to the locations to the left and right of it.\nYou cannot enter Train Car unless all of the clues on the location to its left have been discovered.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0129"
+        ],
+        "name": "객실칸",
+        "pack_code": "tece",
+        "text": "Passenger Car is connected to the locations to the left and right of it.\n<b>Forced</b> - After you enter Passenger Car: You must either discard cards from your hand with at least 2 total [willpower] icons or take 2 horror.",
+        "traits": "열차.",
+        "type_code": "location"
+    },
+    "02170": {
+        "back_text": "Train Car is connected to the locations to the left and right of it.\nYou cannot enter Train Car unless all of the clues on the location to its left have been discovered.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0131"
+        ],
+        "name": "객실칸",
+        "pack_code": "tece",
+        "text": "Passenger Car is connected to the locations to the left and right of it.\n<b>Forced</b> - After you enter Passenger Car: You must either discard cards from your hand with at least 2 total [intellect] icons or take 2 horror.",
+        "traits": "열차.",
+        "type_code": "location"
+    },
+    "02173": {
+        "back_text": "Train Car is connected to the locations to the left and right of it.\nYou cannot enter Train Car unless all of the clues on the location to its left have been discovered.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0134"
+        ],
+        "name": "식당칸",
+        "pack_code": "tece",
+        "text": "Dining Car is connected to the locations to the left and right of it.\n<b>Forced</b> - After you reveal Dining Car: Search the encounter deck and discard pile for a Grappling Horror and draw it.",
+        "traits": "열차.",
+        "type_code": "location"
+    },
+    "02179": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "던_0135"
+        ],
+        "name": "무력한 승객",
+        "pack_code": "tece",
+        "text": "Surge.\n<b>Revelation</b> - Put Helpless Passenger into play at the location to your left (or at your location if you cannot).\n[action]<b> Parley</b>. Take control of Helpless Passenger.\n<b>Forced</b> - If Helpless Passenger leaves play: Each investigator takes 1 horror.",
+        "traits": "조력자. 주변인.",
+        "type_code": "asset"
+    },
+    "02195": {
+        "back_text": "어려움 / 전문가\n[skull]: -1 플레이 상태인 장소 중에서, 그 밑에 조우 카드가 없는 장소마다 -1.\n[cultist]: -4. 실패하면, 토큰 저장소에서 단서를 1개 가져와 당신이 위치한 장소에 올려놓습니다.\n[tablet]: -3. 다른 혼돈 토큰을 하나 더 공개합니다.\n[elder_thing]: -3. 현재 주요사건에 파멸을 1개 올려놓습니다.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0142"
+        ],
+        "name": "제단에 흘린 피",
+        "pack_code": "bota",
+        "text": "쉬움 / 보통\n[skull]: 플레이 상태인 장소 중에서, 그 밑에 조우 카드가 없는 장소마다 -1(최대 -4).\n[cultist]: -2. 실패하면, 토큰 저장소에서 단서를 1개 가져와 당신이 위치한 장소에 올려놓습니다.\n[tablet]: -2. 당신이 ‘숨겨진 방’에 있으면, 다른 혼돈 토큰을 하나 더 공개합니다.\n[elder_thing]: -3. 실패하면, 현재 주요사건에 파멸을 1개 올려놓습니다.",
+        "type_code": "scenario"
+    },
+    "02215": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "던_0144"
+        ],
+        "flavor": "This tarnished silver key was hidden and kept safe out of sight. It must lead somewhere important.",
+        "is_unique": true,
+        "name": "방 열쇠",
+        "pack_code": "bota",
+        "text": "<b>Revelation</b> - Take control of Key to the Chamber.\n[free] If The Hidden Chamber is connected to your location: Attach Key to the Chamber to The Hidden Chamber.",
+        "traits": "물품. 열쇠.",
+        "type_code": "asset"
+    },
+    "02217": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "던_0066",
+            "던_0068"
+        ],
+        "flavor": "…그는 둥글게 늘어선 거석에서 벌어진 주술에서 윌버 웨이틀리 및 그 조부는 관련이 없는 부분들까지 기억하고 있었다.\n–H.P. 러브크래프트, “던위치의 공포”",
+        "is_unique": true,
+        "name": "지블런 웨이틀리",
+        "pack_code": "bota",
+        "subname": "고대의 것을 떠올리다",
+        "text": "당신은 +1 [willpower]를 얻습니다.\n[reaction] 당신이 음모 카드에 있는 [willpower] 테스트에 성공한 후, ‘지블런 웨이틀리’를 소진합니다: 카드를 1장 뽑습니다.",
+        "traits": "조력자. 던위치.",
+        "type_code": "asset"
+    },
+    "02220": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0150"
+        ],
+        "name": "납치당하다!",
+        "pack_code": "bota",
+        "text": "<b>Revelation</b> - Test [willpower] (4) or [agility] (4). If you fail, add an [[Ally]] asset you control to the pool of potential sacrifices. Then, attach Kidnapped! to the current agenda. If you have no [[Ally]] assets, take 2 damage and discard Kidnapped! instead.\n<b>Forced</b> - When attached agenda advances: Choose a potential sacrifice at random and place it underneath the agenda deck.",
+        "type_code": "treachery"
+    },
+    "02221": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0151"
+        ],
+        "name": "저승사자의 노래",
+        "pack_code": "bota",
+        "text": "Surge. Peril.\n<b>Revelation</b> - Add Psychopomp's Song to any investigator's threat area.\n<b>Forced</b> - When you would take 1 or more damage: Take 2 additional damage and discard Psychopomp's Song.",
+        "traits": "징조.",
+        "type_code": "treachery"
+    },
+    "02236": {
+        "back_text": "어려움 / 전문가\n[skull]: 플레이 상태인 ‘요그 소토스의 새끼’마다 -2.\n[cultist]: 다른 혼돈 토큰을 하나 더 공개합니다. 실패하면, 공포 1과 피해 1을 받습니다.\n[tablet]: 0. 플레이 상태인 ‘요그 소토스의 새끼’ 하나에 놓인 단서를 모두 제거하거나, 또는 이 테스트에 자동으로 실패해야 합니다.\n[elder_thing]: -5. 이 토큰이 ‘요그 소토스의 새끼’에 대해 공격 또는 회피를 시도하는 동안 공개되었다면, 해당 적은 즉시 당신을 공격합니다.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009",
+            "던_0168"
+        ],
+        "name": "차원 너머의 보이지 않는 존재",
+        "pack_code": "uau",
+        "text": "쉬움 / 보통\n[skull]: 플레이 상태인 ‘요그 소토스의 새끼’마다 -1.\n[cultist]: 다른 혼돈 토큰을 하나 더 공개합니다. 실패하면, 공포를 1 받습니다.\n[tablet]: 0. 플레이 상태인 ‘요그 소토스의 새끼’ 하나에 놓인 단서를 모두 제거하거나, 또는 이 토큰의 보정값을 0 대신 -4로 해야 합니다.\n[elder_thing]: -3. 이 토큰이 ‘요그 소토스의 새끼’에 대해 공격 또는 회피를 시도하는 동안 공개되었다면, 해당 적은 즉시 당신을 공격합니다.",
+        "type_code": "scenario"
+    },
+    "02237": {
+        "back_flavor": "An old pickup truck rolls to a stop along the weathered trails of Dunwich. The driver - Joe Osborn - calls out to you through a shattered driver-side window, the truck's engine still running. \"IT's over at the Ericks' farm!\" he shouts. \"Done blasted their place apart. Poor Henry and Martha...\"\nYou ask Osborn for the location of the Ericks' homestead, and it confirms your worst fear. For that attack to have occurred recently, there must be more of the monsters on the loose.",
+        "back_text": "Shuffle the encounter discard pile into the encounter deck.\nSpawn 1 of the set-aside Brood of Yog-Sothoth enemies at a random location, if able.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0169",
+            "던_0170"
+        ],
+        "flavor": "Reports of terrifying entities wreaking havoc across the countryside have caused the citizens of Dunwich to panic. Worse, the creatures seem to be invisible to the naked eye.",
+        "name": "날뛰는 괴물",
+        "pack_code": "uau",
+        "text": "<b>Forced</b> - At the end of the enemy phase: Move each Brood of Yog-Sothoth enemy once toward a random location.",
+        "type_code": "agenda"
+    },
+    "02238": {
+        "back_text": "Shuffle the encounter discard pile into the encounter deck. <b>If there is a set-aside Brood of Yog-Sothoth, the lead investigator reads the following (out loud):\n<i>Bleak storm clouds churn overhead and a blanket of rain pelts the countryside. As the downpour grows in intensity, you take refuge in a half-ruined shack nearby. There is a flash of lightning, and in the brief illumination, you spot the outline of something large in the rain. Without warning, the distant trees bend, though nothing seems to be bending them. Moments later, a force with the strength of a truck crashes into your refuge.</i>\n</b>Spawn 1 of the set-aside Brood of Yog-Sothoth enemies at the lead investigator's location, if able. Then, each investigator at that location tests [agility] (4). The newly spawned Brood of Yog-Sothoth makes an attack against each investigator who fails this skill test.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0171"
+        ],
+        "flavor": "Once in a while a wind, sweeping up out of Cold Spring Glen, would bring a touch of ineffable foetor to the heavy night air... But the looked-for terror did not appear. Whatever was down there in the glen was biding its time, and Armitage told his colleagues it would be suicidal to try to attack it in the dark.\n—H.P. Lovecraft, \"The Dunwich Horror\"",
+        "name": "때를 기다리다",
+        "pack_code": "uau",
+        "text": "<b>Forced</b> - At the end of the enemy phase: Move each Brood of Yog-Sothoth enemy once toward a random location.",
+        "type_code": "agenda"
+    },
+    "02255": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0177"
+        ],
+        "flavor": "\"I believe there’s a chance of putting it out of business.\"\n–H.P. Lovecraft, \"The Dunwich Horror\"",
+        "name": "요그 소토스의 새끼",
+        "pack_code": "uau",
+        "text": "Massive.\nBrood of Yog-Sothoth gets +1[per_investigator] health and cannot be damaged or attacked except using the ability on Esoteric Formula.",
+        "traits": "괴물. 흉물.",
+        "type_code": "enemy"
+    },
+    "02282": {
+        "back_flavor": "The long slope of Sentinel Hill rises before you, cresting in the jagged edges of Sentinel Peak.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0200",
+            "던_0201"
+        ],
+        "name": "언덕 아랫자락",
+        "pack_code": "wda",
+        "text": "Base of the Hill is connected to each copy of Diverging Path.\n[action]: <b>Investigate.</b> If you succeed, instead of discovering clues, put a random set-aside Diverging Path into play. (Limit once per round.)\n[action]: <b>Resign.</b> \"This is more than I signed up for!\"",
+        "traits": "던위치. 파수꾼 언덕.",
+        "type_code": "location"
+    },
+    "02283": {
+        "back_flavor": "When you try to follow the path leading further up Sentinel Hill, you somehow end up walking in a perpetual loop. Each time you stop to find your bearings, you find yourself back at the base of the hill again.",
+        "back_text": "The path leading further up the hill is masked. You cannot move into Ascending Path.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0202",
+            "던_0203"
+        ],
+        "name": "경사로",
+        "pack_code": "wda",
+        "text": "Ascending Path is connected to each copy of Altered Path.\n[action]: <b>Investigate.</b> If you succeed, instead of discovering clues, put a random set-aside Altered Path into play. (Limit once per round.)",
+        "traits": "던위치. 파수꾼 언덕.",
+        "type_code": "location"
+    },
+    "02287": {
+        "back_flavor": "A path off the beaten trail leads deeper into the woods surrounding Sentinel Hill",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0204"
+        ],
+        "name": "파괴된 길",
+        "pack_code": "wda",
+        "text": "<b>Forced</b> - After you reveal Destroyed Path: Place 1[per_investigator] doom on it.\n[action]: <b>Investigate.</b> If you succeed, instead of discovering clues, remove 1 doom from Destroyed Path.",
+        "traits": "던위치. 숲.",
+        "type_code": "location"
+    },
+    "02295": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0205"
+        ],
+        "name": "광분한 쇼고스",
+        "pack_code": "wda",
+        "text": "<b>Spawn</b> - Nearest [[Altered]] location.\n<b>Forced</b> - When Crazed Shoggoth attacks: If this attack would defeat an investigator, that investigator is instead killed.",
+        "traits": "괴물. 쇼고스.",
+        "type_code": "enemy"
+    },
+    "02311": {
+        "back_text": "어려움 / 전문가\n[skull]: 플레이 상태인 [[초차원]] 장소마다 -1.\n[cultist]: 다른 혼돈 토큰을 하나 더 공개합니다. 이번 능력 테스트가 끝난 후, 장소 하나를 버릴 때까지 조우 덱 맨 윗장부터 카드를 한 장씩 버립니다. 이렇게 버려진 장소를 플레이 영역에 두고 그 장소로 이동합니다.\n[tablet]: -5. ‘요그 소토스’가 플레이 상태라면, 이번 능력 테스트가 끝난 후 ‘요그 소토스’가 당신을 공격합니다.\n[elder_thing]: -X. 당신이 위치한 장소의 장막값에 2를 곱한 수치가 X 값입니다. 당신이 위치한 장소가 [[초차원]]일 때 실패했다면, 그 장소를 버립니다.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0218"
+        ],
+        "name": "시공간을 헤매다",
+        "pack_code": "litas",
+        "text": "쉬움 / 보통\n[skull]: 플레이 상태인 [[초차원]] 장소마다 -1(최대 -5).\n[cultist]: 다른 혼돈 토큰을 하나 더 공개합니다. 실패하면, 이번 능력 테스트가 끝난 후, 장소 하나를 버릴 때까지 조우 덱 맨 윗장부터 카드를 한 장씩 버립니다. 이렇게 버려진 장소를 플레이 영역에 두고 그 장소로 이동합니다.\n[tablet]: -3. ‘요그 소토스’가 플레이 상태라면, 이번 능력 테스트가 끝난 후 ‘요그 소토스’가 당신을 공격합니다.\n[elder_thing]: -X. 당신이 위치한 장소의 장막값이 X 값입니다. 당신이 위치한 장소가 [[초차원]]일 때 실패했다면, 그 장소를 버립니다.",
+        "type_code": "scenario"
+    },
+    "02312": {
+        "back_text": "Shuffle the encounter discard pile into the encounter deck. Then, discard cards from the top until a location is discarded. The lead investigator resolves that location's 'revelation' effect.\n<b>Check Campaign Log. If the investigators failed to save the students, read the following:</b>\n\"A huge canine creature, alien to your eyes and yet familiar, appears before you. The creature rushes forward, and you prepare to fend it off, but to your surprise it runs through you, towards a building that wasn't behind you moments before: Derby Hall from the Miskatonic University. The creature bursts through the building's front door and you hear screams of panic from inside, followed by the crunch of snapping bones and cries of pain.\"\nEach investigator takes 1 horror, regardless of their location.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0219"
+        ],
+        "flavor": "Pathways of sound and color extend for an eternity in all directions, dotted with impossible architecture, and overgrown with alien wildlife. The lines between objects are jagged and shifting, and your skin feels as if it were inside out.",
+        "name": "모든 것이 하나다",
+        "pack_code": "litas",
+        "text": "<b>Forced</b> - After you are moved to a location by an encounter card effect: Take 1 horror.",
+        "type_code": "agenda"
+    },
+    "02315": {
+        "back_flavor": "Seeking the rift from which you entered this dimension, the extradimensional horror lashes out, crushing entire realms within its grasp.",
+        "back_text": "In player order, Yog-Sothoth attacks each investigator in play, regardless of Yog-Sothoth's current location. Then, flip this agenda back to its \"a\" side.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0223"
+        ],
+        "flavor": "The shape in the distance smashes through the barriers of this dimension, its many arms reaching to envelop everything you see. Its body is like an ooze, covered in eyes and mouths. You feel insignificant, like a bug, next to the creature’s terrifying grandeur.",
+        "name": "만물의 종말",
+        "pack_code": "litas",
+        "text": "<b>Forced</b> - After you are moved by an encounter card effect: Take 1 horror.\n<b>Forced</b> - If Yog-Sothoth is defeated, <b>(→R3)</b>.",
+        "type_code": "agenda"
+    },
+    "02329": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0223"
+        ],
+        "name": "성간 여행자",
+        "pack_code": "litas",
+        "text": "<b>Spawn</b> - Any [[Extradimensional]] location.\nHunter.\n<b>Forced</b> - When Interstellar Traveler enters a location: Flip 1 clue on that location to its doom side and place it on Interstellar Traveler, or place 1 doom on Interstellar Traveler if there are no clues on that location.",
+        "traits": "괴물. 이스인.",
+        "type_code": "enemy"
+    },
+    "03081": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0028"
+        ],
+        "is_unique": true,
+        "name": "다이안 드바인",
+        "pack_code": "ptc",
+        "subname": "변덕스럽고 짓궂다",
+        "text": "Aloof.\nEach investigator at Dianne Devine's location cannot discover or take control of clues.\n<b>Forced</b> - At the beginning of the enemy phase: Find the [[Bystander]] asset with the fewest clues on it. Move Dianne Devine to that asset's location, if able.",
+        "traits": "인간형. 추종자. 정예.",
+        "type_code": "enemy"
+    },
+    "03093": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0034"
+        ],
+        "name": "폴터가이스트",
+        "pack_code": "ptc",
+        "text": "Cannot be damaged except by [[Spell]], [[Relic]], or encounter cards.\n[action] <b>Parley.</b> Test [intellect] (3) to attempt to banish the geist. If you succeed, deal it 1 damage.",
+        "traits": "괴물. 유령.",
+        "type_code": "enemy"
+    },
+    "03095": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0035"
+        ],
+        "flavor": "\"Get out! Get out! Get out of my head!\"",
+        "name": "표식을 목도한 자",
+        "pack_code": "ptc",
+        "text": "<b>Forced</b> - After Maniac engages you: Take 1 damage and deal 1 damage to Maniac.",
+        "traits": "인간형. 홀린.",
+        "type_code": "enemy"
+    },
+    "03097": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0198"
+        ],
+        "name": "황색의 왕의 춤",
+        "pack_code": "ptc",
+        "text": "<b>Revelation</b> - If there are no [[Possessed]] enemies in play, Dance of the Yellow King gains surge. Otherwise, test [willpower] (3). If you fail, the nearest [[Possessed]] enemy readies, moves (one location at a time) until it reaches your location, engages you, and makes an immediate attack.",
+        "traits": "계약.",
+        "type_code": "treachery"
+    },
+    "03102": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0040",
+            "칼_0041"
+        ],
+        "flavor": "You suddenly drop the object on the ground and watch as it erodes and turns to dust before your eyes.",
+        "name": "부식",
+        "pack_code": "ptc",
+        "text": "<b>Revelation</b> - Discard [[Item]] assets from play and/or from your hand with a total printed resource cost of at least X, where X is the shroud value of your location. If no cards are discarded by this effect, Corrosion gains surge.",
+        "traits": "위기.",
+        "type_code": "treachery"
+    },
+    "03121": {
+        "back_flavor": "A phrase in a language you cannot describe whispers through the building, and without warning all of the electric lights shatter at once. You light a nearby candle and continue your search.\nThe building is quite different once plunged into darkness. Shadows and silhouettes dance along the walls. Crevices you hadn't noticed before draw your wary eye. What other secrets does this building hold?",
+        "back_text": "Shuffle the encounter discard pile into the encounter deck.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0047"
+        ],
+        "flavor": "Surprisingly, the front doors of the Historical Society’s Georgian manor are cracked halfway open when you arrive. Who else could be here at this hour?",
+        "name": "진실은 숨겨져 있다",
+        "pack_code": "eotp",
+        "text": "Do not add doom to this agenda during the Mythos phase.\n<b>Forced</b> - After 1 or more clues are placed on an enemy in play: Flip those clues to their doom side.",
+        "type_code": "agenda"
+    },
+    "03130": {
+        "back_flavor": "An unadorned wooden door leads to one of the ground floor rooms used by the Historical Society.",
+        "back_text": "<b>Forced</b> - When an enemy spawns at this location: Reveal this location.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0053"
+        ],
+        "flavor": "Most of the objects on display here are from the early 18th century, spanning Arkham's colonization and early history.",
+        "name": "아컴 사학회",
+        "pack_code": "eotp",
+        "subname": "역사 전시실",
+        "text": "While investigating this location, your [intellect] cannot be modified.",
+        "traits": "1층.",
+        "type_code": "location"
+    },
+    "03132": {
+        "back_flavor": "An unadorned wooden door leads to one of the second floor rooms used by the Historical Society.",
+        "back_text": "<b>Forced</b> - When an enemy spawns at this location: Reveal this location.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0053"
+        ],
+        "flavor": "Most of the objects on display here are from the early 18th century, spanning Arkham's colonization and early history.",
+        "name": "아컴 사학회",
+        "pack_code": "eotp",
+        "subname": "역사 전시실",
+        "text": "While investigating this location, your [intellect] cannot be modified.",
+        "traits": "2층.",
+        "type_code": "location"
+    },
+    "03139": {
+        "back_flavor": "Most of the researchers in the Historical Society don’t even know of this library’s existence. What terrible truths could it be hiding?",
+        "back_text": "While an enemy is moving, Hidden Library gains the [[Passageway]] trait.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0054"
+        ],
+        "flavor": "The space was a small reading room, carpeted with cobwebs and dust. Filled bookshelves lined the walls, but a few books lay scattered on the floor as though their readers had abandoned them in a hurry.\n- Lisa Farrell, <i>The Investigators of Arkham Horror</i>",
+        "name": "비밀 서재",
+        "pack_code": "eotp",
+        "text": "While an enemy is moving, Hidden Library gains the [[Passageway]] trait.",
+        "type_code": "location"
+    },
+    "03141": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "칼_0055"
+        ],
+        "flavor": "\"This building contains many secrets. I will show you some, but even I don’t know them all...\"",
+        "is_unique": true,
+        "name": "피버디 씨",
+        "pack_code": "eotp",
+        "subname": "아컴 사학회 큐레이터",
+        "text": "[action] Exhaust Mr. Peabody: Choose a location. Until Mr. Peabody readies, that location gets -1 shroud and gains the [[Passageway]] trait.",
+        "traits": "조력자. 사학회.",
+        "type_code": "asset"
+    },
+    "03159": {
+        "back_text": "어려움 / 전문가\n[skull]: 다른 혼돈 토큰을 하나 더 공개합니다. 실패하면, 치워 두었던 [[괴물]] 적 중에서 무작위로 1장을 선택하여 앞면을 보지 않고 주요목적 덱 밑에 놓습니다(테스트당 1번 한정).\n[cultist]: -X. X는 당신이 가진 공포 개수입니다. 실패하면, 공포를 1 받습니다.\n[tablet]: -X. X는 당신이 위치한 장소의 기본 장막값입니다. 실패하면, 공포를 1 받습니다.\n[elder_thing]: 0. 둘 중 하나를 선택합니다. 치워 두었던 [[괴물]] 적 중에서 무작위로 1장을 선택하여 앞면을 보지 않고 주요목적 덱 밑에 놓습니다 (또는) 이번 능력 테스트에 자동으로 실패합니다.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009"
+        ],
+        "name": "입에 담아선 안 될 맹세",
+        "pack_code": "tuo",
+        "text": "쉬움 / 보통\n[skull]: -1. 실패하면, 치워 두었던 [[괴물]] 적 중에서 무작위로 1장을 선택하여 앞면을 보지 않고 주요목적 덱 밑에 놓습니다.\n[cultist]: -X. X는 당신이 가진 공포 개수입니다.\n[tablet]: -X. X는 당신이 위치한 장소의 기본 장막값입니다.\n[elder_thing]: 0. 둘 중 하나를 선택합니다. 치워 두었던 [[괴물]] 적 중에서 무작위로 1장을 선택하여 앞면을 보지 않고 주요목적 덱 밑에 놓습니다 (또는) 이번 능력 테스트에 자동으로 실패합니다.",
+        "type_code": "scenario"
+    },
+    "03170": {
+        "back_flavor": "The pleasant atmosphere of the reception area disappeared as soon as Dr. Mintz shut the thick iron door behind them. The temperature dropped to a clammy chill, and a foul, sharp stench hung in the air.\n– Mallory O’Meara, The Investigators of Arkham Horror",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0112"
+        ],
+        "flavor": "As they walked through the meandering stone halls of the sanatorium, Carolyn began to feel uneasy. It seemed like it would be very easy to get lost.\n- Mallory O'Meara, The Investigators of Arkham Horror",
+        "name": "정신병원 복도",
+        "pack_code": "tuo",
+        "subname": "동편 입원 병동",
+        "text": "[action] Take 1 horror: <b>Evade.</b> Automatically evade a [[Possessed]] enemy at this location.",
+        "traits": "아컴 정신병원.",
+        "type_code": "location"
+    },
+    "03176": {
+        "back_flavor": "A lone statue stands sentinel over the garden. Cold wind causes dead leaves to roll gently across the garden path.",
+        "back_text": "The gate leading into the Garden is locked. You cannot enter the Garden.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0070"
+        ],
+        "flavor": "Two guards in white uniforms stand by the gate to the garden, keeping watch.",
+        "name": "정원",
+        "pack_code": "tuo",
+        "text": "[action] If there are no clues on Garden: Test [agility] (2). If you succeed, remember that you \"distracted the guards.\"",
+        "traits": "아컴 정신병원.",
+        "type_code": "location"
+    },
+    "03185": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0074"
+        ],
+        "flavor": "\"What are you doing? I’m not crazy!\"",
+        "name": "구속복",
+        "pack_code": "tuo",
+        "text": "<b>Revelation</b> - If there is no copy of Straitjacket in your threat area, put Straitjacket into play in your threat area as an asset that takes up a body slot and 2 hand slots. Return each asset in those slots to your hand. This card cannot leave play except by the ability below.\n[action] [action]: Discard Straitjacket.",
+        "traits": "물품. 옷.",
+        "type_code": "treachery"
+    },
+    "03187": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0077",
+            "칼_0077"
+        ],
+        "name": "광기의 선물",
+        "pack_code": "tuo",
+        "subname": "비참함",
+        "text": "Peril. Hidden.\n<b>Revelation</b> - Secretly add Gift of Madness (Misery) to your hand.\nYou cannot trigger [action] abilities on locations.\n[action]: Randomly choose 1 enemy from among the set-aside [[Monster]] enemies and place it beneath the act deck without looking at it. Discard Gift of Madness (Misery) from your hand.",
+        "traits": "두려움.",
+        "type_code": "treachery"
+    },
+    "03207": {
+        "back_flavor": "You lose track of yourself within the city as you flee for your life. Your feet move of their own accord. The beating of sinewy wings and screeching of creatures above you spurs you onward. Soon you find yourself running down a narrow avenue, passing a set of heavy iron gates. You are in a dead end - a court with tall, old houses on either side. You turn back toward the entrance and breathe a sigh of relief as you see the sun rising once more over the skyline of Paris. As though dispersed by the sunlight, the figure that had been chasing you folds into the shadows and vanishes. Just as you are about to leave, you spot a plaque next to a red-brown door atop a steep, narrow staircase. It reads: \"N. Engram.\"",
+        "back_text": "Check Campaign Log.\n- <i>If you intruded on a secret meeting</i>, proceed to <b>(→R2)</b>.\n- Otherwise, proceed to <b>(→R1)</b>.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0112"
+        ],
+        "flavor": "I knew that every time I met him brought him nearer to the accomplishment of his purpose and my fate. And still I tried to save myself.\n–Robert W. Chambers, \"In the Court of the Dragon,\" <u>The King in Yellow</u>",
+        "name": "뒤쫓아오는 그림자",
+        "pack_code": "apot",
+        "text": "[free] Spend 1 [per_investigator] clues, as a group: Either place 1 doom on the current agenda, or automatically evade The Organist. (Group limit once per round.)\n<b>Objective</b> - Survive three nights. <i>(Do not advance until you are instructed.)</i>",
+        "type_code": "act"
+    },
+    "03259": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0096"
+        ],
+        "name": "시체를 파먹는 괴수",
+        "pack_code": "tpm",
+        "text": "<b>Spawn</b> - Discard a [[Humanoid]] enemy at any location and spawn Corpse Dweller at that location (if there are no [[Humanoid]] enemies in play, discard Corpse Dweller and it gains surge instead).\nHunter. Retaliate.",
+        "traits": "괴물.",
+        "type_code": "enemy"
+    },
+    "03261": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0097"
+        ],
+        "name": "등 뒤의 그림자",
+        "pack_code": "tpm",
+        "text": "<b>Revelation</b> - Put The Shadow Behind You into play in your threat area. Limit 1 per investigator.\n[action]: You look behind you.\n<b>Forced</b> - At the end of your turn, if you did not perform the above [action] ability: You must either discard all of your resources or discard all cards in your hand. Then, discard The Shadow Behind You.",
+        "traits": "두려움.",
+        "type_code": "treachery"
+    },
+    "03274": {
+        "back_text": "어려움 / 전문가\n[skull]: -X. X는 플레이 상태인 모든 주요사건에 놓인 파멸 개수의 총합입니다.\n[cultist]:  다른 혼돈 토큰을 하나 더 공개합니다. 당신이 위치한 장소에 파멸이 1개 이상 놓인 적이 있다면, 혼돈 토큰을 더 공개하지 않고, 그 대신 이번 능력 테스트에 자동으로 실패합니다.\n[tablet]: 다른 혼돈 토큰을 하나 더 공개합니다. 당신이 ‘난이도를 넘어선 차이 1 이상으로 성공’하지 못하면, 모든 주요사건에 파멸을 1개씩 올려놓습니다.\n[elder_thing]: -3. 실패하면, 조우 덱과 버린 조우 카드 더미에서 [[비야키]] 적 하나를 찾아서 뽑습니다.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009",
+            "칼_0108"
+        ],
+        "name": "검은 별이 떠오르다",
+        "pack_code": "bsr",
+        "text": "쉬움 / 보통\n[skull]: -X. X는 플레이 상태인 주요사건들 중에서, 파멸이 가장 많이 놓인 주요사건의 파멸 개수입니다.\n[cultist]: 다른 혼돈 토큰을 하나 더 공개합니다. 파멸이 1개 이상 놓인 적을 상대로 한 공격 또는 회피 시도 중에 이 토큰을 공개했다면, 혼돈 토큰을 더 공개하지 않고, 그 대신 이번 능력 테스트에 자동으로 실패합니다.\n[tablet]: 다른 혼돈 토큰을 하나 더 공개합니다. 실패하면, 모든 주요사건에 파멸을 1개씩 올려놓습니다.\n[elder_thing]: -2. 실패하면, 조우 덱과 버린 조우 카드 더미에서 [[비야키]] 적 하나를 찾아서 뽑습니다.",
+        "type_code": "scenario"
+    },
+    "03340": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009"
+        ],
+        "name": "꼭두각시로 전락하다",
+        "pack_code": "dca",
+        "subname": "배반적",
+        "text": "Peril. Hidden.\n<b>Revelation</b> - Secretly add Possession (Traitorous) to your hand.\nIf you have horror on you greater than twice your sanity, you are immediately eliminated and <b>killed</b>.\nYou may commit this card to a skill test at your location. That test automatically fails.",
+        "traits": "사술. 두려움.",
+        "type_code": "treachery"
+    },
+    "04043": {
+        "back_text": "어려움 / 전문가\n[skull]: -X. X는 승점 더미의 복수 점수에 1을 더한 값입니다.\n[cultist]: -X. X는 플레이 상태인 장소 개수입니다.\n[tablet]: -X. X는 탐사 덱에 있는 카드 장수입니다(최소 3).\n[elder_thing]: -3. 당신이 중독되어 있다면, -2 대신 이번 능력 테스트가 자동 실패합니다. 당신이 중독되어 있지 않았고 이번 능력 테스트에 실패했다면, 치워 두었던 ‘중독’ 약점 하나를 가져와 플레이 영역 중 당신의 위협 영역에 둡니다.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009"
+        ],
+        "name": "길들지 않은 야생",
+        "pack_code": "tfa",
+        "text": "쉬움 / 보통\n[skull]: -X. X는 승점 더미의 복수 점수입니다.\n[cultist]: -X. X는 플레이 상태인 장소 개수입니다(최대 5).\n[tablet]: -X. X는 탐사 덱에 있는 카드 장수입니다(최대 5).\n[elder_thing]: -2. 당신이 중독되어 있다면, -2 대신 이번 능력 테스트가 자동 실패합니다.",
+        "type_code": "scenario"
+    },
+    "04062": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "칼_0089"
+        ],
+        "is_unique": true,
+        "name": "발루시아의 선봉장",
+        "pack_code": "tfa",
+        "subname": "잠든 자 깨어나다",
+        "text": "Alert. Hunter. Retaliate.\nHarbinger of Valusia can retaliate while exhausted.\n<b>Forced</b> - After Harbinger of Valusia is successfully attacked or evaded: Place 1 resource on it. Then, if there are 2[per_investigator] resources on it, it vanishes with a sinister hiss. (Set it aside, out of play. It keeps all damage tokens.)",
+        "traits": "인간형. 괴물. 뱀. 정예.",
+        "type_code": "enemy"
+    },
+    "04086": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "잊_0026"
+        ],
+        "flavor": "The secret must be kept.",
+        "name": "에스틀리 파수꾼",
+        "pack_code": "tfa",
+        "text": "<b>Spawn</b> - Any empty location ([[Ancient]], if able).\nAlert. Aloof.\n<b>Forced</b> - When enemies attack during the enemy phase, if Eztli Guardian is ready and unengaged: It attacks each investigator in each connecting location.",
+        "traits": "인간형. 에스틀리.",
+        "type_code": "enemy"
+    },
+    "04089": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "잊_0027",
+            "잊_0028"
+        ],
+        "name": "생매장",
+        "pack_code": "tfa",
+        "text": "<b>Revelation</b> - Put Entombed into play in your threat area.\nYou cannot disengage from enemies or move.\n[action]: Test [agility] (4) to escape the tomb or [combat] (4) to break out. If you succeed, discard Entombed. If you fail, reduce the difficulty of this test by 1 until the end of the round.",
+        "traits": "함정.",
+        "type_code": "treachery"
+    },
+    "04099": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0038"
+        ],
+        "name": "뱀의 재앙",
+        "pack_code": "tfa",
+        "text": "<b>Revelation</b> - Put Snakescourge into play in your threat area. If you are poisoned, Snakescourge gains surge.\nTreat each of your non-weakness [[Item]] assets as if its text box were blank (except for [[Traits]]).\n<b>Forced</b> - At the end of the round: Discard Snakescourge.",
+        "traits": "저주.",
+        "type_code": "treachery"
+    },
+    "04163": {
+        "back_flavor": "The silver flashes of lightning become more frequent, and the sky starts to split open. Thunder rumbles in the distance, and you watch as the skylines of both cities - the Present-Day city and its ancient predecessor - are consumed in a giant stone maw. Six pillars surround the cavernous opening, each glowing vibrantly. A red hue erupts from the center of the opening, and the ground shakes with the force of an earthquake. \"We've seen enough. We must get out of here while we still can!\" Ichtaca shouts. For the first time since meeting her, you hear a telltale trembling in her voice.",
+        "back_text": "Find each [[Tenochtitlán]] location in play with no clues on it. Add those locations to the victory display. Then, for each [[Present-Day]] location in play, search the exploration deck for a location with a matching location symbol in the upper-left corner and place it on top of that location, taking its place.\nEach investigator loses each of his or her clues.\nSpawn the set-aside Padma Amrita enemy in Templo Mayor.\nRemove the current act deck from the game. Put the set-aside act 3a and agenda 3a into play as the current act and agenda.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "잊_0051"
+        ],
+        "flavor": "Ichtaca’s strength continues to wane as you journey through the strange vision. You’ve never seen her this troubled. She is often distracted, peering about as though any moment the answer will appear before her. From time to time, she mutters strange phrases to herself: \"…How could this have happened?…The answer will be with the ancients…Someone else is here, I know it…\"",
+        "name": "방벽이 얇아졌다",
+        "pack_code": "tbb",
+        "type_code": "agenda"
+    },
+    "04205": {
+        "back_text": "어려움 / 전문가\n[skull]: -2 (당신이 [[동굴]] 장소에 있다면, -2 대신 -4).\n[cultist]: -3. 실패하면, 당신이 위치한 장소에 파멸을 1개 올려놓습니다.\n[tablet]: -3. 당신이 중독되어 있다면, -3 대신 이번 능력 테스트가 자동 실패합니다. 당신이 중독되어 있지 않았고 이번 능력 테스트에 실패했다면, 치워 두었던 ‘중독’ 약점 하나를 가져와 플레이 영역 중 당신의 위협 영역에 둡니다.\n[elder_thing]: -4. 실패하면, 공포를 1 받습니다.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009",
+            "잊_0069"
+        ],
+        "name": "고대 문명의 심장부",
+        "pack_code": "hote",
+        "text": "쉬움 / 보통\n[skull]: -1 (당신이 [[동굴]] 장소에 있다면, -1 대신 -3).\n[cultist]: -2. 실패하면, 당신이 위치한 장소에 파멸을 1개 올려놓습니다.\n[tablet]: -2. 당신이 중독되어 있다면, -2 대신 이번 능력 테스트가 자동 실패합니다.\n[elder_thing]: -3. 실패하면, 공포를 1 받습니다.",
+        "type_code": "scenario"
+    },
+    "04237": {
+        "back_text": "어려움 / 전문가\n[skull]: -2 (당신의 손에 카드가 5장 이상 있다면, -2 대신 자동 실패합니다).\n[cultist] 또는 [elder_thing]: -2. 당신이 위치한 장소에 당신이 가진 단서를 1개 올려놓습니다.\n[tablet]: -3. 실패하면, 능력값이 난이도에 모자란 차이마다, 당신의 손에서 무작위로 카드를 1장씩 버립니다.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009"
+        ],
+        "name": "기록물의 도시",
+        "pack_code": "tcoa",
+        "text": "쉬움 / 보통\n[skull]: -1 (당신의 손에 카드가 5장 이상 있다면, -1 대신 -3).\n[cultist] 또는 [elder_thing]: -2. 실패하면, 당신이 위치한 장소에 당신이 가진 단서를 1개 올려놓습니다.\n[tablet]: -3. 실패하면, 당신의 손에서 무작위로 카드를 1장 버립니다.",
+        "type_code": "scenario"
+    },
+    "05087": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0038"
+        ],
+        "name": "감시자의 손아귀",
+        "pack_code": "tcu",
+        "text": "<b>Revelation</b> - Heal 3 damage from The Spectral Watcher. Ready The Spectral Watcher. It moves, engages, and attacks as if it were the enemy phase. Throughout the resolution of this effect, The Spectral Watcher gains \"<b>Prey</b> - You.\"",
+        "traits": "권능. 혼령계.",
+        "type_code": "treachery"
+    },
+    "05093": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009"
+        ],
+        "name": "황폐화",
+        "pack_code": "tcu",
+        "text": "<b>Revelation</b> - Put Wracked into play in your threat area.\nYou get -1 to each of your skills during the first skill test you perform each round.\n[action]: Test [willpower] (3). If you succeed, discard Wracked. If there is an exhausted [[Witch]] enemy at your location, this test is automatically successful.",
+        "traits": "사술.",
+        "type_code": "treachery"
+    },
+    "05146": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009"
+        ],
+        "name": "별들에 이끌리다",
+        "pack_code": "tsn",
+        "text": "<b>Revelation</b> - Put Pulled by the Stars into play in your threat area.\n<b>Forced</b> - At the end of your turn, if you did not move at least once during your turn: Take 2 horror.\n[action]: Test [willpower] (3). If you succeed, discard Pulled by the Stars from play. If there is an exhausted [[Witch]] enemy at your location, this test is automatically successful.",
+        "traits": "사술.",
+        "type_code": "treachery"
+    },
+    "05181": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009"
+        ],
+        "name": "징벌",
+        "pack_code": "wos",
+        "text": "<b>Revelation</b> - Put Punishment into play in your threat area.\n<b>Forced</b> - After an enemy at any location is defeated: Take 1 damage.\n[action]: Test [willpower] (3). If you succeed, discard Punishment. If there is an exhausted [[Witch]] enemy at your location, this test is automatically successful.",
+        "traits": "사술.",
+        "type_code": "treachery"
+    },
+    "05307": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0038"
+        ],
+        "name": "태고의 차원문",
+        "pack_code": "icc",
+        "text": "<b>Revelation</b> - Attach to a random location. Place breaches on attached location until there are exactly 3 breaches on it.\nTreat the attached location as if its printed text box were blank (except for [[Traits]]).\n[action]: Test [intellect] or [willpower] (4) to close the gateway. If you succeed, discard Primordial Gateway.",
+        "traits": "권능.",
+        "type_code": "treachery"
+    },
+    "05341": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0038"
+        ],
+        "name": "무념무상의 무희",
+        "pack_code": "bbt",
+        "text": "<b>Spawn</b> - Farthest empty space.\nHunter.\nMindless Dancer can enter empty space as if it were a location.\n<b>Forced</b> - After Mindless Dancer moves to an empty space via its hunter keyword: Resolve its hunter keyword again. (Limit once per round.)",
+        "traits": "괴물.",
+        "type_code": "enemy"
+    },
+    "05345": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "언_0125"
+        ],
+        "name": "암운이 드리운 세계",
+        "pack_code": "bbt",
+        "text": "<b>Revelation</b> - If there is no doom on Azathoth, A World in Darkness gains surge. Otherwise, for each doom on Azathoth, you must choose one:\n- Lose 1 resource.\n- Choose and discard 1 card from your hand.\n- Take 1 horror.\n- Take 1 damage.",
+        "traits": "종말.",
+        "type_code": "treachery"
+    },
+    "50011": {
+        "back_text": "- Remove the original Study location from the game and replace it with the new Study (Aberrant Gateway). Put the Study (<i>Aberrant Gateway</i>) into play. Each investigator begins play in the Study (<i>Aberrant Gateway</i>).<br/>- Put the new Guest Hall, Bedroom, and Bathroom locations into&nbsp;play.<br/>- Remove the original Hallway location from the game.<br/>- Choose one of the two Attic locations and one of the two Cellar locations at random, and set them aside, out of play. Remove the other versions of Attic and Cellar from the game.<br/>- Set each other location aside, out of&nbsp;play.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0214"
+        ],
+        "name": "돌아온 회합",
+        "pack_code": "rtnotz",
+        "text": "Perform the setup as indicated in the <i>Night of the Zealot Campaign Guide</i>, with the following exceptions:<br/>- When gathering encounter sets, also gather the new encounter sets for Return to The Gathering shown here.<br/>- Remove Act 1a- \"Trapped\" from the game and replace it with the new Act 1a- \"Mysterious Gateway.\"<br/><b>(Continued on reverse side.)</b>",
+        "type_code": "scenario"
+    },
+    "51020": {
+        "back_text": "- Before creating the \"Exhibit Deck,\" add the 2 new Exhibit Hall locations to the original 6 Exhibit Hall locations. Set Exhibit Hall <i>(Restricted Hall)</i> aside and randomly remove 2 Exhibit Hall locations from the game. Then, continue creating the Exhibit Deck as normal.\n<hr>For the duration of this scenario, the following additional rule applies:\n\"While an investigator is resolving the text on agenda 1b and agenda 2b, the <b>Forced</b> ability on the next agenda in the agenda deck is considered to be active.\"\nAttach this card to the scenario reference card as a reminder.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0230"
+        ],
+        "name": "돌아온 미스캐토닉 박물관",
+        "pack_code": "rtdwl",
+        "text": "Perform the setup as indicated in <i>The Dunwich Legacy</i> Campaign Guide, with the following exceptions:\n- When gathering encounter sets, also gather the new encounter sets for <i>Return to The Miskatonic Museum</i> shown here.\n<b>(Continued on reverse side.)</b>",
+        "type_code": "scenario"
+    },
+    "51023": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "던_0230"
+        ],
+        "name": "어둠의 명령",
+        "pack_code": "rtdwl",
+        "text": "<b>Revelation</b> - Attach Dark Bidding to Hunting Horror, even if it is out of play. Dark Bidding remains attached to Hunting Horror if it enters the void.\n<b>Forced</b> - When Hunting Horror attacks an investigator: That investigator must take 1 additional damage and 1 additional horror. Heal 2 damage from Hunting Horror. Discard Dark Bidding. (Max once per attack.)",
+        "traits": "권능.",
+        "type_code": "treachery"
+    },
+    "52023": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0112"
+        ],
+        "is_unique": true,
+        "name": "다이안 드바인",
+        "pack_code": "rtptc",
+        "subname": "그대가 무슨 짓을 하려는 건지 다 알고 있어요",
+        "text": "<b>Prey</b> - Most clues.\nHunter.\nDianne Devine gets +3[per_investigator] health.\n<b>Forced</b> - After any investigator performs a parley action: Move Dianne Devine once toward that investigator.",
+        "traits": "괴물. 추종자. 홀린. 정예.",
+        "type_code": "enemy"
+    },
+    "52065": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009"
+        ],
+        "name": "망상 속의 악",
+        "pack_code": "rtptc",
+        "text": "Peril. Hidden.\n<b>Revelation</b> - You must either secretly add Delusory Evils to your hand, or place 1 doom on the current agenda and discard Delusory Evils (this effect may cause the current agenda to advance).\n<b>Forced</b> - When you would succeed at a skill test by 3 or more: You automatically fail, instead. Discard Delusory Evils from your hand.",
+        "traits": "저주.",
+        "type_code": "treachery"
+    },
+    "81023": {
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0101"
+        ],
+        "name": "Swamp Leech",
+        "pack_code": "cotr",
+        "text": "<b>Spawn</b> - Any [[Bayou]] location.\nSwamp Leech cannot be evaded.\n<b>Forced</b> - When Swamp Leech enters a non-[[Bayou]] location: Discard it.",
+        "traits": "Creature.",
+        "type_code": "enemy"
+    },
+    "82014": {
+        "back_flavor": "As the rising tide of the acqua alta floods the square, you trudge through the numbingly cold water. The parade continues across a makeshift wooden bridge that spans the square, too narrow for your comfort.",
+        "back_text": "Flooded Square is connected to the location in the clockwise direction.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0112"
+        ],
+        "name": "Flooded Square",
+        "pack_code": "coh",
+        "text": "Flooded Square is connected to the location in the clockwise direction.\n[action]: Automatically evade a non-[[Elite]] enemy at the location in the counter-clockwise direction. (Group limit once per turn.)",
+        "traits": "Venice.",
+        "type_code": "location"
+    },
+    "82026": {
+        "faction_code": "neutral",
+        "faq_list": [
+            "코_0038"
+        ],
+        "name": "Gilded Volto",
+        "pack_code": "coh",
+        "text": "Limit 1 [[Mask]] in play.\n[reaction] After Gilded Volto enters play: Treat the next asset you play this turn as if it has fast.\n[reaction] When you initiate a non-[agility] test, discard Gilded Volto: Use [agility] for this test, instead of the skill indicated.",
+        "traits": "Item. Mask.",
+        "type_code": "asset"
+    },
+    "84001": {
+        "back_text": "어려움 / 전문가\n[skull]: -X. X는 플레이 상태인 [[손님]] 적의 수입니다.\n[cultist]: -2. 승점 더미에 [[무고한]] 적이 있다면, 다른 혼돈 토큰을 하나 더 공개합니다.\n[tablet]: -5. 대신 -2로 간주하기 위해, 당신이 가진 단서 1개를 당신이 위치한 장소에 올려놓아도 됩니다.\n[elder_thing]: -3. 이번 테스트에 실패하면, 승점 더미에 있는 [[무고한]] 적마다 공포를 1씩 받습니다.",
+        "faction_code": "mythos",
+        "faq_list": [
+            "코_0009"
+        ],
+        "name": "엑셀시어 호텔 살인사건",
+        "pack_code": "hotel",
+        "text": "쉬움 / 보통\n[skull]: -X. X는 플레이 상태인 [[손님]] 적의 수입니다.\n[cultist]: -1. 승점 더미에 [[무고한]] 적이 있다면, 다른 혼돈 토큰을 하나 더 공개합니다.\n[tablet]: -3. 대신 -1로 간주하기 위해, 당신이 가진 단서 1개를 당신이 위치한 장소에 올려놓아도 됩니다.\n[elder_thing]: -3. 이번 테스트에 실패했고 승점 더미에 [[무고한]] 적이 있다면, 공포를 1 받습니다.",
+        "type_code": "scenario"
+    }
+}

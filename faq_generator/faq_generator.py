@@ -14,12 +14,21 @@ import json
 from pathlib import Path
 from os import PathLike
 from dataclasses import dataclass
+from collections import defaultdict
 from google.oauth2.service_account import Credentials
 from googleapiclient.discovery import build, Resource
 from googleapiclient.http import HttpRequest
-from html_reader import HTMLReader
+from .html_reader import HTMLReader
+from .load_arkhamdb import load_arkhamdb
 
 EntryKey = str
+
+KEY_CARDS = [
+    'back_flavor', 'back_text',
+    'flavor', 'name', 'is_unique', 'faction_code',
+    'subname', 'text', 'traits',
+    'type_code', 'pack_code', 'faq_list'
+]
 
 def _range_tostr(index: Union[str, int, None], default: Optional[str]=None) -> str:
     """ help function for range usage
@@ -76,12 +85,16 @@ class RowData:
             self.is_valid = self._is_valid(color.get('red', 0), color.get('green', 0), color.get('blue', 0))
         if not self.text:
             self.is_valid = False
-        _, self.card_id = self._get_cell(cell_cardid)
-        _, self.faq_level = self._get_cell(cell_level)
-        _, self.date = self._get_cell(cell_date) # TODO: check data type if necessary
+        _, self.card_id = self._get_cell(cell_cardid, False)
+        _, self.faq_level = self._get_cell(cell_level, False)
+        _, self.date = self._get_cell(cell_date, False) # TODO: check data type if necessary
     
     @staticmethod
-    def _get_cell(cell: Dict[str, Dict[str, Any]], raise_error: bool=True) -> Tuple[str, str]:
+    def _get_cell(
+        cell: Dict[str, Dict[str, Any]],
+        get_formula: bool=True,
+        raise_error: bool=True
+        ) -> Tuple[str, str]:
         """get cell value from spreadsheet cell format
         Cell should contains following dict:
             userEnteredValue
@@ -89,6 +102,7 @@ class RowData:
 
         Args:
             cell (Dict[str, Dict[str, str]]): input dict
+            get_formul (bool, optional): if get raw formula. Default to True
             raise_error (bool, optional): check error. Defaults to True.
 
         Returns:
@@ -100,6 +114,8 @@ class RowData:
             key, value = next(iter(cell['userEnteredValue'].items()))
             if raise_error and key == 'errorValue':
                 raise ValueError(f"error while capturing row_data: {value}")
+            if key == 'formulaValue' and not get_formula:
+                return key, str(next(iter(cell['effectiveValue'].values())))
             return key, str(value)
         else:
             return '', ''
@@ -112,7 +128,8 @@ class FAQGenerator:
     """faq generator class"""
     def __init__(
         self, path_key: PathLike,
-        path_qna: PathLike, path_notes: PathLike, path_errata: PathLike,
+        path_qna: PathLike, path_notes: PathLike,
+        path_errata: PathLike, path_rr: PathLike,
         path_report: Optional[PathLike]=None,
         spreadsheets_id: Optional[str]=None,
         readonly: bool=True
@@ -125,6 +142,7 @@ class FAQGenerator:
             path_qna (PathLike): path of qna html file
             path_notes (PathLike): path of rule notes html file
             path_errata (PathLike): path of errata html file
+            path_rr (PathLike): path of rr html file
             path_report (Optional[PathLike], optional): path of report file, no report provided if None. Defaults to None.
             spreadsheets_id (Optional[str], optional): spreadsheets id. do not need if existing in key. Defaults to None.
             readonly (bool, optional): authority scope. Defaults to True.
@@ -138,12 +156,15 @@ class FAQGenerator:
         path_qna = Path(path_qna)
         path_notes = Path(path_notes)
         path_errata = Path(path_errata)
+        path_rr = Path(path_rr)
         if not path_qna.is_file():
             raise FileNotFoundError(path_qna)
         if not path_notes.is_file():
             raise FileNotFoundError(path_notes)
         if not path_errata.is_file():
             raise FileNotFoundError(path_errata)
+        if not path_rr.is_file():
+            raise FileNotFoundError(path_rr)
 
         self._service: Resource = build('sheets', 'v4', credentials=self.credentials)
         self.service: Resource = self._service.spreadsheets() # pylint: disable=E1101
@@ -156,9 +177,8 @@ class FAQGenerator:
         self.entries_qna = HTMLReader(path_qna).refine_qna()
         self.entries_notes = HTMLReader(path_notes).refine_notes(path_notes.name)
         self.entries_errata = HTMLReader(path_errata).refine_errata(path_errata.name)
+        self.entries_rr = HTMLReader(path_rr).refine_notes(path_rr.name)
         
-        self.cards_refered_p: Dict[int, List[EntryKey]] = {}
-        self.cards_refered_s: Dict[int, List[EntryKey]] = {}
         if isinstance(path_report, PathLike):
             self._report_stream = open(path_report, "w", encoding='utf-8')
     
@@ -224,6 +244,7 @@ class FAQGenerator:
         colrange = _range_tostr(col_start, "A")+":"+_range_tostr(col_end, "ZZ")
         ranges = [f"'{name}'!{colrange}" for name in self.sheets]
         fields = "sheets/data/rowData/values/userEnteredValue"
+        fields += ",sheets/data/rowData/values/effectiveValue"
         fields += ",sheets/data/rowData/values/userEnteredFormat/backgroundColorStyle/rgbColor"
         response = self.service.get(
             spreadsheetId=self.spreadsheets_id, ranges=ranges, fields=fields
@@ -243,7 +264,7 @@ class FAQGenerator:
         data = self.get_data()
         result: Dict[str, Dict[str, str]] = {}
         regex_formula = re.compile(r"='?([^']+)?(?:'!)?[A-Z]{1,2}([0-9]+)")
-        regex_faq = re.compile(r"(?:https://arkhamfiles.github.io/)?([a-zA-Z]+).html#([a-zA-Z0-9_]+)#?([0-9]+)?")
+        regex_faq = re.compile(r"(?:https://arkhamfiles.github.io/)?([a-zA-Z_]+).html#([a-zA-Z0-9_]+)#?([0-9]+)?")
         regex_qna = re.compile(r"[Qq]:[ ]?(.+)\n[Aa]:[ ]?(.+)")
         for sheet_name, rows in data.items():
             for i, row in enumerate(rows[1:]):
@@ -264,7 +285,7 @@ class FAQGenerator:
                 item = {
                     'level': row.faq_level,
                     'date': row.date,
-                    'card_list': [row.card_id],
+                    'card_list': row.card_id.split(),
                     'text': row.text
                 }
                 if not item['level'] or not item['text']: # sanity
@@ -296,6 +317,15 @@ class FAQGenerator:
                         else:
                             num = int(num)-1 if isinstance(num, str) else 0
                             item['text'] = self.entries_errata[name][2][num]
+                    elif doc == 'rule_reference':
+                        if name not in self.entries_rr:
+                            print(f"rr is given but key({name}) is unknown: {item['text']} for {row.card_id}")
+                        else:
+                            if num is not None:
+                                print('notes does not support number pick.')
+                            item['text'] = self.entries_rr[name][2]
+                    else:
+                        print(f"unknown link is given: {item['text']}")
                 if key in result:
                     item['card_list'].extend(result[key]['card_list'])
                 result[key] = item
@@ -308,8 +338,66 @@ class FAQGenerator:
         with path_json.open("w", encoding="utf-8") as fp:
             json.dump(result, fp, ensure_ascii=False, indent=4)
         return result
+    
+    def generate_card(
+            self, data: Dict[str, Dict[str, str]],
+            path_db: PathLike,
+            path_player: PathLike, path_encounter: PathLike,
+            overwrite_encounter: bool=False
+        ) -> None:
+        """generate card information for faq entries
 
+        Args:
+            data (Dict[str, Dict[str, str]]): data from faq generator
+            path_db (PathLike): local path of arkhamdb-json-data repository
+            path_player (PathLike): player card json
+            path_encounter (PathLike): encounter card json
+            overwrite_encounter (bool, optional): if you want to reset encounter json. Defaults to False.
+        """
+        path_player = Path(path_player)
+        path_encounter = Path(path_encounter)
+        
+        # load card data from arkhamdb-json-data repo
+        data_player = load_arkhamdb(path_db, 'player', 'ko')
+        data_encounter = load_arkhamdb(path_db, 'encounter', 'ko')
+        
+        # we only use several key...
+        for key, value in data_player.items():
+            data_player[key] = {k: v for k, v in value.items() if k in KEY_CARDS}
+        for key, value in data_encounter.items():
+            data_encounter[key] = {k: v for k, v in value.items() if k in KEY_CARDS}
+        
+        # extract only faq-related cards
+        faq_lists: Dict[str, List[str]] = defaultdict(list)
+        for key, entry in data.items():
+            for card in entry['card_list']:
+                faq_lists[card].append(key)
+        data_player = {k: v for k, v in data_player.items() if k in faq_lists}
+        data_encounter = {k: v for k, v in data_encounter.items() if k in faq_lists}
+        
+        # update encounter data from current information if necessary
+        if not overwrite_encounter and path_encounter.is_file():
+            with path_encounter.open("r", encoding="utf-8") as fp:
+                data_enc: Dict[str, Dict[str]] = json.load(fp)
+            for key, value in data_enc.items():
+                if key in data_encounter:
+                    for k, v in value.items():
+                        data_encounter[key][k] = v
+        
+        # always update faq_list key
+        for key, faq in faq_lists.items():
+            if key in data_player:
+                data_player[key]["faq_list"] = faq
+            if key in data_encounter:
+                data_encounter[key]["faq_list"] = faq
+        
+        # then, write
+        with path_player.open("w", encoding='utf-8') as fp:
+            json.dump(data_player, fp, indent=4, ensure_ascii=False, sort_keys=True)
+        with path_encounter.open("w", encoding='utf-8') as fp:
+            json.dump(data_encounter, fp, indent=4, ensure_ascii=False, sort_keys=True)
 
 if __name__ == "__main__":
     gen = FAQGenerator("../api_key.json", "../raw/faq_legacy.html", "../raw/notes.html", "../raw/errata.html")
-    gen.generate_faq("example.json")
+    data = gen.generate_faq("example.json")
+    gen.generate_card(data, "../../arkhamdb-json-data", "player.json", "encounter.json")
