@@ -57,21 +57,6 @@
       },
     ];
 
-    const cards = [
-      {
-        code: "07002",
-        name: "어맨다 샤프",
-        subname: "학생",
-        text: "<b>강제</b> - 조사 단계 시작에: 카드를 1장 뽑습니다. ‘어맨다 샤프’ 밑에 있는 카드를 버립니다. 당신의 손에 있는 카드를 1장 선택해서 ‘어맨다 샤프’ 밑에 놓습니다.\n<b>강제</b> - 당신이 수행하는 능력 테스트 시작에: (가능하다면) ‘어맨다 샤프’ 밑에 있는 카드를 소모합니다. 이번 테스트가 끝날 때 그 카드를 버리지 않습니다.\n[elder_sign] 효과: +0. 이번 능력 테스트에서, 당신은 ‘어맨다 샤프’ 밑에 있는 카드에 있는 능력 아이콘 개수를 두 배로 불려도 됩니다.",
-        traits: "미스캐토닉. 학자.",
-        back_flavor: "어맨다 샤프는 미스캐토닉 대학에서 특출난 실력을 발휘하며 졸업까지 탄탄대로를 걷고 있었다. 그러던 어느 날, 어맨다는 대양의 밑바닥에서 거대한 괴물이 솟아오르는 그림을 본 후로, 도저히 수업을 따라갈 수가 없었다. 그날부터 꿈속에서는 광대한 수중 도시가 펼쳐졌고 불가해한 언어로 된 속삭임이 귓가에 어른거렸다. 어맨다는 아직은 학업에 전념하고 있지만, 더는 최우수 졸업생이란 목표를 좇지 않는다. 그 대신, 현실의 경계 사이에 숨겨져 있는 초자연적인 비밀에 담긴 의미를 밝혀내고자 나섰다.",
-        back_text: "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 탐구자 카드([seeker]), 레벨 0-3 [[숙련]] 능력 카드, 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 불가해한 연구, 심해로부터의 속삭임, 무작위 기본 약점 카드 1장.",
-        faction_code: "seeker",
-        pack_code: "core",
-        faq_list: [701, 702, 703]
-      }
-    ];
-
     const factions = {
       guardian: "#2E86C1",
       seeker: "#F1C40F",
@@ -86,30 +71,6 @@
     const FAQ_LEVEL_C = 'C';
     const FAQ_LEVEL_D = 'D';
     const FAQ_LEVEL_E = 'E';
-
-    const faqs = {
-      701: {
-        level: FAQ_LEVEL_A,
-        date: '2020',
-        source: 'FAQ, v.1.8',
-        question_text: '‘어맨다 샤프’ 밑에 있는 카드가 능력 테스트에 소모된 동안, 그 카드가 다른 플레이 영역으로 이동하려 한다면 어떻게 처리해야 하나요?',
-        answer_text: '이 경우, ‘어맨다 샤프’ 밑에 남지 않고 해당 플레이 영역으로 이동합니다. 능력 테스트 끝에 버려지는 능력 카드만이 ‘어맨다 샤프’ 밑에 남습니다.'
-      },
-      702: {
-        level: FAQ_LEVEL_C,
-        date: '2021',
-        source: 'FAQ, v.1.8',
-        question_text: '‘어맨다 샤프’ 밑에 있는 카드가 능력 테스트에 소모된 동안, 그 카드가 다른 플레이 영역으로 이동하려 한다면 어떻게 처리해야 하나요?',
-        answer_text: '이 경우, ‘어맨다 샤프’ 밑에 남지 않고 해당 플레이 영역으로 이동합니다. 능력 테스트 끝에 버려지는 능력 카드만이 ‘어맨다 샤프’ 밑에 남습니다.'
-      },
-      703: {
-        level: FAQ_LEVEL_A,
-        date: '2022',
-        source: 'FAQ, v.2.0',
-        question_text: '‘방어 태세’, ‘지역 조사’, ‘비술 이론’, ‘불굴의 기백’이 ‘어맨다 샤프’ 밑에 있을 때, 이러한 카드를 능력 테스트에 소모할 수 있나요?',
-        answer_text: '불가능합니다. 이번 능력 테스트와 일치하는 능력 아이콘이 1개 이상 있어야만 소모할 수 있습니다. 위에 언급된 카드는당신의 손에 있거나 능력 테스트에 소모된 경우에만 아이콘을 갖습니다. 따라서 (‘어맨다 샤프’나 ‘연습이 완벽을 만든다’와 같이) 다른 곳/방법을 통해서는 소모할 수 없습니다.'
-      }
-    }
 
     function _getClass(obj) {
       return obj.faction_code ? obj.faction_code : 'neutral';
@@ -194,66 +155,61 @@
       const middleContent = document.getElementById("middleContent");
       const searchInput = document.getElementById("searchInput");
       const searchButton = document.getElementById("searchButton");
+      Promise.all([
+        fetch('json/player_cards.json').then(response => response.json()),
+        fetch('json/faq.json').then(response => response.json())
+      ])
+        .then(([firstData, secondData]) => {
 
-      // Render cycle list
-      cycles.forEach((cycle) => {
-        const cycleLi = document.createElement("li");
-        cycleLi.innerText = cycle.name;
-        cycleLi.classList.add("cycle");
-        cycleList.appendChild(cycleLi);
+          const cards = firstData;
 
-        cycle.card_types.forEach((cardType) => {
-          const li = document.createElement("li");
-          li.innerText = cardType;
-          li.classList.add("card-type");
-          li.addEventListener("click", function () {
-            displayCardsList(cycle, cardType);
+          const faqs = secondData;
+          // Render cycle list
+          cycles.forEach((cycle) => {
+            const cycleLi = document.createElement("li");
+            cycleLi.innerText = cycle.name;
+            cycleLi.classList.add("cycle");
+            cycleList.appendChild(cycleLi);
+
+            cycle.card_types.forEach((cardType) => {
+              const li = document.createElement("li");
+              li.innerText = cardType;
+              li.classList.add("card-type");
+              li.addEventListener("click", function () {
+                displayCardsList(cycle, cardType);
+              });
+              cycleList.appendChild(li);
+            });
           });
-          cycleList.appendChild(li);
+          function displayCardsList(cycle, type) {
+            middleContent.innerHTML = "";
+
+            const table = document.createElement("table");
+            table.classList.add("card-table");
+
+            cards.filter((x) => x.pack_code === cycle.pack_code)
+              .forEach((card) => {
+                const tr = document.createElement("tr");
+                tr.classList.add("card");
+                tr.classList.add(card.faction_code);
+                tr.style.color = factions[card.faction_code];
+                tr.addEventListener("click", function () {
+                  displayCardEntry(card, type);
+                });
+
+                const td = document.createElement("td");
+                td.innerText = card.name;
+                tr.appendChild(td);
+
+                table.appendChild(tr);
+              });
+
+            middleContent.appendChild(table);
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
         });
-      });
-      function displayCardsList(cycle, type) {
-        middleContent.innerHTML = "";
-
-        const table = document.createElement("table");
-        table.classList.add("card-table");
-
-        cards.filter((x) => x.pack_code === cycle.pack_code)
-          .forEach((card) => {
-            const tr = document.createElement("tr");
-            tr.classList.add("card");
-            tr.classList.add(card.faction_code);
-            tr.style.color = factions[card.faction_code];
-            tr.addEventListener("click", function () {
-              displayCardEntry(card, type);
-            });
-
-            const td = document.createElement("td");
-            td.innerText = card.name;
-            tr.appendChild(td);
-
-            table.appendChild(tr);
-          });
-
-        middleContent.appendChild(table);
-      }
-      /*function displayCardsList(cycle, type) {
-        middleContent.innerHTML = "";
-        const ul = document.createElement("ul");
-        middleContent.appendChild(ul);
-        cards.filter((x) => x.pack_code === cycle.pack_code)
-          .forEach((card) => {
-            const li = document.createElement("li");
-            li.innerText = `${card.name}`;
-            li.classList.add("card");
-            li.classList.add(card.faction_code);
-            li.style.color = factions[card.faction_code];
-            li.addEventListener("click", function () {
-              displayCardEntry(card, type);
-            });
-            ul.appendChild(li);
-          });
-      }*/
 
       function displayCardEntry(card) {
         middleContent.innerHTML = `<div class="col-sm-7">
