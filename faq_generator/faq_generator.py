@@ -26,7 +26,7 @@ EntryKey = str
 KEY_CARDS = [
     'back_flavor', 'back_text',
     'flavor', 'name', 'is_unique', 'faction_code',
-    'subname', 'text', 'traits',
+    'subname', 'text', 'traits', 'code',
     'type_code', 'pack_code', 'faq_list'
 ]
 
@@ -387,9 +387,9 @@ class FAQGenerator:
         # always update faq_list key
         for key, faq in faq_lists.items():
             if key in data_player:
-                data_player[key]["faq_list"] = faq
+                data_player[key]["faqs"] = faq
             if key in data_encounter:
-                data_encounter[key]["faq_list"] = faq
+                data_encounter[key]["faqs"] = faq
         
         # then, write
         with path_player.open("w", encoding='utf-8') as fp:

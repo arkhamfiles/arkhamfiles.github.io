@@ -2,8 +2,9 @@
     "01001": {
         "back_flavor": "로랜드는 절차와 규칙을 지키는 것에서 안정감을 느껴왔다. 로랜드는 요원이라는 직업이 어떤 주어진 상황 속에서도 따를 수 있는 지침이 있다는 점에 안도했다. 하지만 최근, 그의 연방 요원 수첩에서는 적혀 있지 않는 케이스를 맡게 되었다. 기괴한 괴물, 시간과 공간을 통하는 차원문, 마법 주문을 맞닥뜨렸을 때 어떻게 해야 하는지는 그의 연방 수첩 어디에도 없었다. 그의 눈으로 보지 못했다면, 결코 믿지 않았을 일들이 일어나고 있었다 …. 그리고 이것들을 그의 윗선에서 이해할리도 없었다. 로랜드는 자신의 힘만으로 이 사건을 해결해야 함을 직감했다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 수호자 카드([guardian]), 레벨 0-2 탐구자 카드([seeker]), 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 로랜드의 38구경 특제 권총, 은폐, 무작위 기본 약점 카드 1장.",
+        "code": "01001",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0000",
             "코_0001"
         ],
@@ -19,8 +20,9 @@
     "01002": {
         "back_flavor": "미스캐토닉 대학의 저명한 사서인 데이지는 언제나 자신의 삶에서 가장 중요한 것은 책이라고 생각하고 있었다. 그녀는 자신이 가장 끔찍하게 여기던 공포, 폭력, 두려움을 탐구하는 방법으로 소설책을 선택했다. 그러던 중, 그녀는 네크로노미콘의 존 디 번역본을 우연히 발견했다. 이 책은 불경스럽고, 배덕적이었으며, 사실이라기엔 너무나도 끔찍했다. 하지만 그녀가 평소에 연구하던 잘 알려져 있지 않은 초자연적인 주제로 볼 때, 데이지는 이 책 안에 소설 같은 가상의 이야기가 아닌 수많은 진실이 담겨있음을 알게 되었다. 그녀는 오른 도서관에서 소장한 금서들에 어떤 다른 비밀이 더 있는지 궁금해졌다‧‧‧.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 탐구자 카드([seeker]), 레벨 0-2 신비주의자 카드([mystic]), 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 데이지의 토트백, 네크로노미콘(존 디 번역본), 무작위 기본 약점 카드 1장.",
+        "code": "01002",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0002"
         ],
         "flavor": "“책에는 매우 강력한 힘이 있어요. 현실을 다시금 쓸 수 있는 힘 말이에요.”",
@@ -35,8 +37,9 @@
     "01004": {
         "back_flavor": "애그니스 베이커는 이번 생에서는 그저 그런 종업원에 불과했다. 하지만, 현대 세계에서 상상할 수도 없는 오래 전에, 그녀는 매우 강력한 마녀였다. 모든 일은 어느 날 그녀가 다락방에서 괴상한 유물을 발견하면서 시작되었다. 열쇠처럼 생긴 그 유물은 가족들의 먼지 쌓인 유품들과 함께 보관되어 있었다. 그녀가 이 물건에 손을 대자, 엄청난 기억들이 그녀의 머릿속에 흘러 들어왔고, “하이퍼보리아”라는 한 단어가 떠올랐다. 그녀가 전생의 기억과 환영을 파헤치면 파헤칠수록 그녀의 마법은 강해졌다‧‧‧. 그리고 그녀의 두려움 또한 깊어져갔다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 신비주의자 카드([mystic]), 레벨 0-2 생존자 카드([survivor]), 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 하이퍼보리아의 가보, 어두운 기억, 무작위 기본 약점 카드 1장.",
+        "code": "01004",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0003",
             "코_0004"
         ],
@@ -52,8 +55,9 @@
     "01005": {
         "back_flavor": "웬디가 어렸을 때, 그녀의 어머니는 웬디의 목걸이를 가지고 함께 놀아주곤 했다. 그녀의 어머니는 자신의 이야기를 들려주었고, 웬디는 반짝이는 목걸이를 빙빙 돌리며 바라보곤 했다. 그러던 어느 날, 그녀의 아버지가 바다에서 실종되었고, 그 이후 어머니는 기이한 행동을 하기 시작했다. 집안 구석구석에 이상한 표식을 그렸던 것이다. 결국 웬디의 어머니는 정신병원으로 끌려 갔고, 웬디는 고아원으로 가게 되었다. 웬디의 어머니가 정신병원으로 끌려가기 전, 어머니는 웬디를 “보호해주기 위해” 웬디에게 자신의 목걸이를 주었다. 웬디는 고아원에서 몇 해를 보내다가, 홀로 살아가는 것이 더 나을 것이라는 확신을 갖고 고아원에서 도망쳤다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 생존자 카드([survivor]), 레벨 0-2 무법자 카드([rogue]), 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 웬디의 부적, 홀로 남겨지다, 무작위 기본 약점 카드 1장.",
+        "code": "01005",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0005",
             "코_0006",
             "코_0007"
@@ -67,8 +71,9 @@
         "type_code": "investigator"
     },
     "01006": {
+        "code": "01006",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0008",
             "코_0009"
         ],
@@ -80,8 +85,9 @@
         "type_code": "asset"
     },
     "01007": {
+        "code": "01007",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0010",
             "코_0011",
             "코_0012",
@@ -99,8 +105,9 @@
         "type_code": "treachery"
     },
     "01008": {
+        "code": "01008",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0011"
         ],
         "is_unique": true,
@@ -111,8 +118,9 @@
         "type_code": "asset"
     },
     "01009": {
+        "code": "01009",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0020",
             "코_0021"
         ],
@@ -124,8 +132,9 @@
         "type_code": "asset"
     },
     "01010": {
+        "code": "01010",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0021"
         ],
         "flavor": "교도서에 두 번 다시 가지 않을 거야.",
@@ -136,8 +145,9 @@
         "type_code": "event"
     },
     "01011": {
+        "code": "01011",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0023",
             "코_0024"
         ],
@@ -148,8 +158,9 @@
         "type_code": "treachery"
     },
     "01012": {
+        "code": "01012",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0006",
             "코_0024",
             "코_0027",
@@ -165,8 +176,9 @@
         "type_code": "asset"
     },
     "01013": {
+        "code": "01013",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0029",
             "코_0030",
             "코_0031"
@@ -179,8 +191,9 @@
         "type_code": "event"
     },
     "01014": {
+        "code": "01014",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0024",
             "코_0032",
             "코_0033",
@@ -196,8 +209,9 @@
         "type_code": "asset"
     },
     "01015": {
+        "code": "01015",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "flavor": "엄마도 아빠도 필요없어. 난 아무도 필요하지 않아.",
@@ -208,8 +222,9 @@
         "type_code": "treachery"
     },
     "01017": {
+        "code": "01017",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0039"
         ],
         "name": "체력 단련",
@@ -219,8 +234,9 @@
         "type_code": "asset"
     },
     "01018": {
+        "code": "01018",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0040"
         ],
         "name": "순찰 경찰",
@@ -230,8 +246,9 @@
         "type_code": "asset"
     },
     "01020": {
+        "code": "01020",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0041",
             "코_0042"
         ],
@@ -243,8 +260,9 @@
         "type_code": "asset"
     },
     "01021": {
+        "code": "01021",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0043"
         ],
         "flavor": "훈련되어 적을 향해 사납게 짖어내는, 이런 충성스러운 개들은 그 자체로서 완벽한 동료이다.",
@@ -255,8 +273,9 @@
         "type_code": "asset"
     },
     "01022": {
+        "code": "01022",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0003"
         ],
         "flavor": "내 추측대로야!",
@@ -267,8 +286,9 @@
         "type_code": "event"
     },
     "01023": {
+        "code": "01023",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0045",
             "코_0046",
             "코_0047",
@@ -281,8 +301,9 @@
         "type_code": "event"
     },
     "01024": {
+        "code": "01024",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0049",
             "코_0050"
         ],
@@ -293,8 +314,9 @@
         "type_code": "event"
     },
     "01028": {
+        "code": "01028",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0042"
         ],
         "name": "순찰 경찰",
@@ -304,8 +326,9 @@
         "type_code": "asset"
     },
     "01029": {
+        "code": "01029",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0052"
         ],
         "name": "산탄총",
@@ -315,8 +338,9 @@
         "type_code": "asset"
     },
     "01030": {
+        "code": "01030",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0053",
             "코_0054"
         ],
@@ -328,8 +352,9 @@
         "type_code": "asset"
     },
     "01031": {
+        "code": "01031",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0055",
             "코_0056"
         ],
@@ -340,8 +365,9 @@
         "type_code": "asset"
     },
     "01032": {
+        "code": "01032",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0057"
         ],
         "flavor": "“우리 모두 알다시피, 오른 도서관에는 문제가 있었다네. 가여운 아미티지 박사의 상태가 악화되고, 관련 없는 다른이가‧‧‧ 몇 해 전 사고‧‧‧.”",
@@ -352,8 +378,9 @@
         "type_code": "asset"
     },
     "01034": {
+        "code": "01034",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0041"
         ],
         "name": "초지각",
@@ -363,8 +390,9 @@
         "type_code": "asset"
     },
     "01036": {
+        "code": "01036",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0059",
             "코_0060",
             "코_0061",
@@ -377,8 +405,9 @@
         "type_code": "event"
     },
     "01037": {
+        "code": "01037",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0003"
         ],
         "name": "직감에 따라 움직이다",
@@ -388,8 +417,9 @@
         "type_code": "event"
     },
     "01038": {
+        "code": "01038",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0064",
             "코_0065"
         ],
@@ -400,8 +430,9 @@
         "type_code": "event"
     },
     "01039": {
+        "code": "01039",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0066",
             "코_0067"
         ],
@@ -413,8 +444,9 @@
         "type_code": "skill"
     },
     "01041": {
+        "code": "01041",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0068",
             "코_0069"
         ],
@@ -428,8 +460,9 @@
         "type_code": "asset"
     },
     "01045": {
+        "code": "01045",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0070"
         ],
         "name": "빈집털이",
@@ -439,8 +472,9 @@
         "type_code": "asset"
     },
     "01046": {
+        "code": "01046",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0071"
         ],
         "name": "소매치기",
@@ -450,8 +484,9 @@
         "type_code": "asset"
     },
     "01048": {
+        "code": "01048",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0072",
             "코_0073"
         ],
@@ -465,8 +500,9 @@
         "type_code": "asset"
     },
     "01049": {
+        "code": "01049",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0060"
         ],
         "name": "역경",
@@ -476,8 +512,9 @@
         "type_code": "asset"
     },
     "01050": {
+        "code": "01050",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0075",
             "코_0076",
             "코_0077",
@@ -491,8 +528,9 @@
         "type_code": "event"
     },
     "01051": {
+        "code": "01051",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0080"
         ],
         "name": "뒤통수치기",
@@ -502,8 +540,9 @@
         "type_code": "event"
     },
     "01052": {
+        "code": "01052",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0081"
         ],
         "name": "기습",
@@ -513,8 +552,9 @@
         "type_code": "event"
     },
     "01054": {
+        "code": "01054",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0075"
         ],
         "flavor": "“난 미시시피에서 태어났어. 루이지애나는 그저 듣기 좋으라고 하는 소리야.”",
@@ -527,8 +567,9 @@
         "type_code": "asset"
     },
     "01056": {
+        "code": "01056",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0084"
         ],
         "name": "짜고 치는 도박",
@@ -538,8 +579,9 @@
         "type_code": "event"
     },
     "01058": {
+        "code": "01058",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0085"
         ],
         "name": "금단의 지식",
@@ -549,8 +591,9 @@
         "type_code": "asset"
     },
     "01060": {
+        "code": "01060",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0086"
         ],
         "name": "쭈그러뜨리기",
@@ -560,8 +603,9 @@
         "type_code": "asset"
     },
     "01062": {
+        "code": "01062",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0076"
         ],
         "name": "비술 연구",
@@ -571,8 +615,9 @@
         "type_code": "asset"
     },
     "01063": {
+        "code": "01063",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0088"
         ],
         "name": "비술 입문자",
@@ -582,8 +627,9 @@
         "type_code": "asset"
     },
     "01064": {
+        "code": "01064",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0065",
             "코_0090",
             "코_0091"
@@ -596,8 +642,9 @@
         "type_code": "event"
     },
     "01065": {
+        "code": "01065",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0092"
         ],
         "name": "보호의 진",
@@ -607,8 +654,9 @@
         "type_code": "event"
     },
     "01066": {
+        "code": "01066",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0088"
         ],
         "name": "눈부신 빛",
@@ -618,8 +666,9 @@
         "type_code": "event"
     },
     "01067": {
+        "code": "01067",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0094"
         ],
         "flavor": "우리가 이 어둠 속에서 굳건히 버텨야만, 다음 날 떠오르는 태양을 볼 수 있다.",
@@ -630,8 +679,9 @@
         "type_code": "skill"
     },
     "01068": {
+        "code": "01068",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0038",
             "코_0095",
             "코_0096",
@@ -645,8 +695,9 @@
         "type_code": "event"
     },
     "01069": {
+        "code": "01069",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0095"
         ],
         "name": "눈부신 빛",
@@ -656,8 +707,9 @@
         "type_code": "event"
     },
     "01071": {
+        "code": "01071",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0101",
             "코_0102"
         ],
@@ -668,8 +720,9 @@
         "type_code": "asset"
     },
     "01073": {
+        "code": "01073",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0059",
             "코_0104",
             "코_0105"
@@ -681,8 +734,9 @@
         "type_code": "asset"
     },
     "01074": {
+        "code": "01074",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0102",
             "코_0107"
         ],
@@ -693,8 +747,9 @@
         "type_code": "asset"
     },
     "01075": {
+        "code": "01075",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0108"
         ],
         "flavor": "사람들은 토끼 발 부적이 행운을 가져온다고 말한다. 이전까지는 그런 이야기에 코웃음을 쳤지만, 지금은 그 부적의 행운에라도 매달려야 할 것 같다.",
@@ -705,8 +760,9 @@
         "type_code": "asset"
     },
     "01076": {
+        "code": "01076",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0109",
             "코_0110"
         ],
@@ -718,8 +774,9 @@
         "type_code": "asset"
     },
     "01078": {
+        "code": "01078",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0112",
             "코_0112"
         ],
@@ -731,8 +788,9 @@
         "type_code": "event"
     },
     "01079": {
+        "code": "01079",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0091"
         ],
         "name": "“이것 좀 봐!”",
@@ -742,8 +800,9 @@
         "type_code": "event"
     },
     "01080": {
+        "code": "01080",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0115",
             "코_0116"
         ],
@@ -754,8 +813,9 @@
         "type_code": "event"
     },
     "01081": {
+        "code": "01081",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0117",
             "코_0118"
         ],
@@ -766,8 +826,9 @@
         "type_code": "skill"
     },
     "01082": {
+        "code": "01082",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0119"
         ],
         "flavor": "“보이는 것을 두려워하지 말아요. 오히려 볼 수 없는 것을 두려워해야 해요.”",
@@ -780,8 +841,9 @@
         "type_code": "asset"
     },
     "01084": {
+        "code": "01084",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0117"
         ],
         "name": "요행",
@@ -791,8 +853,9 @@
         "type_code": "event"
     },
     "01087": {
+        "code": "01087",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0122"
         ],
         "name": "손전등",
@@ -802,8 +865,9 @@
         "type_code": "asset"
     },
     "01089": {
+        "code": "01089",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0123",
             "코_0124"
         ],
@@ -815,8 +879,9 @@
         "type_code": "skill"
     },
     "01096": {
+        "code": "01096",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0033"
         ],
         "flavor": "잠깐‧‧‧ 여기가 어디지? 난 뭘 하고 있었던 거야?",
@@ -827,8 +892,9 @@
         "type_code": "treachery"
     },
     "01097": {
+        "code": "01097",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0132",
             "코_0133"
         ],
@@ -840,8 +906,9 @@
         "type_code": "treachery"
     },
     "01098": {
+        "code": "01098",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0134"
         ],
         "name": "귀신이 들리다",
@@ -851,8 +918,9 @@
         "type_code": "treachery"
     },
     "01099": {
+        "code": "01099",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0135",
             "코_0136"
         ],
@@ -863,8 +931,9 @@
         "type_code": "treachery"
     },
     "01100": {
+        "code": "01100",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0137",
             "코_0138"
         ],
@@ -875,8 +944,9 @@
         "type_code": "treachery"
     },
     "01101": {
+        "code": "01101",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0139"
         ],
         "flavor": "그러게 오배넌 조직에서 돈을 빌리지 말았어야지. 항상 보면 빚쟁이들은 제일 안 좋은 상황에 나타난다니깐.",
@@ -887,8 +957,9 @@
         "type_code": "enemy"
     },
     "01103": {
+        "code": "01103",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0038",
             "코_0140",
             "코_0141"
@@ -903,8 +974,9 @@
     "02001": {
         "back_flavor": "조이는 여섯 살이었을 적, 신의 부름을 받고 자신이 특별한 존재라는 것을 깨달았다. 끔찍한 화마가 부모님을 앗아가 버린 그날 밤, 신은 이 세계의 사람들 중에서 자신의 대리인이 될 존재로 조이를 선택했다고 말해 주었다. 조이는 무고한 이를 보호하고 악을 단죄하려 했다. 그때부터 신은 조이가 곤경에 처할 때마다 길을 알려주고, 안정을 찾아 주었다. 조이는 이제 이 도시 저 도시를 옮겨 다니며 요리사로 일하면서 생계를 이어 가고 있다. 그녀는 일을 하지 않을 때면 주님의 목소리를 따라 뜻을 이루고자 밤의 어둠 속으로 발을 내딛는다. 그리고 사악한 존재를 발견하면, 가책이나 망설임 없이 때려눕힌다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 수호자 카드([guardian]), 레벨 0-5 중립 카드, 이외의 레벨 0 다른 역할군([seeker], [rogue], [mystic], [survivor]) 카드 최대 5장.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 조이의 십자가, 악을 처단하라, 무작위 기본 약점 카드 1장.",
+        "code": "02001",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "던_0002"
         ],
         "flavor": "“신께서 말씀하신 바에 따라, 망설이지 않고 그 뜻을 따르겠어.”",
@@ -919,8 +991,9 @@
     "02002": {
         "back_flavor": "재난이 닥칠 때마다, 렉스 머피는 대개 그 재난에 휘말려 고통받아 왔다. 렉스와 며칠 보내어 보면, 그 어떤 완고한 무신론자라도 렉스가 저주 받은 인간이라는 사실을 인정할 수밖에 없다. 렉스가 좋은 기삿거리다 싶은 실마리를 찾을 때면 늘 일이 잘못 돌아갔다. 인스머스에서 있었던 사건을 찍은 사진은 바다로 날아가 버렸고, 던위치에서의 사건을 추적한 기록은 보안관에게 가져가기도 전에 비에 씻겨 사라졌다. 끔찍한 불운 때문에 소름끼치는 괴물이나 이단의 음모 앞에 놓인 적도 한두 번이 아니다. 살아남기 위해, 렉스는 자신의 기자 정신을 발휘해 다음 번 찾아올 재난보다 한 발 앞서 나아가고 있다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 탐구자 카드([seeker]), 레벨 0-5 중립 카드, 이외의 레벨 0 다른 역할군([guardian], [rogue], [mystic], [survivor]) 카드 최대 5장.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 진실을 찾아서, 렉스의 저주, 무작위 기본 약점 카드 1장.\n<b>덱 구성 제한</b>: [[행운]] 카드는 사용할 수 없습니다.",
+        "code": "02002",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0003",
             "코_0009",
             "던_0004",
@@ -939,8 +1012,9 @@
     "02004": {
         "back_flavor": "아버지의 트럼펫을 집어 든 이후, 재즈란 그에게 골칫거리일 따름이었다. 트럼펫의 나팔 안에는 음산한 느낌을 풍기는 다른 세계의 글귀가 적혀 있으나, 연주할 때는 좋은 커피와 같이 부드럽고 짙은 음정이 울려 퍼졌다. 짐은 이 트럼펫 덕에 많은 연주 계약을 따냈다. 짐이 장례식장에서 연주를 하자 젠킨스 씨의 미망인이 관에서 일어나 춤을 춘 그 날까지는 말이다. 그 이후로, 짐은 당최 일을 구할 수 없었다. 재즈에 대해, 그리고 차가운 가을밤에 묘지의 구울들이 떠들어대는 이야기에 대해 많이 알게 된 것도 그때부터다. 얼마 전, 구울은 종말에 관한 이야기를 들려 주었다. 이 세상에 지금 존재하는, 그리고 미래에 나타날 모든 것의 종말인 ‘최후의 랩소디’가 다가온다는 이야기이다. 사실, 짐은 그런 이야기에 그리 신경쓰지 않는다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 신비주의자 카드([mystic]), 레벨 0-5 중립 카드, 이외의 레벨 0 다른 역할군([guardian], [seeker], [rogue], [survivor]) 카드 최대 5장.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 짐의 트럼펫, 최후의 랩소디, 무작위 기본 약점 카드 1장.",
+        "code": "02004",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "던_0011"
         ],
         "flavor": "“아니, 전혀 조용하지 않소. 내가 트럼펫을 불 때면, 죽은 친구들이 정말 사납게 날뛴다오.”",
@@ -955,8 +1029,9 @@
     "02005": {
         "back_flavor": "“재떨이” 피트는 정처 없이 떠돌다 밤이 되면 어디서든 잠을 청한다. 그곳이 들밭이든, 기차 위든… 운이 좋다면 빈 농가의 헛간에서 하룻밤을 보낼 때도 있다. 피트 자신이 데리고 다니는 충직한 사냥개 듀크를 한쪽 팔에 안고, 다른 팔로는 낡디 낡은 기타를 껴안고 자는 것이다. “재떨이” 피트는 자는 동안 종종 끔찍한 괴물과 황량한 장소가 나오는 꿈을 꾼다. 잠에서 깨고 나면, 피트는 곤경에 처한 누군가를 도와주러 갈 준비를 한다. 그의 꿈은 언제나 현실로 나타났기 때문이다. 피트가 자신의 몸뚱아리 하나만 믿고 길거리 생활을 시작한 지 얼마나 되었는지는 그 자신도 모른다. 하지만 도움을 필요로 하는 사람이 있다면, 아무리 먼 곳이라도 개의치 않고 피트는 즉시 발걸음을 옮길 것이다. 피트가 다른 누군가를 도울 수 있는 한, 그가 방랑을 멈추는 일은 없을 것이다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 생존자 카드([survivor]), 레벨 0-5 중립 카드, 이외의 레벨 0 다른 역할군([guardian], [seeker], [rogue], [mystic]) 카드 최대 5장.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 듀크, 악몽에 무너지다, 무작위 기본 약점 카드 1장.",
+        "code": "02005",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "던_0013"
         ],
         "flavor": "“이리 와, 듀크. 이제 일하러 가보자.”",
@@ -969,8 +1044,9 @@
         "type_code": "investigator"
     },
     "02006": {
+        "code": "02006",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0015"
         ],
         "is_unique": true,
@@ -982,8 +1058,9 @@
         "type_code": "asset"
     },
     "02007": {
+        "code": "02007",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0016",
             "던_0017",
             "던_0018",
@@ -996,8 +1073,9 @@
         "type_code": "treachery"
     },
     "02009": {
+        "code": "02009",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0020"
         ],
         "name": "렉스의 저주",
@@ -1007,8 +1085,9 @@
         "type_code": "treachery"
     },
     "02010": {
+        "code": "02010",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0022"
         ],
         "flavor": "“ …말해 봐. 이게 도노휴 씨의 총인가?” 제니가 어깨 높이로 권총을 들 고는 자세를 잡습니다. “그 사람보다는 나한테 더 잘 어울리는 거 같 은데. 안 그래?”",
@@ -1021,8 +1100,9 @@
         "type_code": "asset"
     },
     "02011": {
+        "code": "02011",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0101",
             "던_0024",
             "던_0025"
@@ -1034,8 +1114,9 @@
         "type_code": "treachery"
     },
     "02013": {
+        "code": "02013",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0027",
             "던_0028"
         ],
@@ -1047,8 +1128,9 @@
         "type_code": "treachery"
     },
     "02014": {
+        "code": "02014",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0029",
             "던_0030",
             "던_0031"
@@ -1062,8 +1144,9 @@
         "type_code": "asset"
     },
     "02015": {
+        "code": "02015",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0035",
             "던_0036"
         ],
@@ -1074,8 +1157,9 @@
         "type_code": "treachery"
     },
     "02018": {
+        "code": "02018",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "던_0037",
             "던_0038"
         ],
@@ -1087,8 +1171,9 @@
         "type_code": "event"
     },
     "02022": {
+        "code": "02022",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "던_0042",
             "던_0043"
         ],
@@ -1100,8 +1185,9 @@
         "type_code": "event"
     },
     "02023": {
+        "code": "02023",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "던_0045"
         ],
         "flavor": "몇몇 이들은 무슨 수를 써서라도 진실을 알고자 합니다. 때론 그 진실이 날카로운 비수가 되어 돌아오기도 합니다.",
@@ -1112,8 +1198,9 @@
         "type_code": "event"
     },
     "02025": {
+        "code": "02025",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "던_0046"
         ],
         "name": "재빠른 대응",
@@ -1123,8 +1210,9 @@
         "type_code": "event"
     },
     "02026": {
+        "code": "02026",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "던_0047",
             "던_0048",
             "던_0049",
@@ -1138,8 +1226,9 @@
         "type_code": "skill"
     },
     "02028": {
+        "code": "02028",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0088",
             "던_0053"
         ],
@@ -1150,8 +1239,9 @@
         "type_code": "asset"
     },
     "02029": {
+        "code": "02029",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "던_0054",
             "던_0055"
         ],
@@ -1163,8 +1253,9 @@
         "type_code": "asset"
     },
     "02032": {
+        "code": "02032",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "던_0056"
         ],
         "name": "소방용 도끼",
@@ -1174,8 +1265,9 @@
         "type_code": "asset"
     },
     "02033": {
+        "code": "02033",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "던_0057"
         ],
         "flavor": "어깨가 떡 벌어진 청년에게서 젊은이 특유의 자신감이 엿보입니다.",
@@ -1188,8 +1280,9 @@
         "type_code": "asset"
     },
     "02035": {
+        "code": "02035",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "던_0059"
         ],
         "flavor": "어깨가 떡 벌어진 청년에게서 젊은이 특유의 자신감이 엿보입니다.",
@@ -1202,8 +1295,9 @@
         "type_code": "asset"
     },
     "02037": {
+        "code": "02037",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0059",
             "던_0060"
         ],
@@ -1215,8 +1309,9 @@
         "type_code": "treachery"
     },
     "02038": {
+        "code": "02038",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0061"
         ],
         "name": "내상",
@@ -1226,8 +1321,9 @@
         "type_code": "treachery"
     },
     "02039": {
+        "code": "02039",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0062"
         ],
         "name": "시간공포증",
@@ -1237,8 +1333,9 @@
         "type_code": "treachery"
     },
     "02105": {
+        "code": "02105",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "던_0102"
         ],
         "name": "긴급 치료",
@@ -1248,8 +1345,9 @@
         "type_code": "event"
     },
     "02108": {
+        "code": "02108",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "던_0103"
         ],
         "flavor": "공포의 존재를 찾아다니는 이들은 더 멀고 기이한 곳에 홀려 있는 법이다. - H.P.러브크래프트, “그 집에 있는 그림”",
@@ -1260,8 +1358,9 @@
         "type_code": "asset"
     },
     "02110": {
+        "code": "02110",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "던_0104"
         ],
         "name": "적응력",
@@ -1271,8 +1370,9 @@
         "type_code": "asset"
     },
     "02113": {
+        "code": "02113",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "던_0105"
         ],
         "name": "이런!",
@@ -1282,8 +1382,9 @@
         "type_code": "event"
     },
     "02115": {
+        "code": "02115",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "던_0107"
         ],
         "name": "조명탄",
@@ -1293,8 +1394,9 @@
         "type_code": "event"
     },
     "02147": {
+        "code": "02147",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "던_0120",
             "던_0121"
         ],
@@ -1305,8 +1407,9 @@
         "type_code": "asset"
     },
     "02148": {
+        "code": "02148",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "던_0122"
         ],
         "flavor": "우린 쉽게 쓰러지지 않아!",
@@ -1317,8 +1420,9 @@
         "type_code": "event"
     },
     "02151": {
+        "code": "02151",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "던_0123"
         ],
         "flavor": "비겁자는 비록 이기지는 못하겠지만, 죽는 일도 거의 없습니다.",
@@ -1329,8 +1433,9 @@
         "type_code": "event"
     },
     "02190": {
+        "code": "02190",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0109",
             "던_0139"
         ],
@@ -1342,8 +1447,9 @@
         "type_code": "skill"
     },
     "02194": {
+        "code": "02194",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0141"
         ],
         "flavor": "아무리 준비해도 부족하다.",
@@ -1354,8 +1460,9 @@
         "type_code": "event"
     },
     "02227": {
+        "code": "02227",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "던_0155"
         ],
         "flavor": "배우고자 한다면, 우선 우리가 알고 있는 모든 것에 질문을 던져야 합니다.",
@@ -1366,8 +1473,9 @@
         "type_code": "skill"
     },
     "02229": {
+        "code": "02229",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0038",
             "던_0053",
             "던_0055",
@@ -1381,8 +1489,9 @@
         "type_code": "skill"
     },
     "02230": {
+        "code": "02230",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "던_0162",
             "던_0163"
         ],
@@ -1394,8 +1503,9 @@
         "type_code": "asset"
     },
     "02233": {
+        "code": "02233",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "던_0162"
         ],
         "name": "탐구의 의식",
@@ -1405,8 +1515,9 @@
         "type_code": "asset"
     },
     "02234": {
+        "code": "02234",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "던_0165"
         ],
         "name": "숨은 실력자",
@@ -1416,8 +1527,9 @@
         "type_code": "asset"
     },
     "02235": {
+        "code": "02235",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "던_0166"
         ],
         "name": "생존 본능",
@@ -1427,8 +1539,9 @@
         "type_code": "skill"
     },
     "02261": {
+        "code": "02261",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "던_0181"
         ],
         "name": "“난 더한 것도 이겨냈어…”",
@@ -1438,8 +1551,9 @@
         "type_code": "event"
     },
     "02262": {
+        "code": "02262",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "던_0183"
         ],
         "name": "기이한 용액",
@@ -1450,8 +1564,9 @@
         "type_code": "asset"
     },
     "02265": {
+        "code": "02265",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "던_0188"
         ],
         "flavor": "“머피. 넌 알잖아. 돈만 되면 생쥐놈은 진짜 누구에게서 언제나 뭐든 훔칠 수 있다는 걸 말야.”\n- 제이슨 마커, “아컴의 세계”",
@@ -1464,8 +1579,9 @@
         "type_code": "asset"
     },
     "02266": {
+        "code": "02266",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "던_0189"
         ],
         "name": "비장의 패",
@@ -1475,8 +1591,9 @@
         "type_code": "event"
     },
     "02269": {
+        "code": "02269",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "던_0190"
         ],
         "is_unique": true,
@@ -1488,8 +1605,9 @@
         "type_code": "asset"
     },
     "02270": {
+        "code": "02270",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "던_0104",
             "던_0192"
         ],
@@ -1500,8 +1618,9 @@
         "type_code": "event"
     },
     "02271": {
+        "code": "02271",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0009",
             "던_0193"
         ],
@@ -1512,8 +1631,9 @@
         "type_code": "skill"
     },
     "02272": {
+        "code": "02272",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0195"
         ],
         "flavor": "피부에 닿는 감촉으로는 실크만한 게 없습니다.",
@@ -1524,8 +1644,9 @@
         "type_code": "asset"
     },
     "02273": {
+        "code": "02273",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0009",
             "던_0141"
         ],
@@ -1536,8 +1657,9 @@
         "type_code": "event"
     },
     "02303": {
+        "code": "02303",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "던_0210",
             "던_0211"
         ],
@@ -1548,8 +1670,9 @@
         "type_code": "event"
     },
     "02305": {
+        "code": "02305",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "던_0213",
             "던_0214",
             "던_0215"
@@ -1563,8 +1686,9 @@
         "type_code": "asset"
     },
     "02307": {
+        "code": "02307",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "던_0216"
         ],
         "name": "보호의 진",
@@ -1574,8 +1698,9 @@
         "type_code": "event"
     },
     "02309": {
+        "code": "02309",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "던_0217"
         ],
         "name": "시행착오",
@@ -1587,8 +1712,9 @@
     "03003": {
         "back_flavor": "세피나가 어렸을 때부터 그녀가 그린 매혹적인 그림은 세간의 눈을 끌었다. 파리에서 타히티로 찾아온 미술품 수집상은 세피나의 재능을 눈여겨 보면서, 자금을 후원해줄 테니 모작을 그려달라고 요청했다. 날선 안목과 지칠 줄 모르는 손을 지닌 세피나는 예상했던 것 이상으로 잘 맞는 일이라고 생각하고서 모작에 묘한 매력을 느꼈다. 최근 세피나는 정체불명의 재력가로부터 의뢰를 받았다. 기괴한 외계 도시의 파노라마를 재창조해 달라는 의뢰였다. 마침내 마지막 붓질을 끝낸 순간, 세피나는 그림 안의 세계로 빨려들어갔다. 그림 속 외계 도시에서 갖은 고초를 겪으며 죽음의 문턱까지 갔다가 간신히 살아남는 과정에서 그녀는 녹초가 되고 말았다. 다시 눈을 떴을 때는 자신의 화랑 안이었지만, 세피나는 그림 속에서 벌어진 일이 실제로 일어났다는 것을 알고 있다.",
         "back_text": "<b>덱 크기</b>: 33장.\n<b>덱 구성 선택지</b>: 레벨 0-5 무법자 카드([rogue]), 레벨 0-5 중립 카드, 레벨 0-2 신비주의자 카드([mystic]).\n<b>덱 구성 요구조건</b> (덱 크기에 포함되지 않습니다): 그림 속 세계 사본 3장, 히아데스 성단 사본 1장, 무작위 기본 약점 카드 1장.",
+        "code": "03003",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "칼_0000"
         ],
         "is_unique": true,
@@ -1602,8 +1728,9 @@
     "03006": {
         "back_flavor": "롤라는 지금껏 세계를 순회하며 연일 매진된 공연에서 훌륭한 연기를 펼쳐왔다. 하지만 『황색의 왕』 만큼 기이하고도 기억에 남는 공연은 없었다. 심지어 예행 연습을 할 때조차, 그 작품과 관련된 모든 것은 재난과 공포로 끝맺고야 말았다. 끝내 롤라와 함께 공동 주연을 맡고 있던 미리엄이 센 강에서 시신으로 발견되었고, 더 이상 참을 수 없었던 롤라는 다음 공연을 마지막으로 하차하겠다고 감독에게 편지로 통보했다. 이제 롤라는 마침내 이 지긋지긋하고 끔찍한 연극에서 발을 뗄 수 있으리라 생각하며 마지막 공연이 열리는 고향 도시 아컴으로 향했다.",
         "back_text": "<b>덱 크기</b>: 35장.\n<b>덱 구성 선택지</b>: 레벨 0-3 생존자([survivor])/수호자([guardian])/탐구자(([seeker])/무법자([rogue])/신비주의자([mystic]) 카드, 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b> (덱 크기에 포함되지 않습니다): 즉흥 연기 사본 2장, 정체성의 위기 사본 2장, 무작위 기본 약점 카드 1장.\n<b>추가 요구조건</b>: 당신의 덱에는 최소한 서로 다른 세 가지 역할군([survivor]/[guardian]/[seeker]/[rogue]/[mystic])의 카드가 각기 7장 이상씩 포함되어야 합니다.",
+        "code": "03006",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "칼_0001",
             "칼_0002",
             "칼_0003"
@@ -1618,8 +1745,9 @@
         "type_code": "investigator"
     },
     "03009": {
+        "code": "03009",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0033"
         ],
         "is_unique": true,
@@ -1631,8 +1759,9 @@
         "type_code": "asset"
     },
     "03012": {
+        "code": "03012",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "칼_0005",
             "칼_0006",
             "칼_0007",
@@ -1646,8 +1775,9 @@
         "type_code": "event"
     },
     "03017": {
+        "code": "03017",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "칼_0010"
         ],
         "flavor": "“지옥은 비어 있고, 악마는 모두 여기 있네.”\n - 윌리엄 셰익스피어, “폭풍우”",
@@ -1658,8 +1788,9 @@
         "type_code": "enemy"
     },
     "03019": {
+        "code": "03019",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "칼_0011"
         ],
         "flavor": "“전 수많은 배역을 연기해 왔어요. 미쳐버린다 해도 이상하지 않을 정도로요.”",
@@ -1670,8 +1801,9 @@
         "type_code": "treachery"
     },
     "03022": {
+        "code": "03022",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "칼_0012"
         ],
         "name": "“이건 내가 처리하지!”",
@@ -1681,8 +1813,9 @@
         "type_code": "event"
     },
     "03024": {
+        "code": "03024",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "칼_0013"
         ],
         "flavor": "이렇게까지 했는데도 ‘제네’가 탐험가 연맹에 가입할 수 없다면, 대체 누가 연맹에 들어갈 수 있단 말입니까?",
@@ -1693,8 +1826,9 @@
         "type_code": "asset"
     },
     "03025": {
+        "code": "03025",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "칼_0014"
         ],
         "name": "고대 상형문자판",
@@ -1705,8 +1839,9 @@
         "type_code": "asset"
     },
     "03027": {
+        "code": "03027",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "name": "사정에 밝다",
@@ -1716,8 +1851,9 @@
         "type_code": "asset"
     },
     "03028": {
+        "code": "03028",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "칼_0016"
         ],
         "name": "잠행",
@@ -1727,8 +1863,9 @@
         "type_code": "asset"
     },
     "03029": {
+        "code": "03029",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "던_0024"
         ],
         "name": "교묘한 술책",
@@ -1738,8 +1875,9 @@
         "type_code": "event"
     },
     "03033": {
+        "code": "03033",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "칼_0009"
         ],
         "flavor": "그녀는 힘에 사로잡혀 벌벌 떨며 경련했다. 마침내 그 힘이 그녀와 합쳐지고, 그녀가 눈을 떴다...",
@@ -1750,8 +1888,9 @@
         "type_code": "event"
     },
     "03034": {
+        "code": "03034",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "칼_0020"
         ],
         "flavor": "차원을 넘어선 이동에는 위험이 따른다는 것쯤은 그도 잘 압니다. 그렇다 한들, 시공을 뛰어넘는 흥미진진한 능력을 거부할 사람이 어디 있겠습니까?",
@@ -1762,8 +1901,9 @@
         "type_code": "event"
     },
     "03035": {
+        "code": "03035",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "칼_0021"
         ],
         "name": "영혼이 깃든 의식용 단검",
@@ -1773,8 +1913,9 @@
         "type_code": "asset"
     },
     "03042": {
+        "code": "03042",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "칼_0023"
         ],
         "flavor": "이 세상 어디에 있든 따라옵니다.",
@@ -1786,8 +1927,9 @@
         "type_code": "enemy"
     },
     "03113": {
+        "code": "03113",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "칼_0023"
         ],
         "name": "명상",
@@ -1797,8 +1939,9 @@
         "type_code": "asset"
     },
     "03149": {
+        "code": "03149",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "칼_0059"
         ],
         "is_unique": true,
@@ -1810,8 +1953,9 @@
         "type_code": "asset"
     },
     "03153": {
+        "code": "03153",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "칼_0060",
             "칼_0061"
         ],
@@ -1822,8 +1966,9 @@
         "type_code": "event"
     },
     "03155": {
+        "code": "03155",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "칼_0062"
         ],
         "name": "투쟁 혹은 도피",
@@ -1833,8 +1978,9 @@
         "type_code": "event"
     },
     "03189": {
+        "code": "03189",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "칼_0080"
         ],
         "flavor": "그는 라이터에 불을 당기고는 마침내 평화를 되찾았습니다.",
@@ -1845,8 +1991,9 @@
         "type_code": "event"
     },
     "03191": {
+        "code": "03191",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "칼_0081"
         ],
         "flavor": "“나는 한 가지 사실을 알고 있기 때문에 현존하는 인간 중에서 가장 현명한 인간이다. 그 한 가지는, 내가 아는 것이 없다는 사실이다.”\n- 플라톤, <u>“국가”</u>",
@@ -1857,8 +2004,9 @@
         "type_code": "event"
     },
     "03193": {
+        "code": "03193",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0112",
             "칼_0082"
         ],
@@ -1870,8 +2018,9 @@
         "type_code": "asset"
     },
     "03194": {
+        "code": "03194",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0112"
         ],
         "flavor": "그들이 내게 가르쳐 주었다. “눈을 노려라.”",
@@ -1882,8 +2031,9 @@
         "type_code": "event"
     },
     "03199": {
+        "code": "03199",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "칼_0088",
             "칼_0089"
         ],
@@ -1894,8 +2044,9 @@
         "type_code": "event"
     },
     "03232": {
+        "code": "03232",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0189",
             "코_0190"
         ],
@@ -1907,8 +2058,9 @@
         "type_code": "event"
     },
     "03234": {
+        "code": "03234",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "칼_0095"
         ],
         "name": "41구경 데린저",
@@ -1918,8 +2070,9 @@
         "type_code": "asset"
     },
     "03263": {
+        "code": "03263",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "칼_0100"
         ],
         "name": "추적",
@@ -1929,8 +2082,9 @@
         "type_code": "event"
     },
     "03264": {
+        "code": "03264",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "코_0038",
             "칼_0101"
         ],
@@ -1941,8 +2095,9 @@
         "type_code": "asset"
     },
     "03265": {
+        "code": "03265",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "던_0217"
         ],
         "name": "지침",
@@ -1952,8 +2107,9 @@
         "type_code": "event"
     },
     "03270": {
+        "code": "03270",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "칼_0104"
         ],
         "name": "보호의 진",
@@ -1963,8 +2119,9 @@
         "type_code": "event"
     },
     "03272": {
+        "code": "03272",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "칼_0105"
         ],
         "name": "“그냥 당하진 않아!”",
@@ -1974,8 +2131,9 @@
         "type_code": "skill"
     },
     "03273": {
+        "code": "03273",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "칼_0106"
         ],
         "name": "진정한 생존자",
@@ -1985,8 +2143,9 @@
         "type_code": "event"
     },
     "03306": {
+        "code": "03306",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "칼_0111",
             "칼_0112",
             "칼_0113"
@@ -1998,8 +2157,9 @@
         "type_code": "event"
     },
     "03308": {
+        "code": "03308",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "칼_0114",
             "칼_0115",
             "칼_0116"
@@ -2013,8 +2173,9 @@
         "type_code": "asset"
     },
     "03310": {
+        "code": "03310",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "칼_0082"
         ],
         "name": "죽음 모면",
@@ -2024,8 +2185,9 @@
         "type_code": "event"
     },
     "03311": {
+        "code": "03311",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "칼_0118",
             "칼_0119",
             "칼_0120",
@@ -2043,8 +2205,9 @@
         "type_code": "event"
     },
     "03315": {
+        "code": "03315",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "칼_0127"
         ],
         "is_unique": true,
@@ -2058,8 +2221,9 @@
     "04001": {
         "back_flavor": "레오 앤더슨은 평생 동안 전 세계에서 가장 위험한 벽지를 누벼왔으며, 그 과정에서 좋은 동료를 많이 잃었다. 그동안 많은 이들의 희생으로 얻어낸 학술적인 성과가 과연 그 목숨만큼의 가치가 있었는지, 레오는 종종 스스로에게 묻곤 한다. 얼마 전 레오는 『올로소파의 책력』이라 불리는 유물을 찾기 위해 난 마돌로 탐사를 다녀왔지만, 그 여정은 비극으로 끝나 버렸다. 레오와 함께한 탐험대원 중에서 생존한, 아니 인간의 몰골이라도 하고서 살아남은 이는 미치 브라운밖에 없었다. 레오는 자신을 믿고 따랐던 사람들을 땅에 묻는 일이 지긋지긋해졌다. 하지만 레오는 이러한 탐사를 그저 학구적인 것으로 순진하게 볼 일이 아니라는 걸 잘 알고 있으며, 이 일을 끝맺기 전까지는 감히 그만두지 않을 것이다. ",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 수호자 카드([guardian]), 레벨 0-2 무법자 카드([rogue]), 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b> (덱 크기에 포함되지 않습니다): 미치 브라운, 피의 대가를 치르다, 무작위 기본 약점 카드 1장.",
+        "code": "04001",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "잊_0000"
         ],
         "flavor": "“제명에 죽고 싶다면, 멈추지 말고 계속 가.”",
@@ -2074,8 +2238,9 @@
     "04002": {
         "back_flavor": "모든 대륙에 있는 산을 등반해 본 사람이 얼마나 되겠는가? 식인 부족으로부터 황금 우상을 훔쳐낸 이는 그보다도 더 적을 것이다. 남성이 지배적으로 군림해 온, 모험과 탐험의 세계에서 이런 업적을 당당히 이뤄냈다는 점에서 우르술라는 독보적인 존재라 할 만하다. 소싯적부터 우르술라는 여자가 따라야 하는 규범 따위 보란 듯이 무시하면서 나무에 오르고, 진탕에서 구르고, 숲을 탐험하면서 “숙녀가 해선 안 될” 일을 수도 없이 해왔다. 우르술라는 보스턴에서 고고학 학위를 받은 이래로, 세계를 여행하며 잊힌 문명을 찾아다니고 있다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 탐구자 카드([seeker]), 레벨 0-4 [[유물]] 카드, 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b> (덱 크기에 포함되지 않습니다): 제이크 윌리엄스, 미지의 부름, 무작위 기본 약점 카드 1장.",
+        "code": "04002",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "잊_0001",
             "잊_0002"
         ],
@@ -2091,8 +2256,9 @@
     "04004": {
         "back_flavor": "사제로 임명된 이래로 마테오 카스티야의 삶은 그리 순탄치 않았다. 지난 수십 년 동안 멕시코는 분쟁과 갈등을 겪으며 망가지고 있었다. 마테오 신부는 신념의 실천과 정부가 정한 전도 금지법의 테두리 사이에서 균형을 잡으려 노력했다. 그러나 마테오의 신앙을 근간부터 흔드는 문제는 따로 있었다. 최근 벌어진 수많은 살인과 납치 사건을 조사하던 마테오는 이 사건들이 자신이 애초에 우려했던 정치 폭력과는 거리가 멀다는 사실을 알아냈다. 이 사건 중 대부분은 들끓고 있는 전쟁의 핵심에 자리잡은 끔찍하고 무시무시한 이단 종교 집단이 저지른 범죄였던 것이다. 마테오는 의문을 품었다. 어찌하여 선하고 자비로우신 신께서는 마테오 자신이 그날 밤 본 끔찍한 사태가 일어나게 두신단 말인가?",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 신비주의자 카드([mystic]), 레벨 0-3 [[축복받은]] 카드, 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b> (덱 크기에 포함되지 않습니다): 시대의 고서, 이그의 뱀, 무작위 기본 약점 카드 1장.\n<b>추가 경험치</b>: 당신은 추가 경험치 5점을 가지고 캠페인을 시작합니다(이 추가 경험치는 독립 시나리오 모드에서 경험치에 따라 받아야 하는 약점 개수에 영향을 미치지 않습니다).",
+        "code": "04004",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0009",
             "잊_0004"
         ],
@@ -2105,8 +2271,9 @@
         "type_code": "investigator"
     },
     "04006": {
+        "code": "04006",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "잊_0006"
         ],
         "flavor": "“레오, 넌 이제 나 없인 아무 데도 못 가.\n그러니 무슨 사정인지 다 털어놓으라고!”",
@@ -2119,8 +2286,9 @@
         "type_code": "asset"
     },
     "04009": {
+        "code": "04009",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0101",
             "잊_0007"
         ],
@@ -2131,8 +2299,9 @@
         "type_code": "treachery"
     },
     "04013": {
+        "code": "04013",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "is_unique": true,
@@ -2144,8 +2313,9 @@
         "type_code": "asset"
     },
     "04017": {
+        "code": "04017",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "잊_0010"
         ],
         "name": "생존용 단도",
@@ -2155,8 +2325,9 @@
         "type_code": "asset"
     },
     "04021": {
+        "code": "04021",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "잊_0011"
         ],
         "is_unique": true,
@@ -2168,8 +2339,9 @@
         "type_code": "asset"
     },
     "04028": {
+        "code": "04028",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "칼_0014"
         ],
         "name": "“네가 처리해!”",
@@ -2179,8 +2351,9 @@
         "type_code": "event"
     },
     "04032": {
+        "code": "04032",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0104"
         ],
         "flavor": "별들 사이에 비밀이 쓰여 있나니.",
@@ -2191,8 +2364,9 @@
         "type_code": "event"
     },
     "04034": {
+        "code": "04034",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "잊_0015"
         ],
         "flavor": "행운이란 기대하지도 않았던 순간에 찾아오는 법이다.",
@@ -2203,8 +2377,9 @@
         "type_code": "event"
     },
     "04035": {
+        "code": "04035",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "잊_0017"
         ],
         "is_unique": true,
@@ -2216,8 +2391,9 @@
         "type_code": "asset"
     },
     "04037": {
+        "code": "04037",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0038",
             "잊_0019"
         ],
@@ -2228,8 +2404,9 @@
         "type_code": "asset"
     },
     "04038": {
+        "code": "04038",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "잊_0020"
         ],
         "name": "어둠의 계약",
@@ -2239,8 +2416,9 @@
         "type_code": "event"
     },
     "04040": {
+        "code": "04040",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "잊_0021"
         ],
         "name": "비운",
@@ -2250,8 +2428,9 @@
         "type_code": "treachery"
     },
     "04105": {
+        "code": "04105",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0112",
             "잊_0033"
         ],
@@ -2262,8 +2441,9 @@
         "type_code": "event"
     },
     "04106": {
+        "code": "04106",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "잊_0035"
         ],
         "name": "재빠른 분석",
@@ -2273,8 +2453,9 @@
         "type_code": "asset"
     },
     "04108": {
+        "code": "04108",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "잊_0036"
         ],
         "flavor": "“걱정 마. 처리해줄 사람이 있어.” – 레오 데 루카",
@@ -2285,8 +2466,9 @@
         "type_code": "asset"
     },
     "04109": {
+        "code": "04109",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "잊_0037",
             "잊_0038",
             "잊_0039",
@@ -2300,8 +2482,9 @@
         "type_code": "asset"
     },
     "04110": {
+        "code": "04110",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0109"
         ],
         "flavor": "“내가 보고 있는 동안엔 안되지.”",
@@ -2312,8 +2495,9 @@
         "type_code": "event"
     },
     "04111": {
+        "code": "04111",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "잊_0043"
         ],
         "flavor": "그녀에게 필요한 건 굳센 손과 결연한 마음뿐.",
@@ -2324,8 +2508,9 @@
         "type_code": "event"
     },
     "04112": {
+        "code": "04112",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0112"
         ],
         "flavor": "빠각.",
@@ -2336,8 +2521,9 @@
         "type_code": "skill"
     },
     "04152": {
+        "code": "04152",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "칼_0016"
         ],
         "flavor": "“내가 미쳤다고? 그걸 어떻게 알아!”\n앨리스가 묻자 고양이가 답했다.\n“그야 당연하지. 아니면 어떻게 여기 있겠어?”\n- 루이스 캐럴, “이상한 나라의 앨리스”",
@@ -2348,8 +2534,9 @@
         "type_code": "event"
     },
     "04157": {
+        "code": "04157",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "잊_0050"
         ],
         "flavor": "무지라는 이름의 평온한 섬으로부터 저 멀리 항해해 나아간다.",
@@ -2360,8 +2547,9 @@
         "type_code": "skill"
     },
     "04158": {
+        "code": "04158",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "잊_0050"
         ],
         "name": "미래를 떠올리다",
@@ -2371,8 +2559,9 @@
         "type_code": "asset"
     },
     "04195": {
+        "code": "04195",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "name": "약점 노출",
@@ -2382,8 +2571,9 @@
         "type_code": "event"
     },
     "04196": {
+        "code": "04196",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "잊_0057"
         ],
         "flavor": "“이 일을 하다 보면 소위 ‘저주’란 것들을 자주 접하지.\n 그런 이야기는 가급적 하지 말자고.”\n",
@@ -2396,8 +2586,9 @@
         "type_code": "asset"
     },
     "04197": {
+        "code": "04197",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0104",
             "던_0056",
             "던_0057"
@@ -2412,8 +2603,9 @@
         "type_code": "asset"
     },
     "04199": {
+        "code": "04199",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "name": "불길한 예감",
@@ -2423,8 +2615,9 @@
         "type_code": "event"
     },
     "04200": {
+        "code": "04200",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "잊_0065",
             "잊_0066",
             "잊_0067"
@@ -2436,8 +2629,9 @@
         "type_code": "event"
     },
     "04231": {
+        "code": "04231",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "잊_0072"
         ],
         "name": "고대 석판",
@@ -2448,8 +2642,9 @@
         "type_code": "asset"
     },
     "04233": {
+        "code": "04233",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0189",
             "코_0190",
             "잊_0038",
@@ -2462,8 +2657,9 @@
         "type_code": "event"
     },
     "04236": {
+        "code": "04236",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "잊_0077"
         ],
         "name": "홀로서기",
@@ -2473,8 +2669,9 @@
         "type_code": "asset"
     },
     "04265": {
+        "code": "04265",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "잊_0084"
         ],
         "name": "수갑",
@@ -2484,8 +2681,9 @@
         "type_code": "asset"
     },
     "04273": {
+        "code": "04273",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0009"
         ],
         "name": "낡은 사냥용 소총",
@@ -2495,8 +2693,9 @@
         "type_code": "asset"
     },
     "04309": {
+        "code": "04309",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "잊_0093"
         ],
         "name": "올인",
@@ -2508,8 +2707,9 @@
     "05002": {
         "back_flavor": "사설탐정 조 다이아몬드는 일반인이라면 초자연적인 미신으로 치부하고 말 사건들을 다루는 데 정통하다. 사소한 것 하나도 놓치는 법이 없는 조는 부자들을 위해서도 일했지만 불운에 처한 이들을 위해서도 일해왔다. 조에게 있어 너무 버겁거나 너무 하찮거나 너무 이상하거나 너무 위험한 사건이란 없다. 그는 진실로 다가설수록 무엇이든 추악해진다는 것을 경험으로 익혀왔으며, 그 절정에 다다르는 바로 그 순간을 즐긴다.",
         "back_text": "<b>덱 크기</b>: 40장.\n<b>덱 구성 선택지</b>: 레벨 0-5 탐구자 카드([seeker]), 레벨 0-2 수호자 카드([guardian]), 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 탐정의 콜트 1911 쌍권총, 미제 사건, 무작위 기본 약점 카드 1장.\n<b>추가 요구조건</b>: 당신의 덱은 [[통찰]] 이벤트를 11장 이상 포함해야 합니다(‘미제 사건’을 포함해서). 시나리오를 준비하는 동안, 당신의 덱에서 [[통찰]] 이벤트를 11장 선택해야 합니다(그중에 하나는 ‘미제 사건’이어야 합니다). 이 카드들을 따로 섞어서 별도의 “직감 덱”을 구성합니다.",
+        "code": "05002",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "is_unique": true,
@@ -2523,8 +2723,9 @@
     "05003": {
         "back_flavor": "프레스턴 페어몬트는 집안의 막대한 부 덕분에 원하는 무엇이든 누릴 특권을 거머쥐고 있다는 정도만 인지하고 있을 뿐, 가문의 부가 어디서 흘러들어왔는지는 생각해 본 적이 없었다. 프레스턴의 부친은 이따금 괴로워하며, 할아버지의 사업에 대해 그리고 은빛 황혼회라 불리는 밀교의 요구사항에 대해 설명하려 애를 썼지만 프레스턴은 전혀 귀담아듣질 않았다. 그러던 어느 날, 부친이 꺼림칙한 자동차 사고로 인해 유명을 달리하게 되면서 페어몬트가의 부는 오롯이 프레스턴의 몫이 되었다. 이제 은빛 황혼회의 교단장인 칼 샌포드가 프레스턴을 사적으로 만나고자 한다. 프레스턴은 이제야 자신의 집안에 흘러들어온 재물의 출처에 대해 난생처음으로 생각하기 시작했다…",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 무법자 카드([rogue]), 레벨 0-2 생존자 카드([survivor]), 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b> (덱 크기에 포함되지 않습니다): 가문의 유산, 교단에 진 “빚”, 무작위 기본 약점 카드 1장.\n<b>추가 제한조건</b>: [[불법]] 카드 포함 불가.",
+        "code": "05003",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0009"
         ],
         "flavor": "“내 돈, 내 유산, 내 문제야. 이젠 내 방식대로 해결하지.”",
@@ -2539,8 +2740,9 @@
     "05004": {
         "back_flavor": "아컴에서 새로이 사업을 시작한 다이애나 스탠리는 그 유명한 은빛 황혼회에 자랑스럽게 입단했다. 그러나 그 기쁨은 이내 공포로 변해갔다. 은빛 황혼회에 발을 들인 덕에 사업은 번창했지만 주간 회합은 나날이 꺼려지기 시작했고, 괴상한 의식이며 끔찍한 비밀에 노출될수록 황혼회의 실체는 의문스럽기만 했다. 그리고 이제 다이애나는 끔찍한 세력이 아컴에 모여들고 있으며 황혼회가 이와 모종의 연관성이 있음을 확신하게 되었다. 무슨 수를 써서라도 황혼회를 내부에서 무너뜨리겠노라고, 다이애나는 마음을 굳게 먹었다.",
         "back_text": "<b>덱 크기</b>: 35장.\n<b>덱 구성 선택지</b>: 레벨 0-5 신비주의자 카드([mystic]), 레벨 0-2 수호자 카드([guardian]), 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b> (덱 크기에 포함되지 않습니다): 황혼의 칼, 어두운 통찰, 끔찍한 비밀, 무작위 기본 약점 카드 1장.\n<b>추가 게임준비</b>: 당신은 매 게임마다 시작 카드에 추가로 ‘어두운 통찰’을 가지고 시작합니다.",
+        "code": "05004",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "칼_0002",
             "잊_0021"
         ],
@@ -2553,8 +2755,9 @@
         "type_code": "investigator"
     },
     "05008": {
+        "code": "05008",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "name": "이성적인 사고",
@@ -2564,8 +2767,9 @@
         "type_code": "treachery"
     },
     "05011": {
+        "code": "05011",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "is_unique": true,
@@ -2577,8 +2781,9 @@
         "type_code": "asset"
     },
     "05014": {
+        "code": "05014",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "던_0033",
             "칼_0106"
         ],
@@ -2589,8 +2794,9 @@
         "type_code": "event"
     },
     "05021": {
+        "code": "05021",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "던_0183"
         ],
         "name": "불가피한 숙명을 늦추다",
@@ -2600,8 +2806,9 @@
         "type_code": "event"
     },
     "05022": {
+        "code": "05022",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "잊_0019"
         ],
         "flavor": "용기와 멍청함은 한 끗 차이다.",
@@ -2612,8 +2819,9 @@
         "type_code": "skill"
     },
     "05032": {
+        "code": "05032",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0135"
         ],
         "name": "존재 부정",
@@ -2623,8 +2831,9 @@
         "type_code": "event"
     },
     "05156": {
+        "code": "05156",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "name": "재빠른 반사신경",
@@ -2634,8 +2843,9 @@
         "type_code": "event"
     },
     "05234": {
+        "code": "05234",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0112"
         ],
         "name": "유인",
@@ -2645,8 +2855,9 @@
         "type_code": "event"
     },
     "05279": {
+        "code": "05279",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "is_unique": true,
@@ -2658,8 +2869,9 @@
         "type_code": "asset"
     },
     "05280": {
+        "code": "05280",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0135"
         ],
         "name": "존재 부정",
@@ -2669,8 +2881,9 @@
         "type_code": "event"
     },
     "05315": {
+        "code": "05315",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "던_0183"
         ],
         "name": "“난 더한 것도 이겨냈어...”",
@@ -2680,8 +2893,9 @@
         "type_code": "event"
     },
     "05320": {
+        "code": "05320",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "칼_0011",
             "언_0110"
         ],
@@ -2695,8 +2909,9 @@
     "06004": {
         "back_flavor": "수년 전, 루크는 몽환의 땅으로 진입할 수 있는 입구를 발견했다. 삼촌이 유품으로 남긴 특이한 상자를 사용하여, 잠의 관문을 지나 여행하는 방법을 익혔던 것이다. 그렇게 꿈을 자유롭게 드나들 수 있게 된 후로, 루크는 꿈속의 대지를 돌아다니며 모험을 찾아 나서는 데에 대부분의 나날을 보내왔다. 셀레파이스의 거리에서 마법 걸린 숲에 이르기까지, 루크는 끝없는 불가사의로 가득한 곳을 누비며 몽환의 땅이 지닌 비밀을, 그리고 이곳에 거주하는 무수한 꿈꾸는 자들의 비밀을 밝혀왔다. 고대의 혼돈이 꿈 바깥 세계뿐만 아니라 꿈속 세계까지 소멸시키기 위해 마수를 뻗어오고 있는 지금, 루크는 절대 그런 일이 일어나도록 좌시하지 않을 것이다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 신비주의자 카드([mystic]), 레벨 0-2 탐구자 카드([seeker]), 레벨 0-5 중립 카드\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 차원문 상자, 현실로부터의 격리, 무작위 기본 약점 카드 1장.",
+        "code": "06004",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0038",
             "꿈_0003"
         ],
@@ -2712,8 +2927,9 @@
     "06005": {
         "back_flavor": "패트리스는 일평생 음악을 하며 살았다. 고조되는 소나타, 기품이 넘치는 아리아, 가슴 뛰는 행진곡, 그 모든 것이 언제나 패트리스의 가장 친한 벗이었다. 그러나 바이올린을 켤 때면, 이따금씩 어떤 외계의 지성체의 기척이 있는 듯 없는 듯 아주 희미하게 느껴졌다. 그것은 패트리스를 감시하면서 때를 기다리고 있었다. 그것도 잔뜩 굶주린 채로. 특히 지난 한 달 동안 그것의 존재감은 점점 커져 갔으며, 그에 따라 불안감도 점점 커져 가 패트리스의 바이올린 재능조차 망가져 가기에 이르렀다. 그것만큼은 용납할 수 없었던 패트리스는 아컴의 와드 극장에서 콘서트가 끝나자마자, 마침내 방법을 강구하기로 결심했다.",
         "back_text": "<b>덱 크기</b>: 42장.\n<b>덱 구성 선택지</b>: 레벨 0-5 생존자 카드([survivor]), 레벨 0-2 신비주의자 카드([mystic]), 레벨 0-5 중립 카드\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 패트리스의 바이올린, 다른 차원에서 온 감시자, 무작위 기본 약점 카드 1장.",
+        "code": "06005",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "꿈_0024",
             "꿈_0025",
             "꿈_0026"
@@ -2727,8 +2943,9 @@
         "type_code": "investigator"
     },
     "06006": {
+        "code": "06006",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "꿈_0027"
         ],
         "is_unique": true,
@@ -2740,8 +2957,9 @@
         "type_code": "asset"
     },
     "06017": {
+        "code": "06017",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0038"
         ],
         "is_unique": true,
@@ -2752,8 +2970,9 @@
         "type_code": "enemy"
     },
     "06024": {
+        "code": "06024",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0006",
             "칼_0010"
         ],
@@ -2764,8 +2983,9 @@
         "type_code": "asset"
     },
     "06031": {
+        "code": "06031",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0112"
         ],
         "is_unique": true,
@@ -2776,8 +2996,9 @@
         "type_code": "asset"
     },
     "06032": {
+        "code": "06032",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0009"
         ],
         "is_unique": true,
@@ -2788,8 +3009,9 @@
         "type_code": "asset"
     },
     "06117": {
+        "code": "06117",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "잊_0069"
         ],
         "flavor": "그대의 앞길에 끔찍한 미래가 보입니다.\n외면하시겠습니까? 받아들이겠습니까?",
@@ -2800,8 +3022,9 @@
         "type_code": "event"
     },
     "06164": {
+        "code": "06164",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "꿈_0120"
         ],
         "name": "에테르 형상",
@@ -2811,8 +3034,9 @@
         "type_code": "event"
     },
     "06199": {
+        "code": "06199",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "코_0009"
         ],
         "name": "에이스 트리플",
@@ -2822,8 +3046,9 @@
         "type_code": "skill"
     },
     "06246": {
+        "code": "06246",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "코_0112"
         ],
         "name": "신속한 후퇴",
@@ -2833,8 +3058,9 @@
         "type_code": "skill"
     },
     "06279": {
+        "code": "06279",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "꿈_0003"
         ],
         "name": "낡은 지식의 서",
@@ -2844,8 +3070,9 @@
         "type_code": "asset"
     },
     "06281": {
+        "code": "06281",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "잊_0010"
         ],
         "flavor": "“셸던? 오베니언? 신경 안 써. 보수만 지급한다면 말이지.”",
@@ -2860,8 +3087,9 @@
     "07002": {
         "back_flavor": "어맨다 샤프는 미스캐토닉 대학에서 특출난 실력을 발휘하며 졸업까지 탄탄대로를 걷고 있었다. 그러던 어느 날, 어맨다는 대양의 밑바닥에서 거대한 괴물이 솟아오르는 그림을 본 후로, 도저히 수업을 따라갈 수가 없었다. 그날부터 꿈속에서는 광대한 수중 도시가 펼쳐졌고 불가해한 언어로 된 속삭임이 귓가에 어른거렸다. 어맨다는 아직은 학업에 전념하고 있지만, 더는 최우수 졸업생이란 목표를 좇지 않는다. 그 대신, 현실의 경계 사이에 숨겨져 있는 초자연적인 비밀에 담긴 의미를 밝혀내고자 나섰다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0-5 탐구자 카드([seeker]), 레벨 0-3 [[숙련]] 능력 카드, 레벨 0-5 중립 카드.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 불가해한 연구, 심해로부터의 속삭임, 무작위 기본 약점 카드 1장.",
+        "code": "07002",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "인_0000",
             "인_0002"
         ],
@@ -2874,8 +3102,9 @@
         "type_code": "investigator"
     },
     "07223": {
+        "code": "07223",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "꿈_0003"
         ],
         "name": "보이지 않는 인도를 따라서",
@@ -2885,8 +3114,9 @@
         "type_code": "asset"
     },
     "07303": {
+        "code": "07303",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "잊_0021"
         ],
         "name": "선조의 지식",
@@ -2898,8 +3128,9 @@
     "08004": {
         "back_flavor": "별은 수많은 비밀을 안고 있고, 노먼은 불가사의한 현상을 무시하는 부류의 사람이 아니었다. 그리하여 밤하늘에서 감쪽같이 여섯 개의 별이 동시에 사라졌을 때, 비록 노먼의 동료들은 그저 상상일 뿐이라고 말했지만 노먼으로서는 도저히 간과할 수 없었다. 노먼은 해답을 찾는 데 수년이 걸렸고, 그동안 교수로서의 경력도 끝장날 위기까지 내몰렸다. 그러나 결국 그는 고서에서 답을 찾아내고야 말았다. 고서에는 별들의 위치와 그것이 사라지는 순서는 물론, 그 날짜와 시간까지 기록되어 있었다. 고서에 따르면 이는 만물의 종말을 예고하는 징조라 한다. 인간이 이룩한 모든 것을 갈기갈기 찢어버릴 거대한 괴수가 도래할 거라는 전조였다. 노먼은 괴수가 세상을 파괴하지 못하도록 자신이 무엇을 할 수나 있을지 확신하지 못하지만, 별들 사이에 그 답이 있다면 반드시 찾아내리라.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0 탐구자 카드([seeker]), 레벨 1-5 신비주의자 카드([mystic]), 레벨 0-5 중립 카드, 레벨 0 신비주의자 카드([mystic]) 최대 5장.\n<b>덱 구성 요구조건</b>(덱 크기에 포함되지 않습니다): 리브레 디봉, 종말의 전조, 무작위 기본 약점 카드 1장.",
+        "code": "08004",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "칼_0005"
         ],
         "is_unique": true,
@@ -2911,8 +3142,9 @@
         "type_code": "investigator"
     },
     "08006": {
+        "code": "08006",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "지_0001"
         ],
         "name": "종말의 전조",
@@ -2924,8 +3156,9 @@
     "08007": {
         "back_flavor": "잭은 어릴 적에 아버지의 고고학 탐사대를 따라 세계를 누볐다. 스스로의 힘으로 전 세계를 누비는 보물 사냥꾼이자 성공한 고고학자가 된 “몬터레이”는, 아버지의 자취를 따라 고대의 문명들과 잊혀진 문명의 유산을 찾아냈다. 그러나 낯익은 문양이 새겨진 은제 펜던트를 발견한 후로, 몬터레이는 자신의 과거 속을 샅샅이 탐험해야만 했다. 그 문양은 몇 년 전 살해당한 아버지의 이마에 새겨져 있던 것과 완전히 똑같았던 것이다. 그날 이후로, 몬터레이는 꿈속에서도 그 문양에 시달렸다. 그러나 몬터레이는 진실에 점차 다가서고 있었다. 아버지의 죽음에 얽힌 불가사의를 풀어내기 전까지 몬터레이는 절대 멈추지 않을 것이다. 그 어떤 대가를 치르는 한이 있더라도...",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0 무법자([rogue]) 카드, 레벨 1-5 탐구자([seeker]) 카드, 레벨 0-5 중립 카드, 이외의 레벨 0 탐구자([seeker]) 카드 최대 5장.\n<b>덱 구성 요구조건</b> (덱 크기에 포함되지 않습니다): 든든한 소채찍, 파묻힌 비밀, 무작위 기본 약점 카드 1장.",
+        "code": "08007",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "지_0004"
         ],
         "is_unique": true,
@@ -2939,8 +3172,9 @@
     "08016": {
         "back_flavor": "밥의 말에 따르면, 외판원으로 성공할 수 있는 비밀은 바로 끈질김이다. 사람들에게 물건을 팔고자 한다면, 그들에게 그 물건이 필요하다고 알려주기만 하면 된다. 다만, 반복해서 끈질기게. 최근 밥은  “저주받은” 금화 한 무더기를 손에 넣었고, 지금껏 자신만만하게 신봉하던 끈질김과 함께라면 그 기원과 목적을 밝혀낼 수 있으리라고 기대했다. 밥이 수완을 잘 쓴다면, 이번 건은 그야말로 대박이 될 수도 있을 것이다. 어쩌면 마침내 은퇴할 기회를 붙잡고 눈독 들이던 배를 사고, 열대 휴양지에서 낚시를 즐기며 여생을 보낼 수도 있으리라. 하지만 다른 한편으로는, 밥은 이번 기회에 반짝이는 모든 것이 금이 아니라는 사실을 깨달을지도 모른다.",
         "back_text": "<b>덱 크기</b>: 30장.\n<b>덱 구성 선택지</b>: 레벨 0 생존자([survivor]) 카드, 레벨 1-5 무법자([rogue]) 카드, 레벨 0-5 중립 카드, 이외의 레벨 0 무법자([rogue]) 카드 최대 5장.\n<b>덱 구성 요구조건</b> (덱 크기에 포함되지 않습니다): 명민한 거래 수완, 탐욕, 무작위 기본 약점 카드 1장.",
+        "code": "08016",
         "faction_code": "survivor",
-        "faq_list": [
+        "faqs": [
             "지_0007"
         ],
         "is_unique": true,
@@ -2952,8 +3186,9 @@
         "type_code": "investigator"
     },
     "08022": {
+        "code": "08022",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "지_0008"
         ],
         "flavor": "“우리 중 하나라도 건드렸다가는, 우리 모두가 네 적이 될 거다!”",
@@ -2964,8 +3199,9 @@
         "type_code": "event"
     },
     "08031": {
+        "code": "08031",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "지_0012",
             "지_0014"
         ],
@@ -2976,8 +3212,9 @@
         "type_code": "asset"
     },
     "08048": {
+        "code": "08048",
         "faction_code": "rogue",
-        "faq_list": [
+        "faqs": [
             "지_0022",
             "지_0023"
         ],
@@ -2988,8 +3225,9 @@
         "type_code": "event"
     },
     "08062": {
+        "code": "08062",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "지_0028"
         ],
         "name": "의식을 끝맺어라",
@@ -2999,8 +3237,9 @@
         "type_code": "asset"
     },
     "08088": {
+        "code": "08088",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "지_0039"
         ],
         "name": "낡은 산탄총",
@@ -3010,8 +3249,9 @@
         "type_code": "asset"
     },
     "08125": {
+        "code": "08125",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "지_0054"
         ],
         "name": "깊이 휘말리다",
@@ -3022,8 +3262,9 @@
     },
     "08596": {
         "back_text": "Hard / Expert\n[skull]: –X. X is 2 plus the level of your location.\n[cultist]: –1. Move to the location directly below you.\n[tablet]: –4. If you fail, lose control of an [[Expedition]] asset and place it at your location.\n[elder_thing]: –5. If you fail, the nearest [[Elder Thing]] enemy moves once toward you. If it is engaged with you, it attacks.",
+        "code": "08596",
         "faction_code": "mythos",
-        "faq_list": [
+        "faqs": [
             "지_0058"
         ],
         "name": "To the Forbidden Peaks",
@@ -3033,8 +3274,9 @@
     },
     "08634": {
         "back_flavor": "\"Yet now the sway of reason seemed irrefutably shaken, for this Cyclopean maze of squared, curved, and angled blocks had features which cut off all comfortable refuge. It was, very clearly, the blasphemous city of the mirage in stark, objective, and ineluctable reality.\"\n – H. P. Lovecraft, <u>At the Mountains of Madness</u>",
+        "code": "08634",
         "faction_code": "mythos",
-        "faq_list": [
+        "faqs": [
             "지_0060"
         ],
         "name": "Labyrinthine Chamber",
@@ -3045,8 +3287,9 @@
     },
     "08648": {
         "back_text": "Hard / Expert\n[skull]: –2 (–4 instead if there is an [[Ancient One]] enemy at your location).\n[cultist]: –1. If there is a seal at your location, or if your location is a Mist-Pylon, treat this token as a [frost] token in addition to its modifier.\n[tablet]: –3. Draw the top card of the Tekeli-li deck.\n[elder_thing]: –5. If you fail by 3 or more, place 1 doom on the current agenda. This can cause the current agenda to advance.",
+        "code": "08648",
         "faction_code": "mythos",
-        "faq_list": [
+        "faqs": [
             "지_0061"
         ],
         "name": "The Heart of Madness",
@@ -3055,8 +3298,9 @@
         "type_code": "scenario"
     },
     "08690": {
+        "code": "08690",
         "faction_code": "mythos",
-        "faq_list": [
+        "faqs": [
             "지_0062"
         ],
         "name": "Glacial Phantasm",
@@ -3068,8 +3312,9 @@
     "09001": {
         "back_flavor": "Carson Sinclair has served three generations of the Webb family in Arkham. Always proper, Carson watched with disapproval as his most recent employer, Hercule Webb, began bringing bizarre artifacts and profane tomes into the house, aided in these endeavors by Webb's business manager, Dupuis. When Mr. Webb was swallowed by a dimensional rift, no one believed Carson's description of the harrowing event. Carson has devoted himself to proving Dupuis's guilt, and to restoring the children as the rightful heirs to the Webb fortune.",
         "back_text": "<b>Deck Size</b>: 30.\n<b>Secondary Class Choice</b>: At deck creation, choose Seeker ([seeker]), Mystic ([mystic]), or Survivor ([survivor]).\n<b>Deckbuilding Options</b>: Guardian cards ([guardian]) level 0-5, Neutral cards level 0-5, up to 10 level 0-1 events and/or skills of your chosen secondary class.\n<b>Deckbuilding Requirements</b> (do not count toward deck size): 2 copies of \"As you wish\", Selfless to a Fault, 1 random basic weakness.",
+        "code": "09001",
         "faction_code": "guardian",
-        "faq_list": [
+        "faqs": [
             "진_0002"
         ],
         "is_unique": true,
@@ -3083,8 +3328,9 @@
     "09004": {
         "back_flavor": "After the third or fourth mutilated body showed up during his time at St. Mary’s Hospital in Arkham, Vincent Lee began to suspect that these were not mere wild animal attacks. When a young man died screaming in his sleep from a burst heart, Vincent knew for a fact that dark times were ahead. Taking a leave of absence from his position at the hospital, he has set out to ease the suffering of those afflicted by the spreading chaos, hoping that the trail of bodies will lead him to the answers he craves.",
         "back_text": "<b>Deck Size</b>: 30.\n<b>Deckbuilding Options</b>: Seeker cards ([seeker]) level 0-3, Neutral cards level 0-5, cards that \"heal damage\" level 0-5, up to 15 other Guardian and/or Survivor cards level 0-1 ([guardian] and/or [survivor]).\n<b>Deckbuilding Requirements</b> (do not count toward deck size): Bonesaw, 1 [per_investigator] copies of On the Mend, Wounded Bystander, 1 random basic weakness.\n<b>Additional Setup</b>: You begin each game with 1 [per_investigator] copies of On the Mend set aside, out of play.",
+        "code": "09004",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "인_0027"
         ],
         "flavor": "\"I will find the answers, even if it kills me.\"",
@@ -3097,8 +3343,9 @@
         "type_code": "investigator"
     },
     "09042": {
+        "code": "09042",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "진_0009"
         ],
         "is_unique": true,
@@ -3109,8 +3356,9 @@
         "type_code": "event"
     },
     "09047": {
+        "code": "09047",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "진_0011"
         ],
         "flavor": "\"Don't you realize what this means?\"\n\"Why don't you calm down and tell me very slowly?\"",
@@ -3121,8 +3369,9 @@
         "type_code": "event"
     },
     "09051": {
+        "code": "09051",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "진_0012"
         ],
         "name": "Orphic Theory",
@@ -3132,8 +3381,9 @@
         "type_code": "asset"
     },
     "09058": {
+        "code": "09058",
         "faction_code": "seeker",
-        "faq_list": [
+        "faqs": [
             "진_0013",
             "진_0014"
         ],
@@ -3145,8 +3395,9 @@
         "type_code": "asset"
     },
     "09079": {
+        "code": "09079",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "진_0019"
         ],
         "name": "Living Ink",
@@ -3156,8 +3407,9 @@
         "type_code": "asset"
     },
     "09090": {
+        "code": "09090",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "진_0021"
         ],
         "name": "Ghastly Possession",
@@ -3167,8 +3419,9 @@
         "type_code": "skill"
     },
     "50008": {
+        "code": "50008",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "코_0098",
             "코_0099",
             "코_0101"
@@ -3180,8 +3433,9 @@
         "type_code": "event"
     },
     "51007": {
+        "code": "51007",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "던_0166"
         ],
         "name": "탐구의 의식",
@@ -3191,8 +3445,9 @@
         "type_code": "asset"
     },
     "52008": {
+        "code": "52008",
         "faction_code": "mystic",
-        "faq_list": [
+        "faqs": [
             "칼_0139"
         ],
         "name": "영혼의 폭풍",
@@ -3202,8 +3457,9 @@
         "type_code": "event"
     },
     "53011": {
+        "code": "53011",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "잊_0021"
         ],
         "name": "배낭",
@@ -3213,8 +3469,9 @@
         "type_code": "asset"
     },
     "90018": {
+        "code": "90018",
         "faction_code": "neutral",
-        "faq_list": [
+        "faqs": [
             "코_0029"
         ],
         "is_unique": true,
