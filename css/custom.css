@@ -360,6 +360,7 @@ h3.errata8::after {
   text-align: center;
   margin: auto 0;
   width: 55px;
+  min-width: 55px;
   padding: 5px;
   border-radius: 10px;
 }
@@ -385,7 +386,7 @@ h3.errata8::after {
 }
 
 .faqEntry {
-  display: flex;
+  display: inline-flex;
   margin: 15px 10px;
 }
 
