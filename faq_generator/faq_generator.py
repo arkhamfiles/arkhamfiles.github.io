@@ -378,11 +378,11 @@ class FAQGenerator:
         # update encounter data from current information if necessary
         if not overwrite_encounter and path_encounter.is_file():
             with path_encounter.open("r", encoding="utf-8") as fp:
-                data_enc: Dict[str, Dict[str]] = json.load(fp)
-            for key, value in data_enc.items():
-                if key in data_encounter:
-                    for k, v in value.items():
-                        data_encounter[key][k] = v
+                data_enc: List[Dict[str, Any]] = json.load(fp)
+            for item in data_enc:
+                if item['code'] in data_encounter:
+                    for k, v in item.items():
+                        data_encounter[item['code']][k] = v
         
         # always update faq_list key
         for key, faq in faq_lists.items():
@@ -393,9 +393,9 @@ class FAQGenerator:
         
         # then, write
         with path_player.open("w", encoding='utf-8') as fp:
-            json.dump(data_player, fp, indent=4, ensure_ascii=False, sort_keys=True)
+            json.dump(list(data_player.values()), fp, indent=4, ensure_ascii=False, sort_keys=True)
         with path_encounter.open("w", encoding='utf-8') as fp:
-            json.dump(data_encounter, fp, indent=4, ensure_ascii=False, sort_keys=True)
+            json.dump(list(data_encounter.values()), fp, indent=4, ensure_ascii=False, sort_keys=True)
 
 if __name__ == "__main__":
     gen = FAQGenerator("../api_key.json", "../raw/faq_legacy.html", "../raw/notes.html", "../raw/errata.html")
