@@ -24,8 +24,8 @@ from .load_arkhamdb import load_arkhamdb
 EntryKey = str
 
 KEY_CARDS = [
-    'back_flavor', 'back_text',
-    'flavor', 'name', 'is_unique', 'faction_code',
+    'back_text', 'xp',
+    'name', 'is_unique', 'faction_code',
     'subname', 'text', 'traits', 'code',
     'type_code', 'pack_code', 'faq_list'
 ]
