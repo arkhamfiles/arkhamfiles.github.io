@@ -208,7 +208,7 @@
       });
 
       const td = document.createElement("td");
-      td.innerText = card.name + card.xp > 0 ? ` (${card.xp})` : ``;
+      td.innerText = card.name + (card.xp > 0 ? ` (${card.xp})` : ``);
       tr.appendChild(td);
 
       table.appendChild(tr);
