@@ -398,6 +398,10 @@ class FAQGenerator:
             json.dump(list(data_encounter.values()), fp, indent=4, ensure_ascii=False, sort_keys=True)
 
 if __name__ == "__main__":
-    gen = FAQGenerator("../api_key.json", "../raw/faq_legacy.html", "../raw/notes.html", "../raw/errata.html")
+    gen = FAQGenerator(
+        "../api_key.json", 
+        "../raw/faq_legacy.html", "../raw/notes.html",
+        "../raw/errata.html", "../raw/rule_reference.html"
+    )
     data = gen.generate_faq("example.json")
     gen.generate_card(data, "../../arkhamdb-json-data", "player.json", "encounter.json")
