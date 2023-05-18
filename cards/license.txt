@@ -1,5 +1,3 @@
 Important note about copyright.
 
-All files in this folder (except this file) are copyrighted by Fantasy Flight Games. We only utilize those images for non-commercial purposes.
-
-For any request related to the copyright, please write an issue on GitHub or send an e-mail to arkhamfileskorea at gmail com
+FFG has copyright about all image files in this folder (except 00000.png). All right reserves. We only use those images to maintain the arkhamfiles.github.io sites. Please check the detail in ./readme.md
