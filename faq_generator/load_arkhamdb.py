@@ -12,6 +12,21 @@ import re
 from os import PathLike
 from pathlib import Path
 
+def _is_encounter_file(path: Path) -> bool:
+    """check path is encounter file or not
+    """
+    if re.fullmatch(r"[a-z]+(?:_encounter)\.json", path.name) is not None:
+        return True
+    if re.fullmatch(r"[a-z]+c\.json", path.name) is not None:
+        new_path = path.parent / (path.stem[:-1] + "p.json")
+        if new_path.is_file():
+            return True
+    return False
+
+def _is_json(path: Path) -> bool:
+    """check path is json file or not"""
+    return path.suffix.lower() == ".json"
+
 def load_arkhamdb(
     path_db: PathLike,
     load_type: str = 'all',
@@ -30,11 +45,13 @@ def load_arkhamdb(
     """
     load_type = load_type.lower()
     if load_type == 'all':
-        regex_filename = re.compile(r"[a-z]+(?:_encounter)?\.json")
+        check_file = _is_json
     elif load_type == 'player':
-        regex_filename = re.compile(r"[a-z]+\.json")
+        def check_file(path: Path):
+            return _is_json(path) and not _is_encounter_file(path)
     elif load_type == 'encounter':
-        regex_filename = re.compile(r"[a-z]+_encounter\.json")
+        def check_file(path: Path):
+            return _is_json(path) and _is_encounter_file(path)
     else:
         raise ValueError(f"load_type should be player, encounter, or all. given: {load_type}")
     path_db = Path(path_db)
@@ -52,8 +69,7 @@ def load_arkhamdb(
         if not folder_cycle.is_dir():
             continue
         for file in folder_cycle.iterdir():
-            match = regex_filename.fullmatch(file.name)
-            if match is not None:
+            if check_file(file):
                 files_original.append(file)
     
     result: Dict[str, Dict[str, str]] = {}
