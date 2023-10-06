@@ -124,6 +124,10 @@
       background-color: #008000;
     }
 
+    .card-type.treachery {
+      background-color: #4123ee;
+    }
+
     .hidden {
       display: none;
     }
@@ -144,6 +148,15 @@
         <option value="1">카르코사로 가는 길</option>
         <option value="2">잊힌 시대</option>
         <option value="3">끝맺지 못한 의식</option>
+        <option value="4">꿈을 먹는 자 A</option>
+        <option value="5">꿈을 먹는 자 B</option>
+        <option value="6">인스머스에 드리운 음모</option>
+        <option value="7">지구의 끝자락</option>
+        <option value="8">돌아온 던위치의 유산</option>
+        <option value="9">돌아온 카르코사로 가는 길</option>
+        <option value="10">돌아온 잊힌 시대</option>
+        <option value="11">돌아온 끝맺지 못한 의식</option>
+        <option value="">------------</option>
       </select>
     </section>
     <section id="scenarios" class="hidden">
@@ -447,129 +460,749 @@
         ],
       },
     ], [
-  {
-    name: '마녀의 시간',
-    cards: [
-      { name: '마녀에 씐 숲', type: 'Location', xp: 1, count: 5 },
-      { name: '마녀의 의식진', type: 'Location', xp: 2, group: "WHAnette" },
-      { name: '애닛 메이슨', type: 'Enemy', xp: 2, group: "WHAnette" },
-      { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
-      { name: '멈출 수 없는 슈브 니구라스의 어린 것', type: 'Enemy', xp: 1 },
-      { name: '결말', type: 'Resolution', xp: 1 },
-    ],
-  },
-  {
-    name: "죽음의 문턱에서",
-    cards: [
-      { name: '당구장', type: 'Location', xp: 1 },
-      { name: '요제프의 침실', type: 'Location', xp: 1 },
-      { name: '집무실', type: 'Location', xp: 2 },
-      { name: '요제프 마이거', type: 'Enemy', xp: 2, group: "TCUYosef" },
-      { name: '황천의 안개', type: 'Enemy', xp: 1 },
-    ],
-  },
-  {
-    name: '막간 2',
-    cards: [
-      { name: '요제프 마이거 구출', type: 'Resolution', xp: 2, group: "TCUYosef" },
-    ],
-  },
-  {
-    name: '비밀 이름',
-    cards: [
-      { name: '황혼의 심연', type: 'Location', xp: 1 },
-      { name: '옛것의 도시', type: 'Location', xp: 1 },
-      { name: '물리학 강의실', type: 'Location', xp: 1 },
-      { name: '위대한 고대의 존재의 궁정', type: 'Location', xp: 1 },
-      { name: '결말 1 - 브라운 젠킨', type: 'Resolution', xp: 1, group: "TSNRes" },
-      { name: '결말 1 - 나하브', type: 'Resolution', xp: 1, group: "TSNRes" },
-      { name: '결말 1 - 둘 모두/결말 2', type: 'Resolution', xp: 2, group: "TSNRes" },
-    ],
-  },
-  {
-    name: '죄악의 응보',
-    cards: [
-      { name: '신들린 들판', type: 'Location', xp: 1 },
-      { name: '버려진 예배당', type: 'Location', xp: 1 },
-      { name: '원혼의 미련', type: 'Story', xp: 1, count: 4 },
-    ],
-  },
-  {
-    name: '대의를 위하여',
-    cards: [
-      { name: '보관소', type: 'Location', xp: 1 },
-      { name: '서재', type: 'Location', xp: 1 },
-      { name: '의식실', type: 'Location', xp: 2 },
-      { name: '네이선 윅', type: 'Enemy', xp: 1 },
-      { name: '소환된 괴수', type: 'Enemy', xp: 2 },
-    ],
-  },
-  {
-    name: '합일과 환멸',
-    cards: [
-      { name: '인적 없는 섬', type: 'Location', xp: 1, count: 6 },
-      { name: '영혼 덫', type: 'Location', xp: 1 },
-      { name: '황천의 안개', type: 'Enemy', xp: 1 },
-      { name: '애닛 메이슨', type: 'Enemy', xp: 2, group: "UaDBossE" },
-      { name: '요제프 마이거', type: 'Enemy', xp: 2, group: "UaDBossE" },
-    ],
-  },
-  {
-    name: '혼돈의 손아귀에서',
-    cards: [
-      { name: '교수대 언덕/은빛 황혼회 집회소', type: 'Location', xp: 1 },
-      { name: '교단 집행자/혼돈을 목도한 자', type: 'Enemy', xp: 1, count: 2 },
-      { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
-      { name: '애닛 메이슨/칼 샌포드', type: 'Enemy', xp: 2 },
-    ],
-  },
-  {
-    name: '검은 옥좌 앞에',
-    cards: [
-      { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
-      { name: '결말', type: 'Resolution', xp: 5 },
-      { name: '검은 서책에 서명을 했다', type: 'Resolution', xp: 5 },
-    ],
-  },
-], [
-  {
-    name: 'Beyond the Gates of Sleep',
-    cards: [
-      { name: 'locations/Laboring Gug', type: 'Location', xp: 12 },
-      { name: 'Crawling Mist', type: 'Enemy', xp: 1 },
-    ],
-  },
-  {
-    name: 'The Search for Kadath',
-    cards: [
-      { name: 'locations', type: 'Location', xp: 11 },
-      { name: 'Cats of Ulthar', type: 'Ally', xp: 1 },
-      { name: 'Stalking Manticore', type: 'Enemy', xp: 1 },
-      { name: 'Horde of the Night', type: 'Enemy', xp: 1 },
-      { name: 'Beings of Ib', type: 'Enemy', xp: 1 },
-      { name: 'Crawling Mist', type: 'Enemy', xp: 1 },
-      { name: 'setup: moon-wine with Atal', type: 'Event', xp: 2 },
-    ],
-  },
-  {
-    name: 'Dark Side of the Moon',
-    cards: [
-      { name: 'locations', type: 'Location', xp: 6 },
-      { name: 'Moon Lizard', type: 'Enemy', xp: 2 },
-      { name: 'Moon Beasts', type: 'Enemy', xp: 2 },
-    ],
-  },
-  {
-    name: 'Where The Gods Dwell',
-    cards: [
-      { name: 'aspects of Nyarlathotep', type: 'Enemy', xp: 10 },
-      { name: 'High Priest', type: 'Enemy', xp: 2 },
-      { name: 'Dhole of the Wastes', type: 'Enemy', xp: 1 },
-      { name: 'Crawling Mist', type: 'Enemy', xp: 1 },
-      { name: 'banishing Nyarlathotep’s final form', type: 'Resolution', xp: 5 },
-    ],
-  },
-]];
+      {
+        name: '마녀의 시간',
+        cards: [
+          { name: '마녀에 씐 숲', type: 'Location', xp: 1, count: 5 },
+          { name: '마녀의 의식진', type: 'Location', xp: 2, group: "WHAnette" },
+          { name: '애닛 메이슨', type: 'Enemy', xp: 2, group: "WHAnette" },
+          { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
+          { name: '멈출 수 없는 슈브 니구라스의 어린 것', type: 'Enemy', xp: 1 },
+          { name: '결말', type: 'Resolution', xp: 1 },
+        ],
+      },
+      {
+        name: "죽음의 문턱에서",
+        cards: [
+          { name: '당구장', type: 'Location', xp: 1 },
+          { name: '요제프의 침실', type: 'Location', xp: 1 },
+          { name: '집무실', type: 'Location', xp: 2 },
+          { name: '요제프 마이거', type: 'Enemy', xp: 2, group: "TCUYosef" },
+          { name: '황천의 안개', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '막간 2',
+        cards: [
+          { name: '요제프 마이거 구출', type: 'Resolution', xp: 2, group: "TCUYosef" },
+        ],
+      },
+      {
+        name: '비밀 이름',
+        cards: [
+          { name: '황혼의 심연', type: 'Location', xp: 1 },
+          { name: '옛것의 도시', type: 'Location', xp: 1 },
+          { name: '물리학 강의실', type: 'Location', xp: 1 },
+          { name: '위대한 고대의 존재의 궁정', type: 'Location', xp: 1 },
+          { name: '결말 1 - 브라운 젠킨', type: 'Resolution', xp: 1, group: "TSNRes" },
+          { name: '결말 1 - 나하브', type: 'Resolution', xp: 1, group: "TSNRes" },
+          { name: '결말 1 - 둘 모두/결말 2', type: 'Resolution', xp: 2, group: "TSNRes" },
+        ],
+      },
+      {
+        name: '죄악의 응보',
+        cards: [
+          { name: '신들린 들판', type: 'Location', xp: 1 },
+          { name: '버려진 예배당', type: 'Location', xp: 1 },
+          { name: '원혼의 미련', type: 'Story', xp: 1, count: 4 },
+        ],
+      },
+      {
+        name: '대의를 위하여',
+        cards: [
+          { name: '보관소', type: 'Location', xp: 1 },
+          { name: '서재', type: 'Location', xp: 1 },
+          { name: '의식실', type: 'Location', xp: 2 },
+          { name: '네이선 윅', type: 'Enemy', xp: 1 },
+          { name: '소환된 괴수', type: 'Enemy', xp: 2 },
+        ],
+      },
+      {
+        name: '합일과 환멸',
+        cards: [
+          { name: '인적 없는 섬', type: 'Location', xp: 1, count: 6 },
+          { name: '영혼 덫', type: 'Location', xp: 1 },
+          { name: '황천의 안개', type: 'Enemy', xp: 1 },
+          { name: '애닛 메이슨', type: 'Enemy', xp: 2, group: "UaDBossE" },
+          { name: '요제프 마이거', type: 'Enemy', xp: 2, group: "UaDBossE" },
+        ],
+      },
+      {
+        name: '혼돈의 손아귀에서',
+        cards: [
+          { name: '교수대 언덕/은빛 황혼회 집회소', type: 'Location', xp: 1 },
+          { name: '교단 집행자/혼돈을 목도한 자', type: 'Enemy', xp: 1, count: 2 },
+          { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
+          { name: '애닛 메이슨/칼 샌포드', type: 'Enemy', xp: 2 },
+        ],
+      },
+      {
+        name: '검은 옥좌 앞에',
+        cards: [
+          { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
+          { name: '결말', type: 'Resolution', xp: 5 },
+          { name: '검은 서책에 서명을 했다', type: 'Resolution', xp: 5 },
+        ],
+      },
+    ], [
+      {
+        name: '잠의 관문을 지나서',
+        cards: [
+          { name: '마법 걸린 숲', type: 'Location', xp: 2 },
+          { name: '마법 걸린 숲', type: 'Location', xp: 2 },
+          { name: '마법 걸린 숲', type: 'Location', xp: 2 },
+          { name: '마법 걸린 숲', type: 'Location', xp: 2 },
+          { name: '마법 걸린 숲', type: 'Location', xp: 2 },
+          { name: '마법 걸린 숲', type: 'Location', xp: 2, group: "BtGSWood" },
+          { name: '마법 걸린 숲', type: 'Location', xp: 1, group: "BtGSWood" },
+          { name: '구그 노역꾼', type: 'Enemy', xp: 1, group: "BtGSWood" },
+          { name: '기어 다니는 안개', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '카다스를 찾아서',
+        cards: [
+          { name: '도입부', type: 'Story', xp: 2 },
+          { name: '사르나스', type: 'Location', xp: 1 },
+          { name: '이브 폐허', type: 'Location', xp: 1 },
+          { name: '일레크 바드', type: 'Location', xp: 1 },
+          { name: '바하르나', type: 'Location', xp: 1 },
+          { name: '느그라네크 산', type: 'Location', xp: 1 },
+          { name: '이름 모를 폐허', type: 'Location', xp: 1 },
+          { name: '셀레파이스', type: 'Location', xp: 1 },
+          { name: '세러니언', type: 'Location', xp: 1 },
+          { name: '이룰 수 없는 소망의 사원', type: 'Location', xp: 1 },
+          { name: '그 어떤 지도에도 없는 도시', type: 'Location', xp: 2 },
+          { name: '울타르의 고양이', type: 'Ally', xp: 1 },
+          { name: '만티코어 추적자', type: 'Enemy', xp: 1 },
+          { name: '밤의 군단', type: 'Enemy', xp: 1 },
+          { name: '이브의 토착민', type: 'Enemy', xp: 1 },
+          { name: '기어 다니는 안개', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '달의 어두운 면',
+        cards: [
+          { name: '달 짐승의 도시', type: 'Location', xp: 1 },
+          { name: '어두운 크레이터', type: 'Location', xp: 1 },
+          { name: '달 도마뱀의 사원', type: 'Location', xp: 1 },
+          { name: '달숲', type: 'Location', xp: 1 },
+          { name: '달의 밝은 면', type: 'Location', xp: 2 },
+          { name: '달 도마뱀', type: 'Enemy', xp: 2 },
+          { name: '달 짐승', type: 'Enemy', xp: 1, count: 2 },
+        ],
+      },
+      {
+        name: '신들이 기거하는 곳',
+        cards: [
+          { name: '니알라토텝', type: 'Enemy', xp: 2, count: 5 },
+          { name: '형언할 수 없는 고위 사제', type: 'Enemy', xp: 2 },
+          { name: '황무지 드홀', type: 'Enemy', xp: 1 },
+          { name: '기어 다니는 안개', type: 'Enemy', xp: 1 },
+          { name: '니알라토텝을 몽환의 땅에서 추방', type: 'Resolution', xp: 5 },
+        ],
+      },
+    ], [
+      {
+        name: '깨어난 악몽',
+        cards: [
+          { name: '응급실', type: 'Location', xp: 1 },
+          { name: '실험 치료 병동', type: 'Location', xp: 2 },
+          { name: '의무기록실', type: 'Location', xp: 2 },
+          { name: '계단실', type: 'Location', xp: 1 },
+          { name: '영안실', type: 'Location', xp: 2 },
+          { name: '수술실', type: 'Location', xp: 2 },
+          { name: '회색 방직자', type: 'Enemy', xp: 1, count: 2 },
+        ],
+      },
+      {
+        name: '천 가지 무시무시한 형체',
+        cards: [
+          { name: '무덤가', type: 'Location', xp: 1 },
+          { name: '집무실', type: 'Location', xp: 1 },
+          { name: '거실', type: 'Location', xp: 1 },
+          { name: '서재', type: 'Location', xp: 1 },
+          { name: '침실', type: 'Location', xp: 1 },
+          { name: '다락방', type: 'Location', xp: 1 },
+          { name: '묘비명 없는 묘지', type: 'Location', xp: 1 },
+        ],
+      },
+      {
+        name: '돌아갈 수 없는 다리',
+        cards: [
+          { name: '진의 지하 공동', type: 'Location', xp: 1 },
+          { name: '구그의 도시', type: 'Location', xp: 1 },
+          { name: '구울의 평원', type: 'Location', xp: 1 },
+          { name: '구울의 벼랑', type: 'Location', xp: 1 },
+          { name: '뼈의 바다', type: 'Location', xp: 1 },
+          { name: '프나스 계곡', type: 'Location', xp: 1 },
+          { name: '마법 걸린 숲', type: 'Location', xp: 2 },
+          { name: '구그 보초', type: 'Enemy', xp: 1 },
+          { name: '스멀거리는 드홀', type: 'Enemy', xp: 1 },
+          { name: '회색 방직자', type: 'Enemy', xp: 1, count: 2 },
+        ],
+      },
+      {
+        name: '우주의 가닥을 엮는 자',
+        cards: [
+          { name: '아틀락 나차의 다리', type: 'Enemy', xp: 1, count: 4 },
+          { name: '아틀락 나차', type: 'Enemy', xp: 1 },
+          { name: '회색 방직자', type: 'Enemy', xp: 1, count: 2 },
+          { name: '결말', type: 'Resolution', xp: 5 },
+        ],
+      },
+    ], [
+      {
+        name: '절망의 구렁',
+        cards: [
+          { name: '지하 하천', type: 'Location', xp: 1, count: 2 },
+          { name: '회상 1', type: 'Resolution', xp: 1 },
+          { name: '회상 2', type: 'Resolution', xp: 1 },
+          { name: '회상 3', type: 'Resolution', xp: 1 },
+          { name: '회상 4', type: 'Resolution', xp: 1 }
+        ],
+      },
+      {
+        name: '엘리나 하퍼의 실종',
+        cards: [
+          { name: '데이곤 밀교회당', type: 'Location', xp: 1 },
+          { name: '쏘본 골목', type: 'Location', xp: 1 },
+          { name: '해안 빈민가', type: 'Location', xp: 1 },
+          { name: '워터 가에 있는 집', type: 'Location', xp: 1 },
+          { name: '인스머스 감옥', type: 'Location', xp: 1 },
+          { name: '뉴 처치 그린', type: 'Location', xp: 1 },
+          { name: '날개 돋친 괴수', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '너무나 깊은 수렁',
+        cards: [
+          { name: '쏘본 골목', type: 'Location', xp: 1 },
+          { name: '인스머스 감옥', type: 'Location', xp: 1 },
+          { name: '피시 가 다리', type: 'Location', xp: 1 },
+          { name: '퍼스트 내셔널 식료품점', type: 'Location', xp: 1 },
+          { name: '인스머스 광장', type: 'Location', xp: 1 },
+          { name: '인스머스 쇼고스', type: 'Enemy', xp: 1 },
+          { name: '결말', type: 'Resolution', xp: 2 }
+        ],
+      },
+      {
+        name: '악마의 암초',
+        cards: [
+          { name: '지하 하천', type: 'Location', xp: 1, count: 2 },
+          { name: '밀주업자의 은닉처', type: 'Location', xp: 1, count: 2 },
+          { name: '악마의 암초에 도사린 공포', type: 'Enemy', xp: 1 },
+          { name: '로이거', type: 'Enemy', xp: 1 },
+          { name: '회상 9', type: 'Resolution', xp: 2 },
+          { name: '회상 10', type: 'Resolution', xp: 2 },
+          { name: '회상 11', type: 'Resolution', xp: 2 }
+        ],
+      },
+      {
+        name: '공포의 추격전',
+        cards: [
+          { name: '절벽 도로', type: 'Location', xp: 1, count: 2 },
+          { name: '갈림길', type: 'Location', xp: 1, count: 2 },
+          { name: '교차로', type: 'Location', xp: 1, count: 2 },
+          { name: '호젓한 도로', type: 'Location', xp: 1, count: 2 },
+          { name: '날개 돋친 괴수', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '안개 속 한 줄기 빛',
+        cards: [
+          { name: '등명기실', type: 'Location', xp: 1 },
+          { name: '등대지기 오두막', type: 'Location', xp: 1 },
+          { name: '하이드라에게 바쳐진 신단', type: 'Location', xp: 1 },
+          { name: '물에 잠긴 서고', type: 'Location', xp: 1 },
+          { name: '구금실', type: 'Location', xp: 1 },
+          { name: '오세이로스 마쉬', type: 'Enemy', xp: 2 }
+        ],
+      },
+      {
+        name: '데이곤의 침소',
+        cards: [
+          { name: '심해의 집회실', type: 'Location', xp: 1 },
+          { name: '충성의 집회실', type: 'Location', xp: 1 },
+          { name: '지하 하천', type: 'Location', xp: 1, count: 2 },
+          { name: '데이곤의 침소', type: 'Location', xp: 1 },
+          { name: '데이곤', type: 'Enemy', xp: 1 },
+          { name: '데이곤의 사도', type: 'Enemy', xp: 1 }
+        ],
+      },
+      {
+        name: '몰아치는 소용돌이 속으로',
+        cards: [
+          { name: '지하 하천', type: 'Location', xp: 1, count: 2 },
+          { name: '로이거', type: 'Enemy', xp: 1 },
+          { name: '천체 정렬이 깨지다', type: 'Story', xp: 2 },
+          { name: '실현된 음모', type: 'Story', xp: 2, group: 'ITMAct' },
+          { name: '좌초된 음모', type: 'Story', xp: 2, group: 'ITMAct' },
+          { name: '결말', type: 'Resolution', xp: 3 }
+        ],
+      },
+    ], [
+      {
+        name: '얼음과 죽음, 1/2부',
+        cards: [
+          { name: '피난처 + 동행 구출', type: 'Location', xp: 1, group: 'IaD' },
+          { name: '피난처 + 동행 구출', type: 'Location', xp: 2, group: 'IaD' },
+          { name: '피난처 + 동행 구출', type: 'Location', xp: 3, group: 'IaD' },
+          { name: '피난처 + 동행 구출', type: 'Location', xp: 4, group: 'IaD' },
+          { name: '피난처 + 동행 구출', type: 'Location', xp: 5, group: 'IaD' },
+          { name: '피난처 + 동행 구출', type: 'Location', xp: 6, group: 'IaD' },
+          { name: '피난처 + 동행 구출', type: 'Location', xp: 7, group: 'IaD' },
+          { name: '피난처 + 동행 구출', type: 'Location', xp: 8, group: 'IaD' },
+          { name: '별들의 공포', type: 'Enemy', xp: 1 }
+        ],
+      },
+      {
+        name: '얼음과 죽음, 3부',
+        cards: [
+          { name: '하나 이상 처치', type: 'Resolution', xp: 2, group: 'IaD3' },
+          { name: '모두 처치', type: 'Resolution', xp: 5, group: 'IaD3' },
+        ],
+      },
+      {
+        name: '금단의 봉우리를 향해',
+        cards: [
+          { name: '산 0층', type: 'Location', xp: 1 },
+          { name: '산 1층', type: 'Location', xp: 1 },
+          { name: '산 2층', type: 'Location', xp: 1 },
+          { name: '산 3층', type: 'Location', xp: 1 },
+          { name: '산 4층', type: 'Location', xp: 1 },
+          { name: '정상', type: 'Location', xp: 1 },
+          { name: '별들의 공포', type: 'Enemy', xp: 1 },
+          { name: '물자(개인)', type: 'Resolution', xp: 1, count: 7 },
+        ],
+      },
+      {
+        name: '옛것의 도시',
+        cards: [
+          { name: '열쇠', type: 'Resolution', xp: 1, count: 8 },
+          { name: '미로같이 얽힌 석실', type: 'Location', xp: 1, count: 2 },
+          { name: '비밀 통로', type: 'Location', xp: 1 },
+          { name: '별들의 공포', type: 'Enemy', xp: 1 },
+          { name: '광란에 빠진 쇼고스', type: 'Enemy', xp: 1 }
+        ],
+      },
+      {
+        name: '치명적인 신기루',
+        cards: [
+          { name: '비행장', type: 'Story', xp: 2, group: 'FM.T' },
+          { name: '실종된 아버지에 대한 기억', type: 'Story', xp: 1, group: 'FM.T' },
+          { name: '알래스카 설원', type: 'Story', xp: 2, group: 'FM.c' },
+          { name: '사냥에 실패했던 기억', type: 'Story', xp: 1, group: 'FM.c' },
+          { name: '어수선한 기숙사', type: 'Story', xp: 2, group: 'FM.d' },
+          { name: '형언할 수 없는 악에 대한 기억', type: 'Story', xp: 1, group: 'FM.d' },
+          { name: '다이어 교수의 강의실', type: 'Story', xp: 2, group: 'FM.dy' },
+          { name: '후회스러운 탐사의 기억', type: 'Story', xp: 1, group: 'FM.dy' },
+          { name: '병원', type: 'Story', xp: 2, group: 'FM.m' },
+          { name: '환자를 잃었던 기억', type: 'Story', xp: 1, group: 'FM.m' },
+          { name: '켄슬러 박사의 교수실', type: 'Story', xp: 2, group: 'FM.k' },
+          { name: '짝사랑의 기억', type: 'Story', xp: 1, group: 'FM.k' },
+          { name: '모아이 석상', type: 'Story', xp: 2, group: 'FM.cl' },
+          { name: '외계 언어를 해석한 기억', type: 'Story', xp: 1, group: 'FM.cl' },
+          { name: '오스만 제국 전선', type: 'Story', xp: 2, group: 'FM.x' },
+          { name: '파괴된 나라에 대한 기억', type: 'Story', xp: 1, group: 'FM.x' },
+          { name: '검은 돌기둥', type: 'Story', xp: 2, group: 'FM.e' },
+          { name: '끔찍한 발견을 한 기억', type: 'Story', xp: 1, group: 'FM.e' },
+        ],
+      },
+      {
+        name: '광기의 심장부, 1부',
+        cards: [
+          { name: '봉인', type: 'Resolution', xp: 1, count: 5 },
+          { name: '광란에 빠진 쇼고스', type: 'Enemy', xp: 1 }
+        ],
+      },
+      {
+        name: '광기의 심장부, 2부',
+        cards: [
+          { name: '풀려난 환상체', type: 'Enemy', xp: 1, count: 2 },
+          { name: '결말', type: 'Resolution', xp: 10 }
+        ],
+      }
+    ], [
+      {
+        name: "과외 활동",
+        cards: [
+          { name: "오른 도서관", xp: 1, type: 'location', group: 'RttDL1' },
+          { name: "워렌 천문대", xp: 1, type: 'location', group: 'RttDL1' },
+          { name: "기숙사", xp: 1, type: 'location' },
+          { name: "교수실", xp: 1, type: 'location' },
+          { name: "잠복자의 가신", xp: 1, type: 'enemy', count: 2 },
+          { name: "요그 소토스의 마술사", xp: 1, type: 'enemy' },
+          { name: "실험체", xp: 2, type: 'enemy' },
+        ],
+      },
+      {
+        name: "도박장은 언제나 이긴다",
+        cards: [
+          { name: "미술품 갤러리", xp: 1, type: 'location' },
+          { name: "VIP 공간", xp: 1, type: 'location' },
+          { name: "뒷골목", xp: 1, type: 'location' },
+          { name: "클로버 클럽 책임자", xp: 1, type: 'enemy' },
+          { name: "잠복자의 하인", xp: 1, type: 'enemy' },
+        ],
+      },
+      {
+        name: "미스캐토닉 박물관",
+        cards: [
+          { name: "전시장: 메두사 전시실", xp: 1, type: 'location' },
+          { name: "전시장: 자연 전시실", xp: 1, type: 'location' },
+          { name: "전시장: 이집트 전시실", xp: 1, type: 'location' },
+          { name: "전시장: 망자의 회랑", xp: 1, type: 'location' },
+          { name: "전시장: 중세 전시실", xp: 1, type: 'location' },
+          { name: "전시장: 제한 구역", xp: 1, type: 'location' },
+        ],
+      },
+      {
+        name: "에식스 카운티 특급열차",
+        cards: [
+          { name: "특실칸", xp: 1, type: 'location' },
+          { name: "기관차", xp: 1, type: 'location' },
+          { name: "갑자기 튀어나온 괴생명체", xp: 1, type: 'enemy', count: 2 },
+        ],
+      },
+      {
+        name: "제단에 흘린 피",
+        cards: [
+          { name: "숨겨진 방/사일러스 비숍", xp: 2, type: 'location', group: 'RttDL2' },
+          { name: "결말", xp: 2, type: 'resolution' },
+        ],
+      },
+      {
+        name: "차원 너머의 보이지 않는 존재",
+        cards: [
+          { name: "요그 소토스의 새끼", xp: 1, type: 'enemy', count: 5 },
+        ],
+      },
+      {
+        name: "파멸이 기다리는 곳",
+        cards: [
+          { name: "파수꾼 언덕 정상", xp: 2, type: 'location' },
+          { name: "세스 비숍", xp: 1, type: 'enemy' },
+          { name: "광분한 쇼고스", xp: 1, type: 'enemy' },
+          { name: "요그 소토스의 마술사", xp: 1, type: 'enemy' },
+          { name: "잠복자의 하인", xp: 1, type: 'enemy' },
+        ],
+      },
+      {
+        name: "시공간을 헤매다",
+        cards: [
+          { name: "잠복자의 하인", xp: 1, type: 'enemy' },
+          { name: "잠복자의 가신", xp: 1, type: 'enemy', count: 2 },
+          { name: "세스 비숍", xp: 2, type: 'enemy', group: 'RttDL2' },
+          { name: "결말", xp: 5, type: 'resolution' },
+        ],
+      },
+    ], [
+      {
+        name: "커튼콜",
+        cards: [
+          { name: "특별석", type: "Location", xp: 1 },
+          { name: "조명실", type: "Location", xp: 1 },
+          { name: "배우 휴게실", type: "Location", xp: 1 },
+          { name: "예행 연습실", type: "Location", xp: 1 },
+          { name: "무대 아래 공간", type: "Location", xp: 1 },
+          { name: "극장 휴게실/소품실", type: "Location", xp: 1 },
+          { name: "왕실의 특사", type: "Enemy", xp: 2 },
+          { name: "왕의 권속", type: "Enemy", xp: 1 },
+        ],
+      },
+      {
+        name: "마지막 왕",
+        cards: [
+          { name: "단서", type: "resolution", xp: 1, count: 5 },
+          { name: "다이안 드바인", type: "Enemy", xp: 1 },
+        ],
+      },
+      {
+        name: "과거로부터의 메아리",
+        cards: [
+          { name: "비밀 서재", type: "Location", xp: 2 },
+          { name: "맹세를 입에 담은 자", type: "Enemy", xp: 2 },
+          { name: "왕의 권속", type: "Enemy", xp: 1 },
+        ],
+      },
+      {
+        name: "입에 담아선 안 될 맹세",
+        cards: [
+          { name: "식당", type: "Location", xp: 1 },
+          { name: "진료실", type: "Location", xp: 1 },
+          { name: "지하층 복도", type: "Location", xp: 1 },
+          { name: "광기의 숙주", type: "Enemy", xp: 1, group: "RttPtC1" },
+          { name: "급진적인 치료법", type: "Treachery", xp: 1, group: "RttPtC1" },
+          { name: "알데바란의 야수", type: "Enemy", xp: 1 },
+        ],
+      },
+      {
+        name: "막간 2",
+        cards: [
+          { name: "대니얼 체스터필드 생존", type: "resolution", xp: 2 },
+          { name: "경고를 받아들였다", type: "resolution", xp: 1 },
+        ],
+      },
+      {
+        name: "진실의 망령",
+        cards: [
+          { name: "그랑 기뇰", type: "Location", xp: 1 },
+          { name: "페르 라셰즈 공동묘지", type: "Location", xp: 1 },
+          { name: "생 마르탱 운하", type: "Location", xp: 1 },
+          { name: "뤽상부르 공원", type: "Location", xp: 1 },
+          { name: "나이젤 잉그램을 찾았다", type: "resolution", xp: 2 },
+        ],
+      },
+      {
+        name: "창백한 가면",
+        cards: [
+          { name: "뼈가 가득한 동굴", type: "Location", xp: 1 },
+          { name: "영혼의 우물", type: "Location", xp: 1 },
+          { name: "좁은 환기통", type: "Location", xp: 1 },
+          { name: "으슬으슬한 웅덩이", type: "Location", xp: 1 },
+          { name: "그림자의 무덤", type: "Location", xp: 1 },
+          { name: "죽음의 악령", type: "Enemy", xp: 2 },
+        ],
+      },
+      {
+        name: "검은 별이 떠오르다",
+        cards: [
+          { name: "외벽", type: "Location", xp: 1 },
+          { name: "북쪽 탑", type: "Location", xp: 1 },
+          { name: "수도원 성당", type: "Location", xp: 1 },
+          { name: "생 오베르 예배당/수도원 탑", type: "Location", xp: 2 },
+          { name: "알데바란의 야수", type: "Enemy", xp: 1 },
+        ],
+      },
+      {
+        name: "어스레한 카르코사",
+        cards: [
+          { name: "알데바란의 야수", type: "Enemy", xp: 1 },
+          { name: "왕의 권속", type: "Enemy", xp: 1 },
+          { name: "결말", type: "resolution", xp: 5 },
+        ],
+      },
+    ], [
+      {
+        name: '길들지 않은 야생',
+        cards: [
+          { name: '뱀 소굴/망자의 길', type: 'Location', xp: 1 },
+          { name: '맴도는 길/운무림', type: 'Location', xp: 1 },
+          { name: '송곳니의 사원', type: 'Location', xp: 2 },
+          { name: '수풀이 무성한 유적', type: 'Location', xp: 2 },
+          { name: '에스틀리의 유적', type: 'Location', xp: 2 },
+          { name: '이츠타카', type: 'Enemy', xp: 1 },
+          { name: '요스에서 올라온 뱀', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '막간 1',
+        cards: [
+          { name: '쌍안경', type: 'resolution', xp: 2 },
+        ],
+      },
+      {
+        name: '에스틀리의 몰락',
+        cards: [
+          { name: '웅장한 석실', type: 'Location', xp: 1 },
+          { name: '옥좌의 방', type: 'Location', xp: 1, veng: 1 },
+          { name: '시간의 방', type: 'Location', xp: 2, veng: 2 },
+          { name: '요스에서 올라온 뱀', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '운명의 실 가닥',
+        cards: [
+          { name: '미스캐토닉 대학', type: 'Location', xp: 1 },
+          { name: '아컴 북부', type: 'Location', xp: 1 },
+          { name: '골동품 상점', type: 'Location', xp: 1 },
+          { name: '아컴 시청', type: 'Location', xp: 1 },
+          { name: '에스틀리 전시실', type: 'Location', xp: 1, group: "Relic" },
+          { name: '할런 언스톤', type: 'Enemy', xp: 1, group: "Relic" },
+          { name: '아컴 경찰서', type: 'Location', xp: 1, group: "Alejandro" },
+          { name: '앙리 드보', type: 'Enemy', xp: 1, group: "Alejandro" },
+          { name: '마리아 드실바', type: 'Enemy', xp: 1, group: "Ichtaca" },
+          { name: '검은 동굴', type: 'Location', xp: 1, group: "Ichtaca" },
+          { name: '헤이스팅스 저택', type: 'Location', xp: 1, group: "RttFA1" },
+          { name: '선적 부두', type: 'Location', xp: 1, group: "RttFA1" },
+          { name: '이츠타카', type: 'Resolution', xp: 2 },
+          { name: '알레한드로 벨라', type: 'Resolution', xp: 2 },
+        ],
+      },
+      {
+        name: '경계 너머',
+        cards: [
+          { name: '파드마 암리타', type: 'Enemy', xp: 2, veng: 2 },
+          { name: '테노치티틀란의 뱀', type: 'Enemy', xp: 1, veng: 1 },
+          { name: '테노치티틀란 장소 1개', type: 'Resolution', xp: 1, group: "BBTeno" },
+          { name: '테노치티틀란 장소 2개', type: 'Resolution', xp: 2, group: "BBTeno" },
+          { name: '테노치티틀란 장소 3개', type: 'Resolution', xp: 3, group: "BBTeno" },
+          { name: '테노치티틀란 장소 4개', type: 'Resolution', xp: 4, group: "BBTeno" },
+          { name: '테노치티틀란 장소 5개', type: 'Resolution', xp: 5, group: "BBTeno" },
+          { name: '테노치티틀란 장소 6개', type: 'Resolution', xp: 6, group: "BBTeno" },
+        ],
+      },
+      {
+        name: '고대 문명의 심장부 #1',
+        cards: [
+          { name: '뱀 소굴/망자의 길', type: 'Location', xp: 1 },
+          { name: '맴도는 길/운무림', type: 'Location', xp: 1 },
+          { name: '송곳니의 사원', type: 'Location', xp: 2, group: "HotERuins" },
+          { name: '수풀이 무성한 유적', type: 'Location', xp: 2, group: "HotERuins" },
+          { name: '돌 제단', type: 'Location', xp: 1, group: "HotERuins" },
+          { name: '시간이 붕괴된 숲', type: 'Location', xp: 1 },
+          { name: '육식성 교살 덩굴', type: 'Enemy', xp: 1, count: 2 },
+        ],
+      },
+      {
+        name: '고대 문명의 심장부 #2',
+        cards: [
+          { name: '우상 숭배의 전당/크토니안이 우글거리는 구렁', type: 'Location', xp: 1 },
+          { name: '어두운 공동/크느 얀의 유적', type: 'Location', xp: 1 },
+          { name: '위험천만한 낭떠러지 길/지하 늪지', type: 'Location', xp: 1 },
+          { name: '수정 기둥/위험천만한 내리막길', type: 'Location', xp: 1 },
+          { name: '요스의 하강로', type: 'Location', xp: 2, veng: 2 },
+          { name: '요스에서 올라온 뱀', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '기록물의 도시',
+        cards: [
+          { name: '취조실: 구금실', type: 'Location', xp: 1 },
+          { name: '취조실: 수액으로 가득찬 방', type: 'Location', xp: 1 },
+          { name: '이스의 행성계 모형', type: 'Location', xp: 1 },
+          { name: '탈구축실', type: 'Location', xp: 1 },
+          { name: '지하 기록보관소', type: 'Location', xp: 1 },
+          { name: '프나코투스의 탑', type: 'Location', xp: 2 },
+          { name: "이스인 관찰자", xp: 1, type: 'enemy', count: 2 },
+          { name: '임무 6개 달성', type: 'Resolution', xp: 4, group: "CotAProc" },
+          { name: '임무 5개 달성', type: 'Resolution', xp: 2, group: "CotAProc" },
+          { name: '임무 4개 달성', type: 'Resolution', xp: 1, group: "CotAProc" },
+        ],
+      },
+      {
+        name: '요스 깊은 곳으로',
+        cards: [
+          { name: '깊이 2', type: 'Resolution', xp: 2, group: "DoYDepth" },
+          { name: '깊이 3', type: 'Resolution', xp: 3, group: "DoYDepth" },
+          { name: '깊이 4', type: 'Resolution', xp: 4, group: "DoYDepth" },
+          { name: '깊이 5', type: 'Resolution', xp: 5, group: "DoYDepth" },
+          { name: '깊이 6', type: 'Resolution', xp: 6, group: "DoYDepth" },
+          { name: '이그', type: 'Enemy', xp: 5 },
+          { name: '무저갱의 포식자', type: 'Enemy', xp: 2 },
+          { name: '요스에서 올라온 뱀', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '막간 5',
+        cards: [
+          { name: '지도', type: 'Resolution', xp: 2 },
+        ],
+      },
+      {
+        name: '산산조각난 영겁',
+        cards: [
+          { name: '시간의 이질지대', type: 'Location', xp: 1 },
+          { name: '무 대륙', type: 'Location', xp: 1 },
+          { name: '프나코투스', type: 'Location', xp: 1 },
+          { name: '발루시아', type: 'Location', xp: 1 },
+          { name: '형태 없는 종자', type: 'Enemy', xp: 2 },
+          { name: '이츠타카', type: 'Enemy', xp: 2 },
+          { name: '알레한드로 벨라', type: 'Enemy', xp: 2 },
+          { name: '요스에서 올라온 뱀', type: 'Enemy', xp: 1 },
+          { name: "결말", type: "resolution", xp: 5 },
+        ],
+      },
+    ], [
+      {
+        name: '마녀의 시간',
+        cards: [
+          { name: '마녀에 씐 숲', type: 'Location', xp: 1, count: 5 },
+          { name: '마녀의 의식진', type: 'Location', xp: 2, group: "WHAnette" },
+          { name: '애닛 메이슨', type: 'Enemy', xp: 2, group: "WHAnette" },
+          { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
+          { name: '멈출 수 없는 슈브 니구라스의 어린 것', type: 'Enemy', xp: 1 },
+          { name: '결말', type: 'Resolution', xp: 1 },
+        ],
+      },
+      {
+        name: "죽음의 문턱에서",
+        cards: [
+          { name: '당구장', type: 'Location', xp: 1 },
+          { name: '요제프의 침실', type: 'Location', xp: 1 },
+          { name: '집무실', type: 'Location', xp: 2 },
+          { name: '요제프 마이거', type: 'Enemy', xp: 2, group: "TCUYosef" },
+          { name: '황천의 안개', type: 'Enemy', xp: 1 },
+        ],
+      },
+      {
+        name: '막간 2',
+        cards: [
+          { name: '요제프 마이거 구출', type: 'Resolution', xp: 2, group: "TCUYosef" },
+        ],
+      },
+      {
+        name: '비밀 이름',
+        cards: [
+          { name: '황혼의 심연', type: 'Location', xp: 1 },
+          { name: '옛것의 도시', type: 'Location', xp: 1 },
+          { name: '물리학 강의실', type: 'Location', xp: 1 },
+          { name: '위대한 고대의 존재의 궁정', type: 'Location', xp: 1 },
+          { name: '르리에 사원', type: 'Location', xp: 1 },
+          { name: '에블라의 도서관', type: 'Location', xp: 1 },
+          { name: '결말 1 - 브라운 젠킨', type: 'Resolution', xp: 1, group: "TSNRes" },
+          { name: '결말 1 - 나하브', type: 'Resolution', xp: 1, group: "TSNRes" },
+          { name: '결말 1 - 둘 모두/결말 2', type: 'Resolution', xp: 2, group: "TSNRes" },
+        ],
+      },
+      {
+        name: '죄악의 응보',
+        cards: [
+          { name: '신들린 들판', type: 'Location', xp: 1 },
+          { name: '버려진 예배당', type: 'Location', xp: 1 },
+          { name: '원혼의 미련', type: 'Story', xp: 1, count: 4 },
+        ],
+      },
+      {
+        name: '대의를 위하여',
+        cards: [
+          { name: '보관소', type: 'Location', xp: 1 },
+          { name: '서재', type: 'Location', xp: 1 },
+          { name: '의식실', type: 'Location', xp: 2 },
+          { name: '네이선 윅', type: 'Enemy', xp: 1 },
+          { name: '소환된 괴수', type: 'Enemy', xp: 2 },
+          { name: '열쇠 (이론상 무한)', type: 'Resolution', xp: 1, count: 10 },
+        ],
+      },
+      {
+        name: '합일과 환멸',
+        cards: [
+          { name: '인적 없는 섬', type: 'Location', xp: 1, count: 6 },
+          { name: '영혼 덫', type: 'Location', xp: 1 },
+          { name: '황천의 안개', type: 'Enemy', xp: 1 },
+          { name: '애닛 메이슨', type: 'Enemy', xp: 2, group: "UaDBossE" },
+          { name: '요제프 마이거', type: 'Enemy', xp: 2, group: "UaDBossE" },
+        ],
+      },
+      {
+        name: '혼돈의 손아귀에서',
+        cards: [
+          { name: '교수대 언덕/은빛 황혼회 집회소', type: 'Location', xp: 1 },
+          { name: '교단 집행자/혼돈을 목도한 자', type: 'Enemy', xp: 1, count: 2 },
+          { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
+          { name: '애닛 메이슨/칼 샌포드', type: 'Enemy', xp: 2 },
+        ],
+      },
+      {
+        name: '검은 옥좌 앞에',
+        cards: [
+          { name: '아자토스의 피리꾼', type: 'Enemy', xp: 2 },
+          { name: '결말', type: 'Resolution', xp: 5 },
+          { name: '검은 서책에 서명을 했다', type: 'Resolution', xp: 5 },
+        ],
+      },
+    ]];
 
     function updateTotalXP(scenarioList) {
       let totalXP = 0;
@@ -761,8 +1394,8 @@
         case "story":
           return '이야기';
           break;
-        case "survivor":
-          return '생존자';
+        case "treachery":
+          return '음모';
           break;
         default:
           return '';
