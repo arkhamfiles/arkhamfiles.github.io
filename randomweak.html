@@ -254,6 +254,13 @@
         if (document.formCount.ban_classonly.checked) {
           bans.push('역할군 전용 약점');
         }
+        if (document.formCount.ban_custom.checked) {
+          bans.push('비운');
+          bans.push('거부할 수 없는 제안');
+          bans.push('역할군 전용 약점');
+          bans.push('부채');
+          bans.push('고지식한 탐정');
+        }
         _setupWeights(packMod, {ban: bans, campaignOnly: document.formCount.option_campaign_only.checked});
         document.getElementById("resultText").innerText = '';
         if (!document.formCount.chooseMode.value) {
@@ -371,6 +378,7 @@
 	    <br><input type="checkbox" name="ban_doomed"><label for="ban_doomed">비운 밴</label>
 	    <input type="checkbox" name="ban_sellsoul"><label for="ban_sellsoul">거부할 수 없는 제안 밴</label>
 	    <input type="checkbox" name="ban_classonly"><label for="ban_classonly">역할군 전용 약점 밴</label>
+	    <input type="checkbox" name="ban_custom"><label for="ban_custom">커스텀 금기</label>
 	    <input type="checkbox" name="option_campaign_only" checked><label for="option_campaign_only">캠페인 전용 포함</label>
           </form>
           <button type="button" onclick="onlyKorean()">한국어판만</button>
