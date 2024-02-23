@@ -110,6 +110,7 @@
       const PACK_TIC = 8;
       const PACK_EOTE = 9;
       const PACK_TSK = 10;
+      const PACK_FHV = 11;
       const CLASS_GUARDIAN = 0;
       const CLASS_SEEKER = 1;
       const CLASS_ROGUE = 2;
@@ -190,6 +191,11 @@
         {name: '아미나 지단', pack: PACK_TSK, class: CLASS_MYSTIC, tier: TIER_D_PLUS},
         {name: '대럴 시몬스', pack: PACK_TSK, class: CLASS_SURVIVOR, tier: TIER_A_PLUS},
         {name: '찰리 케인', pack: PACK_TSK, class: CLASS_NEUTRAL, tier: TIER_A},
+        {name: '윌슨 리처즈', pack: PACK_FHV, class: CLASS_GUARDIAN, tier: TIER_B},
+        {name: '케이트 윈스롭', pack: PACK_FHV, class: CLASS_SEEKER, tier: TIER_C},
+        {name: '알레산드라 초르치', pack: PACK_FHV, class: CLASS_ROGUE, tier: TIER_B_PLUS},
+        {name: '코하쿠 나루카미', pack: PACK_FHV, class: CLASS_MYSTIC, tier: TIER_B_PLUS},
+        {name: '행크 샘슨', pack: PACK_FHV, class: CLASS_SURVIVOR, tier: TIER_C_PLUS},
       ];
 
       var weightSum = 0;
@@ -197,7 +203,7 @@
       function _setupWeights(packMod, classMod, tierMod) {
         weightSum = 0;
         actCnt = 0;
-        var packModArr = packMod ? packMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        var packModArr = packMod ? packMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
         var classModArr = classMod ? classMod : [1, 1, 1, 1, 1, 1];
         var tierModArr = tierMod ? tierMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0];
         for (var i = 0; i < invData.length; i++) {
@@ -255,7 +261,7 @@
         for (var i = 0; i < 14; i++) {
           tierMod.push(document.formTier.elements[i].value);
         }
-        for (var i = 0; i < 11; i++) {
+        for (var i = 0; i < 12; i++) {
           packMod.push(document.formPack.elements[i].value);
         }
         for (var i = 0; i < 6; i++) {
@@ -273,13 +279,14 @@
       function onlyKorean() {
         document.formPack.elements[PACK_PARALLEL].value = 0;
         document.formPack.elements[PACK_TSK].value = 0;
+        document.formPack.elements[PACK_FHV].value = 0;
       }
 
       function init() {
         for (var i = 0; i < 14; i++) {
           document.formTier.elements[i].value = 1;
         }
-        for (var i = 0; i < 11; i++) {
+        for (var i = 0; i < 12; i++) {
           document.formPack.elements[i].value = 1;
         }
         for (var i = 0; i < 6; i++) {
@@ -350,6 +357,9 @@
       <li>
         <label for="pack_tsk">진홍색 열쇠</label><input type="range" id="pack_tsk" name="pack_tsk" min="0" max="3" value="1" step="0.1"><br>
       </li>
+      <li>
+        <label for="pack_fhv">헴록 베일의 축일</label><input type="range" id="pack_fhv" name="pack_fhv" min="0" max="3" value="1" step="0.1"><br>
+      </li>
       </ul>
   </form>
     <div class="textBlock">
@@ -377,10 +387,10 @@
       </li>
       </ul>
   </form>
-    <div class="textBlock">
+    <div class="textBlock" style="display: none;">
       티어 (아컴파일즈 선정 풀확장 기준)
     </div>
-      <ul style="list-style-type: none; width: 100%;">
+      <ul style="list-style-type: none; width: 100%; display: none;">
       <form name="formTier">
         <li>
           <label for="tier_s">Tier S</label><input type="range" id="tier_s" name="tier_s" min="0" max="3" value="1" step="0.1"><br>
