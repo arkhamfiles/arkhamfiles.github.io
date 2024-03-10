@@ -80,6 +80,16 @@
         "path": "109_SKC.svg"
     },
     {
+        "char": "j",
+        "name": "fhvp",
+        "path": "10_FHVP.svg"
+    },
+    {
+        "char": "J",
+        "name": "fhvc",
+        "path": "110_FHVC.svg"
+    },
+    {
         "char": "1",
         "name": "nc",
         "path": "201_NC.svg"
@@ -108,5 +118,10 @@
         "char": "6",
         "name": "par",
         "path": "206_PI.svg"
+    },
+    {
+        "char": "7",
+        "name": "tbaee",
+        "path": "207_BAEE.svg"
     }
 ]

@@ -82,6 +82,14 @@
     content: "I"
 }
 
+.symbol-fhvp:before {
+    content: "j"
+}
+
+.symbol-fhvc:before {
+    content: "J"
+}
+
 .symbol-nc:before {
     content: "1"
 }
@@ -104,5 +112,9 @@
 
 .symbol-par:before {
     content: "6"
+}
+
+.symbol-tbaee:before {
+    content: "7"
 }
 
