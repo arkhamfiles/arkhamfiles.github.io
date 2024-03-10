@@ -118,10 +118,11 @@
       const PACK_TIC = 8;
       const PACK_EOTE = 9;
       const PACK_TSK = 10;
-      const PACK_RT_DUNWICH = 11;
-      const PACK_RT_CARCOSA = 12;
-      const PACK_RT_TFA = 13;
-      const PACK_RT_TCU = 14;
+      const PACK_FHV = 11;
+      const PACK_RT_DUNWICH = 12;
+      const PACK_RT_CARCOSA = 13;
+      const PACK_RT_TFA = 14;
+      const PACK_RT_TCU = 15;
       const weaknessData = [
         {name: '기억상실', pack: PACK_CORE, code: '01096', count: 2},
         {name: '편집증', pack: PACK_CORE, code: '01097', count: 2},
@@ -166,6 +167,10 @@
         {name: '나락으로 떨어지다', pack: PACK_RT_TCU, code: '54014', count: 1},
         {name: '악마 · XV', pack: PACK_RT_TCU, code: '54015', count: 2},
         {name: '역할군 전용 약점', pack: PACK_TSK, code: '00000', count: 1},
+        {name: '불구가 된 손', pack: PACK_FHV, code: '10135', count: 1},
+        {name: '허리 부상', pack: PACK_FHV, code: '10136', count: 1},
+        {name: '은빛 나방', pack: PACK_FHV, code: '10137', count: 1},
+        {name: '지텔레크의 맹서', pack: PACK_FHV, code: '10138', count: 1},
       ];
 
       var weightSum = 0;
@@ -173,7 +178,7 @@
       function _setupWeights(packMod, options) {
         weightSum = 0;
         actCnt = 0;
-        var packModArr = packMod ? packMod : [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        var packModArr = packMod ? packMod : [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
         for (var i = 0; i < weaknessData.length; i++) {
           weaknessData[i].weight = 1 * packModArr[weaknessData[i].pack] * weaknessData[i].count;
           if (options.ban && options.ban.includes(weaknessData[i].name)) {
@@ -242,7 +247,7 @@
         var packMod = [];
         var bans = [];
         finalRes = [];
-        for (var i = 0; i < 15; i++) {
+        for (var i = 0; i < 16; i++) {
           packMod.push(document.formPack.elements[i].value);
         }
         if (document.formCount.ban_doomed.checked) {
@@ -323,10 +328,11 @@
       function onlyKorean() {
         document.formPack.elements[PACK_PARALLEL].value = 0;
         document.formPack.elements[PACK_TSK].value = 0;
+        document.formPack.elements[PACK_FHV].value = 0;
       }
 
       function init() {
-        for (var i = 0; i < 15; i++) {
+        for (var i = 0; i < 16; i++) {
           document.formPack.elements[i].value = 1;
         }
       }
@@ -426,6 +432,9 @@
       </li>
       <li>
         <label for="pack_tsk">진홍색 열쇠</label><input type="range" id="pack_tsk" name="pack_tsk" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_fhv">헴록 베일의 축일</label><input type="range" id="pack_fhv" name="pack_fhv" min="0" max="3" value="1" step="0.1"><br>
       </li>
       <li>
         <label for="pack_rt_dunwich">돌아온 던위치의 유산</label><input type="range" id="pack_rt_dunwich" name="pack_rt_dunwich" min="0" max="3" value="1" step="0.1"><br>
