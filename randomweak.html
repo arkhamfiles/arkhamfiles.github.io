@@ -42,7 +42,17 @@
       }
 
       .selectCardBlock {
-        justify-content: space-around;
+        justify-content: center;
+      }
+
+      .choiceBlock {
+        text-align: center;
+        background-color: steelblue;
+        color: white;
+        border: 1px white solid;
+        border-radius: 10px;
+        padding: 4px;
+        margin: 0 6px;
       }
 
       .textBlock {
@@ -311,7 +321,7 @@
         savedRes = _pickMulti(document.formCount.text2.value);
         var htmlCons = '';
         for (var i = 0; i < savedRes.length; i++) {
-          htmlCons += '<div>' + savedRes[i].name + '<br><img src="' + _makeDBImageURL(savedRes[i].code) + '" onclick="_chooseThis(' + i + ')"></div>';
+          htmlCons += '<div class="choiceBlock">' + savedRes[i].name + '<br><img src="' + _makeDBImageURL(savedRes[i].code) + '" onclick="_chooseThis(' + i + ')"></div>';
         }
         document.getElementById("selectChoices").innerHTML = htmlCons;
       }
