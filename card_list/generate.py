@@ -15,13 +15,13 @@ from tqdm.auto import tqdm
 # special case: upgrade version will follow just after
 # investigate & signature inserting at the start
 
-cycle = 'eoe'
-data_folder = Path('../../arkhamdb-json-data')
-template_file = Path("card_list_template.html")
-output_json = Path("outputs.json")
-output_disp = Path("dist")
-output_file = Path("dist.zip")
-download_card = True
+cycle = 'tsk'
+data_folder = Path(__file__).parent / Path('../../arkhamdb-json-data')
+template_file = Path(__file__).parent / Path("card_list_template.html")
+output_json = Path(__file__).parent / Path("outputs.json")
+output_disp = Path(__file__).parent / Path("dist")
+output_file = Path(__file__).parent / Path("dist.zip")
+download_card = False
 
 if not template_file.is_file():
     raise FileNotFoundError(template_file)
@@ -60,6 +60,9 @@ for pack in packs:
         for key, value in k.items():
             e[key] = value
     data.extend(data_eng)
+    for item in data:
+        if "customization_text" in item:
+            item["text"] +=  '\n' + item["customization_text"]
 
 ## one more sort based on code
 data.sort(key=lambda x: x['code'])
@@ -171,10 +174,10 @@ if download_card is True:
 
 if output_file is not None:
     with ZipFile(output_file, "w", ZIP_LZMA) as fileio:
-        target = ["css", "fonts", "js"]
-        if download_card:
-            target += ["cards"]
-        for name in target:
-            for file in (output_disp / name).iterdir():
-                fileio.write(file, name + "/" + file.name)
+        target = ["css", "fonts", "js", "cards"]
+        for input_dir in map(lambda x: output_disp / x, target):
+            if not input_dir.is_dir():
+                continue
+            for file in input_dir.iterdir():
+                fileio.write(file, input_dir.stem + "/" + file.name)
         fileio.write(output_disp / "card_list.html", "card_list.html")
