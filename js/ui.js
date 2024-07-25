@@ -9,14 +9,14 @@ window.onload = function () {
   }
 
   window.toggleViewAll.onclick = function() {
-    toggleViewSelector('.tskp, .tskc');
+    toggleViewSelector('.fhvp, .fhvc');
     viewAll = !viewAll;
       window.toggleViewAll.innerText = viewAll ? '한국어판만 보기' : '모두 보기';
     localStorage.setItem('viewAll', viewAll);
   }
 
   if (!viewAll) {
-    toggleViewSelector('.tskp, .tskc');
+    toggleViewSelector('.fhvp, .fhvc');
   }
 
   window.toggleHighlightNew.onclick = function() {
