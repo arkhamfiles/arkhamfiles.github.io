@@ -20,7 +20,7 @@ window.onload = function () {
   }
 
   window.toggleHighlightNew.onclick = function() {
-    toggleViewColor('.V1_6, .new');
+    toggleViewColor('.V1_7, .new');
     toggleViewSelector('.newShowList', 'list-item');
     highlightNew = !highlightNew;
     window.toggleHighlightNew.innerText = highlightNew ? '강조 끄기' : '신규 항목 강조';
@@ -28,7 +28,7 @@ window.onload = function () {
   }
 
   if (highlightNew) {
-    toggleViewColor('.V1_6, .new');
+    toggleViewColor('.V1_7, .new');
     toggleViewSelector('.newShowList', 'list-item');
   }
 
