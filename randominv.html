@@ -111,6 +111,7 @@
       const PACK_EOTE = 9;
       const PACK_TSK = 10;
       const PACK_FHV = 11;
+      const PACK_TDC = 12;
       const CLASS_GUARDIAN = 0;
       const CLASS_SEEKER = 1;
       const CLASS_ROGUE = 2;
@@ -143,6 +144,13 @@
         {name: '평행/"스키즈" 오\'툴', pack: PACK_PARALLEL, class: CLASS_ROGUE, tier: TIER_B},
         {name: '평행/애그니스 베이커', pack: PACK_PARALLEL, class: CLASS_MYSTIC, tier: TIER_A_MINUS},
         {name: '평행/웬디 애덤스', pack: PACK_PARALLEL, class: CLASS_SURVIVOR, tier: TIER_C},
+        {name: '평행/조이 사마라스', pack: PACK_PARALLEL, class: CLASS_GUARDIAN, tier: TIER_B},
+        {name: '평행/렉스 머피', pack: PACK_PARALLEL, class: CLASS_SEEKER, tier: TIER_C_PLUS},
+        {name: '평행/제니 반즈', pack: PACK_PARALLEL, class: CLASS_ROGUE, tier: TIER_C},
+        {name: '평행/짐 컬버', pack: PACK_PARALLEL, class: CLASS_MYSTIC, tier: TIER_D},
+        {name: '평행/“재떨이” 피트', pack: PACK_PARALLEL, class: CLASS_SURVIVOR, tier: TIER_D},
+        {name: '평행/마테오 신부', pack: PACK_PARALLEL, class: CLASS_MYSTIC, tier: TIER_C_MINUS},
+        {name: '평행/몬터레이 잭', pack: PACK_PARALLEL, class: CLASS_ROGUE, tier: TIER_B_MINUS},
         {name: '조이 사마라스', pack: PACK_DUNWICH, class: CLASS_GUARDIAN, tier: TIER_B},
         {name: '렉스 머피', pack: PACK_DUNWICH, class: CLASS_SEEKER, tier: TIER_C_PLUS},
         {name: '제니 반즈', pack: PACK_DUNWICH, class: CLASS_ROGUE, tier: TIER_C},
@@ -196,24 +204,37 @@
         {name: '알레산드라 초르치', pack: PACK_FHV, class: CLASS_ROGUE, tier: TIER_B_PLUS},
         {name: '코하쿠 나루카미', pack: PACK_FHV, class: CLASS_MYSTIC, tier: TIER_B_PLUS},
         {name: '행크 샘슨', pack: PACK_FHV, class: CLASS_SURVIVOR, tier: TIER_C_PLUS},
+        {name: '마리온 타바레스', pack: PACK_TDC, class: CLASS_GUARDIAN, tier: TIER_A},
+        {name: '루시우스 갤러웨이', pack: PACK_TDC, class: CLASS_SEEKER, tier: TIER_B_PLUS},
+        {name: '마이클 맥글렌', pack: PACK_TDC, class: CLASS_ROGUE, tier: TIER_C},
+        {name: '글로리아 골드버그', pack: PACK_TDC, class: CLASS_MYSTIC, tier: TIER_B_PLUS},
+        {name: '조지 바나비', pack: PACK_TDC, class: CLASS_SURVIVOR, tier: TIER_B_PLUS},
+        {name: '애거서 크레인', pack: PACK_TDC, class: [CLASS_SEEKER, CLASS_MYSTIC], tier: TIER_C},
       ];
 
-      var weightSum = 0;
-      var actCnt = 0;
-      function _setupWeights(packMod, classMod, tierMod) {
-        weightSum = 0;
-        actCnt = 0;
-        var packModArr = packMod ? packMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-        var classModArr = classMod ? classMod : [1, 1, 1, 1, 1, 1];
-        var tierModArr = tierMod ? tierMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0];
-        for (var i = 0; i < invData.length; i++) {
-          invData[i].weight = 1 * packModArr[invData[i].pack] * classModArr[invData[i].class] * tierModArr[invData[i].tier];
-          weightSum += invData[i].weight;
-          if (invData[i].weight) {
-            actCnt++;
+        var weightSum = 0;
+        var actCnt = 0;
+        function _setupWeights(packMod, classMod, tierMod) {
+          weightSum = 0;
+          actCnt = 0;
+          var packModArr = packMod ? packMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+          var classModArr = classMod ? classMod : [1, 1, 1, 1, 1, 1];
+          var tierModArr = tierMod ? tierMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0];
+          for (var i = 0; i < invData.length; i++) {
+            if (typeof invData[i].class === 'object') {
+              invData[i].weight = 0;
+              for (var j = 0; j < invData[i].class.length; j++) {
+                invData[i].weight += 1 * packModArr[invData[i].pack] * classModArr[invData[i].class[j]] * tierModArr[invData[i].tier] / invData[i].class.length;
+              }
+            } else {
+              invData[i].weight = 1 * packModArr[invData[i].pack] * classModArr[invData[i].class] * tierModArr[invData[i].tier];
+            }
+            weightSum += invData[i].weight;
+            if (invData[i].weight) {
+              actCnt++;
+            }
           }
         }
-      }
 
       function _pickOne(banned) {
         var banList = banned ? banned : [];
@@ -261,7 +282,7 @@
         for (var i = 0; i < 14; i++) {
           tierMod.push(document.formTier.elements[i].value);
         }
-        for (var i = 0; i < 12; i++) {
+        for (var i = 0; i < 13; i++) {
           packMod.push(document.formPack.elements[i].value);
         }
         for (var i = 0; i < 6; i++) {
@@ -278,15 +299,15 @@
 
       function onlyKorean() {
         document.formPack.elements[PACK_PARALLEL].value = 0;
-        document.formPack.elements[PACK_TSK].value = 0;
         document.formPack.elements[PACK_FHV].value = 0;
+        document.formPack.elements[PACK_TDC].value = 0;
       }
 
       function init() {
         for (var i = 0; i < 14; i++) {
           document.formTier.elements[i].value = 1;
         }
-        for (var i = 0; i < 12; i++) {
+        for (var i = 0; i < 13; i++) {
           document.formPack.elements[i].value = 1;
         }
         for (var i = 0; i < 6; i++) {
@@ -359,6 +380,9 @@
       </li>
       <li>
         <label for="pack_fhv">헴록 베일의 축일</label><input type="range" id="pack_fhv" name="pack_fhv" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_tdc">수몰된 도시</label><input type="range" id="pack_tdc" name="pack_tdc" min="0" max="3" value="1" step="0.1"><br>
       </li>
       </ul>
   </form>

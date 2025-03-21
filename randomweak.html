@@ -129,10 +129,11 @@
       const PACK_EOTE = 9;
       const PACK_TSK = 10;
       const PACK_FHV = 11;
-      const PACK_RT_DUNWICH = 12;
-      const PACK_RT_CARCOSA = 13;
-      const PACK_RT_TFA = 14;
-      const PACK_RT_TCU = 15;
+      const PACK_TDC = 12;
+      const PACK_RT_DUNWICH = 13;
+      const PACK_RT_CARCOSA = 14;
+      const PACK_RT_TFA = 15;
+      const PACK_RT_TCU = 16;
       const weaknessData = [
         {name: '기억상실', pack: PACK_CORE, code: '01096', count: 2},
         {name: '편집증', pack: PACK_CORE, code: '01097', count: 2},
@@ -181,6 +182,10 @@
         {name: '허리 부상', pack: PACK_FHV, code: '10136', count: 1},
         {name: '은빛 나방', pack: PACK_FHV, code: '10137', count: 1},
         {name: '지텔레크의 맹서', pack: PACK_FHV, code: '10138', count: 1},
+        {name: '빈털터리 신세', pack: PACK_TDC, code: '11126', count: 1},
+        {name: '병적인 호기심', pack: PACK_TDC, code: '11127', count: 1},
+        {name: '성가신 폴터가이스트', pack: PACK_TDC, code: '11128', count: 1},
+        {name: '광분', pack: PACK_TDC, code: '11129', count: 1},
       ];
 
       var weightSum = 0;
@@ -188,7 +193,7 @@
       function _setupWeights(packMod, options) {
         weightSum = 0;
         actCnt = 0;
-        var packModArr = packMod ? packMod : [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        var packModArr = packMod ? packMod : [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
         for (var i = 0; i < weaknessData.length; i++) {
           weaknessData[i].weight = 1 * packModArr[weaknessData[i].pack] * weaknessData[i].count;
           if (options.ban && options.ban.includes(weaknessData[i].name)) {
@@ -257,7 +262,7 @@
         var packMod = [];
         var bans = [];
         finalRes = [];
-        for (var i = 0; i < 16; i++) {
+        for (var i = 0; i < 17; i++) {
           packMod.push(document.formPack.elements[i].value);
         }
         if (document.formCount.ban_doomed.checked) {
@@ -337,12 +342,12 @@
 
       function onlyKorean() {
         document.formPack.elements[PACK_PARALLEL].value = 0;
-        document.formPack.elements[PACK_TSK].value = 0;
         document.formPack.elements[PACK_FHV].value = 0;
+        document.formPack.elements[PACK_TDC].value = 0;
       }
 
       function init() {
-        for (var i = 0; i < 16; i++) {
+        for (var i = 0; i < 17; i++) {
           document.formPack.elements[i].value = 1;
         }
       }
@@ -445,6 +450,9 @@
       </li>
       <li>
         <label for="pack_fhv">헴록 베일의 축일</label><input type="range" id="pack_fhv" name="pack_fhv" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_tdc">수몰된 도시</label><input type="range" id="pack_tdc" name="pack_tdc" min="0" max="3" value="1" step="0.1"><br>
       </li>
       <li>
         <label for="pack_rt_dunwich">돌아온 던위치의 유산</label><input type="range" id="pack_rt_dunwich" name="pack_rt_dunwich" min="0" max="3" value="1" step="0.1"><br>
