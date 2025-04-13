@@ -92,3 +92,11 @@ Some python scripts will be distributed as MIT license: all files in `html_gener
    * windows인 경우, PATH를 지정하면 ffpython을 활용합니다.
    * ubuntu는 fontforge를 잘 깔아야 합니다. 시도 안해봄.
 
+## python 가상환경 설정
+ * powershell 실행
+ * `pip install virtualenv`
+ * `python -m venv venv`
+ * `venv/Scripts/Activate.ps1`
+   * 권한 문제로 오류가 나는 경우, 관리자 권한으로 powershell 실행 후, `Set-ExecutionPolicy Unrestricted`
+ * `pip install -r requrements.txt`
+ * `./(name of script).ps1`

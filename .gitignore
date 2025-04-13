@@ -13,3 +13,4 @@ card_list/dist
 testfont
 api_key.json
 arkhamdb-json-data
+venv/*

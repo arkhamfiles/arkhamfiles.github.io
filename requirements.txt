@@ -1,0 +1,6 @@
+beautifulsoup4
+requests
+tqdm
+opencv-python
+fonttools >= 4.39
+font-cli
