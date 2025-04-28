@@ -15,13 +15,13 @@ from tqdm.auto import tqdm
 # special case: upgrade version will follow just after
 # investigate & signature inserting at the start
 
-cycle = 'tsk'
+cycle = 'fhv'
 data_folder = Path(__file__).parent / Path('../../arkhamdb-json-data')
 template_file = Path(__file__).parent / Path("card_list_template.html")
 output_json = Path(__file__).parent / Path("outputs.json")
 output_disp = Path(__file__).parent / Path("dist")
 output_file = Path(__file__).parent / Path("dist.zip")
-download_card = False
+download_card = True
 
 if not template_file.is_file():
     raise FileNotFoundError(template_file)
@@ -75,14 +75,15 @@ invs = [x for x in data if "type_code" in x and x['type_code'] == "investigator"
 sigs: List[List[Dict[str, str]]] = []
 for inv in invs:
     sig: List[Dict[str, str]] = []
-    reqs = inv['deck_requirements']
     idx = code.index(inv['code'])
     to_remove.append(idx)
-    for match in re.finditer(r"card:([0-9]+)", reqs):
-        c = match.group(1)
-        idx = code.index(c)
-        sig.append(data[idx])
-        to_remove.append(idx)
+    if 'deck_requirements' in inv:
+        reqs = inv['deck_requirements']
+        for match in re.finditer(r"card:([0-9]+)", reqs):
+            c = match.group(1)
+            idx = code.index(c)
+            sig.append(data[idx])
+            to_remove.append(idx)
     sigs.append(sig)
 to_remove.sort()
 for idx in reversed(to_remove):
