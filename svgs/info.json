@@ -90,6 +90,16 @@
         "path": "110_FHVC.svg"
     },
     {
+        "char": "k",
+        "name": "tdcp",
+        "path": "11_DCP.svg"
+    },
+    {
+        "char": "K",
+        "name": "tdcc",
+        "path": "111_DCC.svg"
+    },
+    {
         "char": "1",
         "name": "nc",
         "path": "201_NC.svg"

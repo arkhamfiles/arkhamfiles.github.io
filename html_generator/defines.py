@@ -51,7 +51,9 @@ SYMBOLS: Dict[str, str] = OrderedDict([
     ('tskp', '진홍색 열쇠'),
     ('tskc', '진홍색 열쇠 캠페인 확장'),
     ('fhvp', '햄록 베일의 축일'),
-    ('fhvc', '햄록 베일의 축일 캠페인 확장')
+    ('fhvc', '햄록 베일의 축일 캠페인 확장'),
+    ('tdcp', '수몰된 도시'),
+    ('tdcc', '수몰된 도시 캠페인 확장')
 ])
 
 EXPANSION: Dict[str, str] = OrderedDict([
@@ -77,5 +79,7 @@ EXPANSION: Dict[str, str] = OrderedDict([
     ('tskp', '진홍색 열쇠'),
     ('tskc', '진홍색 열쇠 캠페인 확장'),
     ('fhvp', '햄록 베일의 축일'),
-    ('fhvc', '햄록 베일의 축일 캠페인 확장')
+    ('fhvc', '햄록 베일의 축일 캠페인 확장'),
+    ('tdcp', '수몰된 도시'),
+    ('tdcc', '수몰된 도시 캠페인 확장')
 ])

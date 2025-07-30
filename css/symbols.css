@@ -90,6 +90,14 @@
     content: "J"
 }
 
+.symbol-tdcp:before {
+    content: "k"
+}
+
+.symbol-tdcc:before {
+    content: "K"
+}
+
 .symbol-nc:before {
     content: "1"
 }
