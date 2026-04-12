@@ -14,3 +14,5 @@ testfont
 api_key.json
 arkhamdb-json-data
 venv/*
+utility/input/*
+utility/output/*
