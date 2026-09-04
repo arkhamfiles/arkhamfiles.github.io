@@ -315,7 +315,32 @@
         }
       }
     </script>
-	  </head>
+	  <script>if(window.self!==window.top){document.documentElement.className+=" hub-embed";}</script>
+<style>
+/* 아컴 허브(chapters.html) 안에 임베드될 때만 적용되는 테마 */
+html.hub-embed{--paper:#f4f3ef;--surface:#fff;--line:#d8d4ca;--ink:#2c2620;--muted:#665f50;--crim:#7a1c1c;--crim2:#9a4a1a;}
+html.hub-embed body{background:var(--paper)!important;color:var(--ink)!important;font-family:"Noto Sans KR","Open Sans","Malgun Gothic",system-ui,sans-serif!important;line-height:1.6;padding:1.1rem 1.4rem 2.5rem;}
+html.hub-embed button{appearance:none;border:1px solid #6a3030;background:var(--crim);color:#fff;font:inherit;font-size:.88rem;font-weight:600;padding:.35rem .9rem;border-radius:.3rem;cursor:pointer;transition:background .15s;}
+html.hub-embed button:hover{background:#9a2a2a;}
+html.hub-embed select,html.hub-embed input[type=text],html.hub-embed input[type=number]{border:1px solid var(--line);background:#fff;color:var(--ink);font:inherit;font-size:.9rem;padding:.3rem .5rem;border-radius:.3rem;}
+html.hub-embed input[type=range]{accent-color:var(--crim);}
+html.hub-embed input[type=checkbox],html.hub-embed input[type=radio]{accent-color:var(--crim);}
+html.hub-embed .rules-reference{max-width:64rem;margin:0 auto;}
+html.hub-embed .titleRowBlock{height:auto;font-size:1.3rem;font-weight:700;color:var(--crim);border-bottom:2px solid var(--crim);padding-bottom:.4rem;margin-bottom:1rem;}
+html.hub-embed .pickRowBlock,html.hub-embed .halfRowBlock{background:var(--surface);border:1px solid var(--line);border-radius:.3rem;box-shadow:0 1px 2px rgb(60 40 20/.08);padding:1rem 1.15rem;margin-bottom:1.1rem;height:auto;min-height:0;}
+html.hub-embed .halfRowBlock>.textBlock{font-weight:700;color:var(--crim);font-size:1.02rem;margin:.9rem 0 .5rem;}
+html.hub-embed .halfRowBlock>.textBlock:first-child{margin-top:0;}
+html.hub-embed #resultText{font-size:1.02rem;margin-top:.6rem;line-height:1.8;}
+html.hub-embed header h1{font-size:1.3rem;color:var(--crim);border-bottom:2px solid var(--crim);padding-bottom:.4rem;margin-bottom:1rem;text-align:left;font-weight:700;}
+html.hub-embed h2{color:var(--crim);font-size:1.05rem;}
+html.hub-embed .campaign-selection,html.hub-embed #scenarios{background:var(--surface);border:1px solid var(--line);border-radius:.3rem;box-shadow:0 1px 2px rgb(60 40 20/.08);padding:1rem 1.15rem;margin-bottom:1.1rem;width:100%;max-width:64rem;}
+html.hub-embed .scenario-card{background:var(--paper);border:1px solid var(--line);border-radius:.3rem;max-width:none;}
+html.hub-embed .scenario-card h3{color:var(--crim);}
+html.hub-embed .counter{color:var(--crim);font-weight:700;}
+html.hub-embed #toggle-check-all{background:var(--crim);font-size:.9rem;padding:.4rem .9rem;border-radius:.3rem;}
+html.hub-embed #toggle-check-all:hover{background:#9a2a2a;}
+</style>
+</head>
 
 
 
