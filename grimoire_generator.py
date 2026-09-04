@@ -6,7 +6,7 @@
  - 챕터 2의 규칙/정오표/FAQ/선택 규칙/개정 재수록 패널(본문+목차)을 시트 내용으로 교체합니다.
  - 시트가 갱신되면 다시 실행하기만 하면 됩니다. (chapters.html은 제자리에서 수정)
 """
-import sys, re, html, unicodedata
+import os, sys, re, html, unicodedata
 import openpyxl
 
 ICON = {
@@ -344,8 +344,13 @@ def entry_html(e):
     tcls='block-title fc-title' if e.get('center_title') else 'block-title'
     title = '' if e.get('notitle') else '<h3 class="'+tcls+'">'+fmt(e["kt"])+'</h3>'
     cls='rules-block entry'+(' plain' if e.get('plain') else '')
-    imgs=''.join('<figure class="rb-fig"><img loading="lazy" src="'+u+'" alt="'+html.escape(e["kt"],quote=True)+'"></figure>'
-                 for u in ENTRY_IMAGES.get(e['key'],[]))
+    row = e['key'] in ENTRY_IMAGES_ROW
+    imgs=''
+    for it in ENTRY_IMAGES.get(e['key'],[]):
+        u,xcls = it if isinstance(it,tuple) else (it,'')   # (경로, 추가클래스) 또는 경로
+        imgs+=('<figure class="rb-fig'+(' '+xcls if xcls else '')+'"'+(' style="flex-grow:%.4f"'%img_aspect(u) if row else '')+
+               '><img loading="lazy" src="'+u+'" alt="'+html.escape(e["kt"],quote=True)+'"></figure>')
+    if imgs and row: imgs='<div class="rb-row">'+imgs+'</div>'
     body=render_parts(e["parts"])+subs
     if e['key'] in IMAGE_REPLACES_BODY and imgs: body=''
     return ('<article class="'+cls+'" id="'+e["key"]+'">'+title+
@@ -536,9 +541,20 @@ ANATOMY_IDS={'시나리오 카드 해설':'scenario_card_anatomy_key','플레이
 # 항목에 삽입할 규칙서 도해 이미지 (entry id -> [이미지 경로])
 ENTRY_IMAGES = {
     'c2-anat-scenario_card_anatomy_key': ['images/rulebook/anatomy_scenario_1.webp','images/rulebook/anatomy_scenario_2.webp'],
-    'c2-anat-player_card_anatomy_key':   ['images/rulebook/anatomy_player_1.webp','images/rulebook/anatomy_player_2.webp'],
+    'c2-anat-player_card_anatomy_key':   [('images/rulebook/anatomy_player_1.webp','w75'),'images/rulebook/anatomy_player_2.webp'],  # w75: 75% 너비·가운데
 }
 IMAGE_REPLACES_BODY = set()
+# 이미지를 가로로 나란히 배치할 항목
+ENTRY_IMAGES_ROW = {'c2-anat-scenario_card_anatomy_key'}
+
+def img_aspect(rel):
+    """가로/세로 비율. 나란히 배치 시 flex-grow 로 써서 두 이미지의 높이를 맞춘다."""
+    try:
+        from PIL import Image
+        w,h = Image.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), rel)).size
+        return w/h
+    except Exception:
+        return 1.0
 DROP_ENTRIES = {'Symbols and Icons'}   # 웹판에서 통째로 제외하는 항목
 
 # 특정 문단 바로 아래 삽입하는 이미지: (엔트리 id, 문단에 포함된 문구) -> [(src, 추가클래스)]
