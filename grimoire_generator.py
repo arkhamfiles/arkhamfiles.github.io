@@ -23,6 +23,11 @@ ICON = {
  'tommy':('sym2-tommy','토미 멀둔'), 'carolyn':('sym2-carolyn','캐롤린 펀'), 'andre':('sym2-andre','앙드레 파텔'),
  'marie':('sym2-marie','마리 램부'), 'maire':('sym2-marie','마리 램부'), 'miguel':('sym2-miguel','미겔 데 라 크루스'), 'codex':('sym2-codex','서고'),
  'weakness':('sym2-weakness','기본 약점'), 'basic_weakness':('sym2-weakness','기본 약점'),
+ # 슬롯 기호(이미지, chapters.html의 .slot-icon CSS)
+ 'accessory':('slot-icon slot-accessory','액세서리 슬롯'), 'head':('slot-icon slot-head','머리 슬롯'),
+ 'body':('slot-icon slot-body','신체 슬롯'), 'ally':('slot-icon slot-ally','조력자 슬롯'),
+ 'hand':('slot-icon slot-hand','손 슬롯'), 'hand_2':('slot-icon slot-hand_2','손 슬롯 2칸'),
+ 'arcane':('slot-icon slot-arcane','마법 슬롯'), 'arcane_2':('slot-icon slot-arcane_2','마법 슬롯 2칸'),
 }
 DROP_MARKERS = set()
 
@@ -37,6 +42,9 @@ def fmt(text):
             return f'<span title="{t}" class="{cls}"></span>'
         return m.group(0)
     s = re.sub(r'\[([a-z_0-9]+)\]', rep, s)
+    if 'slot-icon' in s:   # 슬롯 기호 표: 줄 단위로 표시하고 한 줄의 두 항목 사이를 띄움
+        s = s.replace('\n', '<br />')
+        s = re.sub(r'(\S) (<span title="[^"]*" class="slot-icon)', r'\1&emsp;\2', s)
     s = re.sub(r'\*\*\*(.+?)\*\*\*', r'<b><i>\1</i></b>', s)
     s = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', s)
     s = re.sub(r'\*(.+?)\*', r'<i>\1</i>', s)
