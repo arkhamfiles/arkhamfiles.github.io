@@ -718,8 +718,7 @@ def main():
     sections, order = build_entries(rows)
     panels = assemble(sections)
     doc = open(target, encoding='utf-8').read()
-    header = ('<div class="chapter-header"><h1>챕터 2 · 아컴 마도서</h1>'
-              '<p>코리아보드게임즈와 공동 검수 중인 한국어 번역 초안 기준입니다. 검수 진행에 따라 내용이 변경될 수 있습니다.</p></div>')
+    header = ('<div class="chapter-header"><h1>챕터 2 · 아컴 마도서</h1></div>')
     conf = [
       ('rules','<div class="content-panel grimoire-list" data-sub="rules" data-ch="c2">',header),
       ('errata','<div class="content-panel grimoire-list" data-sub="errata" data-ch="c2">',None),
