@@ -42,9 +42,9 @@ def fmt(text):
             return f'<span title="{t}" class="{cls}"></span>'
         return m.group(0)
     s = re.sub(r'\[([a-z_0-9]+)\]', rep, s)
-    if 'slot-icon' in s:   # 슬롯 기호 표: 줄 단위로 표시하고 한 줄의 두 항목 사이를 띄움
-        s = s.replace('\n', '<br />')
-        s = re.sub(r'(\S) (<span title="[^"]*" class="slot-icon)', r'\1&emsp;\2', s)
+    if 'slot-icon' in s:   # 슬롯 기호 표: 항목마다 칸을 나눠 2열 격자로 표시(.slot-grid)
+        items = re.split(r'\s*(?=<span title="[^"]*" class="slot-icon)', s.replace('\n', ' ').strip())
+        s = '<span class="slot-grid">' + ''.join(f'<span class="slot-item">{it.strip()}</span>' for it in items if it.strip()) + '</span>'
     s = re.sub(r'\*\*\*(.+?)\*\*\*', r'<b><i>\1</i></b>', s)
     s = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', s)
     s = re.sub(r'\*(.+?)\*', r'<i>\1</i>', s)
