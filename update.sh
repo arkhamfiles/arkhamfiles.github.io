@@ -17,4 +17,7 @@ python3 generate.py raw/taboo.html taboo.html --nolink
 echo -e "generate taboo.html..."
 python3 generate.py raw/ultimatums.html ultimatums.html --nolink
 
+echo -e "generate chapters.html..."
+python3 generate.py raw/chapters.html chapters.html --nolink --force
+
 echo -e "terminated..."

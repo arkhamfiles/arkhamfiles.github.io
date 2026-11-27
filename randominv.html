@@ -74,6 +74,10 @@
       .pickRowBlock input.smallInput {
         width: 40px;
       }
+      .chapTabs { margin-bottom: 10px; }
+      #chap2Block, #chap1Block, #classBlock { width: 100%; }
+      .chapTabs button { margin: 0 3px; opacity: .6; }
+      .chapTabs button.active { opacity: 1; font-weight: bold; text-decoration: underline; }
 
       .quarterBlock {
         width: 48%;
@@ -112,6 +116,8 @@
       const PACK_TSK = 10;
       const PACK_FHV = 11;
       const PACK_TDC = 12;
+      const PACK_CORE26 = 13;
+      const PACK_INVDECK26 = 14;
       const CLASS_GUARDIAN = 0;
       const CLASS_SEEKER = 1;
       const CLASS_ROGUE = 2;
@@ -133,7 +139,32 @@
       const TIER_D_MINUS = 12;
       const TIER_F = 13;
       const TIER_UNDEF = 14;
-      const invData = [
+      const PACK2_CORE = 0;
+      const PACK2_INVDECK = 1;
+      // 챕터 2 조사자 (기본판 AHC100, 조사자 덱 확장 AHC101~105). 티어 미적용.
+      const invData2 = [
+        {name: '다니엘라 레예스', pack: PACK2_CORE, class: CLASS_GUARDIAN, tier: TIER_UNDEF},
+        {name: '조 다이아몬드', pack: PACK2_CORE, class: CLASS_SEEKER, tier: TIER_UNDEF},
+        {name: '트리시 스카보로', pack: PACK2_CORE, class: CLASS_ROGUE, tier: TIER_UNDEF},
+        {name: '덱스터 드레이크', pack: PACK2_CORE, class: CLASS_MYSTIC, tier: TIER_UNDEF},
+        {name: '이자벨 반즈', pack: PACK2_CORE, class: CLASS_SURVIVOR, tier: TIER_UNDEF},
+        {name: '토미 멀둔', pack: PACK2_INVDECK, class: CLASS_GUARDIAN, tier: TIER_UNDEF},
+        {name: '캐롤린 펀', pack: PACK2_INVDECK, class: CLASS_SEEKER, tier: TIER_UNDEF},
+        {name: '앙드레 파텔', pack: PACK2_INVDECK, class: CLASS_ROGUE, tier: TIER_UNDEF},
+        {name: '마리 램부', pack: PACK2_INVDECK, class: CLASS_MYSTIC, tier: TIER_UNDEF},
+        {name: '미겔 데 라 크루스', pack: PACK2_INVDECK, class: CLASS_SURVIVOR, tier: TIER_UNDEF},
+      ];
+      var chapter = 2;
+      function setChapter(c) {
+        chapter = c;
+        document.getElementById('chap2Block').style.display = (c === 2) ? '' : 'none';
+        document.getElementById('chap1Block').style.display = (c === 1) ? '' : 'none';
+        document.getElementById('chapBtn2').classList.toggle('active', c === 2);
+        document.getElementById('chapBtn1').classList.toggle('active', c === 1);
+        document.getElementById('resultText').innerText = '';
+        try { localStorage.setItem('randominv.chapter', String(c)); } catch (e) {}
+      }
+      const invData1 = [
         {name: '로랜드 뱅크스', pack: PACK_CORE, class: CLASS_GUARDIAN, tier: TIER_C_MINUS},
         {name: '데이지 워커', pack: PACK_CORE, class: CLASS_SEEKER, tier: TIER_A_PLUS},
         {name: '"스키즈" 오\'툴', pack: PACK_CORE, class: CLASS_ROGUE, tier: TIER_D},
@@ -151,6 +182,7 @@
         {name: '평행/“재떨이” 피트', pack: PACK_PARALLEL, class: CLASS_SURVIVOR, tier: TIER_D},
         {name: '평행/마테오 신부', pack: PACK_PARALLEL, class: CLASS_MYSTIC, tier: TIER_C_MINUS},
         {name: '평행/몬터레이 잭', pack: PACK_PARALLEL, class: CLASS_ROGUE, tier: TIER_B_MINUS},
+        {name: '평행/롤라 헤이즈', pack: PACK_PARALLEL, class: CLASS_NEUTRAL, tier: TIER_UNDEF},
         {name: '조이 사마라스', pack: PACK_DUNWICH, class: CLASS_GUARDIAN, tier: TIER_B},
         {name: '렉스 머피', pack: PACK_DUNWICH, class: CLASS_SEEKER, tier: TIER_C_PLUS},
         {name: '제니 반즈', pack: PACK_DUNWICH, class: CLASS_ROGUE, tier: TIER_C},
@@ -211,15 +243,21 @@
         {name: '조지 바나비', pack: PACK_TDC, class: CLASS_SURVIVOR, tier: TIER_B_PLUS},
         {name: '애거서 크레인', pack: PACK_TDC, class: [CLASS_SEEKER, CLASS_MYSTIC], tier: TIER_C},
       ];
+      // 유산 풀에도 2026년 기본판/조사자 덱 확장 조사자를 포함
+      invData2.forEach(function (d) {
+        invData1.push({name: d.name, label: d.name + ' (2026년)', pack: d.pack === PACK2_CORE ? PACK_CORE26 : PACK_INVDECK26, class: d.class, tier: d.tier});
+      });
+      var invData = invData1;
 
         var weightSum = 0;
         var actCnt = 0;
         function _setupWeights(packMod, classMod, tierMod) {
           weightSum = 0;
           actCnt = 0;
-          var packModArr = packMod ? packMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+          invData = (chapter === 2) ? invData2 : invData1;
+          var packModArr = packMod ? packMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
           var classModArr = classMod ? classMod : [1, 1, 1, 1, 1, 1];
-          var tierModArr = tierMod ? tierMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0];
+          var tierModArr = tierMod ? tierMod : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
           for (var i = 0; i < invData.length; i++) {
             if (typeof invData[i].class === 'object') {
               invData[i].weight = 0;
@@ -282,38 +320,46 @@
         for (var i = 0; i < 14; i++) {
           tierMod.push(document.formTier.elements[i].value);
         }
-        for (var i = 0; i < 13; i++) {
-          packMod.push(document.formPack.elements[i].value);
+        if (chapter === 2) {
+          for (var i = 0; i < 2; i++) {
+            packMod.push(document.formPack2.elements[i].value);
+          }
+        } else {
+          for (var i = 0; i < 15; i++) {
+            packMod.push(document.formPack.elements[i].value);
+          }
         }
         for (var i = 0; i < 6; i++) {
           classMod.push(document.formClass.elements[i].value);
         }
-        tierMod.push(0);
+        tierMod.push(1);   // 티어 미정(2026년 제품군)은 가중치 1
         _setupWeights(packMod, classMod, tierMod);
         document.getElementById("resultText").innerText = '';
         var res = _pickMulti(document.formCount.text1.value);
         for (var i = 0; i < res.length; i++) {
-          document.getElementById("resultText").innerText += res[i].name + (i === res.length - 1 ? '' : '\n');
+          document.getElementById("resultText").innerText += (res[i].label || res[i].name) + (i === res.length - 1 ? '' : '\n');
         }
-      }
-
-      function onlyKorean() {
-        document.formPack.elements[PACK_PARALLEL].value = 0;
-        document.formPack.elements[PACK_FHV].value = 0;
-        document.formPack.elements[PACK_TDC].value = 0;
       }
 
       function init() {
         for (var i = 0; i < 14; i++) {
           document.formTier.elements[i].value = 1;
         }
-        for (var i = 0; i < 13; i++) {
+        for (var i = 0; i < 15; i++) {
           document.formPack.elements[i].value = 1;
+        }
+        for (var i = 0; i < 2; i++) {
+          document.formPack2.elements[i].value = 1;
         }
         for (var i = 0; i < 6; i++) {
           document.formClass.elements[i].value = 1;
         }
       }
+      window.addEventListener('DOMContentLoaded', function () {
+        var c = 2;
+        try { c = localStorage.getItem('randominv.chapter') === '1' ? 1 : 2; } catch (e) {}
+        setChapter(c);
+      });
     </script>
 	  <script>if(window.self!==window.top){document.documentElement.className+=" hub-embed";}</script>
 <style>
@@ -330,6 +376,10 @@ html.hub-embed .titleRowBlock{height:auto;font-size:1.3rem;font-weight:700;color
 html.hub-embed .pickRowBlock,html.hub-embed .halfRowBlock{background:var(--surface);border:1px solid var(--line);border-radius:.3rem;box-shadow:0 1px 2px rgb(60 40 20/.08);padding:1rem 1.15rem;margin-bottom:1.1rem;height:auto;min-height:0;}
 html.hub-embed .halfRowBlock>.textBlock{font-weight:700;color:var(--crim);font-size:1.02rem;margin:.9rem 0 .5rem;}
 html.hub-embed .halfRowBlock>.textBlock:first-child{margin-top:0;}
+html.hub-embed .chapTabs{margin:0 0 .8rem;padding-bottom:.7rem;border-bottom:1px dashed var(--line);}
+html.hub-embed .chapTabs button{opacity:1;text-decoration:none;background:#fff;color:var(--crim);border:1px solid var(--crim);}
+html.hub-embed .chapTabs button.active{background:var(--crim);color:#fff;}
+html.hub-embed #chap2Block>.textBlock,html.hub-embed #chap1Block>.textBlock,html.hub-embed #classBlock>.textBlock{font-weight:700;color:var(--crim);font-size:1.02rem;margin:0 0 .5rem;}
 html.hub-embed #resultText{font-size:1.02rem;margin-top:.6rem;line-height:1.8;}
 html.hub-embed header h1{font-size:1.3rem;color:var(--crim);border-bottom:2px solid var(--crim);padding-bottom:.4rem;margin-bottom:1rem;text-align:left;font-weight:700;}
 html.hub-embed h2{color:var(--crim);font-size:1.05rem;}
@@ -353,11 +403,14 @@ html.hub-embed #toggle-check-all:hover{background:#9a2a2a;}
     </div>
   </div>
   <div class="pickRowBlock">
+    <div class="textBlock chapTabs">
+      <button type="button" id="chapBtn2" class="active" onclick="setChapter(2)">현행</button>
+      <button type="button" id="chapBtn1" onclick="setChapter(1)">유산</button>
+    </div>
     <div class="textBlock">
     <form name="formCount">
       <input type="text" name="text1" id="text1" value="1" class="smallInput">개 <button type="button" onclick="run()">선택</button>
           </form>
-          <button type="button" onclick="onlyKorean()">한국어판만</button>
           <button type="button" onclick="init()">초기화</button>
     </div>
       <div class="textBlock" id="resultText">
@@ -365,8 +418,24 @@ html.hub-embed #toggle-check-all:hover{background:#9a2a2a;}
 
 </div>
   <div class="halfRowBlock">
+    <div id="chap2Block">
     <div class="textBlock">
-      확장
+      제품군 (현행)
+    </div>
+      <ul style="list-style-type: none; width: 100%;" class="longLabel">
+      <form name="formPack2">
+        <li>
+          <label for="pack2_core">기본판</label><input type="range" id="pack2_core" name="pack2_core" min="0" max="3" value="1" step="0.1"><br>
+        </li>
+        <li>
+        <label for="pack2_invdeck">조사자 덱 확장</label><input type="range" id="pack2_invdeck" name="pack2_invdeck" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      </ul>
+  </form>
+    </div>
+    <div id="chap1Block" style="display: none;">
+    <div class="textBlock">
+      제품군 (유산)
     </div>
       <ul style="list-style-type: none; width: 100%;" class="longLabel">
       <form name="formPack">
@@ -409,12 +478,20 @@ html.hub-embed #toggle-check-all:hover{background:#9a2a2a;}
       <li>
         <label for="pack_tdc">수몰된 도시</label><input type="range" id="pack_tdc" name="pack_tdc" min="0" max="3" value="1" step="0.1"><br>
       </li>
+      <li>
+        <label for="pack_core26">기본판 (2026년)</label><input type="range" id="pack_core26" name="pack_core26" min="0" max="3" value="1" step="0.1"><br>
+      </li>
+      <li>
+        <label for="pack_invdeck26">조사자 덱 확장 (2026년)</label><input type="range" id="pack_invdeck26" name="pack_invdeck26" min="0" max="3" value="1" step="0.1"><br>
+      </li>
       </ul>
   </form>
+    </div>
+    <div id="classBlock">
     <div class="textBlock">
       역할군
     </div>
-      <ul style="list-style-type: none; width: 100%;">
+      <ul style="list-style-type: none; width: 100%;" class="longLabel">
       <form name="formClass">
         <li>
           <label for="class_guardian">수호자</label><input type="range" id="class_guardian" name="class_guardian" min="0" max="3" value="1" step="0.1"><br>
@@ -436,10 +513,11 @@ html.hub-embed #toggle-check-all:hover{background:#9a2a2a;}
       </li>
       </ul>
   </form>
-    <div class="textBlock" style="display: none;">
+        </div>
+<div class="textBlock" style="display: none;">
       티어 (아컴파일즈 선정 풀확장 기준)
     </div>
-      <ul style="list-style-type: none; width: 100%; display: none;">
+      <ul style="list-style-type: none; width: 100%; display: none;" class="longLabel">
       <form name="formTier">
         <li>
           <label for="tier_s">Tier S</label><input type="range" id="tier_s" name="tier_s" min="0" max="3" value="1" step="0.1"><br>
