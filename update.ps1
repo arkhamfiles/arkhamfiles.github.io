@@ -32,7 +32,4 @@ python generate.py raw/test.html test.html --nolink
 Write-Output "generate utility.html..."
 python generate.py raw/utility.html utility.html --nolink
 
-Write-Output "generate chapters.html..."
-python generate.py raw/chapters.html chapters.html --nolink --force
-
 Write-Output "terminated..."
