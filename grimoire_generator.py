@@ -180,6 +180,8 @@ def build_entries(rows):
         if cur is None: continue
         part = classify(row)
         if part is None: continue
+        # 표제어(영문) 없이 표제어(한글)만 있는 행: FAQ 질문 제목 등으로 기록
+        if row['kt'] and cur[0]=='intro': S.setdefault('qtitles',{})[part[1]] = row['kt']
         (S['intro'] if cur[0]=='intro' else cur[1]['parts']).append(part) if cur[0]=='intro' else cur[1]['parts'].append(part)
     return sections, order
 
@@ -396,10 +398,14 @@ def split_faq(sections):
         is_q = kind=='p' and re.sub(r'\*+','',text).rstrip().endswith('?')
         if is_q:
             n+=1
-            disp=re.sub(r'\[[a-z_0-9]+\]\s*','',text)   # 목차 표시용: 아이콘 마커 제거 후 절단
-            cur=dict(key='c2-faq-q%02d'%n, et='FAQ Q%d'%n,
-                     kt=(disp[:42]+'…') if len(disp)>42 else disp,
-                     parts=[('q',text)], notitle=True)
+            qt=S.get('qtitles',{}).get(text)   # 시트 D열의 표제어(한글)가 있으면 제목/목차에 사용
+            if qt:
+                cur=dict(key='c2-faq-q%02d'%n, et='FAQ Q%d'%n, kt=qt, parts=[('q',text)])
+            else:
+                disp=re.sub(r'\[[a-z_0-9]+\]\s*','',text)   # 목차 표시용: 아이콘 마커 제거 후 절단
+                cur=dict(key='c2-faq-q%02d'%n, et='FAQ Q%d'%n,
+                         kt=(disp[:42]+'…') if len(disp)>42 else disp,
+                         parts=[('q',text)], notitle=True)
             entries.append(cur)
         elif cur is not None:
             cur['parts'].append(('a',text) if kind=='p' else (kind,text))
