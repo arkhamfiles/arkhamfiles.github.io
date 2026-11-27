@@ -1,35 +1,11 @@
 Write-Output "update card images..."
 python download_cards.py
 
-Write-Output "generate rule_reference.html..."
-python generate.py raw/rule_reference.html rule_reference.html
-
-Write-Output "generate notes.html..."
-python generate.py raw/notes.html notes.html --rr rule_reference.html
-
-Write-Output "generate faq.html..."
-python generate.py raw/faq.html faq.html --rr rule_reference.html --faq notes.html
-python generate.py raw/faq_legacy.html faq_legacy.html --rr rule_reference.html --faq notes.html
-
-Write-Output "generate errata.html..."
-python generate.py raw/errata.html errata.html --nolink
-
-Write-Output "generate taboo.html..."
-python generate.py raw/taboo.html taboo.html --nolink
-
-Write-Output "generate ultimatums.html..."
-python generate.py raw/ultimatums.html ultimatums.html --nolink
-
-Write-Output "generate starter_deck.html..."
-python generate.py raw/starter_deck.html starter_deck.html --nolink
-
-Write-Output "generate index.html..."
-python generate.py raw/index.html index.html --nolink
+# 2026-12-03: 구 허브 페이지(rule_reference·notes·faq·faq_legacy·errata·taboo·ultimatums·starter_deck·index)는
+# 폐기되어 chapters.html로 이동하는 안내 페이지로 대체되었습니다. 다시 생성하면 안내 페이지를 덮어쓰므로 생성 단계를 뺐습니다.
+# chapters.html 챕터 2 패널 갱신: python grimoire_generator.py <번역대조표.xlsx> chapters.html
 
 Write-Output "generate test.html..."
 python generate.py raw/test.html test.html --nolink
-
-Write-Output "generate utility.html..."
-python generate.py raw/utility.html utility.html --nolink
 
 Write-Output "terminated..."
